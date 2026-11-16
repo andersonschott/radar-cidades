@@ -1,7 +1,7 @@
 import { use } from 'react'
 import { useParams } from 'react-router'
 import { formatDate, formatDateTime, formatMoney, load, type Meta } from '../data'
-import { OfficialLink } from '../layout'
+import { ExternalLink, OfficialLink, UpdatedAt } from '../layout'
 
 const repo = 'https://github.com/andersonschott/radar-cidades'
 
@@ -9,7 +9,7 @@ export default function Methodology() {
   const { city = '' } = useParams()
   const meta = use(load<Meta>(`${city}/meta.json`)).data
   return (
-    <article className="prose-sm flex mx-auto max-w-2xl flex-col gap-4 [&_h2]:mt-4 [&_h2]:text-2xl [&_h2]:font-black text-base [&_li]:ml-5 [&_li]:list-disc">
+    <article className="mx-auto flex max-w-[68ch] flex-col gap-4 [&_h2]:mt-4 [&_h2]:text-2xl [&_h2]:font-black text-base [&_li]:ml-5 [&_li]:list-disc">
       <h1 className="text-4xl font-black tracking-tight">Como funciona</h1>
 
       <h2>Fonte</h2>
@@ -54,9 +54,10 @@ export default function Methodology() {
       <h2>Correções</h2>
       <p>
         Encontrou um erro? Abra uma issue no repositório público do projeto. Correções na fonte oficial aparecem na coleta seguinte.{' '}
-        <OfficialLink href={`${repo}/issues`} label="Reportar um erro" />
+        <ExternalLink href={`${repo}/issues`}>Reportar um erro no GitHub</ExternalLink>
       </p>
-      <p>Código aberto (AGPL-3.0). Dados sob CC BY 4.0. <OfficialLink href={repo} label="Repositório" /></p>
+      <p>Código aberto (AGPL-3.0). Dados sob CC BY 4.0. <ExternalLink href={repo}>Ver o código no GitHub</ExternalLink></p>
+      <UpdatedAt meta={meta} />
     </article>
   )
 }

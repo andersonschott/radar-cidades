@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Request } from './data'
-import { buildIndex, searchRequests } from './search'
+import { buildIndex, expandQuery, searchRequests } from './search'
 
 const req = (id: string, date: string, summary: string, streets: string[], neighborhoods: string[]): Request => ({
   id, type: 'Indicacao', number: Number(id), year: 2026, date, summary, url: `https://x/${id}`, authors: [], streets, neighborhoods,
@@ -30,5 +30,18 @@ describe('searchRequests', () => {
 
   it('aceita prefixo e exige todos os termos', () => {
     expect(searchRequests(data, index, 'jardim eur').map((r) => r.id)).toEqual(['3'])
+  })
+
+  it('entende abreviações de endereço', () => {
+    for (const q of ['jd perola', 'Jd. Pérola', 'JD. perola']) expect(searchRequests(data, index, q).map((r) => r.id)).toEqual(['1'])
+    expect(searchRequests(data, index, 'r. do cafe').map((r) => r.id)).toEqual(['1'])
+    expect(searchRequests(data, index, 'av. da industria').map((r) => r.id)).toEqual(['2'])
+  })
+})
+
+describe('expandQuery', () => {
+  it('expande jd, vl, pq com ou sem ponto; r. e av. só com ponto', () => {
+    expect(expandQuery('jd. europa Vl pq. r. av.')).toBe('jardim europa vila parque rua avenida')
+    expect(expandQuery(' r av rio ')).toBe('r av rio')
   })
 })

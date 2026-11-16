@@ -103,3 +103,23 @@
     letter-spacing: -0.025em;
   }
 }
+
+/*
+ * Foco de teclado em todo elemento (fora de @layer para vencer o outline-none dos utilitários).
+ * Dois tons: contorno escuro + anel da cor do fundo por dentro. Aparece no branco, no bloco escuro do salário e nos botões pretos.
+ */
+:focus-visible {
+  outline: 3px solid var(--foreground);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--background);
+}
+/* Alvos de foco programático (o <main> ao trocar de página) não ganham anel. */
+[tabindex='-1']:focus {
+  outline: none;
+  box-shadow: none;
+}
+/* Em faixas roláveis (chips), o anel de fora seria cortado pelo overflow: desenha por dentro. */
+.overflow-x-auto :focus-visible {
+  outline-offset: -3px;
+  box-shadow: none;
+}

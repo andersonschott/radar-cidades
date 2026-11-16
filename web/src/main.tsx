@@ -2,7 +2,7 @@ import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import './index.css'
-import { CityLayout, PageSkeleton, RootLayout, RouteError } from './layout'
+import { CityLayout, PageSkeleton, RootLayout, RouteError, type RouteHandle } from './layout'
 import City from './pages/City'
 import Councilors from './pages/Councilors'
 import Home from './pages/Home'
@@ -22,10 +22,10 @@ export const routes = [
         errorElement: <RouteError />,
         children: [
           { index: true, element: <City /> },
-          { path: 'vereadores', element: <Councilors /> },
-          { path: 'vereadores/:slug', element: <Profile /> },
-          { path: 'bairros', element: <Neighborhoods /> },
-          { path: 'metodologia', element: <Methodology /> },
+          { path: 'vereadores', element: <Councilors />, handle: { title: 'Vereadores' } satisfies RouteHandle },
+          { path: 'vereadores/:slug', element: <Profile />, handle: { title: 'Vereador' } satisfies RouteHandle },
+          { path: 'bairros', element: <Neighborhoods />, handle: { title: 'Meu bairro' } satisfies RouteHandle },
+          { path: 'metodologia', element: <Methodology />, handle: { title: 'Como funciona' } satisfies RouteHandle },
         ],
       },
     ],
