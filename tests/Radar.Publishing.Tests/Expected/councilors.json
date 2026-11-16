@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-16T09:12:00+00:00",
+  "city": "santa-barbara-doeste",
+  "data": [
+    {
+      "slug": "ana-souza",
+      "name": "Ana Souza",
+      "party": "PSD",
+      "photoUrl": null,
+      "profileUrl": "https://camara.example/v/1",
+      "totals": {
+        "propositions": 2,
+        "neighborhoodRequests": 1,
+        "byType": {
+          "Indicacao": 1,
+          "Mocao": 1
+        }
+      }
+    },
+    {
+      "slug": "joao-lima",
+      "name": "João Lima",
+      "party": null,
+      "photoUrl": null,
+      "profileUrl": "https://camara.example/v/2",
+      "totals": {
+        "propositions": 1,
+        "neighborhoodRequests": 1,
+        "byType": {
+          "Indicacao": 1
+        }
+      }
+    }
+  ]
+}

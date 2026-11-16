@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-16T09:12:00+00:00",
+  "city": "santa-barbara-doeste",
+  "data": {
+    "councilor": {
+      "slug": "ana-souza",
+      "name": "Ana Souza",
+      "party": "PSD",
+      "photoUrl": null,
+      "profileUrl": "https://camara.example/v/1",
+      "totals": {
+        "propositions": 2,
+        "neighborhoodRequests": 1,
+        "byType": {
+          "Indicacao": 1,
+          "Mocao": 1
+        }
+      }
+    },
+    "propositions": [
+      {
+        "id": "100",
+        "type": "Indicacao",
+        "rawType": "Indicacao",
+        "number": 100,
+        "year": 2025,
+        "date": "2025-03-10",
+        "summary": "Indica tapa-buraco na Rua do Algodão, no bairro Jardim Primavera \u003Curgente\u003E",
+        "category": "PedidoBairro",
+        "url": "https://camara.example/p/100"
+      },
+      {
+        "id": "200",
+        "type": "Mocao",
+        "rawType": "Mocao",
+        "number": 200,
+        "year": 2025,
+        "date": "2025-03-10",
+        "summary": "Moção de congratulação",
+        "category": "Outro",
+        "url": "https://camara.example/p/200"
+      }
+    ]
+  }
+}

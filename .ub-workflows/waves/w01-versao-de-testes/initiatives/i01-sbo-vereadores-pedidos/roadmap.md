@@ -7,15 +7,15 @@ SDD M1 para Santa Bárbara d'Oeste publicado como versão de testes no Azure pes
 ## Current Position
 
 - Current state: `in progress`
-- Active or next sprint: S02 `adaptador-siscam` (próxima)
+- Active or next sprint: S03 `coleta-vertical` (próxima)
 - Active discovery: `w01-i01-d01-siscam-fonte`
 - WIP state: 1 discovery ativa, nenhuma sprint de entrega ativa.
 
 ## Forecast Control
 
 - Appetite state: `within_appetite`
-- Completed count: 1 (S01)
-- Registered remaining: 3
+- Completed count: 2 (S01, S02)
+- Registered remaining: 2
 - Forecast delta: none.
 - Confidence: média até fechar d01.
 - Next scope tradeoff: se o SQL atrasar a S03, publicar JSON direto da coleta (scope hammer da wave).
@@ -23,20 +23,21 @@ SDD M1 para Santa Bárbara d'Oeste publicado como versão de testes no Azure pes
 
 ## Active Or Next Sprint Route
 
-S02 sai da discovery d01 quando aceita.
+S03 sai da discovery d01 quando aceita.
 
 ## Adaptive Plan
 
 1. ~~S01 domínio + classificação~~ (closed, enabling).
-2. S02 adaptador SISCAM: vereadores + proposições contra fixtures (enabling — 2ª seguida; route review aceito: pré-requisito sem alternativa).
-3. S03 vertical: Data (EF + upsert idempotente) + Publishing (JSON §9) + Functions (timer, filas, backfill) — termina com JSON real publicado no Blob.
+2. ~~S02 dados + publicação~~ (closed, enabling — 2ª seguida; route review aceito).
+3. S03 vertical: adaptador SISCAM + Functions (timer, filas, backfill) — termina com JSON real publicado no Blob.
 4. S04 front (rotas M1) + deploy + amostra de 10 proposições conferidas.
 5. Pre-audit continuation window (`adaptive insertion`).
 6. Final audit (`terminal audit`).
 
 ## Sequence Changes
 
-- 2026-11-16: route review da cadeia enabling (regra 31) — aceito comprar a 2ª sprint enabling (S02); S03 obrigatoriamente vertical.
+- 2026-11-16: route review da cadeia enabling (regra 31) — aceito comprar a 2ª sprint enabling; S03 obrigatoriamente vertical.
+- 2026-11-16: Data + Publishing antecipados para S02 (independem da fonte) enquanto a discovery d01 corria; adaptador passa para a S03 junto com as Functions.
 
 ## Revalidation Rules
 
