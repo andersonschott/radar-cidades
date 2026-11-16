@@ -7,7 +7,12 @@ function key(name) {
   w = w.filter((x) => !['bairro', 'de', 'do', 'da', 'dos', 'das', 'e'].includes(x))
   return w.join(' ')
 }
-module.exports = { key }
+/** Chave final: aplica as junções da cidade ({ into, pattern }) depois da normalização. */
+function canonical(name, merges = []) {
+  const k = key(name)
+  return merges.find((m) => new RegExp(m.pattern).test(k))?.into ?? k
+}
+module.exports = { key, canonical }
 if (require.main === module) {
   const ours = JSON.parse(require('fs').readFileSync(process.argv[2], 'utf8'))
   const groups = new Map()

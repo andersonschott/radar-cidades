@@ -2,15 +2,15 @@
 // Uso: node tools/geo/geocode.js <requests.json publicado> cities/<slug>.neighborhoods.json
 // Retoma de onde parou: bairros já resolvidos ou recusados no arquivo de saída não são consultados de novo.
 const fs = require('fs')
-const { key } = require('./norm.js')
+const { key, canonical } = require('./norm.js')
 const [requestsPath, outPath] = process.argv.slice(2)
 const counts = new Map()
 for (const r of JSON.parse(fs.readFileSync(requestsPath, 'utf8')).data) for (const n of new Set(r.neighborhoods ?? [])) counts.set(n, (counts.get(n) ?? 0) + 1)
 const ours = [...counts.entries()]
-const groups = new Map()
-for (const [n, c] of ours) { const k = key(n); const g = groups.get(k) ?? { key: k, total: 0, names: [] }; g.total += c; g.names.push([n, c]); groups.set(k, g) }
-const list = [...groups.values()].sort((a, b) => b.total - a.total)
 const file = fs.existsSync(outPath) ? JSON.parse(fs.readFileSync(outPath, 'utf8')) : { source: 'OpenStreetMap via Nominatim', license: 'ODbL 1.0 — © colaboradores do OpenStreetMap', neighborhoods: {} }
+const groups = new Map()
+for (const [n, c] of ours) { const k = canonical(n, file.merge); const g = groups.get(k) ?? { key: k, total: 0, names: [] }; g.total += c; g.names.push([n, c]); groups.set(k, g) }
+const list = [...groups.values()].sort((a, b) => b.total - a.total)
 const done = file.neighborhoods
 const save = () => { file.updatedAt = new Date().toISOString().slice(0, 10); fs.writeFileSync(outPath, JSON.stringify(file, null, 1) + '\n') }
 const ok = new Set(['place', 'landuse', 'boundary'])
