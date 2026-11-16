@@ -64,7 +64,7 @@ public sealed class PiracicabaSiscamTests
         call.Present.Count.ShouldBe(20);
         call.Absent.ShouldBe(["alessandra bellucci", "marco antonio da fonseca bicheiro", "paulo henrique paranhos ribeiro"], ignoreOrder: true);
         call.CountMismatch.ShouldBeFalse();
-        // Cássio Luiz Barbosa votou em 2025 e não está nos 23 de /vereadores (suplente que saiu): o source o deixa de fora e loga.
+        // Cássio Luiz Barbosa está presente e fora dos 23 de /vereadores (hipótese não verificada: suplente); o source o deixa de fora e loga.
         call.Present.ShouldContain("cassio luiz barbosa");
         Aliases().ShouldNotContainKey("cassio luiz barbosa");
     }

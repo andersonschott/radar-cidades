@@ -18,15 +18,15 @@ Há, portanto, dois grupos `*` que se contradizem.
 
 1. **A coleta é permitida pelas duas leituras**, e a cidade **não** declara `robotsOverride`:
    - **Nosso `RobotsTxt.IsAllowed`** usa o primeiro grupo `*`, que é o da Cloudflare: `Allow: /`.
-   - **RFC 9309 (§2.2.1 e §2.2.2):** grupos para o mesmo agente são combinados num só; vence a regra de caminho mais longo e, no empate, vence `Allow`. O grupo `*` combinado tem `Allow: /` e `Disallow: /`, de mesmo comprimento, então vale `Allow`.
+   - **RFC 9309:** grupos para o mesmo agente são combinados num só; vence a regra de caminho mais longo e, no empate, vence `Allow`. O grupo `*` combinado tem `Allow: /` e `Disallow: /`, de mesmo comprimento, então vale `Allow`.
    - O teste `PiracicabaSiscamTests.Robots_FirstStarGroupAllows` prova a primeira leitura sobre o arquivo real, para os caminhos que o `SiscamSource` checa.
-2. O `Content-Signal` não restringe o nosso uso: o Radar não treina modelo e só publica dados derivados com link para a fonte oficial.
+2. O `Content-Signal` do bloco da Cloudflare diz `search=yes`, `ai-train=no` e `use=reference`, sem sinal `ai-input`. O Radar não treina modelo com o conteúdo; a compatibilidade com `use=reference` fica para o dono avaliar junto com esta ADR.
 3. A etiqueta da ADR 0002 vale igual: 1 req/s por host, 1 run por dia, coleta incremental, sem retry em 4xx e User-Agent honesto. Se o `SiscamSource` passar a ler o grupo da forma da RFC, o resultado não muda.
 
 ## Riscos
 
 - **A intenção do dono do site é incerta.** O `Disallow` do SISCAM pode ser a regra que a Câmara quer e o `Allow` da Cloudflare um efeito colateral do recurso gerenciado. Se o bloco da Cloudflare sair, o mesmo arquivo passa a proibir, e o adaptador aborta sozinho (comportamento correto do SDD §8.2).
-- **Bloqueio de IP de datacenter (SDD §8.4).** O site da Câmara já devolveu 403 a partir de IP de datacenter. Daqui (rede residencial no Brasil) o `siave` respondeu 200 em 16/11/2026, mas o Function App no Azure pode receber 403 ou desafio da Cloudflare. Hoje um 403 falha o run da cidade (4xx não repete).
+- **Bloqueio de IP de datacenter (SDD §8.4).** O site da Câmara já devolveu 403 a partir de IP de datacenter. Desta máquina local (atendida pelo nó GRU da Cloudflare) o `siave` respondeu 200 em 16/11/2026, mas o Function App no Azure pode receber 403 ou desafio da Cloudflare. Hoje um 403 falha o run da cidade (4xx não repete).
 
 ## Mitigações
 
