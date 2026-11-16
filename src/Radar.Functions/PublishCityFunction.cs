@@ -21,6 +21,13 @@ public sealed class PublishCityFunction(IReadOnlyList<CityConfig> cities, Public
             await UploadAsync($"{slug}/{path}", content, ct).ConfigureAwait(false);
         }
 
+        // Posições de bairro (tools/geo) são opcionais: cidade sem o arquivo só não tem mapa.
+        var places = Path.Combine(AppContext.BaseDirectory, "cities", $"{slug}.neighborhoods.json");
+        if (File.Exists(places))
+        {
+            await UploadAsync($"{slug}/places.json", PublicationBuilder.Places(await File.ReadAllTextAsync(places, ct).ConfigureAwait(false), slug, now), ct).ConfigureAwait(false);
+        }
+
         // shortcut: lastUpdated do índice só conhece a cidade publicada agora; ler meta.json das outras quando houver mais de uma.
         var index = cities.Where(c => c.Active).Select(c => new CitySummaryDto(c.Slug, c.Name, c.Uf, c.Capabilities,
             c.Slug == slug ? data.LastSuccessfulScrape : null));

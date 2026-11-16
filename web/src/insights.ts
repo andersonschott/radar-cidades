@@ -1,4 +1,4 @@
-import type { Request } from './data'
+import type { Place, Request } from './data'
 
 export interface Count { key: string; count: number }
 
@@ -37,4 +37,21 @@ export function repeatedStreets(requests: Request[]): StreetRepeat[] {
     .filter((s) => s.count > 1)
     .map(({ authorSet, ...s }) => ({ ...s, authors: authorSet.size }))
     .sort((a, b) => b.count - a.count || a.street.localeCompare(b.street))
+}
+
+export interface PlaceCount { place: Place; count: number }
+
+/** Pedidos por bairro no mapa (um voto por pedido e bairro) e quantos pedidos com bairro ficaram de fora por falta de posição. */
+export function placeCounts(requests: Request[], places: Place[]): { items: PlaceCount[]; withNeighborhood: number; mapped: number } {
+  const byAlias = new Map(places.flatMap((p) => p.aliases.map((a) => [a, p] as const)))
+  const counts = new Map<Place, number>()
+  let withNeighborhood = 0, mapped = 0
+  for (const r of requests) {
+    if (r.neighborhoods.length === 0) continue
+    withNeighborhood++
+    const hit = new Set(r.neighborhoods.map((n) => byAlias.get(n)).filter((p) => p !== undefined))
+    if (hit.size > 0) mapped++
+    for (const p of hit) counts.set(p, (counts.get(p) ?? 0) + 1)
+  }
+  return { items: [...counts].map(([place, count]) => ({ place, count })).sort((a, b) => b.count - a.count), withNeighborhood, mapped }
 }

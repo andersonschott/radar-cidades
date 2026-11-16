@@ -36,6 +36,12 @@ public sealed record MetaDto(
     bool ThirteenthSalary,
     string? SalarySourceLabel);
 
+/// <summary>Posição aproximada de um bairro para o mapa. <c>Aliases</c>: grafias de bairro como aparecem em <c>requests.json</c>.
+/// <c>Method</c>: "osm" (ponto do OpenStreetMap) ou "ruas" (mediana das ruas citadas nos pedidos do bairro).</summary>
+public sealed record PlaceDto(string Label, string Search, double Lat, double Lon, string Method, IReadOnlyList<string> Aliases);
+
+public sealed record PlacesDto(string Attribution, IReadOnlyList<PlaceDto> Places);
+
 /// <summary>Sessões com chamada em que o vereador foi chamado (presente ou ausente). Nulo: nenhuma.</summary>
 public sealed record AttendanceDto(int Sessions, int Present, int Absent);
 

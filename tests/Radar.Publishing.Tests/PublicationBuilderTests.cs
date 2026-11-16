@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.Json;
 using Radar.Data;
 using Radar.Domain;
 using Radar.Publishing;
@@ -71,6 +72,27 @@ public sealed class PublicationBuilderTests
     public void CitiesIndex_MatchSnapshot() =>
         AssertSnapshot("cities.json", PublicationBuilder.CitiesIndex(
             [new CitySummaryDto("santa-barbara-doeste", "Santa Bárbara d'Oeste", "SP", ["councilors", "propositions"], GeneratedAt)], GeneratedAt));
+
+    [Fact]
+    public void Places_KeepsOnlyLocatedAndNamesByMethod()
+    {
+        const string json = """
+            {"license": "ODbL 1.0 — © colaboradores do OpenStreetMap", "neighborhoods": {
+              "mollon": {"names": ["jardim mollon", "vila mollon iv"], "total": 9, "label": "jardim mollon", "search": "mollon",
+                "match": {"name": "Mollon", "lat": -22.7495707, "lon": -47.3658174, "category": "place", "type": "suburb"}},
+              "jardim laranjeiras": {"names": ["jardim das laranjeiras"], "total": 5, "label": "jardim das laranjeiras", "search": "jardim das laranjeiras",
+                "match": {"lat": -22.73153, "lon": -47.39379, "category": "streets", "type": "median", "streets": 11}},
+              "beira rio": {"names": ["beira rio"], "total": 3, "match": null}
+            }}
+            """;
+
+        var places = JsonSerializer.Deserialize<Envelope<PlacesDto>>(PublicationBuilder.Places(json, "sbo", GeneratedAt), PublicationBuilder.JsonOptions)!.Data;
+
+        places.Attribution.ShouldStartWith("ODbL");
+        places.Places.Select(p => (p.Label, p.Search, p.Method)).ShouldBe([("Mollon", "mollon", "osm"), ("jardim das laranjeiras", "jardim das laranjeiras", "ruas")]);
+        places.Places[0].Lat.ShouldBe(-22.74957);
+        places.Places[0].Aliases.ShouldBe(["jardim mollon", "vila mollon iv"]);
+    }
 
     // Snapshot sem biblioteca (SDD §9): arquivo esperado versionado; se faltar, é gerado para revisão e o teste falha.
     private static void AssertSnapshot(string path, byte[] actual, [CallerFilePath] string testFile = "")

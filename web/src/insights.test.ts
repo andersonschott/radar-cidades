@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { groupTotals, titleCase, type Request } from './data'
-import { repeatedStreets, topNeighborhoods } from './insights'
+import { placeCounts, repeatedStreets, topNeighborhoods } from './insights'
 
 const req = (id: string, date: string, streets: string[], neighborhoods: string[], authors: string[]): Request =>
   ({ id, type: 'Indicacao', number: Number(id), year: 2025, date, summary: '', url: '', authors, streets, neighborhoods })
@@ -61,5 +61,16 @@ describe('situação de projeto de lei', () => {
     expect(billStatus('ProjetoLei', 'PEDIDO DE PARECER - SUSPENSO O TRÂMITE')).toBe('Em análise, aguardando parecer')
     expect(billStatus('ProjetoLeiComplementar', 'TRAMITANDO')).toBe('Em análise na Câmara')
     expect(billStatus('Indicacao', 'TRAMITANDO')).toBeNull()
+  })
+})
+
+describe('mapa por bairro', () => {
+  it('soma grafias do mesmo bairro, um voto por pedido, e conta quem ficou de fora', () => {
+    const europa = { label: 'Jardim Europa', search: 'jardim europa', lat: -22.7, lon: -47.3, method: 'osm' as const, aliases: ['jardim europa', 'jd europa'] }
+    const reqs = [...data, req('5', '2025-07-01', [], ['jd europa'], ['a']), req('6', '2025-07-02', [], [], ['a'])]
+    const { items, withNeighborhood, mapped } = placeCounts(reqs, [europa])
+    expect(items).toEqual([{ place: europa, count: 4 }])
+    expect(withNeighborhood).toBe(5)
+    expect(mapped).toBe(4)
   })
 })

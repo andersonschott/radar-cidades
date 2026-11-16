@@ -37,7 +37,9 @@
     "type": "suburb",
     "osm": "node/4227654202"
    },
-   "streetCheckKm": 0.42
+   "streetCheckKm": 0.42,
+   "label": "jardim mollon",
+   "search": "mollon"
   },
   "jardim europa": {
    "names": [
@@ -53,7 +55,9 @@
     "type": "village",
     "osm": "node/4228358167"
    },
-   "streetCheckKm": 0.12
+   "streetCheckKm": 0.12,
+   "label": "jardim europa",
+   "search": "jardim europa"
   },
   "jardim sao francisco": {
    "names": [
@@ -70,7 +74,9 @@
     "type": "suburb",
     "osm": "node/1712169708"
    },
-   "streetCheckKm": 0.32
+   "streetCheckKm": 0.32,
+   "label": "jardim sao francisco",
+   "search": "jardim sao francisco"
   },
   "jardim perola": {
    "names": [
@@ -86,7 +92,9 @@
     "type": "suburb",
     "osm": "node/4232229573"
    },
-   "streetCheckKm": 0.23
+   "streetCheckKm": 0.23,
+   "label": "jardim perola",
+   "search": "jardim perola"
   },
   "residencial furlan": {
    "names": [
@@ -102,7 +110,9 @@
     "type": "suburb",
     "osm": "node/4276168905"
    },
-   "streetCheckKm": 0.42
+   "streetCheckKm": 0.42,
+   "label": "residencial furlan",
+   "search": "residencial furlan"
   },
   "jardim orquideas": {
    "names": [
@@ -127,7 +137,9 @@
     "category": "place",
     "type": "suburb",
     "osm": "node/4276168911"
-   }
+   },
+   "label": "jardim das orquideas",
+   "search": "jardim das orquideas"
   },
   "cidade nova": {
    "names": [
@@ -143,7 +155,9 @@
     "type": "suburb",
     "osm": "node/6287520377"
    },
-   "streetCheckKm": 0.75
+   "streetCheckKm": 0.75,
+   "label": "cidade nova",
+   "search": "cidade nova"
   },
   "jardim laranjeiras": {
    "names": [
@@ -160,7 +174,9 @@
     "streets": 11,
     "spreadKm": 0.24
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim das laranjeiras",
+   "search": "jardim das laranjeiras"
   },
   "jardim sao fernando": {
    "names": [
@@ -176,7 +192,9 @@
     "type": "suburb",
     "osm": "node/4232232989"
    },
-   "streetCheckKm": 0.43
+   "streetCheckKm": 0.43,
+   "label": "jardim sao fernando",
+   "search": "jardim sao fernando"
   },
   "sao joaquim": {
    "names": [
@@ -192,7 +210,9 @@
     "type": "suburb",
     "osm": "node/4227654204"
    },
-   "streetCheckKm": 0.91
+   "streetCheckKm": 0.91,
+   "label": "sao joaquim",
+   "search": "sao joaquim"
   },
   "planalto sol": {
    "names": [
@@ -209,7 +229,9 @@
     "type": "suburb",
     "osm": "node/6287523887"
    },
-   "streetCheckKm": 0.11
+   "streetCheckKm": 0.11,
+   "label": "planalto do sol",
+   "search": "planalto do sol"
   },
   "parque olaria": {
    "names": [
@@ -225,7 +247,9 @@
     "type": "suburb",
     "osm": "node/4227666889"
    },
-   "streetCheckKm": 0.35
+   "streetCheckKm": 0.35,
+   "label": "parque olaria",
+   "search": "parque olaria"
   },
   "jardim esmeralda": {
    "names": [
@@ -243,7 +267,9 @@
    },
    "rejected": [
     "leisure/park: Área de Lazer Jardim Esmeralda (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "jardim esmeralda",
+   "search": "jardim esmeralda"
   },
   "jardim nova conquista": {
    "names": [
@@ -259,7 +285,9 @@
     "type": "suburb",
     "osm": "node/6016037956"
    },
-   "streetCheckKm": 0.15
+   "streetCheckKm": 0.15,
+   "label": "jardim nova conquista",
+   "search": "jardim nova conquista"
   },
   "jardim santa rita cassia": {
    "names": [
@@ -275,7 +303,9 @@
     "type": "quarter",
     "osm": "node/5037927922"
    },
-   "streetCheckKm": 0.2
+   "streetCheckKm": 0.2,
+   "label": "jardim santa rita de cassia",
+   "search": "jardim santa rita de cassia"
   },
   "jardim sartori": {
    "names": [
@@ -294,7 +324,9 @@
    "rejected": [
     "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
     "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "jardim sartori",
+   "search": "jardim sartori"
   },
   "parque planalto": {
    "names": [
@@ -312,7 +344,9 @@
    },
    "rejected": [
     "leisure/park: Parque Linear Perdoso (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "parque planalto",
+   "search": "parque planalto"
   },
   "planalto sol 2": {
    "names": [
@@ -329,7 +363,9 @@
     "type": "suburb",
     "osm": "node/6287551440"
    },
-   "streetCheckKm": 0.2
+   "streetCheckKm": 0.2,
+   "label": "planalto do sol ii",
+   "search": "planalto do sol ii"
   },
   "parque zabani": {
    "names": [
@@ -345,7 +381,9 @@
     "type": "suburb",
     "osm": "node/11026899118"
    },
-   "streetCheckKm": 0.39
+   "streetCheckKm": 0.39,
+   "label": "parque zabani",
+   "search": "parque zabani"
   },
   "vila brasil": {
    "names": [
@@ -361,7 +399,9 @@
     "type": "suburb",
     "osm": "node/4227652301"
    },
-   "streetCheckKm": 0.45
+   "streetCheckKm": 0.45,
+   "label": "vila brasil",
+   "search": "vila brasil"
   },
   "cruzeiro sul": {
    "names": [
@@ -379,7 +419,9 @@
    },
    "rejected": [
     "shop/beverages: cRUZEIRO DO SUL (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "cruzeiro do sul",
+   "search": "cruzeiro do sul"
   },
   "conjunto habitacional trabalhadores": {
    "names": [
@@ -396,7 +438,9 @@
     "type": "quarter",
     "osm": "node/4227654203"
    },
-   "streetCheckKm": 0.05
+   "streetCheckKm": 0.05,
+   "label": "conjunto habitacional dos trabalhadores",
+   "search": "conjunto habitacional dos trabalhadores"
   },
   "sao fernando": {
    "names": [
@@ -414,7 +458,9 @@
    },
    "rejected": [
     "place/suburb: Jardim São Fernando (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "sao fernando",
+   "search": "sao fernando"
   },
   "jardim san marino": {
    "names": [
@@ -430,7 +476,9 @@
     "streets": 8,
     "spreadKm": 0.18
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim san marino",
+   "search": "jardim san marino"
   },
   "jardim geriva": {
    "names": [
@@ -455,7 +503,9 @@
     "category": "place",
     "type": "neighbourhood",
     "osm": "node/4276088412"
-   }
+   },
+   "label": "jardim geriva",
+   "search": "jardim geriva"
   },
   "parque lago": {
    "names": [
@@ -474,7 +524,9 @@
    },
    "rejected": [
     "water/lake: Lago do Parque dos Ipês (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "parque do lago",
+   "search": "parque do lago"
   },
   "vila linopolis": {
    "names": [
@@ -490,7 +542,9 @@
     "type": "suburb",
     "osm": "node/3763724306"
    },
-   "streetCheckKm": 0.32
+   "streetCheckKm": 0.32,
+   "label": "vila linopolis",
+   "search": "vila linopolis"
   },
   "conjunto trabalhadores": {
    "names": [
@@ -509,7 +563,9 @@
    },
    "rejected": [
     "place/quarter: Conjunto Habitacional dos Trabalhadores (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "conjunto dos trabalhadores",
+   "search": "conjunto dos trabalhadores"
   },
   "jardim vista alegre": {
    "names": [
@@ -528,7 +584,9 @@
    "rejected": [
     "highway/motorway: Rodovia dos Bandeirantes (Santa Bárbara d'Oeste)",
     "highway/motorway: Rodovia dos Bandeirantes (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "jardim vista alegre",
+   "search": "jardim vista alegre"
   },
   "31 marco": {
    "names": [
@@ -544,7 +602,9 @@
     "type": "hamlet",
     "osm": "node/1712175594"
    },
-   "streetCheckKm": 0.42
+   "streetCheckKm": 0.42,
+   "label": "31 de marco",
+   "search": "31 de marco"
   },
   "dona regina": {
    "names": [
@@ -560,7 +620,9 @@
     "streets": 9,
     "spreadKm": 0.27
    },
-   "rejected": []
+   "rejected": [],
+   "label": "dona regina",
+   "search": "dona regina"
   },
   "vila sartori": {
    "names": [
@@ -576,7 +638,9 @@
     "type": "suburb",
     "osm": "node/4227657865"
    },
-   "streetCheckKm": 0.13
+   "streetCheckKm": 0.13,
+   "label": "vila sartori",
+   "search": "vila sartori"
   },
   "vila grego": {
    "names": [
@@ -592,7 +656,9 @@
     "type": "village",
     "osm": "node/1712173290"
    },
-   "streetCheckKm": 0.36
+   "streetCheckKm": 0.36,
+   "label": "vila grego",
+   "search": "vila grego"
   },
   "jardim mariana": {
    "names": [
@@ -608,7 +674,9 @@
     "type": "suburb",
     "osm": "node/4232222004"
    },
-   "streetCheckKm": 0.91
+   "streetCheckKm": 0.91,
+   "label": "jardim mariana",
+   "search": "jardim mariana"
   },
   "jardim europa 4": {
    "names": [
@@ -627,7 +695,9 @@
    },
    "rejected": [
     "place/village: Jardim Europa (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "jardim europa iv",
+   "search": "jardim europa iv"
   },
   "jardim batagin": {
    "names": [
@@ -643,7 +713,9 @@
     "streets": 14,
     "spreadKm": 0.25
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim batagin",
+   "search": "jardim batagin"
   },
   "jardim barao": {
    "names": [
@@ -659,7 +731,9 @@
     "type": "suburb",
     "osm": "node/4227654441"
    },
-   "streetCheckKm": 0.45
+   "streetCheckKm": 0.45,
+   "label": "jardim barao",
+   "search": "jardim barao"
   },
   "jardim conceicao": {
    "names": [
@@ -675,7 +749,9 @@
     "type": "suburb",
     "osm": "node/4227657863"
    },
-   "streetCheckKm": 0.03
+   "streetCheckKm": 0.03,
+   "label": "jardim conceicao",
+   "search": "jardim conceicao"
   },
   "loteamento planalto sol": {
    "names": [
@@ -691,7 +767,9 @@
     "streets": 15,
     "spreadKm": 0.47
    },
-   "rejected": []
+   "rejected": [],
+   "label": "loteamento planalto do sol",
+   "search": "loteamento planalto do sol"
   },
   "jardim dulce": {
    "names": [
@@ -707,7 +785,9 @@
     "streets": 14,
     "spreadKm": 0.22
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim dulce",
+   "search": "jardim dulce"
   },
   "centro": {
    "names": [
@@ -723,7 +803,9 @@
     "type": "suburb",
     "osm": "node/4222578819"
    },
-   "streetCheckKm": 0.4
+   "streetCheckKm": 0.4,
+   "label": "centro",
+   "search": "centro"
   },
   "vista alegre": {
    "names": [
@@ -739,7 +821,9 @@
     "type": "suburb",
     "osm": "node/4232227329"
    },
-   "streetCheckKm": 0.18
+   "streetCheckKm": 0.18,
+   "label": "vista alegre",
+   "search": "vista alegre"
   },
   "jardim alfa": {
    "names": [
@@ -759,7 +843,9 @@
     "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
     "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
     "highway/motorway: Rodovia dos Bandeirantes (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "jardim alfa",
+   "search": "jardim alfa"
   },
   "jardim paraiso": {
    "names": [
@@ -775,7 +861,9 @@
     "streets": 9,
     "spreadKm": 0.29
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim paraiso",
+   "search": "jardim paraiso"
   },
   "conjunto habitacional roberto romano": {
    "names": [
@@ -791,7 +879,9 @@
     "streets": 8,
     "spreadKm": 0.11
    },
-   "rejected": []
+   "rejected": [],
+   "label": "conjunto habitacional roberto romano",
+   "search": "conjunto habitacional roberto romano"
   },
   "jardim cedros": {
    "names": [
@@ -810,7 +900,9 @@
     "streets": 6,
     "spreadKm": 0.16
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim dos cedros",
+   "search": "jardim dos cedros"
   },
   "jardim paulista": {
    "names": [
@@ -826,7 +918,9 @@
     "streets": 10,
     "spreadKm": 0.25
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim paulista",
+   "search": "jardim paulista"
   },
   "zabani": {
    "names": [
@@ -844,7 +938,9 @@
    },
    "rejected": [
     "place/suburb: Parque Zabani (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "zabani",
+   "search": "zabani"
   },
   "jardim laudissi": {
    "names": [
@@ -860,7 +956,9 @@
     "streets": 8,
     "spreadKm": 0.3
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim laudissi",
+   "search": "jardim laudissi"
   },
   "nova conquista": {
    "names": [
@@ -878,7 +976,9 @@
    },
    "rejected": [
     "place/suburb: Jardim Nova Conquista (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "nova conquista",
+   "search": "nova conquista"
   },
   "jardim icarai": {
    "names": [
@@ -894,7 +994,9 @@
     "streets": 12,
     "spreadKm": 0.28
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim icarai",
+   "search": "jardim icarai"
   },
   "parque residencial zabani": {
    "names": [
@@ -910,7 +1012,9 @@
     "streets": 5,
     "spreadKm": 0.32
    },
-   "rejected": []
+   "rejected": [],
+   "label": "parque residencial zabani",
+   "search": "parque residencial zabani"
   },
   "jardim brasilia": {
    "names": [
@@ -926,7 +1030,9 @@
     "type": "suburb",
     "osm": "node/4222566524"
    },
-   "streetCheckKm": 0.03
+   "streetCheckKm": 0.03,
+   "label": "jardim brasilia",
+   "search": "jardim brasilia"
   },
   "santa rita": {
    "names": [
@@ -947,7 +1053,9 @@
     "place/village: Jardim Santa Rita (Santa Bárbara d'Oeste)",
     "place/quarter: Jardim Santa Rita de Cássia (Santa Bárbara d'Oeste)",
     "leisure/park: Praça Santa Rita (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "santa rita",
+   "search": "santa rita"
   },
   "vila diva": {
    "names": [
@@ -963,7 +1071,9 @@
     "type": "quarter",
     "osm": "node/6286563897"
    },
-   "streetCheckKm": 0.3
+   "streetCheckKm": 0.3,
+   "label": "vila diva",
+   "search": "vila diva"
   },
   "sao camilo": {
    "names": [
@@ -983,7 +1093,9 @@
     "place/suburb: Vila São Camilo (Santa Bárbara d'Oeste)",
     "leisure/park: Parquinho do São Camilo (Santa Bárbara d'Oeste)",
     "leisure/park: Praça do São Camilo (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "sao camilo",
+   "search": "sao camilo"
   },
   "santa rita cassia": {
    "names": [
@@ -1001,7 +1113,9 @@
    },
    "rejected": [
     "place/quarter: Jardim Santa Rita de Cássia (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "santa rita de cassia",
+   "search": "santa rita de cassia"
   },
   "jardim adelia": {
    "names": [
@@ -1017,7 +1131,9 @@
     "streets": 10,
     "spreadKm": 0.49
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim adelia",
+   "search": "jardim adelia"
   },
   "residencial sao joaquim": {
    "names": [
@@ -1033,7 +1149,9 @@
     "streets": 14,
     "spreadKm": 0.2
    },
-   "rejected": []
+   "rejected": [],
+   "label": "residencial sao joaquim",
+   "search": "residencial sao joaquim"
   },
   "parque jacarandas": {
    "names": [
@@ -1045,7 +1163,9 @@
    "match": null,
    "rejected": [
     "leisure/park: Parque dos Jacarandás (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "parque dos jacarandas",
+   "search": "parque dos jacarandas"
   },
   "jardim dona regina": {
    "names": [
@@ -1061,7 +1181,9 @@
     "streets": 12,
     "spreadKm": 0.32
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim dona regina",
+   "search": "jardim dona regina"
   },
   "jardim panambi": {
    "names": [
@@ -1077,7 +1199,9 @@
     "type": "quarter",
     "osm": "node/5037961483"
    },
-   "streetCheckKm": 0.62
+   "streetCheckKm": 0.62,
+   "label": "jardim panambi",
+   "search": "jardim panambi"
   },
   "residencial dona margarida": {
    "names": [
@@ -1093,7 +1217,9 @@
     "type": "suburb",
     "osm": "node/4276168909"
    },
-   "streetCheckKm": 0.05
+   "streetCheckKm": 0.05,
+   "label": "residencial dona margarida",
+   "search": "residencial dona margarida"
   },
   "vila rica": {
    "names": [
@@ -1109,7 +1235,9 @@
     "streets": 7,
     "spreadKm": 0.28
    },
-   "rejected": []
+   "rejected": [],
+   "label": "vila rica",
+   "search": "vila rica"
   },
   "jardim europa 1": {
    "names": [
@@ -1128,7 +1256,9 @@
    },
    "rejected": [
     "place/village: Jardim Europa (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "jardim europa i",
+   "search": "jardim europa i"
   },
   "cidade nova 2": {
    "names": [
@@ -1147,7 +1277,9 @@
    },
    "rejected": [
     "place/suburb: Cidade Nova (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "cidade nova ii",
+   "search": "cidade nova ii"
   },
   "sao francisco": {
    "names": [
@@ -1167,7 +1299,9 @@
     "place/suburb: Jardim São Francisco (Santa Bárbara d'Oeste)",
     "place/quarter: Jardim São Francisco (Santa Bárbara d'Oeste)",
     "building/chapel: capela são francisco (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "sao francisco",
+   "search": "sao francisco"
   },
   "vila mac knight": {
    "names": [
@@ -1184,7 +1318,9 @@
     "streets": 9,
     "spreadKm": 0.24
    },
-   "rejected": []
+   "rejected": [],
+   "label": "vila mac knight",
+   "search": "vila mac knight"
   },
   "reserva centenaria": {
    "names": [
@@ -1200,7 +1336,9 @@
     "streets": 11,
     "spreadKm": 0.19
    },
-   "rejected": []
+   "rejected": [],
+   "label": "reserva centenaria",
+   "search": "reserva centenaria"
   },
   "san marino": {
    "names": [
@@ -1216,7 +1354,9 @@
     "streets": 3,
     "spreadKm": 0.04
    },
-   "rejected": []
+   "rejected": [],
+   "label": "san marino",
+   "search": "san marino"
   },
   "jardim santo antonio": {
    "names": [
@@ -1234,7 +1374,9 @@
    },
    "rejected": [
     "highway/residential: Rua Santo Antônio do Jardim (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "jardim santo antonio",
+   "search": "jardim santo antonio"
   },
   "jardim candido bertini": {
    "names": [
@@ -1250,7 +1392,9 @@
     "streets": 7,
     "spreadKm": 0.38
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim candido bertini",
+   "search": "jardim candido bertini"
   },
   "parque eldorado": {
    "names": [
@@ -1266,7 +1410,9 @@
     "streets": 5,
     "spreadKm": 0.07
    },
-   "rejected": []
+   "rejected": [],
+   "label": "parque eldorado",
+   "search": "parque eldorado"
   },
   "vila oliveira": {
    "names": [
@@ -1282,7 +1428,9 @@
     "type": "suburb",
     "osm": "node/4276168904"
    },
-   "streetCheckKm": 0.18
+   "streetCheckKm": 0.18,
+   "label": "vila oliveira",
+   "search": "vila oliveira"
   },
   "jardim santa alice": {
    "names": [
@@ -1298,7 +1446,9 @@
     "type": "suburb",
     "osm": "node/4232227330"
    },
-   "streetCheckKm": 0.26
+   "streetCheckKm": 0.26,
+   "label": "jardim santa alice",
+   "search": "jardim santa alice"
   },
   "jardim belo horizonte": {
    "names": [
@@ -1314,7 +1464,9 @@
     "streets": 9,
     "spreadKm": 0.29
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim belo horizonte",
+   "search": "jardim belo horizonte"
   },
   "jardim boa vista": {
    "names": [
@@ -1330,7 +1482,9 @@
     "streets": 8,
     "spreadKm": 0.35
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim boa vista",
+   "search": "jardim boa vista"
   },
   "glebas california": {
    "names": [
@@ -1345,7 +1499,9 @@
     "category": "place",
     "type": "village",
     "osm": "node/1712173252"
-   }
+   },
+   "label": "glebas california",
+   "search": "glebas california"
   },
   "jardim turmalinas": {
    "names": [
@@ -1362,7 +1518,9 @@
     "streets": 12,
     "spreadKm": 0.18
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim turmalinas",
+   "search": "jardim turmalinas"
   },
   "parque ipes": {
    "names": [
@@ -1373,7 +1531,9 @@
    "match": null,
    "rejected": [
     "leisure/park: Parque dos Ipês (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "parque dos ipes",
+   "search": "parque dos ipes"
   },
   "jardim firenze": {
    "names": [
@@ -1391,7 +1551,9 @@
    },
    "rejected": [
     "building/yes: Condomínio Jardim Firenze (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "jardim firenze",
+   "search": "jardim firenze"
   },
   "jardim pantano 2": {
    "names": [
@@ -1410,7 +1572,9 @@
    },
    "rejected": [
     "place/neighbourhood: Jardim Gerivá (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "jardim pantano 2",
+   "search": "jardim pantano 2"
   },
   "jardim pantano": {
    "names": [
@@ -1428,7 +1592,9 @@
    },
    "rejected": [
     "place/neighbourhood: Jardim Gerivá (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "jardim pantano",
+   "search": "jardim pantano"
   },
   "jardim primavera": {
    "names": [
@@ -1444,7 +1610,9 @@
     "type": "suburb",
     "osm": "node/1712175452"
    },
-   "streetCheckKm": 0.1
+   "streetCheckKm": 0.1,
+   "label": "jardim primavera",
+   "search": "jardim primavera"
   },
   "conjunto romano": {
    "names": [
@@ -1460,7 +1628,9 @@
     "streets": 3,
     "spreadKm": 0.05
    },
-   "rejected": []
+   "rejected": [],
+   "label": "conjunto romano",
+   "search": "conjunto romano"
   },
   "sartori": {
    "names": [
@@ -1480,7 +1650,9 @@
     "place/suburb: Vila Sartori (Santa Bárbara d'Oeste)",
     "highway/residential: Rua Caetano Sartori (Santa Bárbara d'Oeste)",
     "highway/residential: Rua Nelson Sartori (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "sartori",
+   "search": "sartori"
   },
   "jardim santa rita": {
    "names": [
@@ -1496,7 +1668,9 @@
     "type": "village",
     "osm": "node/1695646304"
    },
-   "streetCheckKm": 0.11
+   "streetCheckKm": 0.11,
+   "label": "jardim santa rita",
+   "search": "jardim santa rita"
   },
   "santa rosa": {
    "names": [
@@ -1514,7 +1688,9 @@
    },
    "rejected": [
     "shop/department_store: Veste 10 (antigo Cine Santa Rosa, bem tombado) (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "santa rosa",
+   "search": "santa rosa"
   },
   "jardim augusto cavalheiro": {
    "names": [
@@ -1530,7 +1706,9 @@
     "streets": 4,
     "spreadKm": 0.14
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim augusto cavalheiro",
+   "search": "jardim augusto cavalheiro"
   },
   "beira rio": {
    "names": [
@@ -1541,7 +1719,9 @@
    "match": null,
    "rejected": [
     "place/suburb: Chácaras Beira-rio (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "beira rio",
+   "search": "beira rio"
   },
   "jardim souza queiroz": {
    "names": [
@@ -1557,7 +1737,9 @@
     "streets": 4,
     "spreadKm": 0.58
    },
-   "rejected": []
+   "rejected": [],
+   "label": "jardim souza queiroz",
+   "search": "jardim souza queiroz"
   },
   "geriva": {
    "names": [
@@ -1568,7 +1750,9 @@
    "match": null,
    "rejected": [
     "place/neighbourhood: Jardim Gerivá (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "geriva",
+   "search": "geriva"
   },
   "parque residencial lago": {
    "names": [
@@ -1588,7 +1772,9 @@
     "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
     "highway/motorway: Rodovia dos Bandeirantes (Santa Bárbara d'Oeste)",
     "highway/motorway: Rodovia dos Bandeirantes (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "parque residencial do lago",
+   "search": "parque residencial do lago"
   },
   "jardim america": {
    "names": [
@@ -1604,7 +1790,9 @@
     "type": "suburb",
     "osm": "node/1712175478"
    },
-   "streetCheckKm": 0.12
+   "streetCheckKm": 0.12,
+   "label": "jardim america",
+   "search": "jardim america"
   },
   "parque paineiras": {
    "names": [
@@ -1614,7 +1802,9 @@
    "total": 14,
    "query": "parque das paineiras",
    "match": null,
-   "rejected": []
+   "rejected": [],
+   "label": "parque das paineiras",
+   "search": "parque das paineiras"
   },
   "santo antonio sapezeiro": {
    "names": [
@@ -1630,7 +1820,9 @@
     "category": "place",
     "type": "village",
     "osm": "node/1733635656"
-   }
+   },
+   "label": "santo antonio do sapezeiro",
+   "search": "santo antonio do sapezeiro"
   },
   "frezarin": {
    "names": [
@@ -1646,7 +1838,9 @@
     "streets": 3,
     "spreadKm": 0.14
    },
-   "rejected": []
+   "rejected": [],
+   "label": "frezarin",
+   "search": "frezarin"
   },
   "parque frezzarin": {
    "names": [
@@ -1665,7 +1859,9 @@
    "rejected": [
     "building/yes: Residencial Parque Assunção (Santa Bárbara d'Oeste)",
     "building/yes: Residencial Parque Amarilis (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "parque frezzarin",
+   "search": "parque frezzarin"
   },
   "jardim carolina": {
    "names": [
@@ -1674,7 +1870,9 @@
    "total": 13,
    "query": "jardim carolina",
    "match": null,
-   "rejected": []
+   "rejected": [],
+   "label": "jardim carolina",
+   "search": "jardim carolina"
   },
   "vila dainese": {
    "names": [
@@ -1690,7 +1888,9 @@
     "streets": 4,
     "spreadKm": 0.09
    },
-   "rejected": []
+   "rejected": [],
+   "label": "vila dainese",
+   "search": "vila dainese"
   },
   "parque linear": {
    "names": [
@@ -1701,7 +1901,9 @@
    "match": null,
    "rejected": [
     "leisure/park: Parque Linear Perdoso (Santa Bárbara d'Oeste)"
-   ]
+   ],
+   "label": "parque linear",
+   "search": "parque linear"
   },
   "jardim laudisse": {
    "names": [
@@ -1716,7 +1918,9 @@
     "type": "median",
     "streets": 6,
     "spreadKm": 0.3
-   }
+   },
+   "label": "jardim laudisse",
+   "search": "jardim laudisse"
   },
   "candido bertine": {
    "names": [
@@ -1731,7 +1935,9 @@
     "type": "median",
     "streets": 10,
     "spreadKm": 0.42
-   }
+   },
+   "label": "candido bertine",
+   "search": "candido bertine"
   },
   "candido bertini": {
    "names": [
@@ -1746,7 +1952,9 @@
     "type": "median",
     "streets": 7,
     "spreadKm": 0.48
-   }
+   },
+   "label": "candido bertini",
+   "search": "candido bertini"
   },
   "jardim palmeiras": {
    "names": [
@@ -1762,7 +1970,9 @@
     "type": "median",
     "streets": 6,
     "spreadKm": 0.32
-   }
+   },
+   "label": "jardim das palmeiras",
+   "search": "jardim das palmeiras"
   },
   "itapua": {
    "names": [
@@ -1777,7 +1987,9 @@
     "type": "median",
     "streets": 8,
     "spreadKm": 0.14
-   }
+   },
+   "label": "itapua",
+   "search": "itapua"
   },
   "jardim sao camilo": {
    "names": [
@@ -1792,7 +2004,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.16
-   }
+   },
+   "label": "jardim sao camilo",
+   "search": "jardim sao camilo"
   },
   "jardim santa fe": {
    "names": [
@@ -1801,7 +2015,9 @@
    ],
    "total": 12,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim santa fe",
+   "search": "jardim santa fe"
   },
   "angelo giubina": {
    "names": [
@@ -1809,7 +2025,9 @@
    ],
    "total": 12,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "angelo giubina",
+   "search": "angelo giubina"
   },
   "santa fe": {
    "names": [
@@ -1824,7 +2042,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.49
-   }
+   },
+   "label": "santa fe",
+   "search": "santa fe"
   },
   "vila siqueira campos": {
    "names": [
@@ -1839,7 +2059,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.13
-   }
+   },
+   "label": "vila siqueira campos",
+   "search": "vila siqueira campos"
   },
   "jardim vila rica": {
    "names": [
@@ -1854,7 +2076,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.23
-   }
+   },
+   "label": "jardim vila rica",
+   "search": "jardim vila rica"
   },
   "vila pires": {
    "names": [
@@ -1869,7 +2093,9 @@
     "type": "median",
     "streets": 6,
     "spreadKm": 0.26
-   }
+   },
+   "label": "vila pires",
+   "search": "vila pires"
   },
   "frezzarin 2": {
    "names": [
@@ -1885,7 +2111,9 @@
     "type": "median",
     "streets": 7,
     "spreadKm": 0.78
-   }
+   },
+   "label": "frezzarin ii",
+   "search": "frezzarin ii"
   },
   "distrito industrial": {
    "names": [
@@ -1900,7 +2128,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.29
-   }
+   },
+   "label": "distrito industrial",
+   "search": "distrito industrial"
   },
   "dona margarida": {
    "names": [
@@ -1915,7 +2145,9 @@
     "type": "median",
     "streets": 5,
     "spreadKm": 0.17
-   }
+   },
+   "label": "dona margarida",
+   "search": "dona margarida"
   },
   "parque frezarin": {
    "names": [
@@ -1930,7 +2162,9 @@
     "type": "median",
     "streets": 5,
     "spreadKm": 0.18
-   }
+   },
+   "label": "parque frezarin",
+   "search": "parque frezarin"
   },
   "residencial bosque arvores": {
    "names": [
@@ -1938,7 +2172,9 @@
    ],
    "total": 11,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial bosque das arvores",
+   "search": "residencial bosque das arvores"
   },
   "conjunto habitacional 31 marco": {
    "names": [
@@ -1954,7 +2190,9 @@
     "type": "median",
     "streets": 6,
     "spreadKm": 0.12
-   }
+   },
+   "label": "conjunto habitacional 31 de marco",
+   "search": "conjunto habitacional 31 de marco"
   },
   "romano": {
    "names": [
@@ -1969,7 +2207,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.15
-   }
+   },
+   "label": "romano",
+   "search": "romano"
   },
   "jardim sao francisco 2": {
    "names": [
@@ -1985,7 +2225,9 @@
     "type": "median",
     "streets": 8,
     "spreadKm": 0.18
-   }
+   },
+   "label": "jardim sao francisco ii",
+   "search": "jardim sao francisco ii"
   },
   "terra azul": {
    "names": [
@@ -1993,7 +2235,9 @@
    ],
    "total": 10,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "terra azul",
+   "search": "terra azul"
   },
   "jardim batagim": {
    "names": [
@@ -2008,7 +2252,9 @@
     "type": "median",
     "streets": 5,
     "spreadKm": 0.23
-   }
+   },
+   "label": "jardim batagim",
+   "search": "jardim batagim"
   },
   "inocoop": {
    "names": [
@@ -2023,7 +2269,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.35
-   }
+   },
+   "label": "inocoop",
+   "search": "inocoop"
   },
   "loteamento industrial": {
    "names": [
@@ -2038,7 +2286,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.96
-   }
+   },
+   "label": "loteamento industrial",
+   "search": "loteamento industrial"
   },
   "siqueira campos": {
    "names": [
@@ -2053,7 +2303,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.12
-   }
+   },
+   "label": "siqueira campos",
+   "search": "siqueira campos"
   },
   "jardim itamaraty": {
    "names": [
@@ -2061,7 +2313,9 @@
    ],
    "total": 10,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim itamaraty",
+   "search": "jardim itamaraty"
   },
   "santa cruz": {
    "names": [
@@ -2076,7 +2330,9 @@
     "type": "median",
     "streets": 5,
     "spreadKm": 0.41
-   }
+   },
+   "label": "santa cruz",
+   "search": "santa cruz"
   },
   "santa alice": {
    "names": [
@@ -2085,7 +2341,9 @@
    ],
    "total": 9,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa alice",
+   "search": "santa alice"
   },
   "vila pantano": {
    "names": [
@@ -2100,7 +2358,9 @@
     "type": "median",
     "streets": 6,
     "spreadKm": 0.52
-   }
+   },
+   "label": "vila pantano",
+   "search": "vila pantano"
   },
   "vila boldrin": {
    "names": [
@@ -2115,7 +2375,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.11
-   }
+   },
+   "label": "vila boldrin",
+   "search": "vila boldrin"
   },
   "parque infantil": {
    "names": [
@@ -2130,7 +2392,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.45
-   }
+   },
+   "label": "parque infantil",
+   "search": "parque infantil"
   },
   "santo antonio": {
    "names": [
@@ -2138,7 +2402,9 @@
    ],
    "total": 9,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santo antonio",
+   "search": "santo antonio"
   },
   "joias santa barbara": {
    "names": [
@@ -2146,7 +2412,9 @@
    ],
    "total": 9,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "joias de santa barbara",
+   "search": "joias de santa barbara"
   },
   "parque aracariguama": {
    "names": [
@@ -2154,7 +2422,9 @@
    ],
    "total": 9,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque aracariguama",
+   "search": "parque aracariguama"
   },
   "vale cigarras": {
    "names": [
@@ -2169,7 +2439,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.23
-   }
+   },
+   "label": "vale das cigarras",
+   "search": "vale das cigarras"
   },
   "parque tom leite": {
    "names": [
@@ -2177,7 +2449,9 @@
    ],
    "total": 8,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque tom leite",
+   "search": "parque tom leite"
   },
   "jardim itapua": {
    "names": [
@@ -2192,7 +2466,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.06
-   }
+   },
+   "label": "jardim itapua",
+   "search": "jardim itapua"
   },
   "vila borges": {
    "names": [
@@ -2207,7 +2483,9 @@
     "type": "median",
     "streets": 5,
     "spreadKm": 0.12
-   }
+   },
+   "label": "vila borges",
+   "search": "vila borges"
   },
   "jardim santa ines": {
    "names": [
@@ -2215,7 +2493,9 @@
    ],
    "total": 8,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim santa ines",
+   "search": "jardim santa ines"
   },
   "residencial zabani": {
    "names": [
@@ -2223,7 +2503,9 @@
    ],
    "total": 8,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial zabani",
+   "search": "residencial zabani"
   },
   "santa rosa 2": {
    "names": [
@@ -2232,7 +2514,9 @@
    ],
    "total": 8,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa rosa ii",
+   "search": "santa rosa ii"
   },
   "jardim santa rosa": {
    "names": [
@@ -2247,7 +2531,9 @@
     "type": "median",
     "streets": 5,
     "spreadKm": 0.14
-   }
+   },
+   "label": "jardim santa rosa",
+   "search": "jardim santa rosa"
   },
   "aranha oliveira": {
    "names": [
@@ -2256,7 +2542,9 @@
    ],
    "total": 8,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "aranha oliveira",
+   "search": "aranha oliveira"
   },
   "chacara recreio cruzeiro sul": {
    "names": [
@@ -2271,7 +2559,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.58
-   }
+   },
+   "label": "chacara recreio cruzeiro do sul",
+   "search": "chacara recreio cruzeiro do sul"
   },
   "caiubi": {
    "names": [
@@ -2279,7 +2569,9 @@
    ],
    "total": 8,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "caiubi",
+   "search": "caiubi"
   },
   "vila pantano 2": {
    "names": [
@@ -2295,7 +2587,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.26
-   }
+   },
+   "label": "vila pantano ii",
+   "search": "vila pantano ii"
   },
   "vila godoy": {
    "names": [
@@ -2310,7 +2604,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.05
-   }
+   },
+   "label": "vila godoy",
+   "search": "vila godoy"
   },
   "vila linopolis 1": {
    "names": [
@@ -2325,7 +2621,9 @@
     "type": "median",
     "streets": 6,
     "spreadKm": 0.28
-   }
+   },
+   "label": "vila linopolis i",
+   "search": "vila linopolis i"
   },
   "jardim santa luzia": {
    "names": [
@@ -2340,7 +2638,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.39
-   }
+   },
+   "label": "jardim santa luzia",
+   "search": "jardim santa luzia"
   },
   "frezzarin": {
    "names": [
@@ -2355,7 +2655,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.12
-   }
+   },
+   "label": "frezzarin",
+   "search": "frezzarin"
   },
   "lagoa seca": {
    "names": [
@@ -2370,7 +2672,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.47
-   }
+   },
+   "label": "lagoa seca",
+   "search": "lagoa seca"
   },
   "vila tereza": {
    "names": [
@@ -2378,7 +2682,9 @@
    ],
    "total": 7,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila tereza",
+   "search": "vila tereza"
   },
   "linopolis": {
    "names": [
@@ -2393,7 +2699,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.12
-   }
+   },
+   "label": "linopolis",
+   "search": "linopolis"
   },
   "jardim aranha oliveira": {
    "names": [
@@ -2402,7 +2710,9 @@
    ],
    "total": 7,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim aranha oliveira",
+   "search": "jardim aranha oliveira"
   },
   "jardim amelia": {
    "names": [
@@ -2417,7 +2727,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.19
-   }
+   },
+   "label": "jardim amelia",
+   "search": "jardim amelia"
   },
   "vila lola": {
    "names": [
@@ -2425,7 +2737,9 @@
    ],
    "total": 7,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila lola",
+   "search": "vila lola"
   },
   "jardim frezarin": {
    "names": [
@@ -2440,7 +2754,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.17
-   }
+   },
+   "label": "jardim frezarin",
+   "search": "jardim frezarin"
   },
   "conjunto habitacional angelo giubina": {
    "names": [
@@ -2455,7 +2771,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.11
-   }
+   },
+   "label": "conjunto habitacional angelo giubina",
+   "search": "conjunto habitacional angelo giubina"
   },
   "jardim flamboyant": {
    "names": [
@@ -2470,7 +2788,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.22
-   }
+   },
+   "label": "jardim flamboyant",
+   "search": "jardim flamboyant"
   },
   "jardim cavalheiro": {
    "names": [
@@ -2485,7 +2805,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.07
-   }
+   },
+   "label": "jardim cavalheiro",
+   "search": "jardim cavalheiro"
   },
   "dodson": {
    "names": [
@@ -2500,7 +2822,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 1.03
-   }
+   },
+   "label": "dodson",
+   "search": "dodson"
   },
   "terrazul": {
    "names": [
@@ -2515,7 +2839,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.32
-   }
+   },
+   "label": "terrazul",
+   "search": "terrazul"
   },
   "vila conceicao": {
    "names": [
@@ -2523,7 +2849,9 @@
    ],
    "total": 6,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila conceicao",
+   "search": "vila conceicao"
   },
   "vila aparecida": {
    "names": [
@@ -2538,7 +2866,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.35
-   }
+   },
+   "label": "vila aparecida",
+   "search": "vila aparecida"
   },
   "bosque arvores": {
    "names": [
@@ -2546,7 +2876,9 @@
    ],
    "total": 6,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "bosque das arvores",
+   "search": "bosque das arvores"
   },
   "santa luzia": {
    "names": [
@@ -2554,7 +2886,9 @@
    ],
    "total": 6,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa luzia",
+   "search": "santa luzia"
   },
   "conjunto roberto romano": {
    "names": [
@@ -2562,7 +2896,9 @@
    ],
    "total": 6,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto roberto romano",
+   "search": "conjunto roberto romano"
   },
   "santa ines": {
    "names": [
@@ -2570,7 +2906,9 @@
    ],
    "total": 6,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa ines",
+   "search": "santa ines"
   },
   "terras santa barbara": {
    "names": [
@@ -2578,7 +2916,9 @@
    ],
    "total": 6,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "terras de santa barbara",
+   "search": "terras de santa barbara"
   },
   "jardim santa rosa 1": {
    "names": [
@@ -2586,7 +2926,9 @@
    ],
    "total": 5,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim santa rosa i",
+   "search": "jardim santa rosa i"
   },
   "vila breda": {
    "names": [
@@ -2601,7 +2943,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.12
-   }
+   },
+   "label": "vila breda",
+   "search": "vila breda"
   },
   "parque residencial santa ines": {
    "names": [
@@ -2609,7 +2953,9 @@
    ],
    "total": 5,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque residencial santa ines",
+   "search": "parque residencial santa ines"
   },
   "vila grego 2": {
    "names": [
@@ -2617,7 +2963,9 @@
    ],
    "total": 5,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila grego ii",
+   "search": "vila grego ii"
   },
   "cidade industrial": {
    "names": [
@@ -2632,7 +2980,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.34
-   }
+   },
+   "label": "cidade industrial",
+   "search": "cidade industrial"
   },
   "pantano 2": {
    "names": [
@@ -2641,7 +2991,9 @@
    ],
    "total": 5,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "pantano ii",
+   "search": "pantano ii"
   },
   "santa rosa 1": {
    "names": [
@@ -2649,7 +3001,9 @@
    ],
    "total": 5,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa rosa i",
+   "search": "santa rosa i"
   },
   "vila betica": {
    "names": [
@@ -2664,7 +3018,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.2
-   }
+   },
+   "label": "vila betica",
+   "search": "vila betica"
   },
   "augusto cavalheiro": {
    "names": [
@@ -2672,7 +3028,9 @@
    ],
    "total": 5,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "augusto cavalheiro",
+   "search": "augusto cavalheiro"
   },
   "loteamento colina santa barbara": {
    "names": [
@@ -2688,7 +3046,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.1
-   }
+   },
+   "label": "loteamento colina de santa barbara",
+   "search": "loteamento colina de santa barbara"
   },
   "parque infantil localizado": {
    "names": [
@@ -2696,7 +3056,9 @@
    ],
    "total": 5,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil localizado",
+   "search": "parque infantil localizado"
   },
   "distrito industrial 1": {
    "names": [
@@ -2704,7 +3066,9 @@
    ],
    "total": 5,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "distrito industrial i",
+   "search": "distrito industrial i"
   },
   "jardim boa esperanca": {
    "names": [
@@ -2712,7 +3076,9 @@
    ],
    "total": 5,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim boa esperanca",
+   "search": "jardim boa esperanca"
   },
   "residencial parque assuncao": {
    "names": [
@@ -2720,7 +3086,9 @@
    ],
    "total": 5,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial parque assuncao",
+   "search": "residencial parque assuncao"
   },
   "laudissi": {
    "names": [
@@ -2728,7 +3096,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "laudissi",
+   "search": "laudissi"
   },
   "jardim santa cecilia": {
    "names": [
@@ -2736,7 +3106,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim santa cecilia",
+   "search": "jardim santa cecilia"
   },
   "cachoeira": {
    "names": [
@@ -2744,7 +3116,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "cachoeira",
+   "search": "cachoeira"
   },
   "colina santa barbara": {
    "names": [
@@ -2760,7 +3134,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.18
-   }
+   },
+   "label": "colina de santa barbara",
+   "search": "colina de santa barbara"
   },
   "conjunto habitacional prefeito angelo giubbina": {
    "names": [
@@ -2768,7 +3144,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto habitacional prefeito angelo giubbina",
+   "search": "conjunto habitacional prefeito angelo giubbina"
   },
   "barao": {
    "names": [
@@ -2783,7 +3161,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.08
-   }
+   },
+   "label": "barao",
+   "search": "barao"
   },
   "jardim santa rosa 2": {
    "names": [
@@ -2792,7 +3172,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim santa rosa ii",
+   "search": "jardim santa rosa ii"
   },
   "monte libano": {
    "names": [
@@ -2800,7 +3182,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "monte libano",
+   "search": "monte libano"
   },
   "souza queiroz": {
    "names": [
@@ -2808,7 +3192,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "souza queiroz",
+   "search": "souza queiroz"
   },
   "parque infantil tom leite": {
    "names": [
@@ -2816,7 +3202,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil tom leite",
+   "search": "parque infantil tom leite"
   },
   "vila mack night": {
    "names": [
@@ -2824,7 +3212,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila mack night",
+   "search": "vila mack night"
   },
   "rochelle 2": {
    "names": [
@@ -2840,7 +3230,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.19
-   }
+   },
+   "label": "rochelle ii",
+   "search": "rochelle ii"
   },
   "esmeralda": {
    "names": [
@@ -2855,7 +3247,9 @@
     "type": "median",
     "streets": 5,
     "spreadKm": 0.37
-   }
+   },
+   "label": "esmeralda",
+   "search": "esmeralda"
   },
   "pantano 3": {
    "names": [
@@ -2864,7 +3258,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "pantano iii",
+   "search": "pantano iii"
   },
   "residencial sao joaquim 2": {
    "names": [
@@ -2872,7 +3268,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial sao joaquim ii",
+   "search": "residencial sao joaquim ii"
   },
   "loteamento terraazul": {
    "names": [
@@ -2880,7 +3278,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "loteamento terraazul",
+   "search": "loteamento terraazul"
   },
   "rochelle": {
    "names": [
@@ -2895,7 +3295,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.16
-   }
+   },
+   "label": "rochelle",
+   "search": "rochelle"
   },
   "conjunto habitacional romano": {
    "names": [
@@ -2903,7 +3305,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto habitacional romano",
+   "search": "conjunto habitacional romano"
   },
   "acampamento presbiteriano": {
    "names": [
@@ -2911,7 +3315,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "acampamento presbiteriano",
+   "search": "acampamento presbiteriano"
   },
   "vila bortoleto": {
    "names": [
@@ -2919,7 +3325,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila bortoleto",
+   "search": "vila bortoleto"
   },
   "parque localizado": {
    "names": [
@@ -2934,7 +3342,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.03
-   }
+   },
+   "label": "parque localizado",
+   "search": "parque localizado"
   },
   "jardim sao joaquim": {
    "names": [
@@ -2949,7 +3359,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.07
-   }
+   },
+   "label": "jardim sao joaquim",
+   "search": "jardim sao joaquim"
   },
   "residencial parque rochele 2": {
    "names": [
@@ -2957,7 +3369,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial parque rochele ii",
+   "search": "residencial parque rochele ii"
   },
   "residencial rochelle": {
    "names": [
@@ -2965,7 +3379,9 @@
    ],
    "total": 4,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial rochelle",
+   "search": "residencial rochelle"
   },
   "planalto": {
    "names": [
@@ -2980,7 +3396,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.9
-   }
+   },
+   "label": "planalto",
+   "search": "planalto"
   },
   "conjunto semaforico": {
    "names": [
@@ -2988,7 +3406,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto semaforico",
+   "search": "conjunto semaforico"
   },
   "jardim alphacenter": {
    "names": [
@@ -2996,7 +3416,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim alphacenter",
+   "search": "jardim alphacenter"
   },
   "furlan": {
    "names": [
@@ -3004,7 +3426,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "furlan",
+   "search": "furlan"
   },
   "molon": {
    "names": [
@@ -3012,7 +3436,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "molon",
+   "search": "molon"
   },
   "jardim pantano 3": {
    "names": [
@@ -3021,7 +3447,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim pantano 3",
+   "search": "jardim pantano 3"
   },
   "conjunto habitacional francisco cillo": {
    "names": [
@@ -3036,7 +3464,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.41
-   }
+   },
+   "label": "conjunto habitacional francisco de cillo",
+   "search": "conjunto habitacional francisco de cillo"
   },
   "conjunto": {
    "names": [
@@ -3044,7 +3474,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conj",
+   "search": "conj"
   },
   "jardim conquista": {
    "names": [
@@ -3053,7 +3485,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim da conquista",
+   "search": "jardim da conquista"
   },
   "vila santana": {
    "names": [
@@ -3068,7 +3502,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.26
-   }
+   },
+   "label": "vila santana",
+   "search": "vila santana"
   },
   "residencial parque lago": {
    "names": [
@@ -3076,7 +3512,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial parque do lago",
+   "search": "residencial parque do lago"
   },
   "parque assuncao": {
    "names": [
@@ -3084,7 +3522,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque assuncao",
+   "search": "parque assuncao"
   },
   "colinas santa barbara": {
    "names": [
@@ -3099,7 +3539,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.11
-   }
+   },
+   "label": "colinas santa barbara",
+   "search": "colinas santa barbara"
   },
   "residencial imagine": {
    "names": [
@@ -3107,7 +3549,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial imagine",
+   "search": "residencial imagine"
   },
   "jardim sao luiz": {
    "names": [
@@ -3115,7 +3559,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim sao luiz",
+   "search": "jardim sao luiz"
   },
   "grego": {
    "names": [
@@ -3123,7 +3569,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "grego",
+   "search": "grego"
   },
   "turmalinas": {
    "names": [
@@ -3131,7 +3579,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "turmalinas",
+   "search": "turmalinas"
   },
   "batagin": {
    "names": [
@@ -3139,7 +3589,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "batagin",
+   "search": "batagin"
   },
   "europa": {
    "names": [
@@ -3147,7 +3599,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "europa",
+   "search": "europa"
   },
   "paraiso": {
    "names": [
@@ -3162,7 +3616,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.14
-   }
+   },
+   "label": "paraiso",
+   "search": "paraiso"
   },
   "santa terezinha": {
    "names": [
@@ -3170,7 +3626,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa terezinha",
+   "search": "santa terezinha"
   },
   "sao francisco 2": {
    "names": [
@@ -3179,7 +3637,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "sao francisco ii",
+   "search": "sao francisco ii"
   },
   "parque rochelle": {
    "names": [
@@ -3187,7 +3647,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque rochelle",
+   "search": "parque rochelle"
   },
   "jardim laudissi 2": {
    "names": [
@@ -3195,7 +3657,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim laudissi ii",
+   "search": "jardim laudissi ii"
   },
   "residencial joias santa barbara": {
    "names": [
@@ -3203,7 +3667,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial joias de santa barbara",
+   "search": "residencial joias de santa barbara"
   },
   "distrito industrial 2": {
    "names": [
@@ -3211,7 +3677,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "distrito industrial ii",
+   "search": "distrito industrial ii"
   },
   "jardim": {
    "names": [
@@ -3219,7 +3687,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim",
+   "search": "jardim"
   },
   "parque olaria neste municipio": {
    "names": [
@@ -3227,7 +3697,9 @@
    ],
    "total": 3,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque olaria neste municipio",
+   "search": "parque olaria neste municipio"
   },
   "sapezeiro": {
    "names": [
@@ -3235,7 +3707,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "sapezeiro",
+   "search": "sapezeiro"
   },
   "parque planalto sol": {
    "names": [
@@ -3244,7 +3718,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque planalto do sol",
+   "search": "parque planalto do sol"
   },
   "miguel claudio grego": {
    "names": [
@@ -3252,7 +3728,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "miguel claudio grego",
+   "search": "miguel claudio grego"
   },
   "recreio alvorada": {
    "names": [
@@ -3261,7 +3739,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "recreio alvorada",
+   "search": "recreio alvorada"
   },
   "firenze": {
    "names": [
@@ -3269,7 +3749,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "firenze",
+   "search": "firenze"
   },
   "parque panambi": {
    "names": [
@@ -3278,7 +3760,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque do panambi",
+   "search": "parque do panambi"
   },
   "jardim monte libano": {
    "names": [
@@ -3286,7 +3770,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim monte libano",
+   "search": "jardim monte libano"
   },
   "jardim europa 2": {
    "names": [
@@ -3294,7 +3780,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim europa ii",
+   "search": "jardim europa ii"
   },
   "pantano": {
    "names": [
@@ -3302,7 +3790,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "pantano",
+   "search": "pantano"
   },
   "pl": {
    "names": [
@@ -3310,7 +3800,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "pl",
+   "search": "pl"
   },
   "jardim belo horizonte 2": {
    "names": [
@@ -3318,7 +3810,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim belo horizonte ii",
+   "search": "jardim belo horizonte ii"
   },
   "santa rosa l": {
    "names": [
@@ -3326,7 +3820,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa rosa l",
+   "search": "santa rosa l"
   },
   "parque rochele": {
    "names": [
@@ -3334,7 +3830,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque rochele",
+   "search": "parque rochele"
   },
   "vila maria": {
    "names": [
@@ -3342,7 +3840,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila maria",
+   "search": "vila maria"
   },
   "bom jardim": {
    "names": [
@@ -3350,7 +3850,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "bom jardim",
+   "search": "bom jardim"
   },
   "parque residencial santa rosa 1": {
    "names": [
@@ -3358,7 +3860,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque residencial santa rosa i",
+   "search": "parque residencial santa rosa i"
   },
   "vila santa cruz": {
    "names": [
@@ -3366,7 +3870,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila santa cruz",
+   "search": "vila santa cruz"
   },
   "jardim rosemary": {
    "names": [
@@ -3374,7 +3880,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim rosemary",
+   "search": "jardim rosemary"
   },
   "jardim manacas": {
    "names": [
@@ -3382,7 +3890,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim dos manacas",
+   "search": "jardim dos manacas"
   },
   "jardim flamboyants": {
    "names": [
@@ -3391,7 +3901,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim dos flamboyants",
+   "search": "jardim dos flamboyants"
   },
   "parque industrial bandeirantes": {
    "names": [
@@ -3399,7 +3911,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque industrial bandeirantes",
+   "search": "parque industrial bandeirantes"
   },
   "jardim residencial mariana": {
    "names": [
@@ -3407,7 +3921,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim residencial mariana",
+   "search": "jardim residencial mariana"
   },
   "pinheirinho": {
    "names": [
@@ -3415,7 +3931,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "pinheirinho",
+   "search": "pinheirinho"
   },
   "adelia": {
    "names": [
@@ -3423,7 +3941,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "adelia",
+   "search": "adelia"
   },
   "dainese": {
    "names": [
@@ -3431,7 +3951,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "dainese",
+   "search": "dainese"
   },
   "chacara vale cigarras": {
    "names": [
@@ -3439,7 +3961,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara vale das cigarras",
+   "search": "chacara vale das cigarras"
   },
   "roberto romano": {
    "names": [
@@ -3447,7 +3971,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "roberto romano",
+   "search": "roberto romano"
   },
   "jardim sao luis": {
    "names": [
@@ -3455,7 +3981,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim sao luis",
+   "search": "jardim sao luis"
   },
   "jardim dona carolina": {
    "names": [
@@ -3463,7 +3991,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim dona carolina",
+   "search": "jardim dona carolina"
   },
   "vila molon 4": {
    "names": [
@@ -3478,7 +4008,9 @@
     "type": "median",
     "streets": 4,
     "spreadKm": 0.52
-   }
+   },
+   "label": "vila molon iv",
+   "search": "vila molon iv"
   },
   "colina": {
    "names": [
@@ -3486,7 +4018,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "colina",
+   "search": "colina"
   },
   "planalto sol ll": {
    "names": [
@@ -3494,7 +4028,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "planalto do sol ll",
+   "search": "planalto do sol ll"
   },
   "vila romi": {
    "names": [
@@ -3502,7 +4038,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila romi",
+   "search": "vila romi"
   },
   "vila mac night": {
    "names": [
@@ -3510,7 +4048,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila mac night",
+   "search": "vila mac night"
   },
   "planalto sol 1": {
    "names": [
@@ -3519,7 +4059,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "planalto do sol 1",
+   "search": "planalto do sol 1"
   },
   "icarai": {
    "names": [
@@ -3527,7 +4069,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "icarai",
+   "search": "icarai"
   },
   "residencial aracari": {
    "names": [
@@ -3535,7 +4079,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial aracari",
+   "search": "residencial aracari"
   },
   "jardim adelia 2": {
    "names": [
@@ -3550,7 +4096,9 @@
     "type": "median",
     "streets": 3,
     "spreadKm": 0.14
-   }
+   },
+   "label": "jardim adelia ii",
+   "search": "jardim adelia ii"
   },
   "chacaras cruzeiro sul": {
    "names": [
@@ -3558,7 +4106,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "de chacaras cruzeiro do sul",
+   "search": "de chacaras cruzeiro do sul"
   },
   "residencial treviso": {
    "names": [
@@ -3566,7 +4116,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial treviso",
+   "search": "residencial treviso"
   },
   "laudissi 2": {
    "names": [
@@ -3574,7 +4126,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "laudissi ii",
+   "search": "laudissi ii"
   },
   "chacaras beira rio": {
    "names": [
@@ -3582,7 +4136,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacaras beira rio",
+   "search": "chacaras beira rio"
   },
   "olaria": {
    "names": [
@@ -3590,7 +4146,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "olaria",
+   "search": "olaria"
   },
   "parque taene": {
    "names": [
@@ -3598,7 +4156,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque taene",
+   "search": "parque taene"
   },
   "alambari debaixo": {
    "names": [
@@ -3606,7 +4166,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "alambari debaixo",
+   "search": "alambari debaixo"
   },
   "residencial amplitude": {
    "names": [
@@ -3614,7 +4176,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial amplitude",
+   "search": "residencial amplitude"
   },
   "chacaras glebas california": {
    "names": [
@@ -3622,7 +4186,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacaras glebas california",
+   "search": "chacaras glebas california"
   },
   "jardim planalto": {
    "names": [
@@ -3630,7 +4196,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim planalto",
+   "search": "jardim planalto"
   },
   "jardim europa localizada": {
    "names": [
@@ -3638,7 +4206,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim europa localizada",
+   "search": "jardim europa localizada"
   },
   "jardim parque lago": {
    "names": [
@@ -3646,7 +4216,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim parque do lago",
+   "search": "jardim parque do lago"
   },
   "residencial parque rochele": {
    "names": [
@@ -3654,7 +4226,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial parque rochele",
+   "search": "residencial parque rochele"
   },
   "jardim parque planalto": {
    "names": [
@@ -3662,7 +4236,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim parque planalto",
+   "search": "jardim parque planalto"
   },
   "vila alves": {
    "names": [
@@ -3670,7 +4246,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila alves",
+   "search": "vila alves"
   },
   "vila santa luzia": {
    "names": [
@@ -3678,7 +4256,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila santa luzia",
+   "search": "vila santa luzia"
   },
   "jardim roberto romano": {
    "names": [
@@ -3686,7 +4266,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim roberto romano",
+   "search": "jardim roberto romano"
   },
   "parque rochelle ll": {
    "names": [
@@ -3694,7 +4276,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque rochelle ll",
+   "search": "parque rochelle ll"
   },
   "jardim esmeralda neste municipio": {
    "names": [
@@ -3702,7 +4286,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim esmeralda neste municipio",
+   "search": "jardim esmeralda neste municipio"
   },
   "cidade nova neste municipio": {
    "names": [
@@ -3710,7 +4296,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "cidade nova neste municipio",
+   "search": "cidade nova neste municipio"
   },
   "residencial furlan neste municipio": {
    "names": [
@@ -3718,7 +4306,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial furlan neste municipio",
+   "search": "residencial furlan neste municipio"
   },
   "jardim itamarati": {
    "names": [
@@ -3726,7 +4316,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim itamarati",
+   "search": "jardim itamarati"
   },
   "sao joaquim neste municipio": {
    "names": [
@@ -3734,7 +4326,9 @@
    ],
    "total": 2,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "sao joaquim neste municipio",
+   "search": "sao joaquim neste municipio"
   },
   "jardim palmeiras ao jardim ferrarezzi": {
    "names": [
@@ -3742,7 +4336,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim das palmeiras ao jardim ferrarezzi",
+   "search": "jardim das palmeiras ao jardim ferrarezzi"
   },
   "conjunto habi tacional trabalhadores": {
    "names": [
@@ -3750,7 +4346,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto habi-tacional dos trabalhadores",
+   "search": "conjunto habi-tacional dos trabalhadores"
   },
   "parque linear paineiras": {
    "names": [
@@ -3758,7 +4356,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque linear das paineiras",
+   "search": "parque linear das paineiras"
   },
   "parque panambi inaugurado recentemente": {
    "names": [
@@ -3766,7 +4366,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque do panambi inaugurado recentemente",
+   "search": "parque do panambi inaugurado recentemente"
   },
   "parque infantil panambi": {
    "names": [
@@ -3774,7 +4376,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil panambi",
+   "search": "parque infantil panambi"
   },
   "jardim parais": {
    "names": [
@@ -3782,7 +4386,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim parais",
+   "search": "jardim parais"
   },
   "residencial viva feliz": {
    "names": [
@@ -3790,7 +4396,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial viva feliz",
+   "search": "residencial viva feliz"
   },
   "residencial assuncao": {
    "names": [
@@ -3798,7 +4406,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial assuncao",
+   "search": "residencial assuncao"
   },
   "jardim planalto sol": {
    "names": [
@@ -3806,7 +4416,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim planalto do sol",
+   "search": "jardim planalto do sol"
   },
   "jardim residencial santa ines": {
    "names": [
@@ -3814,7 +4426,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim residencial santa ines",
+   "search": "jardim residencial santa ines"
   },
   "jardim laudisse 2": {
    "names": [
@@ -3822,7 +4436,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim laudisse ii",
+   "search": "jardim laudisse ii"
   },
   "jardim vila pires": {
    "names": [
@@ -3830,7 +4446,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim vila pires",
+   "search": "jardim vila pires"
   },
   "parque olaria para estacionamento a 45": {
    "names": [
@@ -3838,7 +4456,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque olaria para estacionamento a 45°",
+   "search": "parque olaria para estacionamento a 45°"
   },
   "conjunto habitacional inocoop": {
    "names": [
@@ -3846,7 +4466,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto habitacional inocoop",
+   "search": "conjunto habitacional inocoop"
   },
   "residencial solaris": {
    "names": [
@@ -3854,7 +4476,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial solaris",
+   "search": "residencial solaris"
   },
   "residencial for life": {
    "names": [
@@ -3862,7 +4486,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial for life",
+   "search": "residencial for life"
   },
   "parque ipes que estao danificados": {
    "names": [
@@ -3870,7 +4496,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque dos ipes que estao danificados",
+   "search": "parque dos ipes que estao danificados"
   },
   "parque linear planalto sol": {
    "names": [
@@ -3878,7 +4506,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque linear do planalto do sol",
+   "search": "parque linear do planalto do sol"
   },
   "conjunto hab": {
    "names": [
@@ -3886,7 +4516,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto hab",
+   "search": "conjunto hab"
   },
   "vila santa terezinha": {
    "names": [
@@ -3894,7 +4526,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila santa terezinha",
+   "search": "vila santa terezinha"
   },
   "parque industrial cillo": {
    "names": [
@@ -3902,7 +4536,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque industrial de cillo",
+   "search": "parque industrial de cillo"
   },
   "conjunto habitacional roberto romano neste municipio": {
    "names": [
@@ -3910,7 +4546,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto habitacional roberto romano neste municipio",
+   "search": "conjunto habitacional roberto romano neste municipio"
   },
   "vila pantano 3": {
    "names": [
@@ -3918,7 +4556,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila pantano iii",
+   "search": "vila pantano iii"
   },
   "parque olaria diante possivel desapropriacao area": {
    "names": [
@@ -3926,7 +4566,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque olaria diante da possivel desapropriacao da area",
+   "search": "parque olaria diante da possivel desapropriacao da area"
   },
   "chacaras california": {
    "names": [
@@ -3934,7 +4576,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacaras california",
+   "search": "chacaras california"
   },
   "conjunto arvores nao apropriadas para calcadas que estao danificando o leito passagem para pedestres": {
    "names": [
@@ -3942,7 +4586,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto de arvores nao apropriadas para calcadas que estao danificando o leito de passagem para pedestres",
+   "search": "conjunto de arvores nao apropriadas para calcadas que estao danificando o leito de passagem para pedestres"
   },
   "parque residencial jacira lll": {
    "names": [
@@ -3950,7 +4596,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque residencial jacira lll",
+   "search": "parque residencial jacira lll"
   },
   "jardim sartor": {
    "names": [
@@ -3958,7 +4606,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim sartor",
+   "search": "jardim sartor"
   },
   "jardim parque olaria": {
    "names": [
@@ -3966,7 +4616,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim parque olaria",
+   "search": "jardim parque olaria"
   },
   "jardim flamboyant rua monte siao": {
    "names": [
@@ -3974,7 +4626,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim flamboyant rua monte siao",
+   "search": "jardim flamboyant rua monte siao"
   },
   "vila garrido": {
    "names": [
@@ -3982,7 +4636,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila garrido",
+   "search": "vila garrido"
   },
   "dona carolina": {
    "names": [
@@ -3990,7 +4646,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "dona carolina",
+   "search": "dona carolina"
   },
   "jardim siqueira campos": {
    "names": [
@@ -3998,7 +4656,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim siqueira campos",
+   "search": "jardim siqueira campos"
   },
   "vila ferrarezzi": {
    "names": [
@@ -4006,7 +4666,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila ferrarezzi",
+   "search": "vila ferrarezzi"
   },
   "vale flores": {
    "names": [
@@ -4014,7 +4676,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vale das flores",
+   "search": "vale das flores"
   },
   "jardim zabane": {
    "names": [
@@ -4022,7 +4686,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim zabane",
+   "search": "jardim zabane"
   },
   "residencial lago": {
    "names": [
@@ -4030,7 +4696,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial do lago",
+   "search": "residencial do lago"
   },
   "loteamento planalto sol 2": {
    "names": [
@@ -4038,7 +4706,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "loteamento planalto do sol ii",
+   "search": "loteamento planalto do sol ii"
   },
   "jardim bela vista": {
    "names": [
@@ -4046,7 +4716,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim bela vista",
+   "search": "jardim bela vista"
   },
   "residencial parque rochelle 2": {
    "names": [
@@ -4054,7 +4726,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial parque rochelle ii",
+   "search": "residencial parque rochelle ii"
   },
   "jardim sao francisco 1": {
    "names": [
@@ -4062,7 +4736,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim sao francisco i",
+   "search": "jardim sao francisco i"
   },
   "chacara sem numero": {
    "names": [
@@ -4070,7 +4746,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara sem numero",
+   "search": "chacara sem numero"
   },
   "residencial jacana": {
    "names": [
@@ -4078,7 +4756,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial jacana",
+   "search": "residencial jacana"
   },
   "conjunto cillos": {
    "names": [
@@ -4086,7 +4766,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto de cillos",
+   "search": "conjunto de cillos"
   },
   "conjunto trabalhadores toda extensao": {
    "names": [
@@ -4094,7 +4776,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto dos trabalhadores toda extensao",
+   "search": "conjunto dos trabalhadores toda extensao"
   },
   "parque infantil rua parana 447": {
    "names": [
@@ -4102,7 +4786,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil da rua parana 447",
+   "search": "parque infantil da rua parana 447"
   },
   "jardim rose mary": {
    "names": [
@@ -4110,7 +4796,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim rose mary",
+   "search": "jardim rose mary"
   },
   "parque tiene": {
    "names": [
@@ -4118,7 +4806,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque tiene",
+   "search": "parque tiene"
   },
   "parque rochele 2": {
    "names": [
@@ -4126,7 +4816,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque rochele ii",
+   "search": "parque rochele ii"
   },
   "rochele 2": {
    "names": [
@@ -4134,7 +4826,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "rochele ii",
+   "search": "rochele ii"
   },
   "jardim adelia 2 neste municipio": {
    "names": [
@@ -4142,7 +4836,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim adelia ii neste municipio",
+   "search": "jardim adelia ii neste municipio"
   },
   "jardim sans": {
    "names": [
@@ -4150,7 +4846,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim sans",
+   "search": "jardim sans"
   },
   "parque infantil residencial dona margarida": {
    "names": [
@@ -4158,7 +4856,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil do residencial dona margarida",
+   "search": "parque infantil do residencial dona margarida"
   },
   "conjunto habitacional cillo": {
    "names": [
@@ -4166,7 +4866,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto habitacional de cillo",
+   "search": "conjunto habitacional de cillo"
   },
   "parque infantil vereador arnaldo joao boaretto": {
    "names": [
@@ -4174,7 +4876,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil vereador arnaldo joao boaretto",
+   "search": "parque infantil vereador arnaldo joao boaretto"
   },
   "residencial novita": {
    "names": [
@@ -4182,7 +4886,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial novita",
+   "search": "residencial novita"
   },
   "vila bergamo": {
    "names": [
@@ -4190,7 +4896,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila bergamo",
+   "search": "vila bergamo"
   },
   "jardim esmeralda para a ubs jardim perola": {
    "names": [
@@ -4198,7 +4906,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim esmeralda para a ubs do jardim perola",
+   "search": "jardim esmeralda para a ubs do jardim perola"
   },
   "conquista": {
    "names": [
@@ -4206,7 +4916,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conquista",
+   "search": "conquista"
   },
   "jardim industrial": {
    "names": [
@@ -4214,7 +4926,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim industrial",
+   "search": "jardim industrial"
   },
   "zabane": {
    "names": [
@@ -4222,7 +4936,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "zabane",
+   "search": "zabane"
   },
   "jardim planalto sol 2": {
    "names": [
@@ -4230,7 +4946,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim planalto do sol ii",
+   "search": "jardim planalto do sol ii"
   },
   "santa cecilia": {
    "names": [
@@ -4238,7 +4956,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa cecilia",
+   "search": "santa cecilia"
   },
   "toledinho": {
    "names": [
@@ -4246,7 +4966,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "toledinho",
+   "search": "toledinho"
   },
   "residencial frezarin": {
    "names": [
@@ -4254,7 +4976,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial frezarin",
+   "search": "residencial frezarin"
   },
   "cavalheiro": {
    "names": [
@@ -4262,7 +4986,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "cavalheiro",
+   "search": "cavalheiro"
   },
   "chacaras recanto andorinhas": {
    "names": [
@@ -4270,7 +4996,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "de chacaras recanto das andorinhas",
+   "search": "de chacaras recanto das andorinhas"
   },
   "jardim mac knight": {
    "names": [
@@ -4278,7 +5006,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim mac knight",
+   "search": "jardim mac knight"
   },
   "com a avenida sao paulo": {
    "names": [
@@ -4286,7 +5016,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "com a avenida sao paulo",
+   "search": "com a avenida sao paulo"
   },
   "sao joaquim 2": {
    "names": [
@@ -4294,7 +5026,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "sao joaquim ii",
+   "search": "sao joaquim ii"
   },
   "jardim alice": {
    "names": [
@@ -4302,7 +5036,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim alice",
+   "search": "jardim alice"
   },
   "laudissi neste municipio": {
    "names": [
@@ -4310,7 +5046,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "laudissi neste municipio",
+   "search": "laudissi neste municipio"
   },
   "caibi": {
    "names": [
@@ -4318,7 +5056,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "caibi",
+   "search": "caibi"
   },
   "jardim flamboyant situado a rua monte siao": {
    "names": [
@@ -4326,7 +5066,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim flamboyant situado a rua monte siao",
+   "search": "jardim flamboyant situado a rua monte siao"
   },
   "jardim jacira 3": {
    "names": [
@@ -4334,7 +5076,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim jacira iii",
+   "search": "jardim jacira iii"
   },
   "conjunto trabalhadores neste municipio": {
    "names": [
@@ -4342,7 +5086,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto dos trabalhadores neste municipio",
+   "search": "conjunto dos trabalhadores neste municipio"
   },
   "parque lago que acesso a rua benignidade": {
    "names": [
@@ -4350,7 +5096,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque do lago que da acesso a rua da benignidade",
+   "search": "parque do lago que da acesso a rua da benignidade"
   },
   "alambari baixo": {
    "names": [
@@ -4358,7 +5106,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "alambari de baixo",
+   "search": "alambari de baixo"
   },
   "chacara mondialle": {
    "names": [
@@ -4366,7 +5116,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara mondialle",
+   "search": "chacara mondialle"
   },
   "jardim sao roque": {
    "names": [
@@ -4374,7 +5126,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim sao roque",
+   "search": "jardim sao roque"
   },
   "jardim inocoop": {
    "names": [
@@ -4382,7 +5136,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim inocoop",
+   "search": "jardim inocoop"
   },
   "residencial roberto romano": {
    "names": [
@@ -4390,7 +5146,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial roberto romano",
+   "search": "residencial roberto romano"
   },
   "chacara leao": {
    "names": [
@@ -4398,7 +5156,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara leao",
+   "search": "chacara leao"
   },
   "vila siqueira": {
    "names": [
@@ -4406,7 +5166,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila siqueira",
+   "search": "vila siqueira"
   },
   "residencial italia": {
    "names": [
@@ -4414,7 +5176,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial italia",
+   "search": "residencial italia"
   },
   "31 marco neste municipio": {
    "names": [
@@ -4422,7 +5186,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "31 de marco neste municipio",
+   "search": "31 de marco neste municipio"
   },
   "jacyra": {
    "names": [
@@ -4430,7 +5196,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jacyra",
+   "search": "jacyra"
   },
   "jardim di napoli": {
    "names": [
@@ -4438,7 +5206,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim di napoli",
+   "search": "jardim di napoli"
   },
   "residencial jardim firenze": {
    "names": [
@@ -4446,7 +5216,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial jardim firenze",
+   "search": "residencial jardim firenze"
   },
   "jardim 1": {
    "names": [
@@ -4454,7 +5226,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim i",
+   "search": "jardim i"
   },
   "parque residencial furlan": {
    "names": [
@@ -4462,7 +5236,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque do residencial furlan",
+   "search": "parque do residencial furlan"
   },
   "manacas 2": {
    "names": [
@@ -4470,7 +5246,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "manacas ii",
+   "search": "manacas ii"
   },
   "chacara rua antonio oliveira lino": {
    "names": [
@@ -4478,7 +5256,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara da rua antonio de oliveira lino",
+   "search": "chacara da rua antonio de oliveira lino"
   },
   "santa rita neste municipio": {
    "names": [
@@ -4486,7 +5266,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa rita neste municipio",
+   "search": "santa rita neste municipio"
   },
   "parque rua padre arthur sampaio": {
    "names": [
@@ -4494,7 +5276,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque da rua padre arthur sampaio",
+   "search": "parque da rua padre arthur sampaio"
   },
   "parque infantil rua mario possato com a sebastiao furlan": {
    "names": [
@@ -4502,7 +5286,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil da rua mario possato com a sebastiao furlan",
+   "search": "parque infantil da rua mario possato com a sebastiao furlan"
   },
   "parque linear parque paineiras": {
    "names": [
@@ -4510,7 +5296,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque linear do parque das paineiras",
+   "search": "parque linear do parque das paineiras"
   },
   "parque jacarandas neste municipio": {
    "names": [
@@ -4518,7 +5306,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque dos jacarandas neste municipio",
+   "search": "parque dos jacarandas neste municipio"
   },
   "residencial portal ipes": {
    "names": [
@@ -4526,7 +5316,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial portal dos ipes",
+   "search": "residencial portal dos ipes"
   },
   "vila omar": {
    "names": [
@@ -4534,7 +5326,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila omar",
+   "search": "vila omar"
   },
   "parque aguas": {
    "names": [
@@ -4542,7 +5336,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque das aguas",
+   "search": "parque das aguas"
   },
   "rural vale cigarras": {
    "names": [
@@ -4550,7 +5346,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "rural vale das cigarras",
+   "search": "rural vale das cigarras"
   },
   "rural recanto andorinhas": {
    "names": [
@@ -4558,7 +5356,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "rural recanto das andorinhas",
+   "search": "rural recanto das andorinhas"
   },
   "parque jose bignotto sobrinho": {
    "names": [
@@ -4566,7 +5366,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque jose bignotto sobrinho",
+   "search": "parque jose bignotto sobrinho"
   },
   "parque residencial rochelle": {
    "names": [
@@ -4574,7 +5376,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque residencial rochelle",
+   "search": "parque residencial rochelle"
   },
   "chacara recreio": {
    "names": [
@@ -4582,7 +5386,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara recreio",
+   "search": "chacara recreio"
   },
   "candido bertini 2": {
    "names": [
@@ -4590,7 +5396,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "candido bertini ii",
+   "search": "candido bertini ii"
   },
   "jardim rochele": {
    "names": [
@@ -4598,7 +5406,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim rochele",
+   "search": "jardim rochele"
   },
   "chacara beira rio 1": {
    "names": [
@@ -4606,7 +5416,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara beira rio i",
+   "search": "chacara beira rio i"
   },
   "31 marco ao lado escola baol": {
    "names": [
@@ -4614,7 +5426,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "31 de marco ao lado da escola baol",
+   "search": "31 de marco ao lado da escola baol"
   },
   "jardim sensorial": {
    "names": [
@@ -4622,7 +5436,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim sensorial",
+   "search": "jardim sensorial"
   },
   "jardim maria": {
    "names": [
@@ -4630,7 +5446,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim maria",
+   "search": "jardim maria"
   },
   "chacaras recanto paraiso": {
    "names": [
@@ -4638,7 +5456,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacaras recanto paraiso",
+   "search": "chacaras recanto paraiso"
   },
   "residencial planalto sol": {
    "names": [
@@ -4646,7 +5466,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial planalto do sol",
+   "search": "residencial planalto do sol"
   },
   "jardim turmalinas neste municipio": {
    "names": [
@@ -4654,7 +5476,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim turmalinas neste municipio",
+   "search": "jardim turmalinas neste municipio"
   },
   "jardim conceicao neste municipio": {
    "names": [
@@ -4662,7 +5486,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim conceicao neste municipio",
+   "search": "jardim conceicao neste municipio"
   },
   "residencial parque rochelle": {
    "names": [
@@ -4670,7 +5496,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial parque rochelle",
+   "search": "residencial parque rochelle"
   },
   "jardim paulista neste municipio": {
    "names": [
@@ -4678,7 +5506,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim paulista neste municipio",
+   "search": "jardim paulista neste municipio"
   },
   "no jardim orquideas": {
    "names": [
@@ -4686,7 +5516,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "no jardim das orquideas",
+   "search": "no jardim das orquideas"
   },
   "loteamento beira rio": {
    "names": [
@@ -4694,7 +5526,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "loteamento beira rio",
+   "search": "loteamento beira rio"
   },
   "parque infantil escola dona bininha": {
    "names": [
@@ -4702,7 +5536,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil da escola dona bininha",
+   "search": "parque infantil da escola dona bininha"
   },
   "vila pacheco": {
    "names": [
@@ -4710,7 +5546,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila pacheco",
+   "search": "vila pacheco"
   },
   "jardim dainese": {
    "names": [
@@ -4718,7 +5556,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim dainese",
+   "search": "jardim dainese"
   },
   "nucleo educacao integrada": {
    "names": [
@@ -4726,7 +5566,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "nucleo de educacao integrada",
+   "search": "nucleo de educacao integrada"
   },
   "sartori localizada": {
    "names": [
@@ -4734,7 +5576,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "sartori localizada",
+   "search": "sartori localizada"
   },
   "jardim terra azul": {
    "names": [
@@ -4742,7 +5586,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim terra azul",
+   "search": "jardim terra azul"
   },
   "boa esperanca": {
    "names": [
@@ -4750,7 +5596,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "boa esperanca",
+   "search": "boa esperanca"
   },
   "cruzeiro sul como nova instalacao emefei analia lucca furlan": {
    "names": [
@@ -4758,7 +5606,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "cruzeiro do sul como nova instalacao da emefei analia de lucca furlan",
+   "search": "cruzeiro do sul como nova instalacao da emefei analia de lucca furlan"
   },
   "parque santa rita": {
    "names": [
@@ -4766,7 +5616,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque santa rita",
+   "search": "parque santa rita"
   },
   "parque paineiras sobre a obrigatoriedade uso equipamento seguranca para animais grande porte": {
    "names": [
@@ -4774,7 +5626,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque das paineiras sobre a obrigatoriedade do uso de equipamento de seguranca para animais de grande porte",
+   "search": "parque das paineiras sobre a obrigatoriedade do uso de equipamento de seguranca para animais de grande porte"
   },
   "parque residencial frezzarin": {
    "names": [
@@ -4782,7 +5636,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque residencial frezzarin",
+   "search": "parque residencial frezzarin"
   },
   "jardim esmeralda que esta fechada": {
    "names": [
@@ -4790,7 +5646,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim esmeralda que esta fechada",
+   "search": "jardim esmeralda que esta fechada"
   },
   "jardim rosemary ao": {
    "names": [
@@ -4798,7 +5656,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim rosemary ao",
+   "search": "jardim rosemary ao"
   },
   "vila boldrin neste municipio": {
    "names": [
@@ -4806,7 +5666,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila boldrin neste municipio",
+   "search": "vila boldrin neste municipio"
   },
   "loteamento colina": {
    "names": [
@@ -4814,7 +5676,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "loteamento da colina",
+   "search": "loteamento da colina"
   },
   "jardim frienze": {
    "names": [
@@ -4822,7 +5686,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim frienze",
+   "search": "jardim frienze"
   },
   "jardim frezzarin": {
    "names": [
@@ -4830,7 +5696,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim frezzarin",
+   "search": "jardim frezzarin"
   },
   "vista alegre neste municipio": {
    "names": [
@@ -4838,7 +5706,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vista alegre neste municipio",
+   "search": "vista alegre neste municipio"
   },
   "eldorado": {
    "names": [
@@ -4846,7 +5716,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "eldorado",
+   "search": "eldorado"
   },
   "california ao beira rio": {
    "names": [
@@ -4854,7 +5726,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "california ao beira rio",
+   "search": "california ao beira rio"
   },
   "mac knight": {
    "names": [
@@ -4862,7 +5736,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "mac knight",
+   "search": "mac knight"
   },
   "cruzeiro sul jogar restos asfalto": {
    "names": [
@@ -4870,7 +5746,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "cruzeiro do sul jogar restos de asfalto",
+   "search": "cruzeiro do sul jogar restos de asfalto"
   },
   "passam com frequencia": {
    "names": [
@@ -4878,7 +5756,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "passam com frequencia",
+   "search": "passam com frequencia"
   },
   "vila sartori avenida cillos": {
    "names": [
@@ -4886,7 +5766,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila sartori da avenida cillos",
+   "search": "vila sartori da avenida cillos"
   },
   "jardim dona regina neste municipio": {
    "names": [
@@ -4894,7 +5776,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim dona regina neste municipio",
+   "search": "jardim dona regina neste municipio"
   },
   "jardim sao camilo neste municipio": {
    "names": [
@@ -4902,7 +5786,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim sao camilo neste municipio",
+   "search": "jardim sao camilo neste municipio"
   },
   "vila brasil que esta sendo revitalizado": {
    "names": [
@@ -4910,7 +5796,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila brasil que esta sendo revitalizado",
+   "search": "vila brasil que esta sendo revitalizado"
   },
   "sao joaquim ao aterro sanitario": {
    "names": [
@@ -4918,7 +5806,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "sao joaquim ao aterro sanitario",
+   "search": "sao joaquim ao aterro sanitario"
   },
   "chacara numero 81": {
    "names": [
@@ -4926,7 +5816,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara de numero 81",
+   "search": "chacara de numero 81"
   },
   "santa fe a avenida charles keese dodson": {
    "names": [
@@ -4934,7 +5826,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa fe a avenida charles keese dodson",
+   "search": "santa fe a avenida charles keese dodson"
   },
   "jardim batagin com objetivo aumentar a seguranca": {
    "names": [
@@ -4942,7 +5836,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim batagin com objetivo de aumentar a seguranca",
+   "search": "jardim batagin com objetivo de aumentar a seguranca"
   },
   "jardim laranjeiras com objetivo aumentar a seguranca": {
    "names": [
@@ -4950,7 +5846,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim das laranjeiras com objetivo de aumentar a seguranca",
+   "search": "jardim das laranjeiras com objetivo de aumentar a seguranca"
   },
   "beira rio 1": {
    "names": [
@@ -4958,7 +5856,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "beira rio i",
+   "search": "beira rio i"
   },
   "jardim manacas 2": {
    "names": [
@@ -4966,7 +5866,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim manacas ii",
+   "search": "jardim manacas ii"
   },
   "chacara numero 51": {
    "names": [
@@ -4974,7 +5876,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara de numero 51",
+   "search": "chacara de numero 51"
   },
   "jardim rosimary": {
    "names": [
@@ -4982,7 +5886,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim rosimary",
+   "search": "jardim rosimary"
   },
   "nucleo assistencia social": {
    "names": [
@@ -4990,7 +5896,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "nucleo de assistencia social",
+   "search": "nucleo de assistencia social"
   },
   "parque infantil praca": {
    "names": [
@@ -4998,7 +5906,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil da praca",
+   "search": "parque infantil da praca"
   },
   "pinheirinho rua alvino vieira lopes": {
    "names": [
@@ -5006,7 +5916,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "pinheirinho rua alvino vieira lopes",
+   "search": "pinheirinho rua alvino vieira lopes"
   },
   "balan": {
    "names": [
@@ -5014,7 +5926,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "balan",
+   "search": "balan"
   },
   "jardim laudissi como mao unica ou ou estudo para melhorar a mobilidade urbana": {
    "names": [
@@ -5022,7 +5936,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim laudissi como mao unica ou ou estudo para melhorar a mobilidade urbana",
+   "search": "jardim laudissi como mao unica ou ou estudo para melhorar a mobilidade urbana"
   },
   "conjunto chacaras cruzeiro sul": {
    "names": [
@@ -5030,7 +5946,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto de chacaras cruzeiro do sul",
+   "search": "conjunto de chacaras cruzeiro do sul"
   },
   "jardim gardenias": {
    "names": [
@@ -5038,7 +5956,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim das gardenias",
+   "search": "jardim das gardenias"
   },
   "parque rua noruega com a rua suecia": {
    "names": [
@@ -5046,7 +5966,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque da rua noruega com a rua suecia",
+   "search": "parque da rua noruega com a rua suecia"
   },
   "jardim geriva com sinalizacoes apagadas": {
    "names": [
@@ -5054,7 +5976,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim geriva com sinalizacoes apagadas",
+   "search": "jardim geriva com sinalizacoes apagadas"
   },
   "jardim alves": {
    "names": [
@@ -5062,7 +5986,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim alves",
+   "search": "jardim alves"
   },
   "chacara sao carlos vila sartori": {
    "names": [
@@ -5070,7 +5996,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara sao carlos vila sartori",
+   "search": "chacara sao carlos vila sartori"
   },
   "parque olaria que esta abandonado com estruturas deterioradas": {
    "names": [
@@ -5078,7 +6006,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque olaria que esta abandonado com estruturas deterioradas",
+   "search": "parque olaria que esta abandonado com estruturas deterioradas"
   },
   "parque infantil jardim panambi rua rosas": {
    "names": [
@@ -5086,7 +6016,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil do jardim panambi rua da rosas",
+   "search": "parque infantil do jardim panambi rua da rosas"
   },
   "rochele": {
    "names": [
@@ -5094,7 +6026,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "rochele",
+   "search": "rochele"
   },
   "cruzeiro sul neste municipio": {
    "names": [
@@ -5102,7 +6036,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "cruzeiro do sul neste municipio",
+   "search": "cruzeiro do sul neste municipio"
   },
   "santa rita ao acampamento presbiteriano": {
    "names": [
@@ -5110,7 +6046,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "santa rita ao acampamento presbiteriano",
+   "search": "santa rita ao acampamento presbiteriano"
   },
   "alphacenter": {
    "names": [
@@ -5118,7 +6056,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "alphacenter",
+   "search": "alphacenter"
   },
   "jardim europa conforme especifica": {
    "names": [
@@ -5126,7 +6066,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim europa conforme especifica",
+   "search": "jardim europa conforme especifica"
   },
   "residencial agata": {
    "names": [
@@ -5134,7 +6076,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial agata",
+   "search": "residencial agata"
   },
   "jardim laudisse ao conjunto roberto romano": {
    "names": [
@@ -5142,7 +6086,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim laudisse ao conjunto roberto romano",
+   "search": "jardim laudisse ao conjunto roberto romano"
   },
   "parque zabane": {
    "names": [
@@ -5150,7 +6096,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque zabane",
+   "search": "parque zabane"
   },
   "residencial santa ines": {
    "names": [
@@ -5158,7 +6106,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial santa ines",
+   "search": "residencial santa ines"
   },
   "jardim paraiso ate o eldorado": {
    "names": [
@@ -5166,7 +6116,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim paraiso ate o eldorado",
+   "search": "jardim paraiso ate o eldorado"
   },
   "chacaras recreio paraiso neste municipio": {
    "names": [
@@ -5174,7 +6126,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "de chacaras recreio do paraiso neste municipio",
+   "search": "de chacaras recreio do paraiso neste municipio"
   },
   "jardim cavalheiros": {
    "names": [
@@ -5182,7 +6136,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim cavalheiros",
+   "search": "jardim cavalheiros"
   },
   "parque infantil ao lado quadra": {
    "names": [
@@ -5190,7 +6146,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil ao lado da quadra",
+   "search": "parque infantil ao lado da quadra"
   },
   "parque praca sesi": {
    "names": [
@@ -5198,7 +6156,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque praca do sesi",
+   "search": "parque praca do sesi"
   },
   "conjunto habitacional trabalhadores ao": {
    "names": [
@@ -5206,7 +6166,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto habitacional dos trabalhadores ao",
+   "search": "conjunto habitacional dos trabalhadores ao"
   },
   "cidade nova 2 a fim coibir o mosquito dengue": {
    "names": [
@@ -5214,7 +6176,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "cidade nova ii a fim de coibir o mosquito da dengue",
+   "search": "cidade nova ii a fim de coibir o mosquito da dengue"
   },
   "conjunto habitacional trabalhadores paralela a avenida pedroso": {
    "names": [
@@ -5222,7 +6186,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto habitacional dos trabalhadores paralela a avenida do pedroso",
+   "search": "conjunto habitacional dos trabalhadores paralela a avenida do pedroso"
   },
   "planalto sol 2 neste municipio": {
    "names": [
@@ -5230,7 +6196,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "planalto do sol ii neste municipio",
+   "search": "planalto do sol ii neste municipio"
   },
   "laudisse 2": {
    "names": [
@@ -5238,7 +6206,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "laudisse 2",
+   "search": "laudisse 2"
   },
   "parque ypes": {
    "names": [
@@ -5246,7 +6216,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque dos ypes",
+   "search": "parque dos ypes"
   },
   "jardim zabani": {
    "names": [
@@ -5254,7 +6226,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim zabani",
+   "search": "jardim zabani"
   },
   "antiga propriedade nivaldo mateide": {
    "names": [
@@ -5262,7 +6236,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "antiga propriedade do nivaldo mateide",
+   "search": "antiga propriedade do nivaldo mateide"
   },
   "chacaras paraiso": {
    "names": [
@@ -5270,7 +6246,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacaras paraiso",
+   "search": "chacaras paraiso"
   },
   "vila grego elias david fernandes": {
    "names": [
@@ -5278,7 +6256,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila grego elias david fernandes",
+   "search": "vila grego elias david fernandes"
   },
   "jardim lagoa seca": {
    "names": [
@@ -5286,7 +6266,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim lagoa seca",
+   "search": "jardim lagoa seca"
   },
   "parque ao lado unidade basica saude gabriel rubens pimentel": {
    "names": [
@@ -5294,7 +6276,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque ao lado da unidade basica de saude gabriel rubens pimentel",
+   "search": "parque ao lado da unidade basica de saude gabriel rubens pimentel"
   },
   "cidade nova ll": {
    "names": [
@@ -5302,7 +6286,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "cidade nova ll",
+   "search": "cidade nova ll"
   },
   "vila macknight": {
    "names": [
@@ -5310,7 +6296,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila macknight",
+   "search": "vila macknight"
   },
   "vila balan": {
    "names": [
@@ -5318,7 +6306,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila balan",
+   "search": "vila balan"
   },
   "parque infantil desativado ao lado escola municipal educacao infantil antonia fagnoli furlan": {
    "names": [
@@ -5326,7 +6316,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque infantil desativado ao lado da escola municipal de educacao infantil antonia fagnoli furlan",
+   "search": "parque infantil desativado ao lado da escola municipal de educacao infantil antonia fagnoli furlan"
   },
   "parque industrial cillos": {
    "names": [
@@ -5334,7 +6326,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "parque industrial cillos",
+   "search": "parque industrial cillos"
   },
   "rural recanto solar": {
    "names": [
@@ -5342,7 +6336,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "rural recanto solar",
+   "search": "rural recanto solar"
   },
   "chacara recreio alvorada": {
    "names": [
@@ -5350,7 +6346,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara recreio alvorada",
+   "search": "chacara recreio alvorada"
   },
   "chacara recreio paraiso": {
    "names": [
@@ -5358,7 +6356,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara recreio paraiso",
+   "search": "chacara recreio paraiso"
   },
   "vila grego localizado": {
    "names": [
@@ -5366,7 +6366,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila grego localizado",
+   "search": "vila grego localizado"
   },
   "jardim jeriva": {
    "names": [
@@ -5374,7 +6376,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim jeriva",
+   "search": "jardim jeriva"
   },
   "vila linopolis neste municipio": {
    "names": [
@@ -5382,7 +6386,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila linopolis neste municipio",
+   "search": "vila linopolis neste municipio"
   },
   "joias santa barbara ao centro municipio": {
    "names": [
@@ -5390,7 +6396,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "joias de santa barbara ao centro do municipio",
+   "search": "joias de santa barbara ao centro do municipio"
   },
   "chacara sao carlos sartori": {
    "names": [
@@ -5398,7 +6406,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara sao carlos sartori",
+   "search": "chacara sao carlos sartori"
   },
   "laranjeiras": {
    "names": [
@@ -5406,7 +6416,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "laranjeiras",
+   "search": "laranjeiras"
   },
   "sao francisco 2 ate a rua wilcon pereira": {
    "names": [
@@ -5414,7 +6426,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "sao francisco ii ate a rua wilcon pereira",
+   "search": "sao francisco ii ate a rua wilcon pereira"
   },
   "jardim europa para a instalacao um centro atencao psicossocial": {
    "names": [
@@ -5422,7 +6436,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim europa para a instalacao de um centro de atencao psicossocial",
+   "search": "jardim europa para a instalacao de um centro de atencao psicossocial"
   },
   "trabalhadores com parte linear": {
    "names": [
@@ -5430,7 +6446,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "dos trabalhadores com parte linear",
+   "search": "dos trabalhadores com parte linear"
   },
   "residencial santa rosa": {
    "names": [
@@ -5438,7 +6456,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial santa rosa",
+   "search": "residencial santa rosa"
   },
   "conjunto habitacional anunciado pelo ministerio cidades": {
    "names": [
@@ -5446,7 +6466,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "conjunto habitacional anunciado pelo ministerio das cidades",
+   "search": "conjunto habitacional anunciado pelo ministerio das cidades"
   },
   "planalto sol neste municipio": {
    "names": [
@@ -5454,7 +6476,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "planalto do sol neste municipio",
+   "search": "planalto do sol neste municipio"
   },
   "chacara manzzato": {
    "names": [
@@ -5462,7 +6486,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara do manzzato",
+   "search": "chacara do manzzato"
   },
   "chacara numero 180": {
    "names": [
@@ -5470,7 +6496,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "chacara de numero 180",
+   "search": "chacara de numero 180"
   },
   "jardim mariana ao jardim paulista": {
    "names": [
@@ -5478,7 +6506,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim mariana ao jardim paulista",
+   "search": "jardim mariana ao jardim paulista"
   },
   "onde ha lampada queimada": {
    "names": [
@@ -5486,7 +6516,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "onde ha lampada queimada",
+   "search": "onde ha lampada queimada"
   },
   "residencial furlan jardim": {
    "names": [
@@ -5494,7 +6526,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial furlan jardim",
+   "search": "residencial furlan jardim"
   },
   "residencial cintec rua alfredo cogo 1 poste sinalizados com fita zebrada": {
    "names": [
@@ -5502,7 +6536,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial cintec rua alfredo cogo 1 poste sinalizados com fita zebrada",
+   "search": "residencial cintec rua alfredo cogo 1 poste sinalizados com fita zebrada"
   },
   "residencial cintec rua antonio perez 1 poste sinalizados com fita zebrada": {
    "names": [
@@ -5510,7 +6546,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial cintec rua antonio perez 1 poste sinalizados com fita zebrada",
+   "search": "residencial cintec rua antonio perez 1 poste sinalizados com fita zebrada"
   },
   "residencial cintec rua comendador dide wiezel 2 postes sinalizados com fita zebrada": {
    "names": [
@@ -5518,7 +6556,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial cintec rua comendador dide wiezel 2 postes sinalizados com fita zebrada",
+   "search": "residencial cintec rua comendador dide wiezel 2 postes sinalizados com fita zebrada"
   },
   "residencial cintec rua florindo moraes 2 postes sinalizados com fita zebrada": {
    "names": [
@@ -5526,7 +6566,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial cintec rua florindo de moraes 2 postes sinalizados com fita zebrada",
+   "search": "residencial cintec rua florindo de moraes 2 postes sinalizados com fita zebrada"
   },
   "residencial cintec rua claudionor furlan 11 postes sinalizados com fita zebrada": {
    "names": [
@@ -5534,7 +6576,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial cintec rua claudionor furlan 11 postes sinalizados com fita zebrada",
+   "search": "residencial cintec rua claudionor furlan 11 postes sinalizados com fita zebrada"
   },
   "residencial cintec rua barbara rosa vital": {
    "names": [
@@ -5542,7 +6586,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial cintec rua barbara rosa vital",
+   "search": "residencial cintec rua barbara rosa vital"
   },
   "residencial cintec rua leonel cerchiare": {
    "names": [
@@ -5550,7 +6596,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial cintec rua leonel cerchiare",
+   "search": "residencial cintec rua leonel cerchiare"
   },
   "areia branca": {
    "names": [
@@ -5558,7 +6606,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "areia branca",
+   "search": "areia branca"
   },
   "trabalhadores": {
    "names": [
@@ -5566,7 +6616,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "dos trabalhadores",
+   "search": "dos trabalhadores"
   },
   "jardim geriva com sinalizacao apagadas": {
    "names": [
@@ -5574,7 +6626,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim geriva com sinalizacao apagadas",
+   "search": "jardim geriva com sinalizacao apagadas"
   },
   "jardim frienza": {
    "names": [
@@ -5582,7 +6636,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim frienza",
+   "search": "jardim frienza"
   },
   "jardim adelia neste municipio": {
    "names": [
@@ -5590,7 +6646,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "jardim adelia neste municipio",
+   "search": "jardim adelia neste municipio"
   },
   "residencial zafira": {
    "names": [
@@ -5598,7 +6656,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "residencial zafira",
+   "search": "residencial zafira"
   },
   "lot": {
    "names": [
@@ -5606,7 +6666,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "lot",
+   "search": "lot"
   },
   "vila furlan": {
    "names": [
@@ -5614,7 +6676,9 @@
    ],
    "total": 1,
    "query": null,
-   "match": null
+   "match": null,
+   "label": "vila furlan",
+   "search": "vila furlan"
   }
  },
  "merge": [

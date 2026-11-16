@@ -1,13 +1,23 @@
-import { use, useMemo, useState } from 'react'
+import { lazy, Suspense, use, useMemo, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router'
 import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyTitle } from '@/components/ui/empty'
-import { formatNumber, load, titleCase, type Councilor, type Meta, type Request } from '../data'
-import { topNeighborhoods } from '../insights'
+import { Skeleton } from '@/components/ui/skeleton'
+import { formatNumber, load, titleCase, type Councilor, type Meta, type Places, type Request } from '../data'
+import { placeCounts, topNeighborhoods } from '../insights'
 import { SearchField, UpdatedAt } from '../layout'
 import { Authors, Chip, ChipRow, MoreButton, PropositionCard } from '../pieces'
 import { buildIndex, searchRequests } from '../search'
 
 const PageSize = 20
+const NeighborhoodMap = lazy(() => import('../NeighborhoodMap'))
+
+// places.json é opcional (cidade sem tools/geo não tem mapa): falha vira null, com cache para o use() não pedir de novo.
+const placesCache = new Map<string, Promise<Places | null>>()
+const loadPlaces = (city: string) => {
+  let p = placesCache.get(city)
+  if (!p) placesCache.set(city, (p = load<Places>(`${city}/places.json`).then((e) => e.data, () => null)))
+  return p
+}
 
 export default function Neighborhoods() {
   const { city = '' } = useParams()
@@ -37,6 +47,12 @@ export default function Neighborhoods() {
           <li key={n.key}><Chip active={q === n.key} to={q === n.key ? base : `${base}?q=${encodeURIComponent(n.key)}`}>{titleCase(n.key)}</Chip></li>
         ))}
       </ChipRow>
+
+      {!q && (
+        <Suspense fallback={<Skeleton className="h-96 w-full rounded-2xl sm:h-[28rem]" />}>
+          <CityMap city={city} requests={requests} base={base} />
+        </Suspense>
+      )}
 
       <p className="text-lg" aria-live="polite">
         <strong className="text-3xl font-black tabular-nums">{formatNumber(results.length)}</strong>{' '}
@@ -71,5 +87,25 @@ export default function Neighborhoods() {
       </p>
       <UpdatedAt meta={meta} />
     </div>
+  )
+}
+
+/** Onde se concentram os pedidos: bolinha por bairro, posição aproximada do bairro (nunca do endereço). */
+function CityMap({ city, requests, base }: { city: string; requests: Request[]; base: string }) {
+  const places = use(loadPlaces(city))
+  const counts = useMemo(() => (places ? placeCounts(requests, places.places) : null), [places, requests])
+  if (!places || !counts || counts.items.length === 0) return null
+  return (
+    <section aria-labelledby="mapa" className="flex flex-col gap-3">
+      <h2 id="mapa" className="text-2xl font-black tracking-tight">Onde se concentram os pedidos</h2>
+      <div role="img" aria-label={`Mapa com ${counts.items.length} bairros. Os que têm mais pedidos estão nos atalhos acima.`}>
+        <NeighborhoodMap items={counts.items} base={base} attribution={places.attribution} />
+      </div>
+      <p className="max-w-prose text-sm text-muted-foreground">
+        Cada bolinha é um bairro, do tamanho do número de pedidos; toque para ver os pedidos dele.
+        A posição é a do bairro, não a do endereço. {formatNumber(counts.mapped)} de {formatNumber(counts.withNeighborhood)} pedidos
+        com bairro estão no mapa; bairros que não conseguimos localizar ficam de fora.
+      </p>
+    </section>
   )
 }

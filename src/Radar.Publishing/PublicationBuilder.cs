@@ -20,6 +20,35 @@ public static class PublicationBuilder
         Converters = { new JsonStringEnumConverter() },
     };
 
+    /// <summary><c>places.json</c> a partir de <c>cities/{slug}.neighborhoods.json</c> (gerado por <c>tools/geo</c>): só bairros com posição.</summary>
+    public static byte[] Places(string neighborhoodsJson, string slug, DateTimeOffset generatedAt)
+    {
+        using var doc = JsonDocument.Parse(neighborhoodsJson);
+        var root = doc.RootElement;
+        var places = new List<PlaceDto>();
+        foreach (var hood in root.GetProperty("neighborhoods").EnumerateObject())
+        {
+            var e = hood.Value;
+            if (!e.TryGetProperty("match", out var match) || match.ValueKind != JsonValueKind.Object)
+            {
+                continue;
+            }
+
+            var byStreets = match.GetProperty("category").GetString() == "streets";
+            var label = e.TryGetProperty("label", out var l) ? l.GetString()! : hood.Name;
+            places.Add(new PlaceDto(
+                byStreets ? label : match.GetProperty("name").GetString()!,
+                e.TryGetProperty("search", out var s) ? s.GetString()! : label,
+                Math.Round(match.GetProperty("lat").GetDouble(), 5),
+                Math.Round(match.GetProperty("lon").GetDouble(), 5),
+                byStreets ? "ruas" : "osm",
+                [.. e.GetProperty("names").EnumerateArray().Select(n => n.GetString()!)]));
+        }
+
+        return Serialize(new Envelope<PlacesDto>(SchemaVersion, generatedAt, slug,
+            new PlacesDto(root.GetProperty("license").GetString()!, [.. places.OrderBy(p => p.Label, StringComparer.Ordinal)])));
+    }
+
     public static byte[] CitiesIndex(IEnumerable<CitySummaryDto> cities, DateTimeOffset generatedAt) =>
         Serialize(new Envelope<IReadOnlyList<CitySummaryDto>>(SchemaVersion, generatedAt, null, [.. cities.OrderBy(c => c.Slug, StringComparer.Ordinal)]));
 

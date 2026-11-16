@@ -44,6 +44,10 @@ for (const [h, g] of byHood) {
   const entry = file.neighborhoods[h] ?? (file.neighborhoods[h] = { names: [...g.names.keys()], total: g.requests, query: null, match: null })
   entry.names = [...new Set([...entry.names, ...g.names.keys()])].sort()
   entry.total = g.requests
+  // Grafia mais usada nos pedidos: é o que a busca do site entende e o rótulo quando o OSM não dá nome.
+  entry.label = [...g.names].sort((x, y) => y[1] - x[1])[0][0]
+  // Bairro unificado busca pelo nome da junção ("mollon" acha Jardim, Vila e Mollon 4); os demais, pela grafia mais usada.
+  entry.search = (file.merge ?? []).some((m) => m.into === h) ? h : entry.label
   const pts = [...g.streets.values()]
   if (pts.length < MIN_STREETS) continue
   const c = { lat: median(pts.map((p) => p.lat)), lon: median(pts.map((p) => p.lon)) }

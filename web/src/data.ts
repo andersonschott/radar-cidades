@@ -90,6 +90,17 @@ export interface CouncilorProfile {
   propositions: Proposition[]
 }
 
+/** Posição aproximada de um bairro (places.json, gerado por tools/geo). "ruas": mediana das ruas citadas nos pedidos. */
+export interface Place {
+  label: string
+  search: string
+  lat: number
+  lon: number
+  method: 'osm' | 'ruas'
+  aliases: string[]
+}
+export interface Places { attribution: string; places: Place[] }
+
 export interface Request {
   id: string
   type: string
