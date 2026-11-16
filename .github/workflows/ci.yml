@@ -80,7 +80,8 @@ jobs:
           dotnet restore Radar.slnx
           nuget-license -i Radar.slnx -t \
             -a "Apache-2.0;MIT;BSD-3-Clause;BSD-2-Clause;MS-PL;Microsoft.NET.Library" \
-            -mapping .github/license-url-mappings.json
+            -mapping .github/license-url-mappings.json \
+            -override .github/license-overrides.json
       - name: npm (dependências de produção)
         working-directory: web
         run: |
