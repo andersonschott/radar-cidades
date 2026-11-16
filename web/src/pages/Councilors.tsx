@@ -3,13 +3,14 @@ import { Link, useParams, useSearchParams } from 'react-router'
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from '@/components/ui/empty'
 import { fold, formatNumber, groups, groupTotals, load, type Councilor, type Meta } from '../data'
 import { OfficialLink, UpdatedAt } from '../layout'
-import { Avatar } from '../pieces'
+import { Avatar, PresenceRing } from '../pieces'
 
 const sorts = {
   nome: { label: 'Nome (A–Z)', compare: (a: Councilor, b: Councilor) => a.name.localeCompare(b.name, 'pt-BR') },
   pedidos: { label: 'Mais pedidos com endereço', compare: (a: Councilor, b: Councilor) => b.totals.neighborhoodRequests - a.totals.neighborhoodRequests },
   propostas: { label: 'Mais propostas no total', compare: (a: Councilor, b: Councilor) => b.totals.propositions - a.totals.propositions },
   leis: { label: 'Mais propostas de lei', compare: (a: Councilor, b: Councilor) => groupTotals(b.totals.byType).lei - groupTotals(a.totals.byType).lei },
+  ausencias: { label: 'Mais ausências registradas', compare: (a: Councilor, b: Councilor) => (b.attendance?.absent ?? -1) - (a.attendance?.absent ?? -1) },
   mocoes: { label: 'Mais moções', compare: (a: Councilor, b: Councilor) => groupTotals(b.totals.byType).mocao - groupTotals(a.totals.byType).mocao },
 } as const
 type SortKey = keyof typeof sorts
@@ -67,6 +68,7 @@ export default function Councilors() {
         </ul>
       )}
       <p className="text-sm text-muted-foreground">
+        Presença conta só as sessões com chamada em que o vereador foi chamado; o site da Câmara não informa se a ausência foi justificada.
         Uma proposta com vários autores conta para cada um. Suplentes e ex-vereadores que assinaram propostas nesta legislatura ainda não aparecem aqui.
       </p>
       <UpdatedAt meta={meta} />
@@ -88,6 +90,7 @@ function Badge({ city, councilor: c }: { city: string; councilor: Councilor }) {
         </span>
       </Link>
       <div className="flex flex-1 flex-col gap-3 p-4">
+        {c.attendance && <PresenceRing attendance={c.attendance} compact />}
         <div className="grid grid-cols-2 gap-3">
           <Fig value={formatNumber(c.totals.propositions)} label="propostas desde a posse" />
           <Fig value={formatNumber(c.totals.neighborhoodRequests)} label="pedidos com rua ou bairro" />

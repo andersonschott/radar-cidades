@@ -1,6 +1,6 @@
 namespace Radar.Domain;
 
-// Entidades persistidas (SDD §6). Sessões, presença e votos entram no M2.
+// Entidades persistidas (SDD §6). Votos entram depois.
 
 public sealed class City
 {
@@ -14,6 +14,7 @@ public sealed class City
     public int Seats { get; set; }
     public decimal MonthlySalary { get; set; }
     public required Uri SalarySourceUrl { get; set; }
+    public DateOnly? SalaryFrom { get; set; }
     public DateOnly TermStart { get; set; }
     public bool Active { get; set; }
 }
@@ -88,4 +89,27 @@ public sealed class ScrapeRun
     public ScrapeStatus Status { get; set; }
     public string? Stats { get; set; }
     public string? Error { get; set; }
+}
+
+public sealed class Session
+{
+    public int Id { get; set; }
+    public int CityId { get; set; }
+    public required string SourceId { get; set; }
+    public required string Name { get; set; }
+    public DateOnly Date { get; set; }
+    public required Uri OfficialUrl { get; set; }
+
+    /// <summary>Falso quando a fonte não publicou chamada (sessão solene, audiência): fica fora da conta de presença.</summary>
+    public bool HasRollCall { get; set; }
+
+    public ICollection<Attendance> Attendances { get; } = [];
+}
+
+/// <summary>Uma linha por vereador chamado. A fonte não marca ausência justificada (docs/sources/siscam.md §4).</summary>
+public sealed class Attendance
+{
+    public int SessionId { get; set; }
+    public int CouncilorId { get; set; }
+    public bool Present { get; set; }
 }

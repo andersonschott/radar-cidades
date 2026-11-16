@@ -1,6 +1,6 @@
 import { use } from 'react'
 import { useParams } from 'react-router'
-import { formatDateTime, load, type Meta } from '../data'
+import { formatDate, formatDateTime, formatMoney, load, type Meta } from '../data'
 import { OfficialLink } from '../layout'
 
 const repo = 'https://github.com/andersonschott/radar-cidades'
@@ -28,6 +28,20 @@ export default function Methodology() {
         <li><strong>Pedido para bairro:</strong> toda indicação, e todo requerimento que cita um endereço.</li>
         <li>Uma proposição com vários autores conta para cada um deles.</li>
       </ul>
+
+      <h2>Presença</h2>
+      <p>
+        Vem da chamada registrada em cada sessão ({meta.sessions} sessões com chamada até agora). Quem aparece presente em qualquer chamada da sessão conta como presente.
+        Sessões solenes e audiências sem chamada ficam de fora. Cada vereador é contado só nas sessões em que foi chamado.
+        O site da Câmara não informa se a ausência foi justificada; por isso falamos em "ausências registradas", não em faltas.
+      </p>
+
+      <h2>Salário</h2>
+      <p>
+        O contador é uma <strong>estimativa</strong>: {meta.seats} cadeiras × {meta.monthlySalary > 0 ? formatMoney(meta.monthlySalary) : 'subsídio'} por mês, desde {meta.salaryFrom ? formatDate(meta.salaryFrom) : 'a vigência'}, conforme a Resolução nº 04/2023 da Câmara.
+        É o valor bruto, sem descontos. Não inclui janeiro de 2025 (pago pelo valor anterior), a diferença do presidente da Câmara, 13º salário nem reajustes posteriores.{' '}
+        <OfficialLink href={meta.salarySourceUrl} label="Ler a resolução" />
+      </p>
 
       <h2>Limitações</h2>
       <ul>

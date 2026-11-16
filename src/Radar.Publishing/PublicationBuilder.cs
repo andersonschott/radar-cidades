@@ -30,7 +30,7 @@ public static class PublicationBuilder
         var slug = data.City.Slug;
         var bySlug = data.Councilors.ToDictionary(c => c.Id, c => c.Slug);
         var councilors = data.Councilors
-            .Select(c => (Entity: c, Dto: ToDto(c, data.Propositions.Where(p => p.Authors.Any(a => a.Id == c.Id)).ToList())))
+            .Select(c => (Entity: c, Dto: ToDto(c, data.Propositions.Where(p => p.Authors.Any(a => a.Id == c.Id)).ToList(), Attendance(c, data.Sessions))))
             .ToList();
 
         var files = new Dictionary<string, byte[]>(StringComparer.Ordinal)
@@ -38,7 +38,7 @@ public static class PublicationBuilder
             ["meta.json"] = Serialize(new Envelope<MetaDto>(SchemaVersion, generatedAt, slug, new MetaDto(
                 data.City.Name, data.City.Uf, data.City.Seats, data.City.MonthlySalary, data.City.SalarySourceUrl,
                 data.City.TermStart, data.City.BaseUrl, data.LastSuccessfulScrape, data.Capabilities,
-                data.Councilors.Count, Totals(data.Propositions)))),
+                data.Councilors.Count, Totals(data.Propositions), data.City.SalaryFrom, data.Sessions.Count(s => s.HasRollCall)))),
             ["councilors.json"] = Serialize(new Envelope<IReadOnlyList<CouncilorDto>>(SchemaVersion, generatedAt, slug, [.. councilors.Select(c => c.Dto)])),
             ["requests.json"] = Serialize(new Envelope<IReadOnlyList<RequestDto>>(SchemaVersion, generatedAt, slug,
                 [.. data.Propositions.Where(p => p.Category == PropositionCategory.PedidoBairro).Select(p => ToRequest(p, bySlug))])),
@@ -53,8 +53,15 @@ public static class PublicationBuilder
         return files;
     }
 
-    private static CouncilorDto ToDto(Councilor c, IReadOnlyList<Proposition> authored) =>
-        new(c.Slug, c.Name, c.Mandates.OrderByDescending(m => m.Start).FirstOrDefault()?.Party?.Acronym, c.PhotoUrl, c.ProfileUrl, Totals(authored));
+    private static CouncilorDto ToDto(Councilor c, IReadOnlyList<Proposition> authored, AttendanceDto? attendance) =>
+        new(c.Slug, c.Name, c.Mandates.OrderByDescending(m => m.Start).FirstOrDefault()?.Party?.Acronym, c.PhotoUrl, c.ProfileUrl, Totals(authored), attendance);
+
+    // Denominador por vereador: só as sessões em que ele foi chamado (mandato parcial e suplência não contam como ausência).
+    private static AttendanceDto? Attendance(Councilor c, IReadOnlyList<Session> sessions)
+    {
+        var calls = sessions.Where(s => s.HasRollCall).SelectMany(s => s.Attendances).Where(a => a.CouncilorId == c.Id).ToList();
+        return calls.Count == 0 ? null : new AttendanceDto(calls.Count, calls.Count(a => a.Present), calls.Count(a => !a.Present));
+    }
 
     private static TotalsDto Totals(IReadOnlyCollection<Proposition> propositions) => new(
         propositions.Count,

@@ -175,7 +175,7 @@ Alternativa mais barata, sem a passada 2: casar o texto de Autoria com uma tabel
 ### Lista: `GET /Sessoes/Pesquisa?Classe=Sessao&Pagina={n}&tipo={t}&dataInicial=dd/MM/yyyy&dataFinal=dd/MM/yyyy`
 
 - Valores de `tipo`: 0 Todas, 7 Ordinárias, 8 Extraordinárias, 9 Solenes, 587/625/1203/1342 Audiências Públicas e 1405 Eleição da Mesa.
-- Retorna 15 linhas por página na tabela `table.table`: link `a[href^="/Sessoes/Sessao/"]` com o texto "39ª Sessão Ordinária de 2026", Data, Hora, Hora Término, URL do vídeo (costuma vir vazia) e Observações.
+- Retorna 15 itens por página em `div.data-list-item` (não é tabela): link `h4 > a[href^="/Sessoes/Sessao/"]` com o texto "39ª Sessão Ordinária de 2026", Data, Hora, Hora Término, URL do vídeo (costuma vir vazia) e Observações.
 - O total segue o mesmo padrão (`105 registro(s)` desde 01/01/2025, 7 páginas).
 - Fixture: `sessoes-pesquisa-p1.html`. `GET /sessoes` mostra só as "Recentes".
 

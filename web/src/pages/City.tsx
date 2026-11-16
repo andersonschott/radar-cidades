@@ -4,7 +4,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { formatDate, formatMonthYear, formatNumber, groups, groupTotals, load, titleCase, today, type Councilor, type Meta, type Request } from '../data'
 import { repeatedStreets, topNeighborhoods } from '../insights'
 import { OfficialLink, UpdatedAt } from '../layout'
-import { Authors, Avatar, BigNumber, Chip, ChipRow, GroupIcon, MoreButton, Panel, PropositionCard, Section } from '../pieces'
+import { Authors, Avatar, BigNumber, SalaryCounter, Chip, ChipRow, GroupIcon, MoreButton, Panel, PropositionCard, Section } from '../pieces'
 
 
 export default function City() {
@@ -22,6 +22,7 @@ export default function City() {
         <p className="text-lg text-muted-foreground">
           Tudo o que os {meta.councilors} vereadores apresentaram na Câmara desde {formatDate(meta.termStart)}, com link para o documento oficial.
         </p>
+        <SalaryCounter meta={meta} />
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
           <BigNumber value={formatNumber(meta.totals.propositions)} label="propostas desde a posse" />
           <BigNumber value={formatNumber(meta.totals.neighborhoodRequests)} label="pedidos que citam rua ou bairro" tone="text-info-foreground" />

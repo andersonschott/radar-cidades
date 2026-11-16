@@ -25,9 +25,14 @@ public sealed record MetaDto(
     DateTimeOffset? LastSuccessfulScrape,
     IReadOnlyList<string> Capabilities,
     int Councilors,
-    TotalsDto Totals);
+    TotalsDto Totals,
+    DateOnly? SalaryFrom,
+    int Sessions);
 
-public sealed record CouncilorDto(string Slug, string Name, string? Party, Uri? PhotoUrl, Uri ProfileUrl, TotalsDto Totals);
+/// <summary>Sessões com chamada em que o vereador foi chamado (presente ou ausente). Nulo: nenhuma.</summary>
+public sealed record AttendanceDto(int Sessions, int Present, int Absent);
+
+public sealed record CouncilorDto(string Slug, string Name, string? Party, Uri? PhotoUrl, Uri ProfileUrl, TotalsDto Totals, AttendanceDto? Attendance);
 
 public sealed record PropositionDto(
     string Id,

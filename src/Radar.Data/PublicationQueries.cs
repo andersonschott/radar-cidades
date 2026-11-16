@@ -8,7 +8,8 @@ public sealed record CityPublicationData(
     IReadOnlyList<string> Capabilities,
     IReadOnlyList<Councilor> Councilors,
     IReadOnlyList<Proposition> Propositions,
-    DateTimeOffset? LastSuccessfulScrape);
+    DateTimeOffset? LastSuccessfulScrape,
+    IReadOnlyList<Session> Sessions);
 
 public sealed class PublicationQueries(RadarDbContext db)
 {
@@ -25,6 +26,8 @@ public sealed class PublicationQueries(RadarDbContext db)
             .ToListAsync(ct).ConfigureAwait(false);
         var lastSuccess = await db.ScrapeRuns.Where(r => r.CityId == city.Id && r.Status == ScrapeStatus.Succeeded)
             .MaxAsync(r => (DateTimeOffset?)r.FinishedAt, ct).ConfigureAwait(false);
-        return new CityPublicationData(city, config.Capabilities, councilors, propositions, lastSuccess);
+        var sessions = await db.Sessions.AsNoTracking().Include(s => s.Attendances)
+            .Where(s => s.CityId == city.Id && s.HasRollCall).ToListAsync(ct).ConfigureAwait(false);
+        return new CityPublicationData(city, config.Capabilities, councilors, propositions, lastSuccess, sessions);
     }
 }

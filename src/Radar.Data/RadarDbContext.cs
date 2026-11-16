@@ -11,6 +11,7 @@ public sealed class RadarDbContext(DbContextOptions<RadarDbContext> options) : D
     public DbSet<Councilor> Councilors => Set<Councilor>();
     public DbSet<Proposition> Propositions => Set<Proposition>();
     public DbSet<ScrapeRun> ScrapeRuns => Set<ScrapeRun>();
+    public DbSet<Session> Sessions => Set<Session>();
 
     // Nada é deletado (SDD §6): FKs para City são Restrict, o que também evita múltiplos caminhos de cascade no SQL Server.
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -42,6 +43,21 @@ public sealed class RadarDbContext(DbContextOptions<RadarDbContext> options) : D
             e.Property(c => c.Slug).HasMaxLength(200);
             e.HasOne<City>().WithMany().HasForeignKey(c => c.CityId).OnDelete(DeleteBehavior.Restrict);
             e.HasMany(c => c.Mandates).WithOne().HasForeignKey(m => m.CouncilorId);
+        });
+
+        modelBuilder.Entity<Session>(e =>
+        {
+            e.HasIndex(s => new { s.CityId, s.SourceId }).IsUnique();
+            e.Property(s => s.SourceId).HasMaxLength(64);
+            e.Property(s => s.Name).HasMaxLength(200);
+            e.HasOne<City>().WithMany().HasForeignKey(s => s.CityId).OnDelete(DeleteBehavior.Restrict);
+            e.HasMany(s => s.Attendances).WithOne().HasForeignKey(a => a.SessionId).OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<Attendance>(e =>
+        {
+            e.HasKey(a => new { a.SessionId, a.CouncilorId });
+            e.HasOne<Councilor>().WithMany().HasForeignKey(a => a.CouncilorId).OnDelete(DeleteBehavior.Restrict);
         });
 
         modelBuilder.Entity<Proposition>(e =>

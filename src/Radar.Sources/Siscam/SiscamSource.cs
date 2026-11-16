@@ -15,6 +15,7 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
     private static readonly int[] DocumentTypes = [123, 122, 124, 117, 118, 119, 120, 121];
 
     private bool robotsChecked;
+    private Dictionary<string, string>? aliases;
 
     public SourceSystem System => SourceSystem.Siscam;
 
@@ -25,9 +26,7 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
     {
         ArgumentNullException.ThrowIfNull(city);
         // shortcut: autoria casada por nome (parlamentar ou civil); trocar pela 2ª passada por AutoriaId (docs/sources/siscam.md §3) se UnknownAuthors crescer.
-        var aliases = (await GetCouncilorsWithAliasesAsync(city, ct).ConfigureAwait(false))
-            .SelectMany(c => c.Aliases.Select(a => (Alias: a, c.Councilor.SourceId)))
-            .DistinctBy(a => a.Alias).ToDictionary(a => a.Alias, a => a.SourceId, StringComparer.Ordinal);
+        var aliases = await AliasesAsync(city, ct).ConfigureAwait(false);
         var http = httpFactory.CreateClient(HttpClientName);
         var today = DateOnly.FromDateTime(clock.GetUtcNow().UtcDateTime);
 
@@ -66,6 +65,56 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
         }
     }
 
+    public async Task<IReadOnlyList<SourceSessionRef>> ListSessionsAsync(CityConfig city, DateOnly since, CancellationToken ct)
+    {
+        ArgumentNullException.ThrowIfNull(city);
+        var http = httpFactory.CreateClient(HttpClientName);
+        await CheckRobotsAsync(http, city, ct).ConfigureAwait(false);
+        var to = DateOnly.FromDateTime(clock.GetUtcNow().UtcDateTime);
+        var sessions = new List<SourceSessionRef>();
+        for (var page = 1; ; page++)
+        {
+            var url = new Uri(city.BaseUrl, $"Sessoes/Pesquisa?Classe=Sessao&pagina={page}&tipo=0&dataInicial={Format(since)}&dataFinal={Format(to)}");
+            var list = SiscamParser.ParseSessionList(await http.GetStringAsync(url, ct).ConfigureAwait(false), city.BaseUrl);
+            sessions.AddRange(list.Items);
+            if (list.Items.Count == 0 || sessions.Count >= (list.DeclaredCount ?? 0))
+            {
+                if (list.DeclaredCount is { } declared && declared != sessions.Count)
+                {
+                    LogCountMismatch(logger, url, declared, sessions.Count);
+                }
+
+                return [.. sessions.DistinctBy(s => s.SourceId)];
+            }
+        }
+    }
+
+    public async Task<SourceSession> GetSessionAsync(CityConfig city, SourceSessionRef session, CancellationToken ct)
+    {
+        ArgumentNullException.ThrowIfNull(city);
+        ArgumentNullException.ThrowIfNull(session);
+        var aliases = await AliasesAsync(city, ct).ConfigureAwait(false);
+        var html = await httpFactory.CreateClient(HttpClientName).GetStringAsync(session.OfficialUrl, ct).ConfigureAwait(false);
+        var call = SiscamParser.ParseRollCall(html);
+        if (call.CountMismatch)
+        {
+            LogRollCallMismatch(logger, session.OfficialUrl);
+        }
+
+        return new SourceSession(session, call.Calls > 0, Ids(call.Present), Ids(call.Absent));
+
+        // Nome sem vereador correspondente (suplente fora da lista atual) fica de fora e vai para o log.
+        List<string> Ids(IEnumerable<string> names) => [.. names.Select(n =>
+        {
+            if (!aliases.TryGetValue(n, out var id))
+            {
+                LogUnknownAttendee(logger, n, session.SourceId);
+            }
+
+            return id;
+        }).OfType<string>().Distinct(StringComparer.Ordinal)];
+    }
+
     /// <summary>Janelas de mês civil; a última vai até 31/12/2099 porque há registros com data futura.</summary>
     public static IEnumerable<(DateOnly From, DateOnly To)> MonthlyWindows(DateOnly since, DateOnly today)
     {
@@ -76,18 +125,29 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
         }
     }
 
-    private async Task<IReadOnlyList<SiscamCouncilor>> GetCouncilorsWithAliasesAsync(CityConfig city, CancellationToken ct)
+    private async Task<Dictionary<string, string>> AliasesAsync(CityConfig city, CancellationToken ct) =>
+        aliases ??= (await GetCouncilorsWithAliasesAsync(city, ct).ConfigureAwait(false))
+            .SelectMany(c => c.Aliases.Select(a => (Alias: a, c.Councilor.SourceId)))
+            .DistinctBy(a => a.Alias).ToDictionary(a => a.Alias, a => a.SourceId, StringComparer.Ordinal);
+
+    private async Task CheckRobotsAsync(HttpClient http, CityConfig city, CancellationToken ct)
     {
-        ArgumentNullException.ThrowIfNull(city);
-        var http = httpFactory.CreateClient(HttpClientName);
         if (city.RobotsOverride is null)
         {
             await EnsureRobotsAllowAsync(http, city.BaseUrl, ct).ConfigureAwait(false);
         }
-        else
+        else if (!robotsChecked)
         {
             LogRobotsOverride(logger, city.Slug, city.RobotsOverride);
+            robotsChecked = true;
         }
+    }
+
+    private async Task<IReadOnlyList<SiscamCouncilor>> GetCouncilorsWithAliasesAsync(CityConfig city, CancellationToken ct)
+    {
+        ArgumentNullException.ThrowIfNull(city);
+        var http = httpFactory.CreateClient(HttpClientName);
+        await CheckRobotsAsync(http, city, ct).ConfigureAwait(false);
 
         var html = await http.GetStringAsync(new Uri(city.BaseUrl, "vereadores"), ct).ConfigureAwait(false);
         return SiscamParser.ParseCouncilors(html, city.BaseUrl);
@@ -102,7 +162,7 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
 
         using var response = await http.GetAsync(new Uri(baseUrl, "robots.txt"), ct).ConfigureAwait(false);
         var robots = response.IsSuccessStatusCode ? await response.Content.ReadAsStringAsync(ct).ConfigureAwait(false) : string.Empty;
-        foreach (var path in new[] { "/vereadores", "/Documentos/Exportar" })
+        foreach (var path in new[] { "/vereadores", "/Documentos/Exportar", "/Sessoes/Pesquisa", "/Sessoes/Sessao/1" })
         {
             if (!RobotsTxt.IsAllowed(robots, AgentToken, path))
             {
@@ -120,6 +180,12 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
 
     [LoggerMessage(Level = LogLevel.Warning, Message = "robots.txt ignorado para {City} por decisão registrada em {Decision}")]
     private static partial void LogRobotsOverride(ILogger logger, string city, string decision);
+
+    [LoggerMessage(Level = LogLevel.Warning, Message = "Chamada com contagem divergente dos nomes em {Url}")]
+    private static partial void LogRollCallMismatch(ILogger logger, Uri url);
+
+    [LoggerMessage(Level = LogLevel.Information, Message = "Nome na chamada sem vereador correspondente: {Name} (sessão {SourceId})")]
+    private static partial void LogUnknownAttendee(ILogger logger, string name, string sourceId);
 
     [LoggerMessage(Level = LogLevel.Information, Message = "Autor sem vereador correspondente: {Name} (documento {SourceId})")]
     private static partial void LogUnknownAuthor(ILogger logger, string name, string sourceId);

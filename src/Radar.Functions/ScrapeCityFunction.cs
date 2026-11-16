@@ -18,6 +18,7 @@ public sealed partial class ScrapeCityFunction(
     ILogger<ScrapeCityFunction> logger)
 {
     private const int BatchSize = 500;
+    private const int RecentSessionDays = 14;
 
     [Function("ScrapeCity")]
     [QueueOutput(QueueNames.Publish)]
@@ -61,7 +62,8 @@ public sealed partial class ScrapeCityFunction(
             }
 
             totals = Add(totals, await store.UpsertPropositionsAsync(city, batch, ct).ConfigureAwait(false));
-            var stats = JsonSerializer.Serialize(new { since, councilors, propositions = totals });
+            var sessions = await CollectSessionsAsync(source, config, city, ct).ConfigureAwait(false);
+            var stats = JsonSerializer.Serialize(new { since, councilors, propositions = totals, sessions });
             await store.FinishRunAsync(run, ScrapeStatus.Succeeded, stats, null, ct).ConfigureAwait(false);
             LogDone(logger, config.Slug, stats);
             return config.Slug;
@@ -71,6 +73,22 @@ public sealed partial class ScrapeCityFunction(
             await store.FinishRunAsync(run, ScrapeStatus.Failed, null, ex.Message, CancellationToken.None).ConfigureAwait(false);
             throw;
         }
+    }
+
+    // Lista desde a posse (poucas páginas) e busca o detalhe só do que é novo ou recente: a presença pode sair dias depois.
+    private async Task<object> CollectSessionsAsync(ILegislativeSource source, CityConfig config, City city, CancellationToken ct)
+    {
+        var known = await store.KnownSessionsAsync(city, ct).ConfigureAwait(false);
+        var recent = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-RecentSessionDays);
+        var listed = await source.ListSessionsAsync(config, config.TermStart, ct).ConfigureAwait(false);
+        int fetched = 0, unknownAttendees = 0;
+        foreach (var session in listed.Where(s => !known.ContainsKey(s.SourceId) || s.Date >= recent))
+        {
+            unknownAttendees += await store.UpsertSessionAsync(city, await source.GetSessionAsync(config, session, ct).ConfigureAwait(false), ct).ConfigureAwait(false);
+            fetched++;
+        }
+
+        return new { listed = listed.Count, fetched, unknownAttendees };
     }
 
     private static ClassifiedProposition Classify(SourceProposition p)

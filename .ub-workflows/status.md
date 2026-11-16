@@ -18,6 +18,10 @@ State: active. Interaction mode: `continuous` (operador pediu avanço sem pausas
 - Wave: `waves/w01-versao-de-testes/wave.md`
 - Initiative: `waves/w01-versao-de-testes/initiatives/i01-sbo-vereadores-pedidos/`
 
+## Pulled Forward From M2 (2026-11-16)
+
+A pedido do operador, presença (F-06) e contador de salário (F-08) entraram antes do fechamento do M1, na branch `feat/m2-presenca`. Votações (F-07) continuam no M2. Subsídio: Resolução nº 04/2023 (R$ 15.422,93 desde 01/02/2025), lida no PDF oficial.
+
 ## Blockers
 
 - Login na conta Azure pessoal (perfil `AZURE_CONFIG_DIR=C:\Users\ander\.azure-pessoal`) depende do operador.

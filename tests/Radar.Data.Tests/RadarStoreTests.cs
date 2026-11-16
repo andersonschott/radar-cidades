@@ -148,4 +148,19 @@ public sealed class RadarStoreTests(SqlServerFixture sql)
         data.Propositions.ShouldHaveSingleItem().Authors.ShouldHaveSingleItem().Name.ShouldBe("Ana Souza");
         data.LastSuccessfulScrape.ShouldBe(clock.GetUtcNow());
     }
+
+    [Fact]
+    public async Task UpsertSession_Twice_ReplacesAttendanceAndCountsUnknown()
+    {
+        var (store, city, db) = await SeedAsync("sessoes");
+        var reference = new SourceSessionRef("840", "16ª Sessão Ordinária de 2025", new DateOnly(2025, 5, 6), new Uri("https://camara.example/s/840"));
+
+        (await store.UpsertSessionAsync(city, new SourceSession(reference, true, ["v1"], ["v2", "suplente"]), default)).ShouldBe(1);
+        await store.UpsertSessionAsync(city, new SourceSession(reference, true, ["v1", "v2"], []), default);
+
+        var session = await db.Sessions.Include(s => s.Attendances).AsNoTracking().SingleAsync(s => s.CityId == city.Id);
+        session.Attendances.Count.ShouldBe(2);
+        session.Attendances.ShouldAllBe(a => a.Present);
+        (await store.KnownSessionsAsync(city, default)).ShouldBe(new Dictionary<string, DateOnly> { ["840"] = new DateOnly(2025, 5, 6) });
+    }
 }

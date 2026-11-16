@@ -61,6 +61,45 @@ public sealed class SiscamSourceTests
         handler.Requests.ShouldNotContain(u => u.AbsolutePath == "/vereadores");
     }
 
+    [Fact]
+    public async Task ListSessions_PagesUntilDeclaredTotal()
+    {
+        using var handler = new FakeHandler(uri => uri.AbsolutePath switch
+        {
+            "/robots.txt" => "User-agent: *\nAllow: /",
+            "/vereadores" => Fixture("vereadores.html"),
+            _ when uri.Query.Contains("pagina=7", StringComparison.Ordinal) => Fixture("sessoes-pesquisa-p7.html"),
+            _ => Fixture("sessoes-pesquisa-p1.html"),
+        });
+        var source = new SiscamSource(new SingleClientFactory(handler), new FakeTimeProvider(new DateTimeOffset(2026, 11, 16, 12, 0, 0, TimeSpan.Zero)), NullLogger<SiscamSource>.Instance);
+
+        var sessions = await source.ListSessionsAsync(City, new DateOnly(2025, 1, 1), CancellationToken.None);
+
+        handler.Requests.Count(u => u.AbsolutePath == "/Sessoes/Pesquisa").ShouldBe(7);
+        sessions[^1].SourceId.ShouldBe("821");
+        sessions.Select(s => s.SourceId).ShouldBeUnique();
+    }
+
+    [Fact]
+    public async Task GetSession_MapsRollCallNamesToCouncilorIds()
+    {
+        using var handler = new FakeHandler(uri => uri.AbsolutePath switch
+        {
+            "/robots.txt" => "User-agent: *\nAllow: /",
+            "/vereadores" => Fixture("vereadores.html"),
+            _ => Fixture("sessao-840-ausencia.html"),
+        });
+        var source = new SiscamSource(new SingleClientFactory(handler), TimeProvider.System, NullLogger<SiscamSource>.Instance);
+        var session = new SourceSessionRef("840", "16ª Sessão Ordinária de 2025", new DateOnly(2025, 5, 6), new Uri("https://santabarbara.siscam.com.br/Sessoes/Sessao/840"));
+
+        var result = await source.GetSessionAsync(City, session, CancellationToken.None);
+
+        result.HasRollCall.ShouldBeTrue();
+        result.AbsentIds.ShouldBe(["3546"]);
+        result.PresentIds.Count.ShouldBeGreaterThanOrEqualTo(17);
+        handler.Requests.Count(u => u.AbsolutePath == "/vereadores").ShouldBe(1);
+    }
+
     private sealed class FakeHandler(Func<Uri, string> respond) : HttpMessageHandler
     {
         public List<Uri> Requests { get; } = [];

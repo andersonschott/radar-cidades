@@ -6,14 +6,15 @@
     "name": "Santa Bárbara d\u0027Oeste",
     "uf": "SP",
     "seats": 19,
-    "monthlySalary": 0,
+    "monthlySalary": 15422.93,
     "salarySourceUrl": "https://transparencia.example/",
     "termStart": "2025-01-01",
     "officialUrl": "https://santabarbara.siscam.com.br/",
     "lastSuccessfulScrape": "2026-11-16T08:12:00+00:00",
     "capabilities": [
       "councilors",
-      "propositions"
+      "propositions",
+      "attendance"
     ],
     "councilors": 2,
     "totals": {
@@ -23,6 +24,8 @@
         "Indicacao": 1,
         "Mocao": 1
       }
-    }
+    },
+    "salaryFrom": "2025-02-01",
+    "sessions": 1
   }
 }

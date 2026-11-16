@@ -26,6 +26,7 @@ public sealed class RadarStore(RadarDbContext db, TimeProvider clock)
         city.Seats = config.Seats;
         city.MonthlySalary = config.MonthlySalary;
         city.SalarySourceUrl = config.SalarySourceUrl;
+        city.SalaryFrom = config.SalaryFrom;
         city.TermStart = config.TermStart;
         city.Active = config.Active;
         await db.SaveChangesAsync(ct).ConfigureAwait(false);
@@ -156,6 +157,53 @@ public sealed class RadarStore(RadarDbContext db, TimeProvider clock)
 
         await db.SaveChangesAsync(ct).ConfigureAwait(false);
         return new UpsertStats(inserted, updated, unchanged, unknownAuthors);
+    }
+
+    /// <summary>SourceId → data das sessões já gravadas; quem coleta decide o que buscar de novo.</summary>
+    public Task<Dictionary<string, DateOnly>> KnownSessionsAsync(City city, CancellationToken ct)
+    {
+        ArgumentNullException.ThrowIfNull(city);
+        return db.Sessions.Where(s => s.CityId == city.Id).ToDictionaryAsync(s => s.SourceId, s => s.Date, StringComparer.Ordinal, ct);
+    }
+
+    /// <summary>Upsert por (CityId, SourceId); a presença é substituída inteira. Retorna nomes sem vereador gravado.</summary>
+    public async Task<int> UpsertSessionAsync(City city, SourceSession source, CancellationToken ct)
+    {
+        ArgumentNullException.ThrowIfNull(city);
+        ArgumentNullException.ThrowIfNull(source);
+        var councilors = await db.Councilors.Where(c => c.CityId == city.Id)
+            .ToDictionaryAsync(c => c.SourceId, c => c.Id, StringComparer.Ordinal, ct).ConfigureAwait(false);
+        var session = await db.Sessions.Include(s => s.Attendances)
+            .SingleOrDefaultAsync(s => s.CityId == city.Id && s.SourceId == source.Ref.SourceId, ct).ConfigureAwait(false);
+        if (session is null)
+        {
+            session = new Session { CityId = city.Id, SourceId = source.Ref.SourceId, Name = source.Ref.Name, OfficialUrl = source.Ref.OfficialUrl };
+            db.Sessions.Add(session);
+        }
+
+        session.Name = source.Ref.Name;
+        session.Date = source.Ref.Date;
+        session.OfficialUrl = source.Ref.OfficialUrl;
+        session.HasRollCall = source.HasRollCall;
+        session.Attendances.Clear();
+        var unknown = 0;
+        foreach (var (ids, present) in new[] { (source.PresentIds, true), (source.AbsentIds, false) })
+        {
+            foreach (var id in ids)
+            {
+                if (councilors.TryGetValue(id, out var councilorId))
+                {
+                    session.Attendances.Add(new Attendance { CouncilorId = councilorId, Present = present });
+                }
+                else
+                {
+                    unknown++;
+                }
+            }
+        }
+
+        await db.SaveChangesAsync(ct).ConfigureAwait(false);
+        return unknown;
     }
 
     public async Task<ScrapeRun> StartRunAsync(City city, CancellationToken ct)

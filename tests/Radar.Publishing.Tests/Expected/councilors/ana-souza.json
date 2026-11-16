@@ -16,6 +16,11 @@
           "Indicacao": 1,
           "Mocao": 1
         }
+      },
+      "attendance": {
+        "sessions": 1,
+        "present": 1,
+        "absent": 0
       }
     },
     "propositions": [

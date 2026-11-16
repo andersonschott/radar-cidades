@@ -2,7 +2,7 @@ import { use, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router'
 import { formatNumber, groupOf, groups, groupTotals, load, type CouncilorProfile, type GroupKey, type Meta } from '../data'
 import { OfficialLink, UpdatedAt } from '../layout'
-import { Avatar, BigNumber, Chip, ChipRow, MoreButton, PropositionCard } from '../pieces'
+import { Avatar, BigNumber, PresenceRing, Chip, ChipRow, MoreButton, PropositionCard } from '../pieces'
 
 
 const PageSize = 20
@@ -28,6 +28,8 @@ export default function Profile() {
           <div><OfficialLink href={councilor.profileUrl} label="Ficha oficial na Câmara" /></div>
         </div>
       </header>
+
+      {councilor.attendance && <PresenceRing attendance={councilor.attendance} />}
 
       <div className="grid grid-cols-2 gap-3">
         <BigNumber value={formatNumber(councilor.totals.propositions)} label="propostas desde a posse" />

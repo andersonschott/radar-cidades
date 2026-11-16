@@ -37,6 +37,24 @@ namespace Radar.Data.Migrations
                     b.ToTable("PropositionAuthor");
                 });
 
+            modelBuilder.Entity("Radar.Domain.Attendance", b =>
+                {
+                    b.Property<int>("SessionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CouncilorId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Present")
+                        .HasColumnType("bit");
+
+                    b.HasKey("SessionId", "CouncilorId");
+
+                    b.HasIndex("CouncilorId");
+
+                    b.ToTable("Attendance");
+                });
+
             modelBuilder.Entity("Radar.Domain.City", b =>
                 {
                     b.Property<int>("Id")
@@ -63,6 +81,9 @@ namespace Radar.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
+
+                    b.Property<DateOnly?>("SalaryFrom")
+                        .HasColumnType("date");
 
                     b.Property<string>("SalarySourceUrl")
                         .IsRequired()
@@ -340,6 +361,45 @@ namespace Radar.Data.Migrations
                     b.ToTable("ScrapeRuns");
                 });
 
+            modelBuilder.Entity("Radar.Domain.Session", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
+
+                    b.Property<bool>("HasRollCall")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("OfficialUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SourceId")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CityId", "SourceId")
+                        .IsUnique();
+
+                    b.ToTable("Sessions");
+                });
+
             modelBuilder.Entity("PropositionAuthor", b =>
                 {
                     b.HasOne("Radar.Domain.Councilor", null)
@@ -351,6 +411,21 @@ namespace Radar.Data.Migrations
                     b.HasOne("Radar.Domain.Proposition", null)
                         .WithMany()
                         .HasForeignKey("PropositionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Radar.Domain.Attendance", b =>
+                {
+                    b.HasOne("Radar.Domain.Councilor", null)
+                        .WithMany()
+                        .HasForeignKey("CouncilorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Radar.Domain.Session", null)
+                        .WithMany("Attendances")
+                        .HasForeignKey("SessionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -406,6 +481,15 @@ namespace Radar.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Radar.Domain.Session", b =>
+                {
+                    b.HasOne("Radar.Domain.City", null)
+                        .WithMany()
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Radar.Domain.Councilor", b =>
                 {
                     b.Navigation("Mandates");
@@ -414,6 +498,11 @@ namespace Radar.Data.Migrations
             modelBuilder.Entity("Radar.Domain.Proposition", b =>
                 {
                     b.Navigation("Locations");
+                });
+
+            modelBuilder.Entity("Radar.Domain.Session", b =>
+                {
+                    b.Navigation("Attendances");
                 });
 #pragma warning restore 612, 618
         }

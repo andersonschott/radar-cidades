@@ -26,6 +26,10 @@ export interface Meta {
   uf: string
   seats: number
   termStart: string
+  monthlySalary: number
+  salarySourceUrl: string
+  salaryFrom: string | null
+  sessions: number
   officialUrl: string
   lastSuccessfulScrape: string | null
   capabilities: string[]
@@ -40,6 +44,14 @@ export interface Councilor {
   photoUrl: string | null
   profileUrl: string
   totals: Totals
+  attendance: Attendance | null
+}
+
+/** Sessões com chamada em que o vereador foi chamado. A fonte não diz se a ausência foi justificada. */
+export interface Attendance {
+  sessions: number
+  present: number
+  absent: number
 }
 
 export interface Proposition {
@@ -157,3 +169,16 @@ export const titleCase = (text: string) =>
 const monthYearFormat = new Intl.DateTimeFormat('pt-BR', { month: 'short', year: 'numeric', timeZone: 'UTC' })
 export const formatMonthYear = (iso: string) => monthYearFormat.format(new Date(`${iso}T00:00:00Z`)).replace('.', '').replace(' de ', ' ')
 export const today = () => new Date().toISOString().slice(0, 10)
+
+const AvgMonthMs = 30.4375 * 24 * 3600 * 1000
+
+/** Estimativa (SDD F-08): cadeiras × subsídio × meses corridos desde a vigência. */
+export function salaryEstimate(meta: Pick<Meta, 'seats' | 'monthlySalary' | 'salaryFrom'>, now: number): number | null {
+  if (!meta.salaryFrom || meta.monthlySalary <= 0) return null
+  const elapsed = now - Date.parse(`${meta.salaryFrom}T03:00:00Z`)
+  return elapsed <= 0 ? 0 : (meta.seats * meta.monthlySalary * elapsed) / AvgMonthMs
+}
+
+const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
+export const formatMoney = (n: number) => money.format(n)
+export const percent = (a: Attendance) => Math.round((a.present / a.sessions) * 100)

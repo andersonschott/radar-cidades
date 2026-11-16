@@ -1,6 +1,6 @@
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router'
-import { formatDate, groupOf, groups, typeSingular, type Councilor, type GroupKey } from './data'
+import { formatDate, formatMoney, groupOf, groups, percent, salaryEstimate, typeSingular, type Attendance, type Councilor, type GroupKey, type Meta } from './data'
 import { OfficialLink } from './layout'
 
 /** Título de seção: chamada curta + pergunta grande + explicação simples. */
@@ -127,5 +127,50 @@ export function MoreButton({ onClick, children }: { onClick: () => void; childre
     <button type="button" onClick={onClick} className="min-h-12 w-full rounded-xl bg-foreground px-4 text-base font-bold text-background hover:opacity-90">
       {children}
     </button>
+  )
+}
+
+/** Anel de presença: porcentagem dentro, "X de Y" e ausências ao lado (o número nunca vem só pela cor). */
+export function PresenceRing({ attendance, compact = false }: { attendance: Attendance; compact?: boolean }) {
+  const pct = percent(attendance)
+  const r = 15.9155 // circunferência = 100
+  return (
+    <div className="flex items-center gap-3">
+      <svg viewBox="0 0 36 36" className={compact ? 'size-14' : 'size-16'} role="img" aria-label={`${attendance.present} presenças em ${attendance.sessions} sessões`}>
+        <circle cx="18" cy="18" r={r} fill="none" strokeWidth="4" className="stroke-muted" />
+        <circle cx="18" cy="18" r={r} fill="none" strokeWidth="4" strokeDasharray={`${pct} ${100 - pct}`} strokeDashoffset="25" className="stroke-foreground" />
+        <text x="18" y="21" textAnchor="middle" className="fill-foreground text-[9px] font-black">{pct}%</text>
+      </svg>
+      <p className="text-sm leading-snug">
+        <strong className="text-base">{attendance.present} de {attendance.sessions}</strong> sessões com chamada
+        <span className="block text-muted-foreground">
+          {attendance.absent === 0 ? 'Nenhuma ausência registrada' : attendance.absent === 1 ? '1 ausência registrada' : `${attendance.absent} ausências registradas`}
+        </span>
+      </p>
+    </div>
+  )
+}
+
+/** Contador ao vivo do salário pago (estimativa). Sem animação se o usuário pediu menos movimento. */
+export function SalaryCounter({ meta }: { meta: Meta }) {
+  const [now, setNow] = useState(() => Date.now())
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
+    const id = setInterval(() => setNow(Date.now()), 1000)
+    return () => clearInterval(id)
+  }, [])
+  const value = salaryEstimate(meta, now)
+  if (value === null || !meta.salaryFrom) return null
+  return (
+    <div className="rounded-3xl bg-foreground p-5 text-background">
+      <p className="text-xs font-bold uppercase tracking-wider opacity-80">Salário pago aos {meta.seats} vereadores (estimativa)</p>
+      <p aria-hidden className="mt-1 font-display text-4xl font-black tabular-nums tracking-tight sm:text-5xl">{formatMoney(value)}</p>
+      <p className="sr-only">Cerca de {formatMoney(Math.round(value / 1000) * 1000)}</p>
+      <p className="mt-2 text-sm opacity-80">
+        {meta.seats} × {formatMoney(meta.monthlySalary)} por mês desde {formatDate(meta.salaryFrom)}.
+        Não inclui janeiro de 2025, a diferença do presidente da Câmara, 13º nem reajustes.{' '}
+        <a href={meta.salarySourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold underline">Resolução nº 04/2023 ↗<span className="sr-only"> (abre em nova aba)</span></a>
+      </p>
+    </div>
   )
 }

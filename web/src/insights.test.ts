@@ -34,3 +34,14 @@ describe('insights', () => {
     expect(titleCase("santa barbara d'oeste")).toBe("Santa Barbara d'Oeste")
   })
 })
+
+describe('salário', () => {
+  it('estima cadeiras × subsídio × meses desde a vigência', async () => {
+    const { salaryEstimate } = await import('./data')
+    const meta = { seats: 19, monthlySalary: 15422.93, salaryFrom: '2025-02-01' }
+    const oneMonthLater = Date.parse('2025-02-01T03:00:00Z') + 30.4375 * 24 * 3600 * 1000
+    expect(salaryEstimate(meta, oneMonthLater)).toBeCloseTo(19 * 15422.93, 2)
+    expect(salaryEstimate(meta, Date.parse('2025-01-15T00:00:00Z'))).toBe(0)
+    expect(salaryEstimate({ ...meta, monthlySalary: 0 }, oneMonthLater)).toBeNull()
+  })
+})

@@ -6,10 +6,11 @@
   "source": "Siscam",
   "baseUrl": "https://santabarbara.siscam.com.br/",
   "seats": 19,
-  "monthlySalary": 0,
-  "salarySourceUrl": "https://transparencia-cmsantabarbaradoeste.smarapd.com.br/",
+  "monthlySalary": 15422.93,
+  "salaryFrom": "2025-02-01",
+  "salarySourceUrl": "https://camarasantabarbara.sp.gov.br/Arquivos/Downloads/11545f1c-16f8-4e32-898d-a35594f87b10.pdf",
   "termStart": "2025-01-01",
   "active": true,
-  "capabilities": ["councilors", "propositions"],
+  "capabilities": ["councilors", "propositions", "attendance"],
   "robotsOverride": "docs/adr/0002-coleta-siscam-sbo-apesar-do-robots.md"
 }

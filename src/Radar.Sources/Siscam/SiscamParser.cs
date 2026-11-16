@@ -21,6 +21,11 @@ public sealed record SiscamItem(
 
 public sealed record SiscamExport(int? DeclaredCount, IReadOnlyList<SiscamItem> Items);
 
+public sealed record SiscamSessionList(int? DeclaredCount, IReadOnlyList<SourceSessionRef> Items);
+
+/// <summary>Chamadas de uma sessão, com nomes já dobrados (<see cref="TextFolding.Fold"/>). Presente em qualquer chamada = presente.</summary>
+public sealed record SiscamRollCall(int Calls, IReadOnlyList<string> Present, IReadOnlyList<string> Absent, bool CountMismatch);
+
 /// <summary>Parser puro das páginas do SISCAM (mapeamento em docs/sources/siscam.md).</summary>
 public static partial class SiscamParser
 {
@@ -34,6 +39,9 @@ public static partial class SiscamParser
 
     [GeneratedRegex(@"(\d+)\s+registro\(s\)", RegexOptions.CultureInvariant, 1000)]
     private static partial Regex Count();
+
+    [GeneratedRegex(@"^(?<kind>Presentes|Ausentes) \((?<n>\d+)\)$", RegexOptions.CultureInvariant, 1000)]
+    private static partial Regex RollCallGroup();
 
     [GeneratedRegex(@"\s+", RegexOptions.CultureInvariant, 1000)]
     private static partial Regex Spaces();
@@ -88,6 +96,62 @@ public static partial class SiscamParser
         }
 
         return new SiscamExport(header is null ? null : int.Parse(header.Groups[1].Value, CultureInfo.InvariantCulture), items);
+    }
+
+    /// <summary>Página de <c>/Sessoes/Pesquisa</c>: itens <c>div.data-list-item</c> e o total "N registro(s)".</summary>
+    public static SiscamSessionList ParseSessionList(string html, Uri baseUrl)
+    {
+        using var doc = Parser.ParseDocument(html);
+        var declared = Count().Match(doc.Body?.TextContent ?? string.Empty);
+        var items = doc.QuerySelectorAll("div.data-list-item")
+            .Select(item => (Item: item, Link: item.QuerySelector("h4 > a[href^='/Sessoes/Sessao/']")))
+            .Where(x => x.Link is not null)
+            .Select(x =>
+            {
+                var id = TrailingId().Match(x.Link!.GetAttribute("href")!).Groups[1].Value;
+                var date = LabeledValue(x.Item, "Data") ?? throw new InvalidDataException($"Sessão {id} sem data.");
+                return new SourceSessionRef(id, Clean(x.Link.TextContent),
+                    DateOnly.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture), new Uri(baseUrl, $"Sessoes/Sessao/{id}"));
+            });
+        return new SiscamSessionList(declared.Success ? int.Parse(declared.Groups[1].Value, CultureInfo.InvariantCulture) : null, [.. items]);
+    }
+
+    /// <summary>Bloco "Frequências" de <c>/Sessoes/Sessao/{id}</c>. Os grupos "Ausente (n)" das votações ficam de fora.</summary>
+    public static SiscamRollCall ParseRollCall(string html)
+    {
+        using var doc = Parser.ParseDocument(html);
+        var heading = doc.QuerySelectorAll("h3").FirstOrDefault(h => Clean(h.TextContent) == "Frequências");
+        var list = heading?.NextElementSibling;
+        if (list is null || !list.ClassList.Contains("data-list"))
+        {
+            return new SiscamRollCall(0, [], [], false);
+        }
+
+        var present = new HashSet<string>(StringComparer.Ordinal);
+        var absent = new HashSet<string>(StringComparer.Ordinal);
+        int calls = 0;
+        var mismatch = false;
+        foreach (var call in list.QuerySelectorAll("div.data-list-item"))
+        {
+            calls++;
+            foreach (var strong in call.QuerySelectorAll("p > strong"))
+            {
+                var group = RollCallGroup().Match(Clean(strong.TextContent));
+                if (!group.Success)
+                {
+                    continue;
+                }
+
+                var text = strong.ParentElement!.TextContent;
+                var names = Clean(text[(text.IndexOf(strong.TextContent, StringComparison.Ordinal) + strong.TextContent.Length)..]).TrimStart('-', ' ')
+                    .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Select(TextFolding.Fold).ToList();
+                mismatch |= names.Count != int.Parse(group.Groups["n"].Value, CultureInfo.InvariantCulture);
+                (group.Groups["kind"].Value == "Presentes" ? present : absent).UnionWith(names);
+            }
+        }
+
+        absent.ExceptWith(present);
+        return new SiscamRollCall(calls, [.. present.Order(StringComparer.Ordinal)], [.. absent.Order(StringComparer.Ordinal)], mismatch);
     }
 
     private static string? Field(IEnumerable<IElement> block, string label) =>
