@@ -84,7 +84,7 @@ public static class PublicationBuilder
     }
 
     private static CouncilorDto ToDto(Councilor c, IReadOnlyList<Proposition> authored, AttendanceDto? attendance) =>
-        new(c.Slug, c.Name, c.Mandates.OrderByDescending(m => m.Start).FirstOrDefault()?.Party?.Acronym, c.PhotoUrl, c.ProfileUrl, Totals(authored), attendance);
+        new(c.Slug, DisplayName(c.Name), c.Mandates.OrderByDescending(m => m.Start).FirstOrDefault()?.Party?.Acronym, c.PhotoUrl, c.ProfileUrl, Totals(authored), attendance);
 
     // Denominador por vereador: só as sessões em que ele foi chamado (mandato parcial e suplência não contam como ausência).
     private static AttendanceDto? Attendance(Councilor c, IReadOnlyList<Session> sessions)
@@ -125,6 +125,25 @@ public static class PublicationBuilder
         [.. p.Authors.Select(a => slugs[a.Id]).Order(StringComparer.Ordinal)],
         [.. p.Locations.Select(l => l.StreetNormalized).OfType<string>().Distinct(StringComparer.Ordinal)],
         [.. p.Locations.Select(l => l.NeighborhoodNormalized).OfType<string>().Distinct(StringComparer.Ordinal)]);
+
+    private static readonly HashSet<string> Particles = new(["da", "das", "de", "do", "dos", "e"], StringComparer.Ordinal);
+
+    /// <summary>Nome todo em maiúsculas na fonte (Americana: "DR. WAGNER ROVINA") vira "Dr. Wagner Rovina"; nome já com minúsculas fica como veio.</summary>
+    public static string DisplayName(string name)
+    {
+        ArgumentNullException.ThrowIfNull(name);
+        if (name.Any(char.IsLower))
+        {
+            return name;
+        }
+
+        var culture = System.Globalization.CultureInfo.GetCultureInfo("pt-BR");
+        return string.Join(' ', name.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select((w, i) =>
+        {
+            var lower = w.ToLower(culture);
+            return i > 0 && Particles.Contains(lower) ? lower : char.ToUpper(lower[0], culture) + lower[1..];
+        }));
+    }
 
     private static byte[] Serialize<T>(T value) => JsonSerializer.SerializeToUtf8Bytes(value, JsonOptions);
 }

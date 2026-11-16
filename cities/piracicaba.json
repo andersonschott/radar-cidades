@@ -13,7 +13,7 @@
   "thirteenthSalary": true,
   "thirteenthSalaryNote": "A Resolução nº 10/2023, art. 1º, §2º, assegura os direitos do art. 7º, VIII (13º) e XVII (1/3 de férias) da Constituição, pagos até 20 de dezembro. O ato não fixa valor diferente para o presidente.",
   "termStart": "2025-01-01",
-  "active": true,
+  "active": false,
   "siscam": {
     "searchIndex": 78,
     "documentTypes": { "Indicacao": 135, "Requerimento": 134, "Mocao": 136, "ProjetoLei": 129, "ProjetoLeiComplementar": 130, "ProjetoDecretoLegislativo": 131, "ProjetoResolucao": 132, "Outro": 133 }

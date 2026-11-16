@@ -73,6 +73,14 @@ public sealed class PublicationBuilderTests
         AssertSnapshot("cities.json", PublicationBuilder.CitiesIndex(
             [new CitySummaryDto("santa-barbara-doeste", "Santa Bárbara d'Oeste", "SP", ["councilors", "propositions"], GeneratedAt)], GeneratedAt));
 
+    [Theory]
+    [InlineData("DR. WAGNER ROVINA", "Dr. Wagner Rovina")]
+    [InlineData("FERNANDO DA FARMÁCIA", "Fernando da Farmácia")]
+    [InlineData("Ana Souza", "Ana Souza")]
+    [InlineData("Juninho Dias", "Juninho Dias")]
+    public void DisplayName_TitleCasesOnlyAllCaps(string raw, string expected) =>
+        PublicationBuilder.DisplayName(raw).ShouldBe(expected);
+
     [Fact]
     public void Places_KeepsOnlyLocatedAndNamesByMethod()
     {
