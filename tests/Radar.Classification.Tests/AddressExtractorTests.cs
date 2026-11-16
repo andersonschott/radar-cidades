@@ -19,6 +19,9 @@ public sealed class AddressExtractorTests
         { "Indica ao Poder Executivo Municipal a realização de serviço de tapa-buracos na Rua Aparecido G. de Faria, n° 32, no bairro Jd. Dona Regina.", "rua aparecido g de faria", "jardim dona regina" },
         { "Indica ao Poder Executivo serviço de tapa-buraco rua México 77, bairro Jd. Sartori.", "rua mexico 77", "jardim sartori" },
         { "Indica tapa-buracos na Rua Espanha, n° 890, no bairro Jd. Europa 1.", "rua espanha", "jardim europa 1" },
+        // "Praça localizada na Rua X": a palavra genérica não é nome; a rua de referência vale.
+        { "Indica limpeza geral na praça localizada na Rua Holanda, defronte ao n° 2479, no bairro Jardim Europa.", "rua holanda", "jardim europa" },
+        { "Indica a revitalização da praça pública do bairro Cidade Nova", null, "cidade nova" },
     };
 
     [Theory]

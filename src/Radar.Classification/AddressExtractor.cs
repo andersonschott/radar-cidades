@@ -20,7 +20,7 @@ public static partial class AddressExtractor
         @"[\p{L}\p{N}][\p{L}\p{N}\s'\-º°.]*?(?=\s*(?:[,;:()]|\s-\s|" + Period + @"|$)|\s+(?:e|no|na|nos|nas|em|bairro|esquina|pr[oó]ximo|altura|entre|defronte|frente|n[º°o]\.?)\b)";
 
     [GeneratedRegex(
-        @"(?<![\p{L}])(?:Rua|R\.|Avenida|Av\.?|Travessa|Tv\.|Alameda|Al\.|Pra[çc]a|P[çc]a\.?|Estrada|Rodovia|Viela|Largo)\s+" + Name,
+        @"(?<![\p{L}])(?:Rua|R\.|Avenida|Av\.?|Travessa|Tv\.|Alameda|Al\.|Pra[çc]a|P[çc]a\.?|Estrada|Rodovia|Viela|Largo)\s+(?!(?:localizad|situad|existente|p[uú]blic|que\b)\p{L}*)" + Name,
         RegexOptions.IgnoreCase | RegexOptions.CultureInvariant, matchTimeoutMilliseconds: 1000)]
     private static partial Regex StreetRegex();
 
