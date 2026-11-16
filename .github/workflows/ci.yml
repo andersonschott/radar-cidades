@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test-dotnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+      - run: dotnet restore Radar.slnx
+      - run: dotnet build Radar.slnx --no-restore -warnaserror
+      - run: >
+          dotnet test Radar.slnx --no-build
+          --collect:"XPlat Code Coverage"
+          --results-directory coverage
+          -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-dotnet
+          path: coverage/**/coverage.opencover.xml
+          if-no-files-found: ignore
+
+  build-test-web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
+  license-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: NuGet (diretas e transitivas)
+        run: |
+          dotnet tool install --global nuget-license --version 4.0.18
+          dotnet restore Radar.slnx
+          nuget-license -i Radar.slnx -t \
+            -a "Apache-2.0;MIT;BSD-3-Clause;BSD-2-Clause;MS-PL;Microsoft.NET.Library" \
+            -mapping .github/license-url-mappings.json
+      - name: npm (dependências de produção)
+        working-directory: web
+        run: |
+          npm ci
+          npx --yes license-checker@25.0.1 --production --excludePrivatePackages \
+            --onlyAllow "Apache-2.0;MIT;BSD-3-Clause;BSD-2-Clause;ISC;0BSD"
