@@ -110,7 +110,7 @@ function RankBars({ city, councilors }: { city: string; councilors: Councilor[] 
                 <span className="text-lg font-black tabular-nums">{formatNumber(c.totals.neighborhoodRequests)}</span>
               </span>
               <span aria-hidden className="mt-1.5 block h-2 rounded-full bg-muted">
-                <span className="block h-2 rounded-full bg-info-foreground" style={{ width: `${(c.totals.neighborhoodRequests / max) * 100}%` }} />
+                <span className="block h-2 rounded-full bg-city" style={{ width: `${(c.totals.neighborhoodRequests / max) * 100}%` }} />
               </span>
             </span>
           </Link>
@@ -140,20 +140,20 @@ function Streets({ city }: { city: string }) {
       intro="Quando o mesmo endereço aparece em vários pedidos. O site da Câmara não mostra esse cruzamento.">
       <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {streets.slice(0, shown).map((s) => (
-          <li key={`${s.street}|${s.neighborhood}`}>
+          <li key={`${s.street}|${s.neighborhood}`} className="flex">
             <Link to={`/${city}/bairros?q=${encodeURIComponent(s.neighborhood ? `${s.street} ${s.neighborhood}` : s.street)}`}
-              className="flex gap-4 rounded-2xl border bg-card p-4 hover:bg-accent">
+              className="flex w-full gap-4 rounded-2xl border bg-card p-4 hover:bg-accent">
               <span className="w-16 shrink-0 text-center">
                 <span className="block text-4xl font-black leading-none tabular-nums">{s.count}</span>
                 <span className="text-xs font-bold text-muted-foreground">pedidos</span>
               </span>
-              <span className="flex min-w-0 flex-col gap-1">
+              <span className="flex min-w-0 flex-1 flex-col gap-1">
                 <span className="text-lg font-bold leading-tight">{titleCase(s.street)}</span>
                 {s.neighborhood && <span className="text-muted-foreground">{titleCase(s.neighborhood)}</span>}
                 <span className="text-sm text-muted-foreground">
                   {s.authors === 1 ? '1 vereador pediu' : `${s.authors} vereadores pediram`} · de {formatMonthYear(s.from)} a {formatMonthYear(s.to)}
                 </span>
-                <span className="text-sm font-bold">Ver os pedidos →</span>
+                <span className="mt-auto pt-1 text-sm font-bold">Ver os pedidos →</span>
               </span>
             </Link>
           </li>

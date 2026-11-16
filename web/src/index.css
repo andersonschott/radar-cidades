@@ -93,6 +93,11 @@
     --warning-foreground: var(--color-amber-400);
 }
 /* Títulos com fonte de display (servida pelo próprio site, OFL-1.1); texto corrido na fonte do sistema. */
+@theme inline {
+  /* Cor da cidade (meta.accentColor, aplicada no <html> pelo CityAccent); sem ela, o neutro do tema. */
+  --color-city: var(--city, var(--foreground));
+}
+
 @theme {
   --font-display: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
 }

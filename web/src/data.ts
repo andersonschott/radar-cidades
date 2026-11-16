@@ -40,6 +40,8 @@ export interface Meta {
   monthlySalary: number
   salarySourceUrl: string
   salaryFrom: string | null
+  /** "#rrggbb" da bandeira da cidade; ausente em JSON antigo. */
+  accentColor?: string | null
   sessions: number
   officialUrl: string
   lastSuccessfulScrape: string | null
@@ -152,7 +154,7 @@ export const groups = [
   { key: 'melhoria', soft: 'bg-blue-50 text-blue-700', color: 'bg-blue-600', label: 'Pedidos de melhoria', types: ['Indicacao'], hint: 'Indicações: tapar buraco, podar árvore, trocar lâmpada. É um pedido à Prefeitura, que não é obrigada a fazer. O site da Câmara não registra se foi feito.' },
   { key: 'cobranca', soft: 'bg-orange-50 text-orange-700', color: 'bg-orange-600', label: 'Perguntas e cobranças', types: ['Requerimento'], hint: 'Requerimentos: pedidos de informação à Prefeitura e a outros órgãos.' },
   { key: 'mocao', soft: 'bg-pink-50 text-pink-700', color: 'bg-pink-600', label: 'Moções', types: ['Mocao'], hint: 'Homenagens, votos de pesar, apoio ou repúdio.' },
-  { key: 'lei', soft: 'bg-emerald-50 text-emerald-700', color: 'bg-emerald-600', label: 'Propostas de lei', types: ['ProjetoLei', 'ProjetoLeiComplementar'], hint: 'Projetos que criam ou mudam regras da cidade.' },
+  { key: 'lei', soft: 'bg-violet-50 text-violet-700', color: 'bg-violet-600', label: 'Propostas de lei', types: ['ProjetoLei', 'ProjetoLeiComplementar'], hint: 'Projetos que criam ou mudam regras da cidade.' },
   { key: 'outros', soft: 'bg-slate-100 text-slate-700', color: 'bg-slate-500', label: 'Outros', types: ['ProjetoDecretoLegislativo', 'ProjetoResolucao', 'Emenda', 'Outro'], hint: 'Decretos legislativos, regras internas da Câmara e emendas.' },
 ] as const
 

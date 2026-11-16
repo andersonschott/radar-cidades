@@ -38,7 +38,7 @@ public static class PublicationBuilder
             ["meta.json"] = Serialize(new Envelope<MetaDto>(SchemaVersion, generatedAt, slug, new MetaDto(
                 data.City.Name, data.City.Uf, data.City.Seats, data.City.MonthlySalary, data.City.SalarySourceUrl,
                 data.City.TermStart, data.City.BaseUrl, data.LastSuccessfulScrape, data.Capabilities,
-                data.Councilors.Count, Totals(data.Propositions), data.City.SalaryFrom, data.Sessions.Count(s => s.HasRollCall)))),
+                data.Councilors.Count, Totals(data.Propositions), data.City.SalaryFrom, data.Sessions.Count(s => s.HasRollCall), data.AccentColor))),
             ["councilors.json"] = Serialize(new Envelope<IReadOnlyList<CouncilorDto>>(SchemaVersion, generatedAt, slug, [.. councilors.Select(c => c.Dto)])),
             ["requests.json"] = Serialize(new Envelope<IReadOnlyList<RequestDto>>(SchemaVersion, generatedAt, slug,
                 [.. data.Propositions.Where(p => p.Category == PropositionCategory.PedidoBairro).Select(p => ToRequest(p, bySlug))])),

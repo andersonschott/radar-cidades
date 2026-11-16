@@ -48,16 +48,16 @@ export function CityLayout() {
     main.current?.focus({ preventScroll: true })
   }, [pathname])
 
-  const link = (cls: string) => ({ isActive }: { isActive: boolean }) => `${cls} ${isActive ? 'bg-muted text-foreground' : 'text-muted-foreground hover:text-foreground'}`
+  const link = (cls: string) => ({ isActive }: { isActive: boolean }) => `${cls} ${isActive ? 'bg-city/10 text-city' : 'text-muted-foreground hover:text-foreground'}`
   return (
     <>
       <a href="#conteudo" className="sr-only z-20 rounded-lg bg-foreground px-4 py-3 font-bold text-background focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:px-4 focus:py-3">
         Pular para o conteúdo
       </a>
-      <Suspense fallback={null}><DocumentTitle city={city} /></Suspense>
-      <header className="border-b">
+      <Suspense fallback={null}><DocumentTitle city={city} /><CityAccent city={city} /></Suspense>
+      <header className="border-t-4 border-b border-t-city">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-          <Link to={`/${city}`} className="inline-flex min-h-11 items-center text-lg font-black tracking-tight">Radar <Suspense fallback={null}><CityName city={city} /></Suspense></Link>
+          <Link to={`/${city}`} className="inline-flex min-h-11 items-center text-lg font-black tracking-tight"><span className="text-city">Radar</span>&nbsp;<Suspense fallback={null}><CityName city={city} /></Suspense></Link>
           <nav aria-label="Seções" className="hidden gap-1 sm:flex">
             {sections.map((s) => (
               <NavLink key={s.to} end={s.end} to={`/${city}/${s.to}`} className={link('rounded-lg px-3 py-2 text-sm font-semibold')}>{s.label}</NavLink>
@@ -80,6 +80,17 @@ export function CityLayout() {
       </main>
     </>
   )
+}
+
+/** Aplica a cor da cidade como variável CSS; só aceita "#rrggbb" vindo do JSON. */
+function CityAccent({ city }: { city: string }) {
+  const color = use(load<Meta>(`${city}/meta.json`)).data.accentColor
+  useLayoutEffect(() => {
+    if (!color || !/^#[0-9a-f]{6}$/i.test(color)) return
+    document.documentElement.style.setProperty('--city', color)
+    return () => { document.documentElement.style.removeProperty('--city') }
+  }, [color])
+  return null
 }
 
 function CityName({ city }: { city: string }) {
@@ -139,7 +150,7 @@ export function SearchField({ action, q = '' }: { action: string; q?: string }) 
           </button>
         )}
       </div>
-      <button type="submit" className="min-h-14 rounded-2xl bg-foreground px-6 text-lg font-bold text-background hover:opacity-90">Buscar</button>
+      <button type="submit" className="min-h-14 rounded-2xl bg-city px-6 text-lg font-bold text-white hover:opacity-90">Buscar</button>
     </Form>
   )
 }

@@ -34,6 +34,7 @@
       }
     },
     "salaryFrom": "2025-02-01",
-    "sessions": 1
+    "sessions": 1,
+    "accentColor": "#0b6b3a"
   }
 }

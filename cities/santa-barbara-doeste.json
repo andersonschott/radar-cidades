@@ -11,6 +11,8 @@
   "salarySourceUrl": "https://camarasantabarbara.sp.gov.br/Arquivos/Downloads/11545f1c-16f8-4e32-898d-a35594f87b10.pdf",
   "termStart": "2025-01-01",
   "active": true,
+  "accentColor": "#0b6b3a",
+  "accentColorSource": "Verde da bandeira municipal (Lei nº 2.195/1996); a lei não fixa o tom, valor escolhido para contraste 4,5:1 sobre branco.",
   "capabilities": ["councilors", "propositions", "attendance"],
   "robotsOverride": "docs/adr/0002-coleta-siscam-sbo-apesar-do-robots.md"
 }

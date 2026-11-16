@@ -9,7 +9,8 @@ public sealed record CityPublicationData(
     IReadOnlyList<Councilor> Councilors,
     IReadOnlyList<Proposition> Propositions,
     DateTimeOffset? LastSuccessfulScrape,
-    IReadOnlyList<Session> Sessions);
+    IReadOnlyList<Session> Sessions,
+    string? AccentColor = null);
 
 public sealed class PublicationQueries(RadarDbContext db)
 {
@@ -28,6 +29,6 @@ public sealed class PublicationQueries(RadarDbContext db)
             .MaxAsync(r => (DateTimeOffset?)r.FinishedAt, ct).ConfigureAwait(false);
         var sessions = await db.Sessions.AsNoTracking().Include(s => s.Attendances)
             .Where(s => s.CityId == city.Id && s.HasRollCall).ToListAsync(ct).ConfigureAwait(false);
-        return new CityPublicationData(city, config.Capabilities, councilors, propositions, lastSuccess, sessions);
+        return new CityPublicationData(city, config.Capabilities, councilors, propositions, lastSuccess, sessions, config.AccentColor);
     }
 }

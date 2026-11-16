@@ -8,7 +8,7 @@ export function Section({ id, kicker, title, intro, children }: { id: string; ki
   return (
     <section aria-labelledby={id} className="flex flex-col gap-4">
       <div>
-        <p className="text-sm font-bold text-muted-foreground">{kicker}</p>
+        <p className="text-sm font-bold text-city">{kicker}</p>
         <h2 id={id} className="mt-1 text-3xl font-black leading-tight tracking-tight text-balance">{title}</h2>
         {intro && <p className="mt-2 max-w-prose text-base text-muted-foreground">{intro}</p>}
       </div>
@@ -21,7 +21,7 @@ export function Panel({ className = '', children }: { className?: string; childr
   return <div className={`rounded-2xl border bg-card p-4 shadow-xs sm:p-5 ${className}`}>{children}</div>
 }
 
-export function BigNumber({ value, label, tone = 'text-foreground' }: { value: string; label: string; tone?: string }) {
+export function BigNumber({ value, label, tone = 'text-city' }: { value: string; label: string; tone?: string }) {
   return (
     <div className="rounded-2xl bg-muted/70 p-4">
       <p className={`text-3xl font-black tabular-nums tracking-tight ${tone}`}>{value}</p>
