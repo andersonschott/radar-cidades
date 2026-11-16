@@ -25,9 +25,11 @@ No active cards.
 
 ## Unassigned Product Option
 
-- **Cor da cidade como destaque** (pedido do operador, 2026-11-16).
-  - Cor oficial (bandeira ou brasão, com fonte) num campo da config da cidade, aplicada como token no tema.
-  - Se coincidir com cor de partido, usar só como detalhe (regra "nada de cor de partido").
+- **Mapa de pedidos por bairro em /bairros** (pedido do operador, 2026-11-16).
+  - Dados em 16/11: 9.927 pedidos, 7.523 com bairro, 598 grafias de bairro; 134 bairros com 10+ pedidos.
+  - Bolinha por bairro (área proporcional ao total), nunca por endereço: o texto traz número da casa.
+  - Antes: unificar grafias ("jardim mollon 4" / "vila mollon iv"). Depois, geocodificar uma vez por bairro (OSM Nominatim, 1 req/s, revisão manual) num arquivo versionado por cidade.
+  - Front: Leaflet + tiles OSM com crédito; lista acessível ao lado (o mapa não pode ser o único caminho).
 
 ## Update Rules
 
