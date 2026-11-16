@@ -39,3 +39,9 @@ public sealed record ClassifiedProposition(
     PropositionType Type,
     PropositionCategory Category,
     IReadOnlyList<PropositionLocation> Locations);
+
+/// <summary>Sessão listada na fonte, sem a presença.</summary>
+public sealed record SourceSessionRef(string SourceId, string Name, DateOnly Date, Uri OfficialUrl);
+
+/// <summary>Presença de uma sessão, por SourceId de vereador. <c>HasRollCall</c> falso: a fonte não publicou chamada.</summary>
+public sealed record SourceSession(SourceSessionRef Ref, bool HasRollCall, IReadOnlyList<string> PresentIds, IReadOnlyList<string> AbsentIds);

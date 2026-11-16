@@ -18,6 +18,10 @@ State: active. Interaction mode: `continuous` (operador pediu avanço sem pausas
 - Wave: `waves/w01-versao-de-testes/wave.md`
 - Initiative: `waves/w01-versao-de-testes/initiatives/i01-sbo-vereadores-pedidos/`
 
+## Pulled Forward From M2 (2026-11-16)
+
+A pedido do operador, presença (F-06) e contador de salário (F-08) entraram antes do fechamento do M1, na branch `feat/m2-presenca`. Votações (F-07) continuam no M2. Subsídio: Resolução nº 04/2023 (R$ 15.422,93 desde 01/02/2025), lida no PDF oficial.
+
 ## Blockers
 
 - Login na conta Azure pessoal (perfil `AZURE_CONFIG_DIR=C:\Users\ander\.azure-pessoal`) depende do operador.
@@ -37,4 +41,4 @@ Use `SOURCE_PACK_ATLAS.md` before opening source packs. Mapeamento da fonte: `do
 
 ## Next Allowed Action
 
-Aceitar a discovery `w01-i01-d01-siscam-fonte` e preparar a sprint S01.
+Aguardar a decisão da discovery d01. Enquanto isso, a S04 (front) pode avançar sobre o JSON gerado pelo replay das fixtures. O PR da S03 só sobe depois de decidir se as fixtures (coletadas sob leitura errada do robots) podem ir para o repositório público.

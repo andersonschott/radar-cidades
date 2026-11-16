@@ -1,0 +1,134 @@
+import { use } from 'react'
+import { Link, useParams, useSearchParams } from 'react-router'
+import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from '@/components/ui/empty'
+import { fold, formatNumber, groups, groupTotals, load, type Councilor, type Meta } from '../data'
+import { OfficialLink, UpdatedAt } from '../layout'
+import { Avatar, PresenceRing } from '../pieces'
+
+const sorts = {
+  nome: { label: 'Nome (A–Z)', compare: (a: Councilor, b: Councilor) => a.name.localeCompare(b.name, 'pt-BR') },
+  pedidos: { label: 'Mais pedidos com endereço', compare: (a: Councilor, b: Councilor) => b.totals.neighborhoodRequests - a.totals.neighborhoodRequests },
+  propostas: { label: 'Mais propostas no total', compare: (a: Councilor, b: Councilor) => b.totals.propositions - a.totals.propositions },
+  leis: { label: 'Mais propostas de lei', compare: (a: Councilor, b: Councilor) => groupTotals(b.totals.byType).lei - groupTotals(a.totals.byType).lei },
+  ausencias: { label: 'Mais ausências registradas', compare: (a: Councilor, b: Councilor) => (b.attendance?.absent ?? -1) - (a.attendance?.absent ?? -1) },
+  aprovadas: { label: 'Mais leis aprovadas pela Câmara', compare: (a: Councilor, b: Councilor) => (b.totals.bills?.approved ?? -1) - (a.totals.bills?.approved ?? -1) },
+  mocoes: { label: 'Mais moções', compare: (a: Councilor, b: Councilor) => groupTotals(b.totals.byType).mocao - groupTotals(a.totals.byType).mocao },
+} as const
+type SortKey = keyof typeof sorts
+
+const selectCls = 'min-h-12 w-full rounded-xl border bg-card px-3 text-base'
+
+export default function Councilors() {
+  const { city = '' } = useParams()
+  const meta = use(load<Meta>(`${city}/meta.json`)).data
+  const all = use(load<Councilor[]>(`${city}/councilors.json`)).data
+  const [params, setParams] = useSearchParams()
+  const q = params.get('q') ?? ''
+  const party = params.get('partido') ?? ''
+  const sort = (params.get('ordem') ?? 'nome') as SortKey
+  const set = (key: string, value: string) =>
+    setParams((p) => { if (value) p.set(key, value); else p.delete(key); return p }, { replace: true })
+
+  const parties = [...new Set(all.map((c) => c.party).filter((p): p is string => !!p))].sort((a, b) => a.localeCompare(b, 'pt-BR'))
+  const list = all
+    .filter((c) => fold(c.name).includes(fold(q)) && (!party || c.party === party))
+    .sort((sorts[sort] ?? sorts.nome).compare)
+
+  return (
+    <div className="flex flex-col gap-5">
+      <div>
+        <h1 className="text-4xl font-black leading-tight tracking-tight">Os {meta.councilors} vereadores</h1>
+        <p className="mt-2 text-lg text-muted-foreground">Toque em um tipo de proposta para ver os documentos.</p>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-3">
+        <label className="flex flex-col gap-1 text-sm font-semibold">
+          Buscar por nome
+          <input type="search" className={selectCls} value={q} onChange={(e) => set('q', e.currentTarget.value)} />
+        </label>
+        <label className="flex flex-col gap-1 text-sm font-semibold">
+          Partido
+          <select className={selectCls} value={party} onChange={(e) => set('partido', e.currentTarget.value)}>
+            <option value="">Todos</option>
+            {parties.map((p) => <option key={p} value={p}>{p} ({all.filter((c) => c.party === p).length})</option>)}
+          </select>
+        </label>
+        <label className="flex flex-col gap-1 text-sm font-semibold">
+          Ordenar por
+          <select className={selectCls} value={sort} onChange={(e) => set('ordem', e.currentTarget.value === 'nome' ? '' : e.currentTarget.value)}>
+            {Object.entries(sorts).map(([key, s]) => <option key={key} value={key}>{s.label}</option>)}
+          </select>
+        </label>
+      </div>
+      <p className="text-sm text-muted-foreground" aria-live="polite">Mostrando {list.length === all.length ? `os ${all.length} vereadores` : `${list.length} de ${all.length}`}.</p>
+
+      {list.length === 0 ? (
+        <Empty><EmptyHeader><EmptyTitle>Nenhum vereador encontrado</EmptyTitle><EmptyDescription>Revise a busca ou o filtro de partido.</EmptyDescription></EmptyHeader></Empty>
+      ) : (
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {list.map((c) => <li key={c.slug}><Badge city={city} councilor={c} /></li>)}
+        </ul>
+      )}
+      <p className="max-w-prose text-sm text-muted-foreground">
+        Presença conta só as sessões com chamada em que o vereador foi chamado; o site da Câmara não informa se a ausência foi justificada.
+        "Aprovada pela Câmara" quer dizer votada pelos vereadores; se o prefeito sancionou não aparece no site da Câmara.
+        Uma proposta com vários autores conta para cada um. Suplentes e ex-vereadores que assinaram propostas nesta legislatura ainda não aparecem aqui.
+      </p>
+      <UpdatedAt meta={meta} />
+    </div>
+  )
+}
+
+/** Crachá: foto, nome, partido e o que propôs, em grupos simples com barra proporcional. */
+function Badge({ city, councilor: c }: { city: string; councilor: Councilor }) {
+  const totals = groupTotals(c.totals.byType)
+  const sum = c.totals.propositions || 1
+  return (
+    <article className="flex h-full flex-col overflow-hidden rounded-3xl border bg-card shadow-xs">
+      <Link to={c.slug} className="flex items-center gap-4 bg-city/8 p-4 hover:bg-city/14">
+        <Avatar councilor={c} size="size-20 ring-4 ring-background" />
+        <span className="min-w-0">
+          <span className="block text-2xl font-black leading-tight tracking-tight">{c.name}</span>
+          <span className="mt-2 inline-block rounded-md bg-foreground px-2 py-0.5 text-xs font-black uppercase tracking-wide text-background">{c.party ?? 'Sem partido informado'}</span>
+        </span>
+      </Link>
+      <div className="flex flex-1 flex-col gap-3 p-4">
+        {c.attendance && <PresenceRing attendance={c.attendance} compact />}
+        <div className="grid grid-cols-2 gap-3">
+          <Fig value={formatNumber(c.totals.propositions)} label="propostas desde a posse" />
+          <Fig value={formatNumber(c.totals.neighborhoodRequests)} label="pedidos com rua ou bairro" />
+        </div>
+        {c.totals.bills && c.totals.bills.total > 0 && (
+          <p className="text-sm">
+            <strong className="text-base tabular-nums">{formatNumber(c.totals.bills.approved)} de {formatNumber(c.totals.bills.total)}</strong> propostas de lei aprovadas pela Câmara
+          </p>
+        )}
+        <p className="text-sm font-bold text-muted-foreground">O que propôs até agora</p>
+        <div aria-hidden className="flex h-2.5 gap-0.5 overflow-hidden rounded-full">
+          {groups.map((g) => totals[g.key] > 0 && <span key={g.key} className={g.color} style={{ width: `${(totals[g.key] / sum) * 100}%` }} />)}
+        </div>
+        <ul className="flex flex-col">
+          {groups.map((g) => (
+            <li key={g.key}>
+              <Link to={`/${city}/vereadores/${c.slug}?tipo=${g.key}`} className="flex min-h-11 items-center gap-3 text-base hover:underline">
+                <span aria-hidden className={`size-2.5 shrink-0 rounded-full ${g.color}`} />
+                <span className="flex-1">{g.label}</span>
+                <span className="font-black tabular-nums">{formatNumber(totals[g.key])}</span>
+                <span aria-hidden className="text-muted-foreground">›</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-auto border-t pt-1"><OfficialLink href={c.profileUrl} label="Ficha oficial na Câmara" /></div>
+      </div>
+    </article>
+  )
+}
+
+function Fig({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="rounded-xl bg-muted/70 p-3">
+      <p className="text-xl font-black tabular-nums">{value}</p>
+      <p className="text-xs text-muted-foreground">{label}</p>
+    </div>
+  )
+}

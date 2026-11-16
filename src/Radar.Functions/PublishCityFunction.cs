@@ -1,0 +1,41 @@
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
+using Microsoft.Azure.Functions.Worker;
+using Radar.Data;
+using Radar.Domain;
+using Radar.Publishing;
+
+namespace Radar.Functions;
+
+/// <summary>Grava os JSON públicos da cidade e o índice <c>cities.json</c> no container <c>data</c>.</summary>
+public sealed class PublishCityFunction(IReadOnlyList<CityConfig> cities, PublicationQueries queries, BlobContainerClient container, TimeProvider clock)
+{
+    [Function("PublishCity")]
+    public async Task Run([QueueTrigger(QueueNames.Publish)] string slug, CancellationToken ct)
+    {
+        var now = clock.GetUtcNow();
+        var config = cities.Single(c => c.Slug == slug);
+        var data = await queries.LoadAsync(config, ct).ConfigureAwait(false);
+        foreach (var (path, content) in PublicationBuilder.CityFiles(data, now))
+        {
+            await UploadAsync($"{slug}/{path}", content, ct).ConfigureAwait(false);
+        }
+
+        // Posições de bairro (tools/geo) são opcionais: cidade sem o arquivo só não tem mapa.
+        var places = Path.Combine(AppContext.BaseDirectory, "cities", $"{slug}.neighborhoods.json");
+        if (File.Exists(places))
+        {
+            await UploadAsync($"{slug}/places.json", PublicationBuilder.Places(await File.ReadAllTextAsync(places, ct).ConfigureAwait(false), slug, now), ct).ConfigureAwait(false);
+        }
+
+        var last = await queries.LastSuccessBySlugAsync(ct).ConfigureAwait(false);
+        var index = cities.Where(c => c.Active).Select(c => new CitySummaryDto(c.Slug, c.Name, c.Uf, c.Capabilities, last.GetValueOrDefault(c.Slug)));
+        await UploadAsync("cities.json", PublicationBuilder.CitiesIndex(index, now), ct).ConfigureAwait(false);
+    }
+
+    private async Task UploadAsync(string name, byte[] content, CancellationToken ct) =>
+        await container.GetBlobClient(name).UploadAsync(new BinaryData(content), new BlobUploadOptions
+        {
+            HttpHeaders = new BlobHttpHeaders { ContentType = "application/json; charset=utf-8", CacheControl = "public, max-age=300" },
+        }, ct).ConfigureAwait(false);
+}

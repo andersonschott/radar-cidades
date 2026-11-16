@@ -6,9 +6,21 @@
   "source": "Siscam",
   "baseUrl": "https://santabarbara.siscam.com.br/",
   "seats": 19,
-  "monthlySalary": 0,
-  "salarySourceUrl": "https://transparencia-cmsantabarbaradoeste.smarapd.com.br/",
+  "monthlySalary": 14158.92,
+  "presidentSalary": 15921.41,
+  "salaryFrom": "2025-01-01",
+  "salarySourceLabel": "Resolução nº 07/2024",
+  "salarySourceUrl": "https://santabarbara.siscam.com.br/Documentos/Documento/187447",
+  "thirteenthSalary": false,
+  "thirteenthSalaryNote": "A Resolução nº 07/2024 não prevê 13º e não achamos registro de pagamento. Mudar para true só com fonte oficial (portal da transparência ou lei).",
   "termStart": "2025-01-01",
   "active": true,
-  "capabilities": ["councilors", "propositions"]
+  "accentColor": "#0b6b3a",
+  "accentColorSource": "Verde da bandeira municipal (Lei nº 2.195/1996); a lei não fixa o tom, valor escolhido para contraste 4,5:1 sobre branco.",
+  "siscam": {
+    "searchIndex": 74,
+    "documentTypes": { "Indicacao": 123, "Requerimento": 122, "Mocao": 124, "ProjetoLei": 117, "ProjetoLeiComplementar": 118, "ProjetoDecretoLegislativo": 119, "ProjetoResolucao": 120, "Outro": 121 }
+  },
+  "capabilities": ["councilors", "propositions", "attendance"],
+  "robotsOverride": "docs/adr/0002-coleta-siscam-sbo-apesar-do-robots.md"
 }

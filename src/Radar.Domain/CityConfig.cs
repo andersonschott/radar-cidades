@@ -1,6 +1,10 @@
 namespace Radar.Domain;
 
-/// <summary>Configuração de uma cidade, lida de <c>cities/{slug}.json</c> (fonte da verdade).</summary>
+/// <summary>Configuração de uma cidade, lida de <c>cities/{slug}.json</c> (fonte da verdade).
+/// <c>RobotsOverride</c>: referência à ADR que autoriza coletar apesar do robots.txt; nulo = respeitar.
+/// <c>SalaryFrom</c>: início da vigência de <c>MonthlySalary</c> (pode ser depois da posse).
+/// <c>AccentColor</c>: cor de destaque da cidade ("#rrggbb"), tirada da bandeira ou do brasão; nulo = neutro.
+/// <c>PresidentSalary</c>: subsídio do presidente da Câmara, se diferente; <c>ThirteenthSalary</c>: true só com fonte oficial do 13º.</summary>
 public sealed record CityConfig(
     string Slug,
     string Name,
@@ -13,4 +17,15 @@ public sealed record CityConfig(
     Uri SalarySourceUrl,
     DateOnly TermStart,
     bool Active,
-    IReadOnlyList<string> Capabilities);
+    IReadOnlyList<string> Capabilities,
+    string? RobotsOverride = null,
+    DateOnly? SalaryFrom = null,
+    string? AccentColor = null,
+    decimal? PresidentSalary = null,
+    bool ThirteenthSalary = false,
+    string? SalarySourceLabel = null,
+    SiscamConfig? Siscam = null);
+
+/// <summary>Parâmetros do SISCAM que mudam por instalação: índice da pesquisa avançada (<c>id=</c>) e código "Documento" de cada tipo
+/// (docs/sources/siscam.md §2). Ver no select de tipos da página <c>/index/{SearchIndex}</c> da Câmara.</summary>
+public sealed record SiscamConfig(int SearchIndex, IReadOnlyDictionary<PropositionType, int> DocumentTypes);

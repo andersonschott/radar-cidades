@@ -1,0 +1,26 @@
+{
+  "slug": "americana",
+  "name": "Americana",
+  "uf": "SP",
+  "ibgeCode": 3501608,
+  "source": "Siscam",
+  "baseUrl": "https://americana.siscam.com.br/",
+  "seats": 19,
+  "monthlySalary": 10305.64,
+  "presidentSalary": 11283.75,
+  "salaryFrom": "2025-01-01",
+  "salarySourceLabel": "Resolução nº 436/2024",
+  "salarySourceUrl": "https://americana.siscam.com.br/Documentos/Documento/377192",
+  "thirteenthSalary": false,
+  "thirteenthSalaryNote": "A Resolução nº 436/2024 fixa o subsídio em parcela única (art. 1º) e não trata de 13º. Mudar para true só com fonte oficial (portal da transparência ou lei).",
+  "accentColor": "#c8102e",
+  "accentColorSource": "Vermelho do campo da bandeira municipal (campo vermelho com divisas branca, azul e branca, segundo Flags of the World, crwflags.com/fotw/flags/br-sp-aa.html); a lei da bandeira não foi localizada. Tom escolhido para contraste 5,9:1 sobre branco.",
+  "termStart": "2025-01-01",
+  "active": true,
+  "siscam": {
+    "searchIndex": 74,
+    "documentTypes": { "Indicacao": 125, "Requerimento": 124, "Mocao": 126, "ProjetoLei": 119, "ProjetoLeiComplementar": 120, "ProjetoDecretoLegislativo": 121, "ProjetoResolucao": 122, "Outro": 123 }
+  },
+  "capabilities": ["councilors", "propositions", "attendance"],
+  "robotsOverride": "docs/adr/0003-coleta-siscam-americana-apesar-do-robots.md"
+}

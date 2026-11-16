@@ -29,7 +29,7 @@ S03 sai da discovery d01 quando aceita.
 
 1. ~~S01 domínio + classificação~~ (closed, enabling).
 2. ~~S02 dados + publicação~~ (closed, enabling — 2ª seguida; route review aceito).
-3. S03 vertical: adaptador SISCAM + Functions (timer, filas, backfill) — termina com JSON real publicado no Blob.
+3. S03 vertical: adaptador SISCAM + Functions — **blocked**: código pronto e pipeline provado com replay das fixtures; coleta real proibida pelo robots.txt do SISCAM (discovery d01).
 4. S04 front (rotas M1) + deploy + amostra de 10 proposições conferidas.
 5. Pre-audit continuation window (`adaptive insertion`).
 6. Final audit (`terminal audit`).
@@ -49,3 +49,4 @@ S03 sai da discovery d01 quando aceita.
 ## Update Rules
 
 Update this roadmap only when objective, current position, active route, candidate order, insertion points, WIP state, revalidation rules, or final audit posture changes. Keep token history in `index.md`, not here.
+- 2026-11-16: S03 bloqueada. O robots.txt do SISCAM proíbe agentes não nomeados; a rota depende de autorização da Câmara (d01, decisão do dono).

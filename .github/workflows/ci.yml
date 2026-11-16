@@ -87,4 +87,4 @@ jobs:
         run: |
           npm ci
           npx --yes license-checker@25.0.1 --production --excludePrivatePackages \
-            --onlyAllow "Apache-2.0;MIT;BSD-3-Clause;BSD-2-Clause;ISC;0BSD"
+            --onlyAllow "Apache-2.0;MIT;BSD-3-Clause;BSD-2-Clause;ISC;0BSD;OFL-1.1"

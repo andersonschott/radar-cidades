@@ -18,11 +18,18 @@ No active cards.
 
 ## Probable Later Wave
 
-No active cards.
+- **Comparativo entre cidades** (pedido do operador, 2026-11-16). Quando houver 2+ cidades (M3, Piracicaba): ver onde os vereadores apresentam mais leis, moções etc.
+  - Normalizar por vereador e por mês, porque as Câmaras têm tamanhos diferentes.
+  - Mapear os tipos de cada Câmara para os mesmos grupos ("moção" numa pode ser "requerimento" na outra).
+  - Ranking neutro, com a limitação ao lado (docs/editorial.md).
 
 ## Unassigned Product Option
 
-No active cards.
+- **Mapa de pedidos por bairro em /bairros** (pedido do operador, 2026-11-16).
+  - Dados em 16/11: 9.927 pedidos, 7.523 com bairro, 598 grafias de bairro; 134 bairros com 10+ pedidos.
+  - Bolinha por bairro (área proporcional ao total), nunca por endereço: o texto traz número da casa.
+  - Antes: unificar grafias ("jardim mollon 4" / "vila mollon iv"). Depois, geocodificar uma vez por bairro (OSM Nominatim, 1 req/s, revisão manual) num arquivo versionado por cidade.
+  - Front: Leaflet + tiles OSM com crédito; lista acessível ao lado (o mapa não pode ser o único caminho).
 
 ## Update Rules
 

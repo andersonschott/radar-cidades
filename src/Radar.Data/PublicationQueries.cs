@@ -8,7 +8,12 @@ public sealed record CityPublicationData(
     IReadOnlyList<string> Capabilities,
     IReadOnlyList<Councilor> Councilors,
     IReadOnlyList<Proposition> Propositions,
-    DateTimeOffset? LastSuccessfulScrape);
+    DateTimeOffset? LastSuccessfulScrape,
+    IReadOnlyList<Session> Sessions,
+    string? AccentColor = null,
+    decimal? PresidentSalary = null,
+    bool ThirteenthSalary = false,
+    string? SalarySourceLabel = null);
 
 public sealed class PublicationQueries(RadarDbContext db)
 {
@@ -17,6 +22,8 @@ public sealed class PublicationQueries(RadarDbContext db)
     {
         ArgumentNullException.ThrowIfNull(config);
         var city = await db.Cities.AsNoTracking().SingleAsync(c => c.Slug == config.Slug, ct).ConfigureAwait(false);
+        // Mudar salário ou nome em cities/*.json vale na próxima publicação, sem esperar uma coleta (entidade sem tracking: nada é gravado).
+        RadarStore.ApplyConfig(city, config);
         var councilors = await db.Councilors.AsNoTracking().Include(c => c.Mandates).ThenInclude(m => m.Party)
             .Where(c => c.CityId == city.Id).OrderBy(c => c.Name).ToListAsync(ct).ConfigureAwait(false);
         var propositions = await db.Propositions.AsNoTracking().AsSplitQuery()
@@ -25,6 +32,16 @@ public sealed class PublicationQueries(RadarDbContext db)
             .ToListAsync(ct).ConfigureAwait(false);
         var lastSuccess = await db.ScrapeRuns.Where(r => r.CityId == city.Id && r.Status == ScrapeStatus.Succeeded)
             .MaxAsync(r => (DateTimeOffset?)r.FinishedAt, ct).ConfigureAwait(false);
-        return new CityPublicationData(city, config.Capabilities, councilors, propositions, lastSuccess);
+        var sessions = await db.Sessions.AsNoTracking().Include(s => s.Attendances)
+            .Where(s => s.CityId == city.Id && s.HasRollCall).ToListAsync(ct).ConfigureAwait(false);
+        return new CityPublicationData(city, config.Capabilities, councilors, propositions, lastSuccess, sessions, config.AccentColor, config.PresidentSalary, config.ThirteenthSalary, config.SalarySourceLabel);
     }
+
+    /// <summary>Slug → fim do último run bem-sucedido, para o <c>lastUpdated</c> de cada cidade no índice.</summary>
+    public async Task<Dictionary<string, DateTimeOffset?>> LastSuccessBySlugAsync(CancellationToken ct) =>
+        (await db.Cities.Select(c => new
+        {
+            c.Slug,
+            Last = db.ScrapeRuns.Where(r => r.CityId == c.Id && r.Status == ScrapeStatus.Succeeded).Max(r => (DateTimeOffset?)r.FinishedAt),
+        }).ToListAsync(ct).ConfigureAwait(false)).ToDictionary(c => c.Slug, c => c.Last, StringComparer.Ordinal);
 }

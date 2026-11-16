@@ -73,6 +73,21 @@ public sealed class RadarStoreTests(SqlServerFixture sql)
     }
 
     [Fact]
+    public async Task UpsertPropositions_SameContentNewLocations_Reclassifies()
+    {
+        var (store, city, db) = await SeedAsync("reclassifica");
+        await using var _ = db;
+        var source = Indicacao("1", "Tapa-buraco na Rua A", "v1");
+        await store.UpsertPropositionsAsync(city, [Classified(source)], default);
+
+        var stats = await store.UpsertPropositionsAsync(city, [Classified(source, "Rua A")], default);
+
+        stats.ShouldBe(new UpsertStats(0, 1, 0, 0));
+        await using var check = sql.CreateContext();
+        (await check.Propositions.Include(p => p.Locations).SingleAsync(p => p.CityId == city.Id)).Locations.Count.ShouldBe(1);
+    }
+
+    [Fact]
     public async Task UpsertPropositions_UnknownAuthor_IsCountedNotFailed()
     {
         var (store, city, db) = await SeedAsync("autor-desconhecido");
@@ -126,11 +141,32 @@ public sealed class RadarStoreTests(SqlServerFixture sql)
         await store.FinishRunAsync(run, ScrapeStatus.Succeeded, null, null, default);
 
         await using var read = sql.CreateContext();
-        var data = await new PublicationQueries(read).LoadAsync(Config("publicacao"), default);
+        // Salário mudado só na config (sem nova coleta) já sai na publicação.
+        var data = await new PublicationQueries(read).LoadAsync(Config("publicacao") with { MonthlySalary = 14158.92m, PresidentSalary = 15921.41m }, default);
+
+        data.City.MonthlySalary.ShouldBe(14158.92m);
+        data.PresidentSalary.ShouldBe(15921.41m);
 
         data.Councilors.Select(c => c.Name).ShouldBe(["Ana Souza", "João Lima"]);
         data.Councilors[0].Mandates.Single().Party!.Acronym.ShouldBe("PSD");
         data.Propositions.ShouldHaveSingleItem().Authors.ShouldHaveSingleItem().Name.ShouldBe("Ana Souza");
         data.LastSuccessfulScrape.ShouldBe(clock.GetUtcNow());
+        var index = await new PublicationQueries(read).LastSuccessBySlugAsync(default);
+        index["publicacao"].ShouldBe(clock.GetUtcNow());
+    }
+
+    [Fact]
+    public async Task UpsertSession_Twice_ReplacesAttendanceAndCountsUnknown()
+    {
+        var (store, city, db) = await SeedAsync("sessoes");
+        var reference = new SourceSessionRef("840", "16ª Sessão Ordinária de 2025", new DateOnly(2025, 5, 6), new Uri("https://camara.example/s/840"));
+
+        (await store.UpsertSessionAsync(city, new SourceSession(reference, true, ["v1"], ["v2", "suplente"]), default)).ShouldBe(1);
+        await store.UpsertSessionAsync(city, new SourceSession(reference, true, ["v1", "v2"], []), default);
+
+        var session = await db.Sessions.Include(s => s.Attendances).AsNoTracking().SingleAsync(s => s.CityId == city.Id);
+        session.Attendances.Count.ShouldBe(2);
+        session.Attendances.ShouldAllBe(a => a.Present);
+        (await store.KnownSessionsAsync(city, default)).ShouldBe(new Dictionary<string, bool> { ["840"] = true });
     }
 }
