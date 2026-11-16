@@ -17,6 +17,22 @@ public sealed class CityConfigLoaderTests
         sbo.BaseUrl.ShouldBe(new Uri("https://santabarbara.siscam.com.br/"));
         sbo.Capabilities.ShouldContain("propositions");
         sbo.Active.ShouldBeTrue();
+        sbo.Siscam!.SearchIndex.ShouldBe(74);
+        sbo.Siscam.DocumentTypes[PropositionType.Indicacao].ShouldBe(123);
+    }
+
+    [Fact]
+    public void LoadAll_EverySiscamCityMapsAllEightTypes()
+    {
+        PropositionType[] expected = [PropositionType.Indicacao, PropositionType.Requerimento, PropositionType.Mocao, PropositionType.ProjetoLei,
+            PropositionType.ProjetoLeiComplementar, PropositionType.ProjetoDecretoLegislativo, PropositionType.ProjetoResolucao, PropositionType.Outro];
+
+        foreach (var city in CityConfigLoader.LoadAll(CitiesDir).Where(c => c.Source == SourceSystem.Siscam))
+        {
+            city.Siscam.ShouldNotBeNull($"{city.Slug} sem bloco siscam");
+            city.Siscam.DocumentTypes.Keys.ShouldBe(expected, ignoreOrder: true, $"{city.Slug}: tipos do SISCAM incompletos");
+            city.Siscam.DocumentTypes.Values.ShouldBeUnique($"{city.Slug}: código repetido");
+        }
     }
 
     [Fact]

@@ -9,7 +9,12 @@ namespace Radar.Sources.Tests;
 public sealed class SiscamSourceTests
 {
     private static readonly CityConfig City = new("santa-barbara-doeste", "Santa Bárbara d'Oeste", "SP", 3545803, SourceSystem.Siscam,
-        new Uri("https://santabarbara.siscam.com.br/"), 19, 0m, new Uri("https://example.org/"), new DateOnly(2025, 1, 1), true, ["councilors", "propositions"]);
+        new Uri("https://santabarbara.siscam.com.br/"), 19, 0m, new Uri("https://example.org/"), new DateOnly(2025, 1, 1), true, ["councilors", "propositions"],
+        Siscam: new SiscamConfig(74, new Dictionary<PropositionType, int>
+        {
+            [PropositionType.Indicacao] = 123, [PropositionType.Requerimento] = 122, [PropositionType.Mocao] = 124, [PropositionType.ProjetoLei] = 117,
+            [PropositionType.ProjetoLeiComplementar] = 118, [PropositionType.ProjetoDecretoLegislativo] = 119, [PropositionType.ProjetoResolucao] = 120, [PropositionType.Outro] = 121,
+        }));
 
     private static string Fixture(string name) =>
         File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", "siscam", "santa-barbara-doeste", name));
@@ -69,6 +74,26 @@ public sealed class SiscamSourceTests
         var exports = handler.Requests.Where(u => u.AbsolutePath == "/Documentos/Exportar").ToList();
         exports.Count.ShouldBe(4);
         exports.ShouldAllBe(u => u.Query.Contains("Documento=117", StringComparison.Ordinal) || u.Query.Contains("Documento=118", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task GetPropositions_UsesSearchIndexAndCodesFromConfig()
+    {
+        using var handler = new FakeHandler(uri => uri.AbsolutePath switch
+        {
+            "/robots.txt" => "User-agent: *\nAllow: /",
+            "/vereadores" => Fixture("vereadores.html"),
+            _ => "<html><body><p class=\"text-center\">0 registro(s)</p></body></html>",
+        });
+        var source = new SiscamSource(new SingleClientFactory(handler), new FakeTimeProvider(new DateTimeOffset(2026, 11, 16, 12, 0, 0, TimeSpan.Zero)), NullLogger<SiscamSource>.Instance);
+        var other = City with { Siscam = new SiscamConfig(78, new Dictionary<PropositionType, int> { [PropositionType.Indicacao] = 135 }) };
+
+        await foreach (var _ in source.GetPropositionsAsync(other, new DateOnly(2026, 11, 1), null, CancellationToken.None))
+        {
+        }
+
+        handler.Requests.Where(u => u.AbsolutePath == "/Documentos/Exportar")
+            .ShouldHaveSingleItem().Query.ShouldContain("id=78&Modulo=8&pagina=1&Documento=135");
     }
 
     [Fact]

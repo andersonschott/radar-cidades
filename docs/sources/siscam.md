@@ -73,6 +73,8 @@ Pessoas que assinaram como vereador por pouco tempo (provavelmente suplentes) n�
 
 ### Tipos (`Documento`, módulo 8, índice 74 "Proposituras")
 
+> O índice da pesquisa (`id=`) e os códigos abaixo **mudam por instalação** do SISCAM. Valores de SBO; cada cidade declara os seus em `cities/<slug>.json`, bloco `siscam` (`searchIndex`, `documentTypes`). Para achar: abrir `/index/<id>` da Câmara e ler o select de tipos. Ex.: Piracicaba usa `id=78` e códigos 129–136; Americana, `id=74` e 119–126.
+
 | `Documento` | Tipo bruto | `PropositionType` | Volume 01/01/2025–16/11/2026 |
 |---|---|---|---|
 | 123 | Indicações | `Indicacao` | 9378 |

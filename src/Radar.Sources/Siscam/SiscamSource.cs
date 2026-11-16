@@ -11,17 +11,9 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
     public const string HttpClientName = "siscam";
     public const string AgentToken = "RadarCidades";
 
-    // Código "Documento" do SISCAM (índice 74, módulo 8).
-    // Código do SISCAM → tipo (docs/sources/siscam.md §2).
-    private static readonly (int Code, PropositionType Type)[] DocumentTypes =
-    [
-        (123, PropositionType.Indicacao), (122, PropositionType.Requerimento), (124, PropositionType.Mocao),
-        (117, PropositionType.ProjetoLei), (118, PropositionType.ProjetoLeiComplementar), (119, PropositionType.ProjetoDecretoLegislativo),
-        (120, PropositionType.ProjetoResolucao), (121, PropositionType.Outro),
-    ];
-
-    private bool robotsChecked;
-    private Dictionary<string, string>? aliases;
+    // Por cidade: a mesma instância pode atender mais de uma Câmara (cache de robots e de nomes não vaza entre elas).
+    private readonly HashSet<string> robotsChecked = new(StringComparer.Ordinal);
+    private readonly Dictionary<string, Dictionary<string, string>> aliasesByCity = new(StringComparer.Ordinal);
 
     public SourceSystem System => SourceSystem.Siscam;
 
@@ -36,12 +28,14 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
         var http = httpFactory.CreateClient(HttpClientName);
         var today = DateOnly.FromDateTime(clock.GetUtcNow().UtcDateTime);
 
+        // Índice e códigos mudam por instalação do SISCAM; sem eles a coleta pediria tipos errados em silêncio.
+        var siscam = city.Siscam ?? throw new InvalidOperationException($"Cidade {city.Slug} sem bloco \"siscam\" na config.");
         foreach (var (from, to) in MonthlyWindows(since, today))
         {
-            foreach (var (type, _) in DocumentTypes.Where(d => types is null || types.Contains(d.Type)))
+            foreach (var code in siscam.DocumentTypes.Where(d => types is null || types.Contains(d.Key)).Select(d => d.Value).Order())
             {
                 var url = new Uri(city.BaseUrl,
-                    $"Documentos/Exportar?tipo=0&Pesquisa=Avancada&id=74&Modulo=8&pagina=1&Documento={type}&DataInicial={Format(from)}&DataFinal={Format(to)}");
+                    $"Documentos/Exportar?tipo=0&Pesquisa=Avancada&id={siscam.SearchIndex}&Modulo=8&pagina=1&Documento={code}&DataInicial={Format(from)}&DataFinal={Format(to)}");
                 var html = await http.GetStringAsync(url, ct).ConfigureAwait(false);
                 var export = SiscamParser.ParseExport(html, city.BaseUrl);
                 if (export.DeclaredCount is { } declared && declared != export.Items.Count)
@@ -131,21 +125,28 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
         }
     }
 
-    private async Task<Dictionary<string, string>> AliasesAsync(CityConfig city, CancellationToken ct) =>
-        aliases ??= (await GetCouncilorsWithAliasesAsync(city, ct).ConfigureAwait(false))
-            .SelectMany(c => c.Aliases.Select(a => (Alias: a, c.Councilor.SourceId)))
-            .DistinctBy(a => a.Alias).ToDictionary(a => a.Alias, a => a.SourceId, StringComparer.Ordinal);
+    private async Task<Dictionary<string, string>> AliasesAsync(CityConfig city, CancellationToken ct)
+    {
+        if (!aliasesByCity.TryGetValue(city.Slug, out var map))
+        {
+            map = (await GetCouncilorsWithAliasesAsync(city, ct).ConfigureAwait(false))
+                .SelectMany(c => c.Aliases.Select(a => (Alias: a, c.Councilor.SourceId)))
+                .DistinctBy(a => a.Alias).ToDictionary(a => a.Alias, a => a.SourceId, StringComparer.Ordinal);
+            aliasesByCity[city.Slug] = map;
+        }
+
+        return map;
+    }
 
     private async Task CheckRobotsAsync(HttpClient http, CityConfig city, CancellationToken ct)
     {
         if (city.RobotsOverride is null)
         {
-            await EnsureRobotsAllowAsync(http, city.BaseUrl, ct).ConfigureAwait(false);
+            await EnsureRobotsAllowAsync(http, city, ct).ConfigureAwait(false);
         }
-        else if (!robotsChecked)
+        else if (robotsChecked.Add(city.Slug))
         {
             LogRobotsOverride(logger, city.Slug, city.RobotsOverride);
-            robotsChecked = true;
         }
     }
 
@@ -159,12 +160,14 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
         return SiscamParser.ParseCouncilors(html, city.BaseUrl);
     }
 
-    private async Task EnsureRobotsAllowAsync(HttpClient http, Uri baseUrl, CancellationToken ct)
+    private async Task EnsureRobotsAllowAsync(HttpClient http, CityConfig city, CancellationToken ct)
     {
-        if (robotsChecked)
+        if (robotsChecked.Contains(city.Slug))
         {
             return;
         }
+
+        var baseUrl = city.BaseUrl;
 
         using var response = await http.GetAsync(new Uri(baseUrl, "robots.txt"), ct).ConfigureAwait(false);
         var robots = response.IsSuccessStatusCode ? await response.Content.ReadAsStringAsync(ct).ConfigureAwait(false) : string.Empty;
@@ -176,7 +179,7 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
             }
         }
 
-        robotsChecked = true;
+        robotsChecked.Add(city.Slug);
     }
 
     private static string Format(DateOnly date) => date.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);

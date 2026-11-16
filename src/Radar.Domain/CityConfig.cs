@@ -23,4 +23,9 @@ public sealed record CityConfig(
     string? AccentColor = null,
     decimal? PresidentSalary = null,
     bool ThirteenthSalary = false,
-    string? SalarySourceLabel = null);
+    string? SalarySourceLabel = null,
+    SiscamConfig? Siscam = null);
+
+/// <summary>Parâmetros do SISCAM que mudam por instalação: índice da pesquisa avançada (<c>id=</c>) e código "Documento" de cada tipo
+/// (docs/sources/siscam.md §2). Ver no select de tipos da página <c>/index/{SearchIndex}</c> da Câmara.</summary>
+public sealed record SiscamConfig(int SearchIndex, IReadOnlyDictionary<PropositionType, int> DocumentTypes);

@@ -17,6 +17,10 @@
   "active": true,
   "accentColor": "#0b6b3a",
   "accentColorSource": "Verde da bandeira municipal (Lei nº 2.195/1996); a lei não fixa o tom, valor escolhido para contraste 4,5:1 sobre branco.",
+  "siscam": {
+    "searchIndex": 74,
+    "documentTypes": { "Indicacao": 123, "Requerimento": 122, "Mocao": 124, "ProjetoLei": 117, "ProjetoLeiComplementar": 118, "ProjetoDecretoLegislativo": 119, "ProjetoResolucao": 120, "Outro": 121 }
+  },
   "capabilities": ["councilors", "propositions", "attendance"],
   "robotsOverride": "docs/adr/0002-coleta-siscam-sbo-apesar-do-robots.md"
 }
