@@ -36,4 +36,12 @@ public sealed class PublicationQueries(RadarDbContext db)
             .Where(s => s.CityId == city.Id && s.HasRollCall).ToListAsync(ct).ConfigureAwait(false);
         return new CityPublicationData(city, config.Capabilities, councilors, propositions, lastSuccess, sessions, config.AccentColor, config.PresidentSalary, config.ThirteenthSalary, config.SalarySourceLabel);
     }
+
+    /// <summary>Slug → fim do último run bem-sucedido, para o <c>lastUpdated</c> de cada cidade no índice.</summary>
+    public async Task<Dictionary<string, DateTimeOffset?>> LastSuccessBySlugAsync(CancellationToken ct) =>
+        (await db.Cities.Select(c => new
+        {
+            c.Slug,
+            Last = db.ScrapeRuns.Where(r => r.CityId == c.Id && r.Status == ScrapeStatus.Succeeded).Max(r => (DateTimeOffset?)r.FinishedAt),
+        }).ToListAsync(ct).ConfigureAwait(false)).ToDictionary(c => c.Slug, c => c.Last, StringComparer.Ordinal);
 }

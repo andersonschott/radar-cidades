@@ -151,6 +151,8 @@ public sealed class RadarStoreTests(SqlServerFixture sql)
         data.Councilors[0].Mandates.Single().Party!.Acronym.ShouldBe("PSD");
         data.Propositions.ShouldHaveSingleItem().Authors.ShouldHaveSingleItem().Name.ShouldBe("Ana Souza");
         data.LastSuccessfulScrape.ShouldBe(clock.GetUtcNow());
+        var index = await new PublicationQueries(read).LastSuccessBySlugAsync(default);
+        index["publicacao"].ShouldBe(clock.GetUtcNow());
     }
 
     [Fact]

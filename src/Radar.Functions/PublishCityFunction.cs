@@ -28,9 +28,8 @@ public sealed class PublishCityFunction(IReadOnlyList<CityConfig> cities, Public
             await UploadAsync($"{slug}/places.json", PublicationBuilder.Places(await File.ReadAllTextAsync(places, ct).ConfigureAwait(false), slug, now), ct).ConfigureAwait(false);
         }
 
-        // shortcut: lastUpdated do índice só conhece a cidade publicada agora; ler meta.json das outras quando houver mais de uma.
-        var index = cities.Where(c => c.Active).Select(c => new CitySummaryDto(c.Slug, c.Name, c.Uf, c.Capabilities,
-            c.Slug == slug ? data.LastSuccessfulScrape : null));
+        var last = await queries.LastSuccessBySlugAsync(ct).ConfigureAwait(false);
+        var index = cities.Where(c => c.Active).Select(c => new CitySummaryDto(c.Slug, c.Name, c.Uf, c.Capabilities, last.GetValueOrDefault(c.Slug)));
         await UploadAsync("cities.json", PublicationBuilder.CitiesIndex(index, now), ct).ConfigureAwait(false);
     }
 
