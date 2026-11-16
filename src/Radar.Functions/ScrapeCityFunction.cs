@@ -19,6 +19,8 @@ public sealed partial class ScrapeCityFunction(
 {
     private const int BatchSize = 500;
     private const int RecentSessionDays = 14;
+    // Piracicaba publica as Frequências mais de um mês depois da sessão (docs/sources/siscam-piracicaba.md).
+    private const int PendingRollCallDays = 90;
     private static readonly PropositionType[] BillTypes = [PropositionType.ProjetoLei, PropositionType.ProjetoLeiComplementar];
 
     [Function("ScrapeCity")]
@@ -92,10 +94,13 @@ public sealed partial class ScrapeCityFunction(
     private async Task<object> CollectSessionsAsync(ILegislativeSource source, CityConfig config, City city, CancellationToken ct)
     {
         var known = await store.KnownSessionsAsync(city, ct).ConfigureAwait(false);
-        var recent = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-RecentSessionDays);
+        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var recent = today.AddDays(-RecentSessionDays);
+        var pending = today.AddDays(-PendingRollCallDays);
         var listed = await source.ListSessionsAsync(config, config.TermStart, ct).ConfigureAwait(false);
         int fetched = 0, unknownAttendees = 0;
-        foreach (var session in listed.Where(s => !known.ContainsKey(s.SourceId) || s.Date >= recent))
+        // Busca de novo: sessão nova, recente, ou ainda sem chamada dentro da janela de atraso (solene sem chamada sai da janela e para).
+        foreach (var session in listed.Where(s => !known.TryGetValue(s.SourceId, out var hasCall) || s.Date >= recent || (!hasCall && s.Date >= pending)))
         {
             unknownAttendees += await store.UpsertSessionAsync(city, await source.GetSessionAsync(config, session, ct).ConfigureAwait(false), ct).ConfigureAwait(false);
             fetched++;

@@ -165,6 +165,6 @@ public sealed class RadarStoreTests(SqlServerFixture sql)
         var session = await db.Sessions.Include(s => s.Attendances).AsNoTracking().SingleAsync(s => s.CityId == city.Id);
         session.Attendances.Count.ShouldBe(2);
         session.Attendances.ShouldAllBe(a => a.Present);
-        (await store.KnownSessionsAsync(city, default)).ShouldBe(new Dictionary<string, DateOnly> { ["840"] = new DateOnly(2025, 5, 6) });
+        (await store.KnownSessionsAsync(city, default)).ShouldBe(new Dictionary<string, bool> { ["840"] = true });
     }
 }

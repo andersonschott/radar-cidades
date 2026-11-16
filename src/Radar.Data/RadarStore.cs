@@ -166,10 +166,11 @@ public sealed class RadarStore(RadarDbContext db, TimeProvider clock)
     }
 
     /// <summary>SourceId → data das sessões já gravadas; quem coleta decide o que buscar de novo.</summary>
-    public Task<Dictionary<string, DateOnly>> KnownSessionsAsync(City city, CancellationToken ct)
+    /// <summary>SourceId → já tem chamada (Frequências) gravada.</summary>
+    public Task<Dictionary<string, bool>> KnownSessionsAsync(City city, CancellationToken ct)
     {
         ArgumentNullException.ThrowIfNull(city);
-        return db.Sessions.Where(s => s.CityId == city.Id).ToDictionaryAsync(s => s.SourceId, s => s.Date, StringComparer.Ordinal, ct);
+        return db.Sessions.Where(s => s.CityId == city.Id).ToDictionaryAsync(s => s.SourceId, s => s.HasRollCall, StringComparer.Ordinal, ct);
     }
 
     /// <summary>Upsert por (CityId, SourceId); a presença é substituída inteira. Retorna nomes sem vereador gravado.</summary>
