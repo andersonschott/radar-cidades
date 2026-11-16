@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Radar.Classification/Radar.Classification.csproj" />
+    <Project Path="src/Radar.Data/Radar.Data.csproj" />
+    <Project Path="src/Radar.Domain/Radar.Domain.csproj" />
+    <Project Path="src/Radar.Functions/Radar.Functions.csproj" />
+    <Project Path="src/Radar.Publishing/Radar.Publishing.csproj" />
+    <Project Path="src/Radar.Sources/Radar.Sources.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Radar.Architecture.Tests/Radar.Architecture.Tests.csproj" />
+    <Project Path="tests/Radar.Classification.Tests/Radar.Classification.Tests.csproj" />
+    <Project Path="tests/Radar.Data.Tests/Radar.Data.Tests.csproj" />
+    <Project Path="tests/Radar.Publishing.Tests/Radar.Publishing.Tests.csproj" />
+    <Project Path="tests/Radar.Sources.Tests/Radar.Sources.Tests.csproj" />
+  </Folder>
+</Solution>
