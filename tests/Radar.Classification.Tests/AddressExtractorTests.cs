@@ -15,6 +15,10 @@ public sealed class AddressExtractorTests
         { "Indica melhorias na iluminação da Praça Coronel Luiz Alves", "praca coronel luiz alves", null },
         { "Indica a instalação de lombada no bairro Cidade Nova", null, "cidade nova" },
         { "Indica   a   troca de lâmpadas na RUA  SANTA   BÁRBARA , centro", "rua santa barbara", null },
+        // Casos reais do SISCAM de SBO (backfill de 16/11/2026): abreviação com ponto e inicial no nome.
+        { "Indica ao Poder Executivo Municipal a realização de serviço de tapa-buracos na Rua Aparecido G. de Faria, n° 32, no bairro Jd. Dona Regina.", "rua aparecido g de faria", "jardim dona regina" },
+        { "Indica ao Poder Executivo serviço de tapa-buraco rua México 77, bairro Jd. Sartori.", "rua mexico 77", "jardim sartori" },
+        { "Indica tapa-buracos na Rua Espanha, n° 890, no bairro Jd. Europa 1.", "rua espanha", "jardim europa 1" },
     };
 
     [Theory]

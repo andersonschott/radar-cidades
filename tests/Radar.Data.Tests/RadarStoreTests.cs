@@ -73,6 +73,21 @@ public sealed class RadarStoreTests(SqlServerFixture sql)
     }
 
     [Fact]
+    public async Task UpsertPropositions_SameContentNewLocations_Reclassifies()
+    {
+        var (store, city, db) = await SeedAsync("reclassifica");
+        await using var _ = db;
+        var source = Indicacao("1", "Tapa-buraco na Rua A", "v1");
+        await store.UpsertPropositionsAsync(city, [Classified(source)], default);
+
+        var stats = await store.UpsertPropositionsAsync(city, [Classified(source, "Rua A")], default);
+
+        stats.ShouldBe(new UpsertStats(0, 1, 0, 0));
+        await using var check = sql.CreateContext();
+        (await check.Propositions.Include(p => p.Locations).SingleAsync(p => p.CityId == city.Id)).Locations.Count.ShouldBe(1);
+    }
+
+    [Fact]
     public async Task UpsertPropositions_UnknownAuthor_IsCountedNotFailed()
     {
         var (store, city, db) = await SeedAsync("autor-desconhecido");

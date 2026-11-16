@@ -12,8 +12,12 @@ public sealed record ExtractedLocation(
 public static partial class AddressExtractor
 {
     // O nome termina em pontuação, fim de frase ou numa palavra de ligação ("no bairro", "esquina", " e ").
+    // Ponto depois de inicial ("G.") ou abreviação ("Jd.", "Dr.") não encerra o nome.
+    private const string Period =
+        @"(?<!(?:^|[\s.])(?:\p{L}|Jd|Vl|Pq|Res|Dr|Dra|Prof|Profa|Sta?|Sr|Pe|Cel|Eng|Ver|Gal|Cap|Ten|Av|Tv|Al|P[çc]a))\.(?:\s|$)";
+
     private const string Name =
-        @"[\p{L}\p{N}][\p{L}\p{N}\s'\-º°]*?(?=\s*(?:[,;:()]|\s-\s|\.(?:\s|$)|$)|\s+(?:e|no|na|nos|nas|em|bairro|esquina|pr[oó]ximo|altura|entre|defronte|frente|n[º°o]\.?)\b)";
+        @"[\p{L}\p{N}][\p{L}\p{N}\s'\-º°.]*?(?=\s*(?:[,;:()]|\s-\s|" + Period + @"|$)|\s+(?:e|no|na|nos|nas|em|bairro|esquina|pr[oó]ximo|altura|entre|defronte|frente|n[º°o]\.?)\b)";
 
     [GeneratedRegex(
         @"(?<![\p{L}])(?:Rua|R\.|Avenida|Av\.?|Travessa|Tv\.|Alameda|Al\.|Pra[çc]a|P[çc]a\.?|Estrada|Rodovia|Viela|Largo)\s+" + Name,

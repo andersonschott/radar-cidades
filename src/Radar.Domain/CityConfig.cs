@@ -1,6 +1,7 @@
 namespace Radar.Domain;
 
-/// <summary>Configuração de uma cidade, lida de <c>cities/{slug}.json</c> (fonte da verdade).</summary>
+/// <summary>Configuração de uma cidade, lida de <c>cities/{slug}.json</c> (fonte da verdade).
+/// <c>RobotsOverride</c>: referência à ADR que autoriza coletar apesar do robots.txt; nulo = respeitar.</summary>
 public sealed record CityConfig(
     string Slug,
     string Name,
@@ -13,4 +14,5 @@ public sealed record CityConfig(
     Uri SalarySourceUrl,
     DateOnly TermStart,
     bool Active,
-    IReadOnlyList<string> Capabilities);
+    IReadOnlyList<string> Capabilities,
+    string? RobotsOverride = null);

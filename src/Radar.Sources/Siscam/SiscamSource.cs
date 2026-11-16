@@ -80,7 +80,15 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
     {
         ArgumentNullException.ThrowIfNull(city);
         var http = httpFactory.CreateClient(HttpClientName);
-        await EnsureRobotsAllowAsync(http, city.BaseUrl, ct).ConfigureAwait(false);
+        if (city.RobotsOverride is null)
+        {
+            await EnsureRobotsAllowAsync(http, city.BaseUrl, ct).ConfigureAwait(false);
+        }
+        else
+        {
+            LogRobotsOverride(logger, city.Slug, city.RobotsOverride);
+        }
+
         var html = await http.GetStringAsync(new Uri(city.BaseUrl, "vereadores"), ct).ConfigureAwait(false);
         return SiscamParser.ParseCouncilors(html, city.BaseUrl);
     }
@@ -109,6 +117,9 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
 
     [LoggerMessage(Level = LogLevel.Warning, Message = "Contagem divergente em {Url}: cabeçalho {Declared}, itens {Parsed}")]
     private static partial void LogCountMismatch(ILogger logger, Uri url, int declared, int parsed);
+
+    [LoggerMessage(Level = LogLevel.Warning, Message = "robots.txt ignorado para {City} por decisão registrada em {Decision}")]
+    private static partial void LogRobotsOverride(ILogger logger, string city, string decision);
 
     [LoggerMessage(Level = LogLevel.Information, Message = "Autor sem vereador correspondente: {Name} (documento {SourceId})")]
     private static partial void LogUnknownAuthor(ILogger logger, string name, string sourceId);

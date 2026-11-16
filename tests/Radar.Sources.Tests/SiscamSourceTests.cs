@@ -77,3 +77,35 @@ public sealed class SiscamSourceTests
         public HttpClient CreateClient(string name) => new(handler, disposeHandler: false);
     }
 }
+
+public sealed class SiscamSourceOverrideTests
+{
+    [Fact]
+    public async Task GetCouncilors_WithRecordedOverride_SkipsRobots()
+    {
+        var city = new CityConfig("sbo", "SBO", "SP", 1, SourceSystem.Siscam, new Uri("https://x.example/"), 19, 0m,
+            new Uri("https://x.example/"), new DateOnly(2025, 1, 1), true, [], RobotsOverride: "docs/adr/0002.md");
+        using var handler = new RecordingHandler();
+        var source = new SiscamSource(new Factory(handler), TimeProvider.System, NullLogger<SiscamSource>.Instance);
+
+        await source.GetCouncilorsAsync(city, CancellationToken.None);
+
+        handler.Paths.ShouldBe(["/vereadores"]);
+    }
+
+    private sealed class RecordingHandler : HttpMessageHandler
+    {
+        public List<string> Paths { get; } = [];
+
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            Paths.Add(request.RequestUri!.AbsolutePath);
+            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent("<html></html>") });
+        }
+    }
+
+    private sealed class Factory(HttpMessageHandler handler) : IHttpClientFactory
+    {
+        public HttpClient CreateClient(string name) => new(handler, disposeHandler: false);
+    }
+}

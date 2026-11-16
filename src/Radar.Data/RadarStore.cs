@@ -102,7 +102,8 @@ public sealed class RadarStore(RadarDbContext db, TimeProvider clock)
             if (existing.TryGetValue(item.Source.SourceId, out var entity))
             {
                 entity.LastSeenAt = now;
-                if (entity.ContentHash == hash && entity.Category == item.Category)
+                // Locais entram na comparação: melhorar o extrator reclassifica o que já foi coletado.
+                if (entity.ContentHash == hash && entity.Category == item.Category && LocationKeys(entity.Locations).SequenceEqual(LocationKeys(item.Locations)))
                 {
                     unchanged++;
                     continue;
@@ -195,4 +196,7 @@ public sealed class RadarStore(RadarDbContext db, TimeProvider clock)
 
         return party;
     }
+
+    private static IEnumerable<string> LocationKeys(IEnumerable<PropositionLocation> locations) =>
+        locations.Select(l => $"{l.StreetNormalized}|{l.NeighborhoodNormalized}").Order(StringComparer.Ordinal);
 }
