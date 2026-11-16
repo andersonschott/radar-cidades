@@ -1,6 +1,6 @@
 # ADR 0004 — robots.txt ambíguo e Cloudflare no SISCAM de Piracicaba
 
-- **Status:** Proposta — aguarda o dono. Até a aprovação, `cities/piracicaba.json` fica com `"active": false` (fora do índice e do timer).
+- **Status:** Aceita pelo dono em 2026-11-16.
 - **Data:** 2026-11-16
 - **Decisor:** dono do projeto
 - **Relacionada:** SDD §8.2 e §8.4; ADR 0002; `docs/sources/siscam-piracicaba.md`

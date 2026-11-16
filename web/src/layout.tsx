@@ -1,7 +1,7 @@
 import { Suspense, use, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { Form, isRouteErrorResponse, Link, NavLink, Outlet, useLocation, useMatches, useNavigate, useParams, useRouteError } from 'react-router'
 import { Skeleton } from '@/components/ui/skeleton'
-import { formatDateTime, load, type Meta } from './data'
+import { formatDateTime, load, type CitySummary, type Meta } from './data'
 import { ArrowUpRight, LogoMark } from './logo'
 
 const footerText = 'Projeto independente. Sem vínculo com Câmara, Prefeitura ou partido. Dados oficiais, atualizados diariamente.'
@@ -59,11 +59,14 @@ export function CityLayout() {
       <header className="border-t-4 border-b border-t-city">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
           <Link to={`/${city}`} className="inline-flex min-h-11 items-center gap-2 text-lg font-black tracking-tight"><LogoMark className="size-7 shrink-0 text-city" /><span><span className="text-city">Radar</span> <Suspense fallback={null}><CityName city={city} /></Suspense></span></Link>
-          <nav aria-label="Seções" className="hidden gap-1 sm:flex">
-            {sections.map((s) => (
-              <NavLink key={s.to} end={s.end} to={`/${city}/${s.to}`} className={link('rounded-lg px-3 py-2 text-sm font-semibold')}>{s.label}</NavLink>
-            ))}
-          </nav>
+          <div className="flex items-center gap-2">
+            <nav aria-label="Seções" className="hidden gap-1 sm:flex">
+              {sections.map((s) => (
+                <NavLink key={s.to} end={s.end} to={`/${city}/${s.to}`} className={link('rounded-lg px-3 py-2 text-sm font-semibold')}>{s.label}</NavLink>
+              ))}
+            </nav>
+            <Suspense fallback={null}><CitySwitcher city={city} /></Suspense>
+          </div>
         </div>
       </header>
       {/* No celular a navegação fica embaixo, ao alcance do polegar. Colunas do tamanho do rótulo: "Como funciona" não quebra. */}
@@ -80,6 +83,27 @@ export function CityLayout() {
         </Suspense>
       </main>
     </>
+  )
+}
+
+/** Troca de cidade mantendo a seção ("Meu bairro" de uma vai para "Meu bairro" da outra); perfil de vereador volta para a lista. */
+function CitySwitcher({ city }: { city: string }) {
+  const cities = use(load<CitySummary[]>('cities.json')).data
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
+  if (cities.length < 2) return null
+  const section = pathname.split('/')[2] ?? ''
+  return (
+    <label className="relative">
+      <span className="sr-only">Cidade</span>
+      <select
+        value={city}
+        onChange={(e) => navigate(`/${e.currentTarget.value}${section ? `/${section}` : ''}`)}
+        className="min-h-11 max-w-44 cursor-pointer truncate rounded-lg border bg-background py-2 pr-8 pl-3 text-sm font-semibold"
+      >
+        {cities.map((c) => <option key={c.slug} value={c.slug}>{c.name}</option>)}
+      </select>
+    </label>
   )
 }
 
