@@ -73,31 +73,52 @@ export default function Councilors() {
   )
 }
 
-/** Crachá: foto, nome, partido e o que propôs, em grupos simples. */
+/** Crachá: foto, nome, partido e o que propôs, em grupos simples com barra proporcional. */
 function Badge({ city, councilor: c }: { city: string; councilor: Councilor }) {
   const totals = groupTotals(c.totals.byType)
+  const sum = c.totals.propositions || 1
   return (
-    <article className="flex h-full flex-col gap-3 rounded-2xl border bg-card p-4">
-      <Link to={c.slug} className="flex items-center gap-3">
-        <Avatar councilor={c} size="size-16" />
-        <span>
-          <span className="block text-xl font-black leading-tight">{c.name}</span>
-          <span className="mt-1 inline-block rounded-md bg-muted px-2 py-0.5 text-sm font-semibold">{c.party ?? 'Sem partido informado'}</span>
+    <article className="flex h-full flex-col overflow-hidden rounded-3xl border bg-card shadow-xs">
+      <Link to={c.slug} className="flex items-center gap-4 bg-muted/70 p-4 hover:bg-muted">
+        <Avatar councilor={c} size="size-20 ring-4 ring-background" />
+        <span className="min-w-0">
+          <span className="block text-2xl font-black leading-tight tracking-tight">{c.name}</span>
+          <span className="mt-2 inline-block rounded-md bg-foreground px-2 py-0.5 text-xs font-black uppercase tracking-wide text-background">{c.party ?? 'Sem partido informado'}</span>
         </span>
       </Link>
-      <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">O que propôs até agora</p>
-      <ul className="flex flex-col divide-y">
-        {groups.map((g) => (
-          <li key={g.key}>
-            <Link to={`/${city}/vereadores/${c.slug}?tipo=${g.key}`} className="flex min-h-11 items-center justify-between gap-2 text-base hover:underline">
-              <span>{g.label}</span>
-              <span className="flex items-center gap-2 font-black tabular-nums">{formatNumber(totals[g.key])}<span aria-hidden className="text-muted-foreground">›</span></span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div className="mt-auto"><OfficialLink href={c.profileUrl} label="Ficha oficial na Câmara" /></div>
+      <div className="flex flex-1 flex-col gap-3 p-4">
+        <div className="grid grid-cols-2 gap-3">
+          <Fig value={formatNumber(c.totals.propositions)} label="propostas desde a posse" />
+          <Fig value={formatNumber(c.totals.neighborhoodRequests)} label="pedidos com rua ou bairro" />
+        </div>
+        <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">O que propôs até agora</p>
+        <div aria-hidden className="flex h-2.5 gap-0.5 overflow-hidden rounded-full">
+          {groups.map((g) => totals[g.key] > 0 && <span key={g.key} className={g.color} style={{ width: `${(totals[g.key] / sum) * 100}%` }} />)}
+        </div>
+        <ul className="flex flex-col">
+          {groups.map((g) => (
+            <li key={g.key}>
+              <Link to={`/${city}/vereadores/${c.slug}?tipo=${g.key}`} className="flex min-h-11 items-center gap-3 text-base hover:underline">
+                <span aria-hidden className={`size-2.5 shrink-0 rounded-full ${g.color}`} />
+                <span className="flex-1">{g.label}</span>
+                <span className="font-black tabular-nums">{formatNumber(totals[g.key])}</span>
+                <span aria-hidden className="text-muted-foreground">›</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-auto border-t pt-1"><OfficialLink href={c.profileUrl} label="Ficha oficial na Câmara" /></div>
+      </div>
     </article>
+  )
+}
+
+function Fig({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="rounded-xl bg-muted/70 p-3">
+      <p className="text-xl font-black tabular-nums">{value}</p>
+      <p className="text-xs text-muted-foreground">{label}</p>
+    </div>
   )
 }
 

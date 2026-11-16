@@ -62,7 +62,7 @@ export default function City() {
               <Panel className="flex items-start gap-4">
                 <p className="w-24 shrink-0 text-3xl font-black tabular-nums tracking-tight">{formatNumber(totals[g.key])}</p>
                 <div>
-                  <p className="text-lg font-bold leading-tight">{g.label}</p>
+                  <p className="flex items-center gap-2 text-lg font-bold leading-tight"><span aria-hidden className={`size-2.5 shrink-0 rounded-full ${g.color}`} />{g.label}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{g.hint}</p>
                 </div>
               </Panel>

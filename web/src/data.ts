@@ -123,13 +123,13 @@ export const typeSingular: Record<string, string> = {
   Outro: 'Proposição',
 }
 
-/** Grupos em linguagem simples para quem não conhece os nomes do Regimento. */
+/** Grupos em linguagem simples para quem não conhece os nomes do Regimento. Cor por grupo, nunca por partido; sempre junto do rótulo. */
 export const groups = [
-  { key: 'melhoria', label: 'Pedidos de melhoria', types: ['Indicacao'], hint: 'Indicações: tapar buraco, podar árvore, trocar lâmpada. É um pedido; a Prefeitura decide se faz.' },
-  { key: 'cobranca', label: 'Perguntas e cobranças', types: ['Requerimento'], hint: 'Requerimentos: pedidos de informação à Prefeitura e a outros órgãos.' },
-  { key: 'mocao', label: 'Moções', types: ['Mocao'], hint: 'Homenagens, votos de pesar, apoio ou repúdio.' },
-  { key: 'lei', label: 'Propostas de lei', types: ['ProjetoLei', 'ProjetoLeiComplementar'], hint: 'Projetos que criam ou mudam regras da cidade.' },
-  { key: 'outros', label: 'Outros', types: ['ProjetoDecretoLegislativo', 'ProjetoResolucao', 'Emenda', 'Outro'], hint: 'Decretos legislativos, regras internas da Câmara e emendas.' },
+  { key: 'melhoria', color: 'bg-blue-600', label: 'Pedidos de melhoria', types: ['Indicacao'], hint: 'Indicações: tapar buraco, podar árvore, trocar lâmpada. É um pedido; a Prefeitura decide se faz.' },
+  { key: 'cobranca', color: 'bg-orange-600', label: 'Perguntas e cobranças', types: ['Requerimento'], hint: 'Requerimentos: pedidos de informação à Prefeitura e a outros órgãos.' },
+  { key: 'mocao', color: 'bg-pink-600', label: 'Moções', types: ['Mocao'], hint: 'Homenagens, votos de pesar, apoio ou repúdio.' },
+  { key: 'lei', color: 'bg-emerald-600', label: 'Propostas de lei', types: ['ProjetoLei', 'ProjetoLeiComplementar'], hint: 'Projetos que criam ou mudam regras da cidade.' },
+  { key: 'outros', color: 'bg-slate-500', label: 'Outros', types: ['ProjetoDecretoLegislativo', 'ProjetoResolucao', 'Emenda', 'Outro'], hint: 'Decretos legislativos, regras internas da Câmara e emendas.' },
 ] as const
 
 export type GroupKey = (typeof groups)[number]['key']
