@@ -58,7 +58,7 @@ export function CityLayout() {
       <Suspense fallback={null}><DocumentTitle city={city} /><CityAccent city={city} /></Suspense>
       <header className="border-t-4 border-b border-t-city">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-          <Link to={`/${city}`} className="inline-flex min-h-11 items-center gap-2 text-lg font-black tracking-tight"><LogoMark className="size-7 shrink-0 text-city" /><span><span className="text-city">Radar</span> <Suspense fallback={null}><CityName city={city} /></Suspense></span></Link>
+          <Link to={`/${city}`} className="inline-flex min-h-11 items-center gap-2 text-lg font-black tracking-tight"><LogoMark className="size-7 shrink-0 text-city" /><span className="whitespace-nowrap"><span className="text-city">Radar</span>{/* No celular o seletor ao lado já mostra a cidade; repetir o nome quebrava a linha. shortcut: vale enquanto houver 2+ cidades (seletor visível). */}<span className="hidden sm:inline"> <Suspense fallback={null}><CityName city={city} /></Suspense></span></span></Link>
           <div className="flex items-center gap-2">
             <nav aria-label="Seções" className="hidden gap-1 sm:flex">
               {sections.map((s) => (
@@ -99,7 +99,7 @@ function CitySwitcher({ city }: { city: string }) {
       <select
         value={city}
         onChange={(e) => navigate(`/${e.currentTarget.value}${section ? `/${section}` : ''}`)}
-        className="min-h-11 max-w-44 cursor-pointer truncate rounded-lg border bg-background py-2 pr-8 pl-3 text-sm font-semibold"
+        className="min-h-11 max-w-52 cursor-pointer truncate rounded-lg border bg-background py-2 pr-8 pl-3 text-sm font-semibold"
       >
         {cities.map((c) => <option key={c.slug} value={c.slug}>{c.name}</option>)}
       </select>

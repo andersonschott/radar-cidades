@@ -165,12 +165,12 @@ export function SalaryCounter({ meta }: { meta: Meta }) {
   return (
     <div className="rounded-3xl bg-city p-5 text-white">
       <p className="text-sm font-bold opacity-80">Salário pago aos {meta.seats} vereadores (estimativa)</p>
-      <p aria-hidden className="mt-1 font-display text-4xl font-black tabular-nums tracking-tight sm:text-5xl">{formatMoney(value)}</p>
+      <p aria-hidden className="mt-1 font-display text-[clamp(1.75rem,9vw,2.25rem)] font-black tabular-nums tracking-tight sm:text-5xl">{formatMoney(value)}</p>
       <p className="sr-only">Cerca de {formatMoney(Math.round(value / 1000) * 1000)}</p>
       <p className="mt-2 max-w-prose text-sm opacity-80">
         <SalaryFormula meta={meta} /> por mês desde {formatDate(meta.salaryFrom)}.
         {meta.thirteenthSalary ? ' Inclui o 13º.' : ' Não inclui 13º, que a resolução não prevê.'} Valor bruto, sem reajustes posteriores.{' '}
-        <a href={meta.salarySourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold whitespace-nowrap underline">{meta.salarySourceLabel ?? 'Ato oficial'} <ArrowUpRight /><span className="sr-only"> (abre em nova aba)</span></a>
+        <a href={meta.salarySourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold underline [overflow-wrap:anywhere]">{meta.salarySourceLabel ?? 'Ato oficial'} <ArrowUpRight /><span className="sr-only"> (abre em nova aba)</span></a>
       </p>
     </div>
   )
