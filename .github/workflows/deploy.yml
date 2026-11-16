@@ -1,0 +1,93 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
+env:
+  RESOURCE_GROUP: rg-radar-prod-brs
+
+jobs:
+  deploy:
+    # Inerte até o setup de docs/setup-azure.md criar as variables do repositório.
+    if: vars.AZURE_CLIENT_ID != ''
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: azure/login@v3
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Infra (Bicep)
+        id: infra
+        env:
+          SQL_ADMIN_LOGIN: ${{ vars.SQL_ADMIN_LOGIN }}
+          SQL_ADMIN_OBJECT_ID: ${{ vars.SQL_ADMIN_OBJECT_ID }}
+          DATA_CORS_ORIGINS: ${{ vars.DATA_CORS_ORIGINS }}
+        run: |
+          outputs=$(az deployment group create \
+            --resource-group "$RESOURCE_GROUP" \
+            --name "radar-${{ github.run_number }}" \
+            --parameters infra/parameters/prod.bicepparam \
+            --query properties.outputs -o json)
+          echo "function_app=$(jq -r .functionAppName.value <<<"$outputs")" >> "$GITHUB_OUTPUT"
+          echo "static_web_app=$(jq -r .staticWebAppName.value <<<"$outputs")" >> "$GITHUB_OUTPUT"
+          echo "data_base_url=$(jq -r .dataBaseUrl.value <<<"$outputs")" >> "$GITHUB_OUTPUT"
+
+      # Migrations EF (bundle) entram no M1, junto com o DbContext.
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+
+      - name: Publish Functions
+        run: dotnet publish src/Radar.Functions -c Release -o publish/functions
+
+      - uses: Azure/functions-action@v1
+        with:
+          app-name: ${{ steps.infra.outputs.function_app }}
+          package: publish/functions
+          sku: flexconsumption
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Build web
+        working-directory: web
+        env:
+          VITE_DATA_BASE_URL: ${{ steps.infra.outputs.data_base_url }}
+        run: |
+          npm ci
+          npm run build
+
+      - name: Token de deploy do SWA
+        id: swa
+        run: |
+          token=$(az staticwebapp secrets list --name "${{ steps.infra.outputs.static_web_app }}" \
+            --resource-group "$RESOURCE_GROUP" --query properties.apiKey -o tsv)
+          echo "::add-mask::$token"
+          echo "token=$token" >> "$GITHUB_OUTPUT"
+
+      - uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ steps.swa.outputs.token }}
+          action: upload
+          app_location: web/dist
+          skip_app_build: true
+          skip_api_build: true

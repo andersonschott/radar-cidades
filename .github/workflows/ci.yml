@@ -52,6 +52,17 @@ jobs:
       - run: npm test
       - run: npm run build
 
+  bicep-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: az bicep install
+      - run: az bicep build --file infra/main.bicep --stdout > /dev/null
+      - run: az bicep build-params --file infra/parameters/prod.bicepparam --stdout > /dev/null
+        env:
+          SQL_ADMIN_LOGIN: lint
+          SQL_ADMIN_OBJECT_ID: 00000000-0000-0000-0000-000000000000
+
   license-check:
     runs-on: ubuntu-latest
     steps:
