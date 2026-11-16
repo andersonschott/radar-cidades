@@ -11,7 +11,7 @@ const sorts = {
   propostas: { label: 'Mais propostas no total', compare: (a: Councilor, b: Councilor) => b.totals.propositions - a.totals.propositions },
   leis: { label: 'Mais propostas de lei', compare: (a: Councilor, b: Councilor) => groupTotals(b.totals.byType).lei - groupTotals(a.totals.byType).lei },
   ausencias: { label: 'Mais ausências registradas', compare: (a: Councilor, b: Councilor) => (b.attendance?.absent ?? -1) - (a.attendance?.absent ?? -1) },
-  aprovadas: { label: 'Mais leis aprovadas pela Câmara', compare: (a: Councilor, b: Councilor) => b.totals.bills.approved - a.totals.bills.approved },
+  aprovadas: { label: 'Mais leis aprovadas pela Câmara', compare: (a: Councilor, b: Councilor) => (b.totals.bills?.approved ?? -1) - (a.totals.bills?.approved ?? -1) },
   mocoes: { label: 'Mais moções', compare: (a: Councilor, b: Councilor) => groupTotals(b.totals.byType).mocao - groupTotals(a.totals.byType).mocao },
 } as const
 type SortKey = keyof typeof sorts
@@ -97,7 +97,7 @@ function Badge({ city, councilor: c }: { city: string; councilor: Councilor }) {
           <Fig value={formatNumber(c.totals.propositions)} label="propostas desde a posse" />
           <Fig value={formatNumber(c.totals.neighborhoodRequests)} label="pedidos com rua ou bairro" />
         </div>
-        {c.totals.bills.total > 0 && (
+        {c.totals.bills && c.totals.bills.total > 0 && (
           <p className="text-sm">
             <strong className="text-base tabular-nums">{formatNumber(c.totals.bills.approved)} de {formatNumber(c.totals.bills.total)}</strong> propostas de lei aprovadas pela Câmara
           </p>

@@ -19,7 +19,8 @@ export interface Totals {
   propositions: number
   neighborhoodRequests: number
   byType: Record<string, number>
-  bills: Bills
+  /** Opcional: JSON publicado antes do campo (ou ainda em cache) não o traz. */
+  bills?: Bills
 }
 
 /** Projetos de lei pela situação no site da Câmara. Aprovado = votado pela Câmara; a sanção do prefeito não aparece lá. */
