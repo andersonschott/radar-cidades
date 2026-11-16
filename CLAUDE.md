@@ -1,6 +1,6 @@
 # Radar Cidades — instruções para agentes
 
-A especificação completa é [`docs/SDD.md`](docs/SDD.md). Leia a seção do marco em execução antes de codar. Este arquivo resume só o que vale para toda tarefa.
+Antes de trabalho substancial, siga o roteamento do [`AGENTS.md`](AGENTS.md) (`ub-workflow`: `.ub-workflows/status.md` primeiro). A especificação completa é [`docs/SDD.md`](docs/SDD.md). Leia a seção do marco em execução antes de codar. Este arquivo resume só o que vale para toda tarefa.
 
 ## Stack (SDD §4)
 
