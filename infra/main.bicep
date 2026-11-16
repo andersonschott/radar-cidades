@@ -202,7 +202,7 @@ resource sqlDb 'Microsoft.Sql/servers/databases@2023-08-01' = {
   properties: {
     useFreeLimit: true
     freeLimitExhaustionBehavior: 'AutoPause'
-    autoPauseDelay: 60
+    autoPauseDelay: 15
     minCapacity: json('0.5')
   }
 }
