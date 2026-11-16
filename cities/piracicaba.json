@@ -1,0 +1,22 @@
+{
+  "slug": "piracicaba",
+  "name": "Piracicaba",
+  "uf": "SP",
+  "ibgeCode": 3538709,
+  "source": "Siscam",
+  "baseUrl": "https://siave.camarapiracicaba.sp.gov.br/",
+  "seats": 23,
+  "monthlySalary": 18500.00,
+  "salaryFrom": "2025-01-01",
+  "salarySourceLabel": "Resolução nº 10/2023 (Projeto de Resolução nº 14/2023)",
+  "salarySourceUrl": "https://siave.camarapiracicaba.sp.gov.br/Documentos/Documento/395706",
+  "thirteenthSalary": true,
+  "thirteenthSalaryNote": "A Resolução nº 10/2023, art. 1º, §2º, assegura os direitos do art. 7º, VIII (13º) e XVII (1/3 de férias) da Constituição, pagos até 20 de dezembro. O ato não fixa valor diferente para o presidente.",
+  "termStart": "2025-01-01",
+  "active": true,
+  "siscam": {
+    "searchIndex": 78,
+    "documentTypes": { "Indicacao": 135, "Requerimento": 134, "Mocao": 136, "ProjetoLei": 129, "ProjetoLeiComplementar": 130, "ProjetoDecretoLegislativo": 131, "ProjetoResolucao": 132, "Outro": 133 }
+  },
+  "capabilities": ["councilors", "propositions", "attendance"]
+}
