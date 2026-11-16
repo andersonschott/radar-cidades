@@ -1,6 +1,6 @@
 // Posição de bairro pelas ruas: mediana dos centros das ruas citadas junto com ele nos pedidos.
 // Uso: node tools/geo/streets.js <requests.json publicado> <ruas Overpass .json> cities/<slug>.neighborhoods.json
-// Ruas: [out:json];area["IBGE:GEOCODIGO"="<ibge>"]->.a;way(area.a)["highway"]["name"];out center tags;
+// Ruas: baixadas por tools/geo/overpass.js (uma consulta Overpass por município, pelo código IBGE).
 // Só preenche bairro sem "match" do OSM; nos que têm, grava o desvio do método ("streetCheckKm") como prova
 // e, se o desvio passar de MAX_DISAGREE_KM, troca pela posição das ruas e guarda o ponto do OSM em "osmDisagrees".
 const fs = require('fs')
@@ -72,3 +72,10 @@ fs.writeFileSync(outPath, JSON.stringify(file, null, 1) + '\n')
 const v = Object.values(file.neighborhoods), all = v.reduce((a, x) => a + x.total, 0), located = v.filter((x) => x.match)
 console.log(`ruas OSM ${streets.size} | bairros ${v.length} | localizados ${located.length} (${filled} pelas ruas) | pedidos ${located.reduce((a, x) => a + x.total, 0)} de ${all}`)
 if (checked.length) console.log(`prova nos bairros do OSM (${checked.length}): desvio mediano ${median(checked).toFixed(2)} km, máximo ${Math.max(...checked).toFixed(2)} km`)
+// Sanidade: todo ponto tem de cair no retângulo do município gravado pelo geocode.js.
+if (file.bbox) {
+  const [w, s, e, n] = file.bbox
+  const out = Object.entries(file.neighborhoods).filter(([, x]) => x.match && !(x.match.lon >= w && x.match.lon <= e && x.match.lat >= s && x.match.lat <= n))
+  console.log(out.length ? `FORA do retângulo do município: ${out.map(([k]) => k).join(', ')}` : 'todos os pontos dentro do retângulo do município')
+  if (out.length) process.exitCode = 1
+}

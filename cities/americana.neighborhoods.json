@@ -1,0 +1,2093 @@
+{
+ "source": "OpenStreetMap via Nominatim",
+ "license": "ODbL 1.0 — © colaboradores do OpenStreetMap",
+ "neighborhoods": {
+  "jardim ipiranga": {
+   "names": [
+    "jardim ipiranga"
+   ],
+   "total": 67,
+   "query": "jardim ipiranga",
+   "match": {
+    "name": "Jardim Ipiranga",
+    "lat": -22.7534339,
+    "lon": -47.3599067,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/11076938703"
+   },
+   "label": "jardim ipiranga",
+   "search": "jardim ipiranga",
+   "streetCheckKm": 0.32
+  },
+  "parque liberdade": {
+   "names": [
+    "parque da liberdade"
+   ],
+   "total": 38,
+   "query": "parque da liberdade",
+   "match": {
+    "lat": -22.71308,
+    "lon": -47.35655,
+    "category": "streets",
+    "type": "median",
+    "streets": 15,
+    "spreadKm": 0.26
+   },
+   "rejected": [
+    "landuse/construction: UBS do Parque da Liberdade (Americana)"
+   ],
+   "label": "parque da liberdade",
+   "search": "parque da liberdade"
+  },
+  "jardim paz": {
+   "names": [
+    "jardim da paz"
+   ],
+   "total": 30,
+   "query": "jardim da paz",
+   "match": {
+    "name": "Jardim da Paz",
+    "lat": -22.709662,
+    "lon": -47.3633882,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4276168910"
+   },
+   "label": "jardim da paz",
+   "search": "jardim da paz",
+   "streetCheckKm": 0.22
+  },
+  "parque novo mundo": {
+   "names": [
+    "parque novo mundo"
+   ],
+   "total": 30,
+   "query": "parque novo mundo",
+   "match": {
+    "lat": -22.77328,
+    "lon": -47.3411,
+    "category": "streets",
+    "type": "median",
+    "streets": 17,
+    "spreadKm": 0.36
+   },
+   "rejected": [
+    "man_made/water_tower: Reservatório R09 (Parque Novo Mundo) (Americana)"
+   ],
+   "label": "parque novo mundo",
+   "search": "parque novo mundo"
+  },
+  "sao jeronimo": {
+   "names": [
+    "parque sao jeronimo",
+    "sao jeronimo"
+   ],
+   "total": 20,
+   "query": "sao jeronimo",
+   "match": {
+    "lat": -22.71182,
+    "lon": -47.36506,
+    "category": "streets",
+    "type": "median",
+    "streets": 9,
+    "spreadKm": 0.5
+   },
+   "rejected": [
+    "highway/tertiary: Avenida São Jerônimo (Americana)",
+    "highway/secondary: Avenida São Jerônimo (Americana)",
+    "highway/tertiary: Avenida São Jerônimo (Americana)"
+   ],
+   "label": "sao jeronimo",
+   "search": "sao jeronimo"
+  },
+  "vila bertini": {
+   "names": [
+    "vila bertine ii",
+    "vila bertini",
+    "vila bertini ii"
+   ],
+   "total": 20,
+   "query": "vila bertini",
+   "match": {
+    "lat": -22.72281,
+    "lon": -47.30178,
+    "category": "streets",
+    "type": "median",
+    "streets": 8,
+    "spreadKm": 0.24
+   },
+   "rejected": [],
+   "label": "vila bertini",
+   "search": "vila bertini"
+  },
+  "jardim balsa": {
+   "names": [
+    "jardim da balsa",
+    "jardim da balsa 2",
+    "jardim da balsa i",
+    "jardim da balsa ii"
+   ],
+   "total": 20,
+   "query": "jardim da balsa",
+   "match": {
+    "lat": -22.70009,
+    "lon": -47.3823,
+    "category": "streets",
+    "type": "median",
+    "streets": 10,
+    "spreadKm": 0.19
+   },
+   "rejected": [],
+   "label": "jardim da balsa",
+   "search": "jardim balsa"
+  },
+  "parque nacoes": {
+   "names": [
+    "parque das nacoes"
+   ],
+   "total": 18,
+   "query": "parque das nacoes",
+   "match": {
+    "lat": -22.72531,
+    "lon": -47.3484,
+    "category": "streets",
+    "type": "median",
+    "streets": 9,
+    "spreadKm": 0.42
+   },
+   "rejected": [
+    "leisure/park: Praça das Nações (Americana)"
+   ],
+   "label": "parque das nacoes",
+   "search": "parque das nacoes"
+  },
+  "cidade jardim": {
+   "names": [
+    "cidade jardim",
+    "cidade jardim i",
+    "cidade jardim ii"
+   ],
+   "total": 18,
+   "query": "cidade jardim ii",
+   "match": {
+    "name": "Cidade Jardim II",
+    "lat": -22.7625036,
+    "lon": -47.3366492,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5251328172"
+   },
+   "label": "cidade jardim ii",
+   "search": "cidade jardim",
+   "streetCheckKm": 0.29
+  },
+  "jardim sao paulo": {
+   "names": [
+    "jardim e jardim sao paulo",
+    "jardim sao paulo",
+    "jardim sao paulo iii"
+   ],
+   "total": 17,
+   "query": "jardim sao paulo",
+   "match": {
+    "name": "Jardim São Paulo",
+    "lat": -22.7560139,
+    "lon": -47.3384104,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5218872737"
+   },
+   "label": "jardim sao paulo",
+   "search": "jardim sao paulo",
+   "streetCheckKm": 0.29
+  },
+  "sao domingos": {
+   "names": [
+    "jardim sao domingos",
+    "sao domingos"
+   ],
+   "total": 16,
+   "query": "jardim sao domingos",
+   "match": {
+    "lat": -22.73244,
+    "lon": -47.3401,
+    "category": "streets",
+    "type": "median",
+    "streets": 9,
+    "spreadKm": 0.23
+   },
+   "rejected": [],
+   "label": "jardim sao domingos",
+   "search": "sao domingos"
+  },
+  "parque gramado": {
+   "names": [
+    "parque gramado"
+   ],
+   "total": 15,
+   "query": "parque gramado",
+   "match": {
+    "lat": -22.7204,
+    "lon": -47.36062,
+    "category": "streets",
+    "type": "median",
+    "streets": 4,
+    "spreadKm": 0.26
+   },
+   "rejected": [
+    "landuse/cemetery: Cemitério Parque Gramado (Americana)"
+   ],
+   "label": "parque gramado",
+   "search": "parque gramado"
+  },
+  "campo limpo": {
+   "names": [
+    "campo limpo"
+   ],
+   "total": 15,
+   "query": "campo limpo",
+   "match": {
+    "name": "Campo Limpo",
+    "lat": -22.7365396,
+    "lon": -47.3082586,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/5243602244"
+   },
+   "label": "campo limpo",
+   "search": "campo limpo",
+   "streetCheckKm": 0.23
+  },
+  "vila gallo": {
+   "names": [
+    "vila gallo"
+   ],
+   "total": 14,
+   "query": "vila gallo",
+   "match": {
+    "name": "Vila Gallo",
+    "lat": -22.7470996,
+    "lon": -47.3273709,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5219014889"
+   },
+   "label": "vila gallo",
+   "search": "vila gallo",
+   "streetCheckKm": 0.55
+  },
+  "vila frezzarim": {
+   "names": [
+    "vila frezzarim",
+    "vila frezzarin"
+   ],
+   "total": 14,
+   "query": "vila frezzarim",
+   "match": {
+    "lat": -22.74973,
+    "lon": -47.34781,
+    "category": "streets",
+    "type": "median",
+    "streets": 3,
+    "spreadKm": 0.53
+   },
+   "rejected": [],
+   "label": "vila frezzarim",
+   "search": "vila frezzarim"
+  },
+  "jardim bela vista": {
+   "names": [
+    "jardim bela vista"
+   ],
+   "total": 13,
+   "query": "jardim bela vista",
+   "match": {
+    "name": "Jardim Bela Vista",
+    "lat": -22.732988,
+    "lon": -47.332268,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/5255630422"
+   },
+   "label": "jardim bela vista",
+   "search": "jardim bela vista",
+   "streetCheckKm": 0.69
+  },
+  "antonio zanaga": {
+   "names": [
+    "antonio zanaga",
+    "antonio zanaga i",
+    "antonio zanaga ii"
+   ],
+   "total": 13,
+   "query": "antonio zanaga",
+   "match": {
+    "lat": -22.70161,
+    "lon": -47.29688,
+    "category": "streets",
+    "type": "median",
+    "streets": 9,
+    "spreadKm": 0.44
+   },
+   "rejected": [
+    "highway/motorway: Rodovia Anhanguera (Americana)"
+   ],
+   "label": "antonio zanaga",
+   "search": "antonio zanaga"
+  },
+  "nova carioba": {
+   "names": [
+    "nova carioba",
+    "parque nova carioba"
+   ],
+   "total": 13,
+   "query": "parque nova carioba",
+   "match": {
+    "lat": -22.71653,
+    "lon": -47.3167,
+    "category": "streets",
+    "type": "median",
+    "streets": 8,
+    "spreadKm": 0.43
+   },
+   "rejected": [],
+   "label": "parque nova carioba",
+   "search": "nova carioba"
+  },
+  "jardim terramerica": {
+   "names": [
+    "jardim terramerica",
+    "jardim terramerica i",
+    "jardim terramerica ii",
+    "jardim terramerica iii"
+   ],
+   "total": 12,
+   "query": "jardim terramerica",
+   "match": {
+    "name": "Jardim Terramérica",
+    "lat": -22.7656063,
+    "lon": -47.3521686,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/12577092066"
+   },
+   "label": "jardim terramerica",
+   "search": "jardim terramerica",
+   "streetCheckKm": 0.09
+  },
+  "jardim boer": {
+   "names": [
+    "jardim boer"
+   ],
+   "total": 12,
+   "query": "jardim boer",
+   "match": {
+    "lat": -22.74132,
+    "lon": -47.2851,
+    "category": "streets",
+    "type": "median",
+    "streets": 7,
+    "spreadKm": 0.63
+   },
+   "rejected": [
+    "place/neighbourhood: Jardim Boer I (Americana)",
+    "amenity/clinic: UBS 8 - Jardim Boer (Americana)"
+   ],
+   "label": "jardim boer",
+   "search": "jardim boer"
+  },
+  "vila elvira": {
+   "names": [
+    "vila elvira"
+   ],
+   "total": 11,
+   "query": "vila elvira",
+   "match": {
+    "lat": -22.75359,
+    "lon": -47.32672,
+    "category": "streets",
+    "type": "median",
+    "streets": 5,
+    "spreadKm": 0.21
+   },
+   "rejected": [],
+   "label": "vila elvira",
+   "search": "vila elvira"
+  },
+  "jardim guanabara": {
+   "names": [
+    "jardim guanabara"
+   ],
+   "total": 11,
+   "query": "jardim guanabara",
+   "match": {
+    "lat": -22.71947,
+    "lon": -47.33131,
+    "category": "streets",
+    "type": "median",
+    "streets": 5,
+    "spreadKm": 0.1
+   },
+   "rejected": [
+    "amenity/clinic: UBS Jardim Guanabara (Americana)"
+   ],
+   "label": "jardim guanabara",
+   "search": "jardim guanabara"
+  },
+  "vila santa maria": {
+   "names": [
+    "vila santa maria",
+    "villa santa maria"
+   ],
+   "total": 11,
+   "query": "vila santa maria",
+   "match": {
+    "lat": -22.72664,
+    "lon": -47.34281,
+    "category": "streets",
+    "type": "median",
+    "streets": 7,
+    "spreadKm": 0.3
+   },
+   "rejected": [],
+   "label": "vila santa maria",
+   "search": "vila santa maria"
+  },
+  "jardim sao roque": {
+   "names": [
+    "jardim sao roque"
+   ],
+   "total": 11,
+   "query": "jardim sao roque",
+   "match": {
+    "lat": -22.73013,
+    "lon": -47.35425,
+    "category": "streets",
+    "type": "median",
+    "streets": 7,
+    "spreadKm": 0.3
+   },
+   "rejected": [],
+   "label": "jardim sao roque",
+   "search": "jardim sao roque"
+  },
+  "jardim paulistano": {
+   "names": [
+    "jardim paulistano"
+   ],
+   "total": 10,
+   "query": "jardim paulistano",
+   "match": {
+    "name": "Jardim Paulistano",
+    "lat": -22.7253711,
+    "lon": -47.337275,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5213381082"
+   },
+   "label": "jardim paulistano",
+   "search": "jardim paulistano",
+   "streetCheckKm": 0.3
+  },
+  "jardim girassol": {
+   "names": [
+    "jardim girassol"
+   ],
+   "total": 10,
+   "query": "jardim girassol",
+   "match": null,
+   "rejected": [
+    "highway/motorway: Rodovia Luiz de Queiroz (Americana)",
+    "highway/motorway: Rodovia Luiz de Queiroz (Americana)",
+    "highway/motorway: Rodovia Luiz de Queiroz (Americana)"
+   ],
+   "label": "jardim girassol",
+   "search": "jardim girassol"
+  },
+  "residencial jaguari": {
+   "names": [
+    "parque residencial jaguari",
+    "residencial jaguari"
+   ],
+   "total": 10,
+   "query": "parque residencial jaguari",
+   "match": {
+    "lat": -22.71724,
+    "lon": -47.30985,
+    "category": "streets",
+    "type": "median",
+    "streets": 7,
+    "spreadKm": 0.26
+   },
+   "rejected": [],
+   "label": "parque residencial jaguari",
+   "search": "residencial jaguari"
+  },
+  "jardim primavera": {
+   "names": [
+    "jardim primavera"
+   ],
+   "total": 9,
+   "query": "jardim primavera",
+   "match": {
+    "lat": -22.77089,
+    "lon": -47.34015,
+    "category": "streets",
+    "type": "median",
+    "streets": 4,
+    "spreadKm": 0.1
+   },
+   "rejected": [],
+   "label": "jardim primavera",
+   "search": "jardim primavera"
+  },
+  "riviera tamborlim": {
+   "names": [
+    "riviera tamborlim"
+   ],
+   "total": 9,
+   "query": "riviera tamborlim",
+   "match": null,
+   "rejected": [],
+   "label": "riviera tamborlim",
+   "search": "riviera tamborlim"
+  },
+  "vila mariana": {
+   "names": [
+    "vila mariana"
+   ],
+   "total": 9,
+   "query": "vila mariana",
+   "match": {
+    "lat": -22.72326,
+    "lon": -47.305,
+    "category": "streets",
+    "type": "median",
+    "streets": 4,
+    "spreadKm": 0.2
+   },
+   "rejected": [],
+   "label": "vila mariana",
+   "search": "vila mariana"
+  },
+  "chacara machadinho": {
+   "names": [
+    "chacara machadinho",
+    "chacara machadinho i"
+   ],
+   "total": 9,
+   "query": "chacara machadinho",
+   "match": null,
+   "rejected": [],
+   "label": "chacara machadinho",
+   "search": "chacara machadinho"
+  },
+  "jardim gloria": {
+   "names": [
+    "jardim gloria"
+   ],
+   "total": 6,
+   "query": "jardim gloria",
+   "match": {
+    "lat": -22.75876,
+    "lon": -47.34398,
+    "category": "streets",
+    "type": "median",
+    "streets": 4,
+    "spreadKm": 0.18
+   },
+   "rejected": [],
+   "label": "jardim gloria",
+   "search": "jardim gloria"
+  },
+  "jardim america 2": {
+   "names": [
+    "jardim america ii"
+   ],
+   "total": 5,
+   "query": "jardim america ii",
+   "match": null,
+   "rejected": [],
+   "label": "jardim america ii",
+   "search": "jardim america ii"
+  },
+  "vila jones": {
+   "names": [
+    "vila jones"
+   ],
+   "total": 5,
+   "query": "vila jones",
+   "match": {
+    "lat": -22.73836,
+    "lon": -47.33796,
+    "category": "streets",
+    "type": "median",
+    "streets": 4,
+    "spreadKm": 0.19
+   },
+   "rejected": [
+    "leisure/park: Quadra de Esportes da Vila Jones (Americana)"
+   ],
+   "label": "vila jones",
+   "search": "vila jones"
+  },
+  "vila santa ines": {
+   "names": [
+    "vila santa ines"
+   ],
+   "total": 5,
+   "query": "vila santa ines",
+   "match": null,
+   "rejected": [],
+   "label": "vila santa ines",
+   "search": "vila santa ines"
+  },
+  "jardim novo paraiso": {
+   "names": [
+    "jardim novo paraiso"
+   ],
+   "total": 5,
+   "query": "jardim novo paraiso",
+   "match": {
+    "lat": -22.71605,
+    "lon": -47.28504,
+    "category": "streets",
+    "type": "median",
+    "streets": 3,
+    "spreadKm": 0.06
+   },
+   "rejected": [],
+   "label": "jardim novo paraiso",
+   "search": "jardim novo paraiso"
+  },
+  "jardim colina": {
+   "names": [
+    "jardim colina",
+    "jardim da colina"
+   ],
+   "total": 5,
+   "query": "jardim colina",
+   "match": {
+    "name": "Jardim Colina",
+    "lat": -22.7386359,
+    "lon": -47.3204827,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/5253317353"
+   },
+   "label": "jardim colina",
+   "search": "jardim colina",
+   "streetCheckKm": 0.29
+  },
+  "dona rosa": {
+   "names": [
+    "dona rosa",
+    "jardim residencial dona rosa",
+    "residencial dona rosa"
+   ],
+   "total": 5,
+   "query": "dona rosa",
+   "match": null,
+   "rejected": [],
+   "label": "dona rosa",
+   "search": "dona rosa"
+  },
+  "jardim santana": {
+   "names": [
+    "jardim santana"
+   ],
+   "total": 4,
+   "query": "jardim santana",
+   "match": null,
+   "rejected": [],
+   "label": "jardim santana",
+   "search": "jardim santana"
+  },
+  "jardim dona judith": {
+   "names": [
+    "jardim dona judith"
+   ],
+   "total": 4,
+   "query": "jardim dona judith",
+   "match": null,
+   "rejected": [],
+   "label": "jardim dona judith",
+   "search": "jardim dona judith"
+  },
+  "jaguari": {
+   "names": [
+    "jaguari"
+   ],
+   "total": 4,
+   "query": "jaguari",
+   "match": null,
+   "rejected": [
+    "highway/residential: Rua Rio Jaguari (Americana)",
+    "amenity/school: Casa da Criança Jaguari (Americana)",
+    "amenity/clinic: ESF Jaguari (Americana)"
+   ],
+   "label": "jaguari",
+   "search": "jaguari"
+  },
+  "centro": {
+   "names": [
+    "centro"
+   ],
+   "total": 4,
+   "query": "centro",
+   "match": {
+    "name": "Centro",
+    "lat": -22.7399748,
+    "lon": -47.3300552,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5231741232"
+   },
+   "label": "centro",
+   "search": "centro",
+   "streetCheckKm": 0.67
+  },
+  "sao manoel": {
+   "names": [
+    "sao manoel"
+   ],
+   "total": 4,
+   "query": "sao manoel",
+   "match": {
+    "name": "São Manoel",
+    "lat": -22.7279898,
+    "lon": -47.3153991,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5213388249"
+   },
+   "label": "sao manoel",
+   "search": "sao manoel"
+  },
+  "vila omar": {
+   "names": [
+    "vila omar"
+   ],
+   "total": 4,
+   "query": "vila omar",
+   "match": null,
+   "rejected": [],
+   "label": "vila omar",
+   "search": "vila omar"
+  },
+  "jardim bertoni": {
+   "names": [
+    "jardim bertoni"
+   ],
+   "total": 4,
+   "query": "jardim bertoni",
+   "match": null,
+   "rejected": [],
+   "label": "jardim bertoni",
+   "search": "jardim bertoni"
+  },
+  "jardim orquideas": {
+   "names": [
+    "jardim das orquideas"
+   ],
+   "total": 4,
+   "query": "jardim das orquideas",
+   "match": {
+    "lat": -22.70517,
+    "lon": -47.37123,
+    "category": "streets",
+    "type": "median",
+    "streets": 3,
+    "spreadKm": 0.14
+   },
+   "rejected": [],
+   "label": "jardim das orquideas",
+   "search": "jardim das orquideas"
+  },
+  "loteamento industrial nossa senhora fatima": {
+   "names": [
+    "loteamento industrial nossa senhora de fatima"
+   ],
+   "total": 4,
+   "query": "loteamento industrial nossa senhora de fatima",
+   "match": null,
+   "rejected": [],
+   "label": "loteamento industrial nossa senhora de fatima",
+   "search": "loteamento industrial nossa senhora de fatima"
+  },
+  "chacara girassol": {
+   "names": [
+    "chacara girassol"
+   ],
+   "total": 4,
+   "query": "chacara girassol",
+   "match": null,
+   "rejected": [],
+   "label": "chacara girassol",
+   "search": "chacara girassol"
+  },
+  "catharina zanaga": {
+   "names": [
+    "catharina zanaga"
+   ],
+   "total": 3,
+   "query": "catharina zanaga",
+   "match": null,
+   "rejected": [],
+   "label": "catharina zanaga",
+   "search": "catharina zanaga"
+  },
+  "morada sol": {
+   "names": [
+    "morada do sol"
+   ],
+   "total": 3,
+   "query": "morada do sol",
+   "match": {
+    "name": "Morada do Sol",
+    "lat": -22.7197855,
+    "lon": -47.3493129,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "way/1351697861"
+   },
+   "label": "morada do sol",
+   "search": "morada do sol"
+  },
+  "parque residencial nardini": {
+   "names": [
+    "parque residencial nardini"
+   ],
+   "total": 3,
+   "query": "parque residencial nardini",
+   "match": null,
+   "rejected": [],
+   "label": "parque residencial nardini",
+   "search": "parque residencial nardini"
+  },
+  "vila nossa sra": {
+   "names": [
+    "vila nossa sra"
+   ],
+   "total": 3,
+   "query": "vila nossa sra",
+   "match": null,
+   "rejected": [],
+   "label": "vila nossa sra",
+   "search": "vila nossa sra"
+  },
+  "residencial vale nogueiras": {
+   "names": [
+    "residencial vale das nogueiras"
+   ],
+   "total": 3,
+   "query": "residencial vale das nogueiras",
+   "match": null,
+   "rejected": [],
+   "label": "residencial vale das nogueiras",
+   "search": "residencial vale das nogueiras"
+  },
+  "jardim mata": {
+   "names": [
+    "jardim da mata"
+   ],
+   "total": 3,
+   "query": "jardim da mata",
+   "match": null,
+   "rejected": [],
+   "label": "jardim da mata",
+   "search": "jardim da mata"
+  },
+  "jardim alvorada": {
+   "names": [
+    "jardim alvorada"
+   ],
+   "total": 3,
+   "query": "jardim alvorada",
+   "match": null,
+   "rejected": [],
+   "label": "jardim alvorada",
+   "search": "jardim alvorada"
+  },
+  "vila santa catarina": {
+   "names": [
+    "vila santa catarina"
+   ],
+   "total": 3,
+   "query": "vila santa catarina",
+   "match": {
+    "name": "Vila Santa Catarina",
+    "lat": -22.7511013,
+    "lon": -47.3279949,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5251324713"
+   },
+   "label": "vila santa catarina",
+   "search": "vila santa catarina",
+   "streetCheckKm": 0.51
+  },
+  "chacara pantano": {
+   "names": [
+    "chacara pantano"
+   ],
+   "total": 3,
+   "query": "chacara pantano",
+   "match": {
+    "lat": -22.74228,
+    "lon": -47.33523,
+    "category": "streets",
+    "type": "median",
+    "streets": 3,
+    "spreadKm": 0.09
+   },
+   "rejected": [],
+   "label": "chacara pantano",
+   "search": "chacara pantano"
+  },
+  "residencial lindarma": {
+   "names": [
+    "residencial lindarma"
+   ],
+   "total": 3,
+   "query": "residencial lindarma",
+   "match": null,
+   "rejected": [],
+   "label": "residencial lindarma",
+   "search": "residencial lindarma"
+  },
+  "horto florestal jacyra": {
+   "names": [
+    "horto florestal jacyra"
+   ],
+   "total": 3,
+   "query": "horto florestal jacyra",
+   "match": null,
+   "rejected": [],
+   "label": "horto florestal jacyra",
+   "search": "horto florestal jacyra"
+  },
+  "vila dainese": {
+   "names": [
+    "vila dainese"
+   ],
+   "total": 2,
+   "query": "vila dainese",
+   "match": {
+    "name": "Vila Dainese",
+    "lat": -22.7249403,
+    "lon": -47.3599738,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5217331433"
+   },
+   "label": "vila dainese",
+   "search": "vila dainese"
+  },
+  "jardim progresso": {
+   "names": [
+    "jardim progresso"
+   ],
+   "total": 2,
+   "query": "jardim progresso",
+   "match": {
+    "lat": -22.72491,
+    "lon": -47.33688,
+    "category": "streets",
+    "type": "median",
+    "streets": 3,
+    "spreadKm": 0.28
+   },
+   "rejected": [],
+   "label": "jardim progresso",
+   "search": "jardim progresso"
+  },
+  "jardim santo antonio": {
+   "names": [
+    "jardim santo antonio"
+   ],
+   "total": 2,
+   "query": "jardim santo antonio",
+   "match": null,
+   "rejected": [],
+   "label": "jardim santo antonio",
+   "search": "jardim santo antonio"
+  },
+  "jardim planalto": {
+   "names": [
+    "jardim planalto"
+   ],
+   "total": 2,
+   "query": "jardim planalto",
+   "match": null,
+   "rejected": [],
+   "label": "jardim planalto",
+   "search": "jardim planalto"
+  },
+  "jardim santa eliza": {
+   "names": [
+    "jardim santa eliza"
+   ],
+   "total": 2,
+   "query": "jardim santa eliza",
+   "match": null,
+   "rejected": [],
+   "label": "jardim santa eliza",
+   "search": "jardim santa eliza"
+  },
+  "vila galos": {
+   "names": [
+    "vila dos galos"
+   ],
+   "total": 2,
+   "query": "vila dos galos",
+   "match": null,
+   "rejected": [],
+   "label": "vila dos galos",
+   "search": "vila dos galos"
+  },
+  "jardim nossa senhora fatima": {
+   "names": [
+    "jardim nossa senhora de fatima"
+   ],
+   "total": 2,
+   "query": "jardim nossa senhora de fatima",
+   "match": {
+    "name": "Jardim Nossa Senhora de Fátima.",
+    "lat": -22.7418163,
+    "lon": -47.3109717,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5218998055"
+   },
+   "label": "jardim nossa senhora de fatima",
+   "search": "jardim nossa senhora de fatima"
+  },
+  "sao benedito": {
+   "names": [
+    "jardim sao benedito",
+    "sao benedito"
+   ],
+   "total": 2,
+   "query": "sao benedito",
+   "match": {
+    "name": "São Benedito",
+    "lat": -22.7417186,
+    "lon": -47.2380621,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/5222569978"
+   },
+   "label": "sao benedito",
+   "search": "sao benedito"
+  },
+  "sao luiz": {
+   "names": [
+    "sao luiz"
+   ],
+   "total": 2,
+   "query": "sao luiz",
+   "match": null,
+   "rejected": [],
+   "label": "sao luiz",
+   "search": "sao luiz"
+  },
+  "jardim brasil": {
+   "names": [
+    "jardim brasil"
+   ],
+   "total": 2,
+   "query": "jardim brasil",
+   "match": {
+    "name": "Jardim Brasil",
+    "lat": -22.7167917,
+    "lon": -47.2941442,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/11076203917"
+   },
+   "label": "jardim brasil",
+   "search": "jardim brasil"
+  },
+  "jardim lago": {
+   "names": [
+    "jardim do lago"
+   ],
+   "total": 2,
+   "query": "jardim do lago",
+   "match": null,
+   "rejected": [],
+   "label": "jardim do lago",
+   "search": "jardim do lago"
+  },
+  "jardim sao jose": {
+   "names": [
+    "jardim sao jose"
+   ],
+   "total": 2,
+   "query": "jardim sao jose",
+   "match": {
+    "name": "Jardim São José",
+    "lat": -22.7739501,
+    "lon": -47.3485175,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/11077346402"
+   },
+   "label": "jardim sao jose",
+   "search": "jardim sao jose"
+  },
+  "jardim miriam": {
+   "names": [
+    "jardim miriam"
+   ],
+   "total": 2,
+   "query": "jardim miriam",
+   "match": {
+    "lat": -22.74439,
+    "lon": -47.35023,
+    "category": "streets",
+    "type": "median",
+    "streets": 3,
+    "spreadKm": 0.06
+   },
+   "rejected": [],
+   "label": "jardim miriam",
+   "search": "jardim miriam"
+  },
+  "vila santo antonio": {
+   "names": [
+    "vila santo antonio"
+   ],
+   "total": 2,
+   "query": "vila santo antonio",
+   "match": null,
+   "rejected": [],
+   "label": "vila santo antonio",
+   "search": "vila santo antonio"
+  },
+  "jardim tonica": {
+   "names": [
+    "jardim tonica"
+   ],
+   "total": 2,
+   "query": "jardim tonica",
+   "match": null,
+   "rejected": [],
+   "label": "jardim tonica",
+   "search": "jardim tonica"
+  },
+  "jardim amelia": {
+   "names": [
+    "jardim amelia"
+   ],
+   "total": 2,
+   "query": "jardim amelia",
+   "match": null,
+   "rejected": [
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)"
+   ],
+   "label": "jardim amelia",
+   "search": "jardim amelia"
+  },
+  "recanto": {
+   "names": [
+    "recanto"
+   ],
+   "total": 2,
+   "query": "recanto",
+   "match": null,
+   "rejected": [
+    "boundary/administrative: Recanto Pôr do Sol (Americana)",
+    "boundary/administrative: Recanto das Águas (Americana)",
+    "waterway/stream: Córrego Recanto das Águas (Americana)"
+   ],
+   "label": "recanto",
+   "search": "recanto"
+  },
+  "jardim pau brasil": {
+   "names": [
+    "jardim pau brasil"
+   ],
+   "total": 2,
+   "query": "jardim pau brasil",
+   "match": null,
+   "rejected": [],
+   "label": "jardim pau brasil",
+   "search": "jardim pau brasil"
+  },
+  "vila pavan": {
+   "names": [
+    "vila pavan"
+   ],
+   "total": 2,
+   "query": "vila pavan",
+   "match": null,
+   "rejected": [],
+   "label": "vila pavan",
+   "search": "vila pavan"
+  },
+  "nova americana": {
+   "names": [
+    "nova americana"
+   ],
+   "total": 2,
+   "query": "nova americana",
+   "match": null,
+   "rejected": [
+    "highway/motorway: Rodovia Anhanguera (Nova Odessa)"
+   ],
+   "label": "nova americana",
+   "search": "nova americana"
+  },
+  "conserva": {
+   "names": [
+    "conserva"
+   ],
+   "total": 2,
+   "query": "conserva",
+   "match": {
+    "name": "Conserva",
+    "lat": -22.7474843,
+    "lon": -47.3226005,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5224018777"
+   },
+   "label": "conserva",
+   "search": "conserva"
+  },
+  "residencial praia namorados": {
+   "names": [
+    "residencial praia dos namorados"
+   ],
+   "total": 2,
+   "query": "residencial praia dos namorados",
+   "match": null,
+   "rejected": [],
+   "label": "residencial praia dos namorados",
+   "search": "residencial praia dos namorados"
+  },
+  "jardim governador mario covas 2": {
+   "names": [
+    "jardim governador mario covas ii"
+   ],
+   "total": 2,
+   "query": "jardim governador mario covas ii",
+   "match": null,
+   "rejected": [],
+   "label": "jardim governador mario covas ii",
+   "search": "jardim governador mario covas ii"
+  },
+  "vila rehder": {
+   "names": [
+    "vila rehder"
+   ],
+   "total": 2,
+   "query": "vila rehder",
+   "match": null,
+   "rejected": [],
+   "label": "vila rehder",
+   "search": "vila rehder"
+  },
+  "vila pavani": {
+   "names": [
+    "vila pavani"
+   ],
+   "total": 2,
+   "query": "vila pavani",
+   "match": null,
+   "rejected": [],
+   "label": "vila pavani",
+   "search": "vila pavani"
+  },
+  "vila maule": {
+   "names": [
+    "vila maule"
+   ],
+   "total": 2,
+   "query": "vila maule",
+   "match": null,
+   "rejected": [],
+   "label": "vila maule",
+   "search": "vila maule"
+  },
+  "vila biasi": {
+   "names": [
+    "vila biasi"
+   ],
+   "total": 2,
+   "query": "vila biasi",
+   "match": null,
+   "rejected": [],
+   "label": "vila biasi",
+   "search": "vila biasi"
+  },
+  "vila brieds": {
+   "names": [
+    "vila brieds"
+   ],
+   "total": 2,
+   "query": "vila brieds",
+   "match": null,
+   "rejected": [],
+   "label": "vila brieds",
+   "search": "vila brieds"
+  },
+  "residencial tancredi": {
+   "names": [
+    "parque residencial tancredi",
+    "residencial tancredi"
+   ],
+   "total": 2,
+   "query": "parque residencial tancredi",
+   "match": null,
+   "rejected": [],
+   "label": "parque residencial tancredi",
+   "search": "residencial tancredi"
+  },
+  "sao roque": {
+   "names": [
+    "sao roque"
+   ],
+   "total": 2,
+   "query": "sao roque",
+   "match": null,
+   "rejected": [
+    "highway/residential: Rua São Roque (Santa Bárbara d'Oeste)",
+    "man_made/water_tower: Reservatório R08 (São Roque) (Americana)"
+   ],
+   "label": "sao roque",
+   "search": "sao roque"
+  },
+  "vila grassi": {
+   "names": [
+    "vila grassi"
+   ],
+   "total": 1,
+   "query": "vila grassi",
+   "match": null,
+   "rejected": [],
+   "label": "vila grassi",
+   "search": "vila grassi"
+  },
+  "jardim recanto": {
+   "names": [
+    "jardim recanto"
+   ],
+   "total": 1,
+   "query": "jardim recanto",
+   "match": null,
+   "rejected": [],
+   "label": "jardim recanto",
+   "search": "jardim recanto"
+  },
+  "jardim briedis": {
+   "names": [
+    "jardim briedis"
+   ],
+   "total": 1,
+   "query": "jardim briedis",
+   "match": null,
+   "rejected": [],
+   "label": "jardim briedis",
+   "search": "jardim briedis"
+  },
+  "vila louricilda": {
+   "names": [
+    "vila louricilda"
+   ],
+   "total": 1,
+   "query": "vila louricilda",
+   "match": null,
+   "rejected": [],
+   "label": "vila louricilda",
+   "search": "vila louricilda"
+  },
+  "jardim paulista": {
+   "names": [
+    "jardim paulista"
+   ],
+   "total": 1,
+   "query": "jardim paulista",
+   "match": null,
+   "rejected": [],
+   "label": "jardim paulista",
+   "search": "jardim paulista"
+  },
+  "jardim jacyra": {
+   "names": [
+    "jardim jacyra"
+   ],
+   "total": 1,
+   "query": "jardim jacyra",
+   "match": null,
+   "rejected": [],
+   "label": "jardim jacyra",
+   "search": "jardim jacyra"
+  },
+  "residencial bosque ipes": {
+   "names": [
+    "residencial bosque dos ipes"
+   ],
+   "total": 1,
+   "query": "residencial bosque dos ipes",
+   "match": null,
+   "rejected": [],
+   "label": "residencial bosque dos ipes",
+   "search": "residencial bosque dos ipes"
+  },
+  "parque mangueira": {
+   "names": [
+    "parque mangueira"
+   ],
+   "total": 1,
+   "query": "parque mangueira",
+   "match": null,
+   "rejected": [],
+   "label": "parque mangueira",
+   "search": "parque mangueira"
+  },
+  "jardim nossa sra": {
+   "names": [
+    "jardim nossa sra"
+   ],
+   "total": 1,
+   "query": "jardim nossa sra",
+   "match": null,
+   "rejected": [],
+   "label": "jardim nossa sra",
+   "search": "jardim nossa sra"
+  },
+  "sobrado velho": {
+   "names": [
+    "sobrado velho"
+   ],
+   "total": 1,
+   "query": "sobrado velho",
+   "match": null,
+   "rejected": [],
+   "label": "sobrado velho",
+   "search": "sobrado velho"
+  },
+  "vila sao vito": {
+   "names": [
+    "vila sao vito"
+   ],
+   "total": 1,
+   "query": "vila sao vito",
+   "match": null,
+   "rejected": [
+    "amenity/community_centre: Vila São Vito (Americana)"
+   ],
+   "label": "vila sao vito",
+   "search": "vila sao vito"
+  },
+  "jardim nossa senhora aparecida": {
+   "names": [
+    "jardim nossa senhora aparecida"
+   ],
+   "total": 1,
+   "query": "jardim nossa senhora aparecida",
+   "match": {
+    "name": "Jardim Nossa Senhora Aparecida",
+    "lat": -22.7064102,
+    "lon": -47.2973135,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/5249473283"
+   },
+   "label": "jardim nossa senhora aparecida",
+   "search": "jardim nossa senhora aparecida"
+  },
+  "jardim lizandra": {
+   "names": [
+    "jardim lizandra"
+   ],
+   "total": 1,
+   "query": "jardim lizandra",
+   "match": null,
+   "rejected": [],
+   "label": "jardim lizandra",
+   "search": "jardim lizandra"
+  },
+  "vila rio branco": {
+   "names": [
+    "vila rio branco"
+   ],
+   "total": 1,
+   "query": "vila rio branco",
+   "match": null,
+   "rejected": [],
+   "label": "vila rio branco",
+   "search": "vila rio branco"
+  },
+  "vila conquista": {
+   "names": [
+    "vila conquista"
+   ],
+   "total": 1,
+   "query": "vila conquista",
+   "match": null,
+   "rejected": [],
+   "label": "vila conquista",
+   "search": "vila conquista"
+  },
+  "conjunto poliesportivo ayrton senna": {
+   "names": [
+    "conjunto poliesportivo ayrton senna"
+   ],
+   "total": 1,
+   "query": "conjunto poliesportivo ayrton senna",
+   "match": null,
+   "rejected": [],
+   "label": "conjunto poliesportivo ayrton senna",
+   "search": "conjunto poliesportivo ayrton senna"
+  },
+  "residencial florbela": {
+   "names": [
+    "residencial florbela"
+   ],
+   "total": 1,
+   "query": "residencial florbela",
+   "match": null,
+   "rejected": [],
+   "label": "residencial florbela",
+   "search": "residencial florbela"
+  },
+  "vila camargo": {
+   "names": [
+    "vila camargo"
+   ],
+   "total": 1,
+   "query": "vila camargo",
+   "match": null,
+   "rejected": [
+    "building/residential: Edifício Vila Rica (Americana)"
+   ],
+   "label": "vila camargo",
+   "search": "vila camargo"
+  },
+  "vila cordenonsi": {
+   "names": [
+    "vila cordenonsi"
+   ],
+   "total": 1,
+   "query": "vila cordenonsi",
+   "match": {
+    "name": "Vila Cordenonsi",
+    "lat": -22.7270148,
+    "lon": -47.3208129,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/5211441180"
+   },
+   "label": "vila cordenonsi",
+   "search": "vila cordenonsi"
+  },
+  "jardim novo horizonte": {
+   "names": [
+    "jardim novo horizonte"
+   ],
+   "total": 1,
+   "query": "jardim novo horizonte",
+   "match": {
+    "name": "Jardim Novo Horizonte",
+    "lat": -22.7192759,
+    "lon": -47.3351687,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/12923621553"
+   },
+   "label": "jardim novo horizonte",
+   "search": "jardim novo horizonte"
+  },
+  "jardim brasilia": {
+   "names": [
+    "jardim brasilia"
+   ],
+   "total": 1,
+   "query": "jardim brasilia",
+   "match": null,
+   "rejected": [
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)"
+   ],
+   "label": "jardim brasilia",
+   "search": "jardim brasilia"
+  },
+  "jardim sao sebastiao": {
+   "names": [
+    "jardim sao sebastiao"
+   ],
+   "total": 1,
+   "query": "jardim sao sebastiao",
+   "match": null,
+   "rejected": [],
+   "label": "jardim sao sebastiao",
+   "search": "jardim sao sebastiao"
+  },
+  "vila amorim": {
+   "names": [
+    "vila amorim"
+   ],
+   "total": 1,
+   "query": "vila amorim",
+   "match": {
+    "name": "Vila Amorim",
+    "lat": -22.7383049,
+    "lon": -47.3526944,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/5240245367"
+   },
+   "label": "vila amorim",
+   "search": "vila amorim"
+  },
+  "werner plaas": {
+   "names": [
+    "werner plaas"
+   ],
+   "total": 1,
+   "query": "werner plaas",
+   "match": null,
+   "rejected": [],
+   "label": "werner plaas",
+   "search": "werner plaas"
+  },
+  "vila molon": {
+   "names": [
+    "vila molon"
+   ],
+   "total": 1,
+   "query": "vila molon",
+   "match": {
+    "name": "Vila Molon",
+    "lat": -22.7528173,
+    "lon": -47.3599613,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/11076971913"
+   },
+   "label": "vila molon",
+   "search": "vila molon"
+  },
+  "jardim sao pedro": {
+   "names": [
+    "jardim sao pedro"
+   ],
+   "total": 1,
+   "query": "jardim sao pedro",
+   "match": null,
+   "rejected": [],
+   "label": "jardim sao pedro",
+   "search": "jardim sao pedro"
+  },
+  "vila pantano": {
+   "names": [
+    "vila pantano"
+   ],
+   "total": 1,
+   "query": "vila pantano",
+   "match": null,
+   "rejected": [],
+   "label": "vila pantano",
+   "search": "vila pantano"
+  },
+  "jardim 1": {
+   "names": [
+    "jardim i"
+   ],
+   "total": 1,
+   "query": "jardim i",
+   "match": null,
+   "rejected": [
+    "place/suburb: Cidade Jardim I (Americana)",
+    "place/neighbourhood: Jardim Boer I (Americana)"
+   ],
+   "label": "jardim i",
+   "search": "jardim i"
+  },
+  "nucleo rua goiania": {
+   "names": [
+    "nucleo de rua goiania"
+   ],
+   "total": 1,
+   "query": "nucleo de rua goiania",
+   "match": null,
+   "rejected": [],
+   "label": "nucleo de rua goiania",
+   "search": "nucleo de rua goiania"
+  },
+  "jardim 2": {
+   "names": [
+    "jardim ii"
+   ],
+   "total": 1,
+   "query": "jardim ii",
+   "match": null,
+   "rejected": [
+    "place/suburb: Cidade Jardim II (Americana)",
+    "place/quarter: Loteamento Residencial Jardim Villagio II (Americana)"
+   ],
+   "label": "jardim ii",
+   "search": "jardim ii"
+  },
+  "vila medon": {
+   "names": [
+    "vila medon"
+   ],
+   "total": 1,
+   "query": "vila medon",
+   "match": {
+    "name": "Vila Medon",
+    "lat": -22.7455972,
+    "lon": -47.3343095,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/11077609283"
+   },
+   "label": "vila medon",
+   "search": "vila medon"
+  },
+  "chacara rodrigues": {
+   "names": [
+    "chacara rodrigues"
+   ],
+   "total": 1,
+   "query": "chacara rodrigues",
+   "match": null,
+   "rejected": [],
+   "label": "chacara rodrigues",
+   "search": "chacara rodrigues"
+  },
+  "cariobinha": {
+   "names": [
+    "cariobinha"
+   ],
+   "total": 1,
+   "query": "cariobinha",
+   "match": null,
+   "rejected": [
+    "amenity/hospital: Ubs Cariobinha De Posto Do Saúde (Americana)"
+   ],
+   "label": "cariobinha",
+   "search": "cariobinha"
+  },
+  "residencial vale paineiras": {
+   "names": [
+    "residencial vale das paineiras"
+   ],
+   "total": 1,
+   "query": "residencial vale das paineiras",
+   "match": null,
+   "rejected": [],
+   "label": "residencial vale das paineiras",
+   "search": "residencial vale das paineiras"
+  },
+  "campo verde": {
+   "names": [
+    "campo verde"
+   ],
+   "total": 1,
+   "query": "campo verde",
+   "match": null,
+   "rejected": [],
+   "label": "campo verde",
+   "search": "campo verde"
+  },
+  "jardim pacaembu": {
+   "names": [
+    "jardim pacaembu"
+   ],
+   "total": 1,
+   "query": "jardim pacaembu",
+   "match": null,
+   "rejected": [],
+   "label": "jardim pacaembu",
+   "search": "jardim pacaembu"
+  },
+  "chacara letonia": {
+   "names": [
+    "chacara letonia"
+   ],
+   "total": 1,
+   "query": "chacara letonia",
+   "match": {
+    "name": "Chácara Letônia",
+    "lat": -22.7226518,
+    "lon": -47.2832897,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/5217269891"
+   },
+   "label": "chacara letonia",
+   "search": "chacara letonia"
+  },
+  "jardim nossa senhora carmo": {
+   "names": [
+    "jardim nossa senhora do carmo"
+   ],
+   "total": 1,
+   "query": "jardim nossa senhora do carmo",
+   "match": null,
+   "rejected": [],
+   "label": "jardim nossa senhora do carmo",
+   "search": "jardim nossa senhora do carmo"
+  },
+  "balneario salto grande": {
+   "names": [
+    "balneario salto grande"
+   ],
+   "total": 1,
+   "query": "balneario salto grande",
+   "match": null,
+   "rejected": [],
+   "label": "balneario salto grande",
+   "search": "balneario salto grande"
+  },
+  "colina werner plaas": {
+   "names": [
+    "colina werner plaas"
+   ],
+   "total": 1,
+   "query": "colina werner plaas",
+   "match": null,
+   "rejected": [],
+   "label": "colina werner plaas",
+   "search": "colina werner plaas"
+  },
+  "residencial mario covas": {
+   "names": [
+    "residencial mario covas"
+   ],
+   "total": 1,
+   "query": "residencial mario covas",
+   "match": null,
+   "rejected": [
+    "landuse/construction: Loteamento Residencial Jardim do Édem (Americana)",
+    "building/yes: Residencial Janaina (Americana)",
+    "building/yes: Residencial Tainá (Americana)"
+   ],
+   "label": "residencial mario covas",
+   "search": "residencial mario covas"
+  },
+  "jardim werner plaas 2": {
+   "names": [
+    "jardim werner plaas ii"
+   ],
+   "total": 1,
+   "query": "jardim werner plaas ii",
+   "match": null,
+   "rejected": [],
+   "label": "jardim werner plaas ii",
+   "search": "jardim werner plaas ii"
+  },
+  "vila denadai": {
+   "names": [
+    "vila denadai"
+   ],
+   "total": 1,
+   "query": "vila denadai",
+   "match": null,
+   "rejected": [],
+   "label": "vila denadai",
+   "search": "vila denadai"
+  },
+  "jardim helena": {
+   "names": [
+    "jardim helena"
+   ],
+   "total": 1,
+   "query": "jardim helena",
+   "match": null,
+   "rejected": [],
+   "label": "jardim helena",
+   "search": "jardim helena"
+  },
+  "vila cecchino": {
+   "names": [
+    "vila cecchino"
+   ],
+   "total": 1,
+   "query": "vila cecchino",
+   "match": null,
+   "rejected": [],
+   "label": "vila cecchino",
+   "search": "vila cecchino"
+  },
+  "mathiensen": {
+   "names": [
+    "mathiensen"
+   ],
+   "total": 1,
+   "query": "mathiensen",
+   "match": null,
+   "rejected": [
+    "leisure/park: Praça \"Carlos Mathiensen\" (Americana)",
+    "amenity/social_facility: Centro de Referência de Assistência Social Vila Mathiensen (Americana)",
+    "amenity/clinic: Unidade Básica de Saúde Mathiensen (Americana)"
+   ],
+   "label": "mathiensen",
+   "search": "mathiensen"
+  },
+  "parque planalto": {
+   "names": [
+    "parque planalto"
+   ],
+   "total": 1,
+   "query": "parque planalto",
+   "match": null,
+   "rejected": [],
+   "label": "parque planalto",
+   "search": "parque planalto"
+  },
+  "parque residencial jardini": {
+   "names": [
+    "parque residencial jardini"
+   ],
+   "total": 1,
+   "query": "parque residencial jardini",
+   "match": null,
+   "rejected": [],
+   "label": "parque residencial jardini",
+   "search": "parque residencial jardini"
+  },
+  "nucleo especialidades": {
+   "names": [
+    "nucleo de especialidades"
+   ],
+   "total": 1,
+   "query": "nucleo de especialidades",
+   "match": null,
+   "rejected": [],
+   "label": "nucleo de especialidades",
+   "search": "nucleo de especialidades"
+  },
+  "jardim lirios": {
+   "names": [
+    "jardim dos lirios"
+   ],
+   "total": 1,
+   "query": "jardim dos lirios",
+   "match": null,
+   "rejected": [],
+   "label": "jardim dos lirios",
+   "search": "jardim dos lirios"
+  },
+  "vila massuchetto": {
+   "names": [
+    "vila massuchetto"
+   ],
+   "total": 1,
+   "query": "vila massuchetto",
+   "match": null,
+   "rejected": [],
+   "label": "vila massuchetto",
+   "search": "vila massuchetto"
+  },
+  "jardim esplanada": {
+   "names": [
+    "jardim esplanada"
+   ],
+   "total": 1,
+   "query": "jardim esplanada",
+   "match": null,
+   "rejected": [],
+   "label": "jardim esplanada",
+   "search": "jardim esplanada"
+  }
+ },
+ "merge": [
+  {
+   "into": "antonio zanaga",
+   "pattern": "^antonio zanaga( [12])?$",
+   "why": "Antônio Zanaga, Antônio Zanaga I e II: o mesmo loteamento em etapas."
+  },
+  {
+   "into": "cidade jardim",
+   "pattern": "^cidade jardim( [12])?$",
+   "why": "Cidade Jardim, Cidade Jardim I e II: o mesmo loteamento em etapas."
+  },
+  {
+   "into": "jardim balsa",
+   "pattern": "^jardim balsa( [12])?$",
+   "why": "Jardim da Balsa, Jardim da Balsa I e II: o mesmo loteamento em etapas."
+  },
+  {
+   "into": "jardim terramerica",
+   "pattern": "^jardim terramerica( [123])?$",
+   "why": "Jardim Terramérica e Terramérica I, II e III: o mesmo loteamento em etapas."
+  },
+  {
+   "into": "chacara machadinho",
+   "pattern": "^chacara machadinho( 1)?$",
+   "why": "Chácara Machadinho e Chácara Machadinho I: o mesmo loteamento."
+  },
+  {
+   "into": "vila bertini",
+   "pattern": "^vila bertin[ei]( 2)?$",
+   "why": "Vila Bertini, Vila Bertini II e a grafia Bertine: o mesmo loteamento."
+  },
+  {
+   "into": "vila frezzarim",
+   "pattern": "^vila frezzari[mn]$",
+   "why": "Vila Frezzarim / Frezzarin: só a grafia muda."
+  },
+  {
+   "into": "vila santa maria",
+   "pattern": "^vill?a santa maria$",
+   "why": "Vila / Villa Santa Maria: só a grafia muda."
+  },
+  {
+   "into": "jardim sao paulo",
+   "pattern": "^jardim (jardim )?sao paulo( 3)?$",
+   "why": "Jardim São Paulo, Jardim São Paulo III e o \"jardim e jardim São Paulo\" digitado em dobro: o mesmo bairro."
+  },
+  {
+   "into": "sao jeronimo",
+   "pattern": "^(parque )?sao jeronimo$",
+   "why": "Parque São Jerônimo citado também só como São Jerônimo."
+  },
+  {
+   "into": "sao domingos",
+   "pattern": "^(jardim )?sao domingos$",
+   "why": "Jardim São Domingos citado também só como São Domingos."
+  },
+  {
+   "into": "sao benedito",
+   "pattern": "^(jardim )?sao benedito$",
+   "why": "Jardim São Benedito citado também só como São Benedito."
+  },
+  {
+   "into": "nova carioba",
+   "pattern": "^(parque )?nova carioba$",
+   "why": "Parque Nova Carioba citado também só como Nova Carioba."
+  },
+  {
+   "into": "dona rosa",
+   "pattern": "^(jardim )?(residencial )?dona rosa$",
+   "why": "Dona Rosa, Residencial Dona Rosa e Jardim Residencial Dona Rosa: o mesmo loteamento."
+  },
+  {
+   "into": "residencial jaguari",
+   "pattern": "^(parque )?residencial jaguari$",
+   "why": "Parque Residencial Jaguari citado também como Residencial Jaguari (o \"Jaguari\" solto fica de fora: pode ser o rio ou a região)."
+  },
+  {
+   "into": "residencial tancredi",
+   "pattern": "^(parque )?residencial tancredi$",
+   "why": "Parque Residencial Tancredi citado também como Residencial Tancredi."
+  }
+ ],
+ "bbox": [
+  -47.3880554,
+  -22.7847861,
+  -47.1931633,
+  -22.6629879
+ ],
+ "bboxSource": "Nominatim relation/297977 (limite municipal, IBGE 3501608)",
+ "updatedAt": "2026-11-16",
+ "streetsSource": "OpenStreetMap via Overpass (vias com nome no município), ODbL"
+}

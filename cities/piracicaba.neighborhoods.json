@@ -1,0 +1,1727 @@
+{
+ "source": "OpenStreetMap via Nominatim",
+ "license": "ODbL 1.0 — © colaboradores do OpenStreetMap",
+ "neighborhoods": {
+  "vila rezende": {
+   "names": [
+    "vila rezende"
+   ],
+   "total": 10,
+   "query": "vila rezende",
+   "match": {
+    "name": "Vila Rezende",
+    "lat": -22.7046658,
+    "lon": -47.6595247,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1419643939"
+   },
+   "label": "vila rezende",
+   "search": "vila rezende",
+   "streetCheckKm": 0.36
+  },
+  "vila sonia": {
+   "names": [
+    "vila sonia"
+   ],
+   "total": 10,
+   "query": "vila sonia",
+   "match": {
+    "name": "Vila Sônia",
+    "lat": -22.6658186,
+    "lon": -47.7007056,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/6539619899"
+   },
+   "label": "vila sonia",
+   "search": "vila sonia",
+   "streetCheckKm": 0.82
+  },
+  "pauliceia": {
+   "names": [
+    "pauliceia"
+   ],
+   "total": 8,
+   "query": "pauliceia",
+   "match": {
+    "name": "Paulicéia",
+    "lat": -22.7491928,
+    "lon": -47.6478432,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539520842"
+   },
+   "label": "pauliceia",
+   "search": "pauliceia",
+   "streetCheckKm": 0.2
+  },
+  "alto": {
+   "names": [
+    "alto"
+   ],
+   "total": 7,
+   "query": "alto",
+   "match": {
+    "lat": -22.73037,
+    "lon": -47.63733,
+    "category": "streets",
+    "type": "median",
+    "streets": 3,
+    "spreadKm": 0.37
+   },
+   "rejected": [
+    "natural/peak: Morro Pico Alto (Piracicaba)",
+    "boundary/administrative: Residencial Alto da Boa Vista (Piracicaba)",
+    "boundary/administrative: Alto de Santa Thereza (Piracicaba)"
+   ],
+   "label": "alto",
+   "search": "alto"
+  },
+  "sol nascente": {
+   "names": [
+    "jardim sol nascente",
+    "sol nascente",
+    "sol nascente 2",
+    "sol nascente ii"
+   ],
+   "total": 6,
+   "query": "jardim sol nascente",
+   "match": {
+    "name": "Jardim Sol Nascente II",
+    "lat": -22.7639878,
+    "lon": -47.6074738,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1410391666"
+   },
+   "label": "jardim sol nascente",
+   "search": "sol nascente",
+   "streetCheckKm": 0.48
+  },
+  "sao dimas": {
+   "names": [
+    "sao dimas"
+   ],
+   "total": 6,
+   "query": "sao dimas",
+   "match": {
+    "name": "São Dimas",
+    "lat": -22.7115835,
+    "lon": -47.6430296,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1419679003"
+   },
+   "label": "sao dimas",
+   "search": "sao dimas",
+   "streetCheckKm": 0.27
+  },
+  "campestre": {
+   "names": [
+    "campestre"
+   ],
+   "total": 5,
+   "query": "campestre",
+   "match": {
+    "name": "Campestre",
+    "lat": -22.7671199,
+    "lon": -47.6610397,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539578616"
+   },
+   "label": "campestre",
+   "search": "campestre"
+  },
+  "vila industrial": {
+   "names": [
+    "vila industrial"
+   ],
+   "total": 5,
+   "query": "vila industrial",
+   "match": {
+    "name": "Vila Industrial",
+    "lat": -22.6853423,
+    "lon": -47.6656424,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1413296463"
+   },
+   "label": "vila industrial",
+   "search": "vila industrial",
+   "streetCheckKm": 0.46
+  },
+  "vila monteiro": {
+   "names": [
+    "vila monteiro"
+   ],
+   "total": 5,
+   "query": "vila monteiro",
+   "match": {
+    "name": "Vila Monteiro",
+    "lat": -22.7306201,
+    "lon": -47.6315676,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "relation/1362090"
+   },
+   "label": "vila monteiro",
+   "search": "vila monteiro"
+  },
+  "centro": {
+   "names": [
+    "centro"
+   ],
+   "total": 5,
+   "query": "centro",
+   "match": {
+    "name": "Centro",
+    "lat": -22.7265208,
+    "lon": -47.649997,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539544599"
+   },
+   "label": "centro",
+   "search": "centro",
+   "streetCheckKm": 0.52
+  },
+  "independencia": {
+   "names": [
+    "independencia"
+   ],
+   "total": 5,
+   "query": "independencia",
+   "match": null,
+   "rejected": [
+    "boundary/administrative: Vila Independência (Piracicaba)",
+    "highway/secondary: Avenida Independência (Piracicaba)",
+    "highway/secondary: Avenida Independência (Piracicaba)"
+   ],
+   "label": "independencia",
+   "search": "independencia"
+  },
+  "monte libano": {
+   "names": [
+    "jardim monte libano ii",
+    "monte libano"
+   ],
+   "total": 4,
+   "query": "monte libano",
+   "match": {
+    "name": "Monte Líbano",
+    "lat": -22.7546543,
+    "lon": -47.6537334,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539520843"
+   },
+   "label": "monte libano",
+   "search": "monte libano",
+   "streetCheckKm": 0.22
+  },
+  "jardim nova iguacu": {
+   "names": [
+    "jardim nova iguacu"
+   ],
+   "total": 4,
+   "query": "jardim nova iguacu",
+   "match": {
+    "name": "Jardim Nova Iguaçu",
+    "lat": -22.7390355,
+    "lon": -47.5985395,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "relation/19915751"
+   },
+   "label": "jardim nova iguacu",
+   "search": "jardim nova iguacu"
+  },
+  "artemis": {
+   "names": [
+    "artemis",
+    "de artemis"
+   ],
+   "total": 4,
+   "query": "artemis",
+   "match": {
+    "lat": -22.6871,
+    "lon": -47.7756,
+    "category": "streets",
+    "type": "median",
+    "streets": 3,
+    "spreadKm": 0.7
+   },
+   "label": "artemis",
+   "search": "artemis",
+   "streetCheckKm": 4.37,
+   "osmDisagrees": {
+    "name": "Ártemis",
+    "lat": -22.6754106,
+    "lon": -47.8162439,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "relation/3028927"
+   }
+  },
+  "santa terezinha": {
+   "names": [
+    "santa teresinha",
+    "santa terezinha"
+   ],
+   "total": 4,
+   "query": "santa terezinha",
+   "match": {
+    "lat": -22.6707,
+    "lon": -47.69235,
+    "category": "streets",
+    "type": "median",
+    "streets": 4,
+    "spreadKm": 0.34
+   },
+   "label": "santa terezinha",
+   "search": "santa terezinha",
+   "streetCheckKm": 1.89,
+   "osmDisagrees": {
+    "name": "Santa Terezinha",
+    "lat": -22.6784453,
+    "lon": -47.6759893,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1414436866"
+   }
+  },
+  "noiva colina": {
+   "names": [
+    "noiva da colina"
+   ],
+   "total": 4,
+   "query": "noiva da colina",
+   "match": null,
+   "rejected": [
+    "boundary/administrative: Glebas Noiva da Colina (Piracicaba)",
+    "place/quarter: Glebas Noiva da Colina (Piracicaba)",
+    "amenity/fuel: Posto Noiva da Colina (Piracicaba)"
+   ],
+   "label": "noiva da colina",
+   "search": "noiva da colina"
+  },
+  "jardim itaicaba": {
+   "names": [
+    "jardim itaicaba"
+   ],
+   "total": 4,
+   "query": "jardim itaicaba",
+   "match": {
+    "name": "Jardim Itaiçaba",
+    "lat": -22.6886467,
+    "lon": -47.775904,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1412365287"
+   },
+   "label": "jardim itaicaba",
+   "search": "jardim itaicaba",
+   "streetCheckKm": 0.2
+  },
+  "cecap": {
+   "names": [
+    "cecap",
+    "cecap ii"
+   ],
+   "total": 3,
+   "query": "cecap",
+   "match": {
+    "name": "Cecap",
+    "lat": -22.7717992,
+    "lon": -47.59758,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/6539593408"
+   },
+   "label": "cecap",
+   "search": "cecap"
+  },
+  "residencial paineiras": {
+   "names": [
+    "residencial paineiras"
+   ],
+   "total": 3,
+   "query": "residencial paineiras",
+   "match": null,
+   "rejected": [],
+   "label": "residencial paineiras",
+   "search": "residencial paineiras"
+  },
+  "algodoal": {
+   "names": [
+    "algodoal"
+   ],
+   "total": 3,
+   "query": "algodoal",
+   "match": {
+    "name": "Algodoal",
+    "lat": -22.695041,
+    "lon": -47.6672195,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/6539532444"
+   },
+   "label": "algodoal",
+   "search": "algodoal",
+   "streetCheckKm": 0.31
+  },
+  "parque sao matheus": {
+   "names": [
+    "parque sao matheus"
+   ],
+   "total": 3,
+   "query": "parque sao matheus",
+   "match": null,
+   "rejected": [
+    "boundary/administrative: Parque São Matheus II (Piracicaba)",
+    "boundary/administrative: Parque São Matheus I (Piracicaba)"
+   ],
+   "label": "parque sao matheus",
+   "search": "parque sao matheus"
+  },
+  "residencial nova agua branca 2": {
+   "names": [
+    "residencial nova agua branca ii"
+   ],
+   "total": 2,
+   "query": "residencial nova agua branca ii",
+   "match": {
+    "name": "Residencial Nova Água Branca II",
+    "lat": -22.7606456,
+    "lon": -47.6239481,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1410561467"
+   },
+   "label": "residencial nova agua branca ii",
+   "search": "residencial nova agua branca ii"
+  },
+  "jardim santa cecilia": {
+   "names": [
+    "jardim santa cecilia"
+   ],
+   "total": 2,
+   "query": "jardim santa cecilia",
+   "match": null,
+   "rejected": [
+    "highway/trunk: Rodovia Luiz de Queiroz (Piracicaba)",
+    "highway/trunk: Rodovia Luiz de Queiroz (Piracicaba)",
+    "highway/motorway: Rodovia Ernesto Paterniani (Piracicaba)"
+   ],
+   "label": "jardim santa cecilia",
+   "search": "jardim santa cecilia"
+  },
+  "jardim brasilia": {
+   "names": [
+    "jardim brasilia"
+   ],
+   "total": 2,
+   "query": "jardim brasilia",
+   "match": null,
+   "rejected": [],
+   "label": "jardim brasilia",
+   "search": "jardim brasilia"
+  },
+  "nova america": {
+   "names": [
+    "nova america"
+   ],
+   "total": 2,
+   "query": "nova america",
+   "match": {
+    "name": "Nova América",
+    "lat": -22.7403926,
+    "lon": -47.6332937,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/11028171492"
+   },
+   "label": "nova america",
+   "search": "nova america"
+  },
+  "agua branca": {
+   "names": [
+    "agua branca"
+   ],
+   "total": 2,
+   "query": "agua branca",
+   "match": {
+    "name": "Água Branca",
+    "lat": -22.7605113,
+    "lon": -47.6245617,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/6539578618"
+   },
+   "label": "agua branca",
+   "search": "agua branca"
+  },
+  "dois corregos": {
+   "names": [
+    "dois corregos"
+   ],
+   "total": 2,
+   "query": "dois corregos",
+   "match": {
+    "name": "Dois Córregos",
+    "lat": -22.7444435,
+    "lon": -47.6006699,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539584547"
+   },
+   "label": "dois corregos",
+   "search": "dois corregos"
+  },
+  "alto boa vista": {
+   "names": [
+    "alto da boa vista",
+    "residencial alto da boa vista neste municipio"
+   ],
+   "total": 2,
+   "query": "residencial alto da boa vista neste municipio",
+   "match": null,
+   "rejected": [],
+   "label": "residencial alto da boa vista neste municipio",
+   "search": "alto boa vista"
+  },
+  "costa rica": {
+   "names": [
+    "costa rica",
+    "jardim costa rica"
+   ],
+   "total": 2,
+   "query": "jardim costa rica",
+   "match": {
+    "name": "Jardim Costa Rica",
+    "lat": -22.7651593,
+    "lon": -47.6548783,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1411876777"
+   },
+   "label": "jardim costa rica",
+   "search": "costa rica"
+  },
+  "bertolucci": {
+   "names": [
+    "bertolucci",
+    "residencial bertolucci"
+   ],
+   "total": 2,
+   "query": "residencial bertolucci",
+   "match": {
+    "name": "Residencial Bertolucci",
+    "lat": -22.7661254,
+    "lon": -47.6421014,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1410597969"
+   },
+   "label": "residencial bertolucci",
+   "search": "bertolucci"
+  },
+  "jardim primavera": {
+   "names": [
+    "jardim primavera"
+   ],
+   "total": 2,
+   "query": "jardim primavera",
+   "match": {
+    "name": "Jardim Primavera",
+    "lat": -22.6943936,
+    "lon": -47.6539263,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1419667842"
+   },
+   "label": "jardim primavera",
+   "search": "jardim primavera"
+  },
+  "jardim conceicao": {
+   "names": [
+    "jardim conceicao"
+   ],
+   "total": 2,
+   "query": "jardim conceicao",
+   "match": {
+    "name": "Jardim Conceição",
+    "lat": -22.6688611,
+    "lon": -47.6813681,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1414423877"
+   },
+   "label": "jardim conceicao",
+   "search": "jardim conceicao"
+  },
+  "jardim sao paulo": {
+   "names": [
+    "jardim sao paulo"
+   ],
+   "total": 2,
+   "query": "jardim sao paulo",
+   "match": {
+    "name": "Jardim São Paulo",
+    "lat": -22.7186019,
+    "lon": -47.6670334,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1414477299"
+   },
+   "label": "jardim sao paulo",
+   "search": "jardim sao paulo"
+  },
+  "novo horizonte": {
+   "names": [
+    "novo horizonte"
+   ],
+   "total": 2,
+   "query": "novo horizonte",
+   "match": {
+    "name": "Novo Horizonte",
+    "lat": -22.7578611,
+    "lon": -47.6778623,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539578615"
+   },
+   "label": "novo horizonte",
+   "search": "novo horizonte"
+  },
+  "jardim nova suica": {
+   "names": [
+    "jardim nova suica"
+   ],
+   "total": 2,
+   "query": "jardim nova suica",
+   "match": {
+    "name": "Jardim Nova Suíça",
+    "lat": -22.7446247,
+    "lon": -47.6761934,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1412349078"
+   },
+   "label": "jardim nova suica",
+   "search": "jardim nova suica"
+  },
+  "vila independencia": {
+   "names": [
+    "vila independencia"
+   ],
+   "total": 2,
+   "query": "vila independencia",
+   "match": {
+    "name": "Vila Independência",
+    "lat": -22.7200908,
+    "lon": -47.6292609,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "relation/19382974"
+   },
+   "label": "vila independencia",
+   "search": "vila independencia"
+  },
+  "santa rosa": {
+   "names": [
+    "santa rosa"
+   ],
+   "total": 2,
+   "query": "santa rosa",
+   "match": {
+    "name": "Santa Rosa",
+    "lat": -22.6855338,
+    "lon": -47.635687,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1413268694"
+   },
+   "label": "santa rosa",
+   "search": "santa rosa"
+  },
+  "alemaes": {
+   "names": [
+    "alemaes",
+    "dos alemaes"
+   ],
+   "total": 2,
+   "query": "dos alemaes",
+   "match": {
+    "lat": -22.71804,
+    "lon": -47.63827,
+    "category": "streets",
+    "type": "median",
+    "streets": 3,
+    "spreadKm": 0.23
+   },
+   "rejected": [],
+   "label": "dos alemaes",
+   "search": "dos alemaes"
+  },
+  "jardim estoril": {
+   "names": [
+    "jardim estoril"
+   ],
+   "total": 2,
+   "query": "jardim estoril",
+   "match": {
+    "name": "Jardim Estoril",
+    "lat": -22.6949073,
+    "lon": -47.7028771,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1412811534"
+   },
+   "label": "jardim estoril",
+   "search": "jardim estoril"
+  },
+  "parque orlanda": {
+   "names": [
+    "parque orlanda"
+   ],
+   "total": 2,
+   "query": "parque orlanda",
+   "match": null,
+   "rejected": [
+    "leisure/park: Area Verde Parque Orlanda I (Piracicaba)"
+   ],
+   "label": "parque orlanda",
+   "search": "parque orlanda"
+  },
+  "jaragua": {
+   "names": [
+    "jaragua"
+   ],
+   "total": 2,
+   "query": "jaragua",
+   "match": {
+    "name": "Jaraguá",
+    "lat": -22.7361026,
+    "lon": -47.6663365,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539520847"
+   },
+   "label": "jaragua",
+   "search": "jaragua"
+  },
+  "loteamento santa rosa": {
+   "names": [
+    "loteamento santa rosa"
+   ],
+   "total": 2,
+   "query": "loteamento santa rosa",
+   "match": null,
+   "rejected": [],
+   "label": "loteamento santa rosa",
+   "search": "loteamento santa rosa"
+  },
+  "altos piracicaba": {
+   "names": [
+    "altos de piracicaba"
+   ],
+   "total": 2,
+   "query": "altos de piracicaba",
+   "match": null,
+   "rejected": [
+    "highway/trunk: Rodovia Geraldo de Barros (Piracicaba)",
+    "highway/motorway: Rodovia Comendador Mário Dedini (Piracicaba)",
+    "highway/motorway: Rodovia Comendador Mário Dedini (Piracicaba)"
+   ],
+   "label": "altos de piracicaba",
+   "search": "altos de piracicaba"
+  },
+  "jardim sao luiz": {
+   "names": [
+    "jardim sao luiz"
+   ],
+   "total": 2,
+   "query": "jardim sao luiz",
+   "match": null,
+   "rejected": [
+    "amenity/police: Polícia Militar Rodoviária - Base SP-304/1 - km 156,9 Leste - Piracicaba (Piracicaba)"
+   ],
+   "label": "jardim sao luiz",
+   "search": "jardim sao luiz"
+  },
+  "jardim planalto": {
+   "names": [
+    "jardim planalto"
+   ],
+   "total": 1,
+   "query": "jardim planalto",
+   "match": {
+    "name": "Jardim Planalto",
+    "lat": -22.7451493,
+    "lon": -47.6737426,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539520844"
+   },
+   "label": "jardim planalto",
+   "search": "jardim planalto"
+  },
+  "jardim asturias": {
+   "names": [
+    "jardim asturias"
+   ],
+   "total": 1,
+   "query": "jardim asturias",
+   "match": {
+    "name": "Jardim Astúrias",
+    "lat": -22.7568923,
+    "lon": -47.6254571,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1410557900"
+   },
+   "label": "jardim asturias",
+   "search": "jardim asturias"
+  },
+  "sao luis agua branca": {
+   "names": [
+    "sao luis agua branca"
+   ],
+   "total": 1,
+   "query": "sao luis agua branca",
+   "match": null,
+   "rejected": [],
+   "label": "sao luis agua branca",
+   "search": "sao luis agua branca"
+  },
+  "tupi": {
+   "names": [
+    "tupi"
+   ],
+   "total": 1,
+   "query": "tupi",
+   "match": {
+    "name": "Tupi",
+    "lat": -22.743252,
+    "lon": -47.526927,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "relation/3028942"
+   },
+   "label": "tupi",
+   "search": "tupi"
+  },
+  "alvorada": {
+   "names": [
+    "alvorada"
+   ],
+   "total": 1,
+   "query": "alvorada",
+   "match": null,
+   "rejected": [
+    "boundary/administrative: Alvorada II (Piracicaba)",
+    "boundary/administrative: Alvorada III (Piracicaba)",
+    "boundary/administrative: Conjunto Habitacional Alvorada I (Piracicaba)"
+   ],
+   "label": "alvorada",
+   "search": "alvorada"
+  },
+  "jardim piazza italia": {
+   "names": [
+    "jardim piazza italia"
+   ],
+   "total": 1,
+   "query": "jardim piazza italia",
+   "match": {
+    "name": "Jardim Piazza Itália",
+    "lat": -22.7632137,
+    "lon": -47.6820546,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1411923351"
+   },
+   "label": "jardim piazza italia",
+   "search": "jardim piazza italia"
+  },
+  "parque sao jorge": {
+   "names": [
+    "parque sao jorge"
+   ],
+   "total": 1,
+   "query": "parque sao jorge",
+   "match": {
+    "name": "Parque São Jorge",
+    "lat": -22.6668707,
+    "lon": -47.6259338,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1413273295"
+   },
+   "label": "parque sao jorge",
+   "search": "parque sao jorge"
+  },
+  "mario dedini": {
+   "names": [
+    "mario dedini"
+   ],
+   "total": 1,
+   "query": "mario dedini",
+   "match": {
+    "name": "Mário Dedini",
+    "lat": -22.6756738,
+    "lon": -47.6590241,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1413281285"
+   },
+   "label": "mario dedini",
+   "search": "mario dedini"
+  },
+  "piracicamirim": {
+   "names": [
+    "piracicamirim"
+   ],
+   "total": 1,
+   "query": "piracicamirim",
+   "match": {
+    "name": "Piracicamirim",
+    "lat": -22.7421677,
+    "lon": -47.6252805,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539578623"
+   },
+   "label": "piracicamirim",
+   "search": "piracicamirim"
+  },
+  "terras piracicaba": {
+   "names": [
+    "terras de piracicaba"
+   ],
+   "total": 1,
+   "query": "terras de piracicaba",
+   "match": {
+    "name": "Terras de Piracicaba",
+    "lat": -22.7252835,
+    "lon": -47.6785145,
+    "category": "landuse",
+    "type": "residential",
+    "osm": "way/1351227410"
+   },
+   "label": "terras de piracicaba",
+   "search": "terras de piracicaba"
+  },
+  "morumbi": {
+   "names": [
+    "morumbi"
+   ],
+   "total": 1,
+   "query": "morumbi",
+   "match": {
+    "name": "Morumbi",
+    "lat": -22.7360533,
+    "lon": -47.6240674,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539578625"
+   },
+   "label": "morumbi",
+   "search": "morumbi"
+  },
+  "itaperu": {
+   "names": [
+    "itaperu"
+   ],
+   "total": 1,
+   "query": "itaperu",
+   "match": null,
+   "rejected": [],
+   "label": "itaperu",
+   "search": "itaperu"
+  },
+  "abaete": {
+   "names": [
+    "abaete"
+   ],
+   "total": 1,
+   "query": "abaete",
+   "match": null,
+   "rejected": [
+    "place/suburb: Jardim Abaeté (Piracicaba)"
+   ],
+   "label": "abaete",
+   "search": "abaete"
+  },
+  "jardim flores": {
+   "names": [
+    "jardim das flores"
+   ],
+   "total": 1,
+   "query": "jardim das flores",
+   "match": {
+    "name": "Jardim das Flores",
+    "lat": -22.7564395,
+    "lon": -47.6557697,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1411906165"
+   },
+   "label": "jardim das flores",
+   "search": "jardim das flores"
+  },
+  "jardim ibirapuera": {
+   "names": [
+    "jardim ibirapuera"
+   ],
+   "total": 1,
+   "query": "jardim ibirapuera",
+   "match": {
+    "name": "Jardim Ibirapuera",
+    "lat": -22.7449208,
+    "lon": -47.6598577,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/12467021363"
+   },
+   "label": "jardim ibirapuera",
+   "search": "jardim ibirapuera"
+  },
+  "terra nova": {
+   "names": [
+    "terra nova"
+   ],
+   "total": 1,
+   "query": "terra nova",
+   "match": {
+    "name": "Terra Nova",
+    "lat": -22.7522517,
+    "lon": -47.6299093,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1410556299"
+   },
+   "label": "terra nova",
+   "search": "terra nova"
+  },
+  "vale sol": {
+   "names": [
+    "vale do sol"
+   ],
+   "total": 1,
+   "query": "vale do sol",
+   "match": {
+    "name": "Vale do Sol",
+    "lat": -22.6862833,
+    "lon": -47.7041596,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1412502946"
+   },
+   "label": "vale do sol",
+   "search": "vale do sol"
+  },
+  "nova suica": {
+   "names": [
+    "nova suica"
+   ],
+   "total": 1,
+   "query": "nova suica",
+   "match": {
+    "name": "Nova Suíça",
+    "lat": -22.748766,
+    "lon": -47.6954493,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1411933448"
+   },
+   "label": "nova suica",
+   "search": "nova suica"
+  },
+  "chapadao": {
+   "names": [
+    "chapadao"
+   ],
+   "total": 1,
+   "query": "chapadao",
+   "match": null,
+   "rejected": [
+    "place/quarter: Parque Chapadão (Piracicaba)"
+   ],
+   "label": "chapadao",
+   "search": "chapadao"
+  },
+  "jardim santa maria": {
+   "names": [
+    "jardim santa maria"
+   ],
+   "total": 1,
+   "query": "jardim santa maria",
+   "match": null,
+   "rejected": [
+    "highway/primary: Rodovia Hermínio Petrin (Piracicaba)",
+    "highway/primary: Rodovia Hermínio Petrin - SP308 (Piracicaba)",
+    "highway/primary: Rodovia Hermínio Petrin (Piracicaba)"
+   ],
+   "label": "jardim santa maria",
+   "search": "jardim santa maria"
+  },
+  "javari 3": {
+   "names": [
+    "javari iii"
+   ],
+   "total": 1,
+   "query": "javari iii",
+   "match": null,
+   "rejected": [],
+   "label": "javari iii",
+   "search": "javari iii"
+  },
+  "jardim gloria": {
+   "names": [
+    "jardim gloria"
+   ],
+   "total": 1,
+   "query": "jardim gloria",
+   "match": {
+    "name": "Jardim Glória",
+    "lat": -22.7455826,
+    "lon": -47.6672733,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/12467021364"
+   },
+   "label": "jardim gloria",
+   "search": "jardim gloria"
+  },
+  "jardim monte feliz": {
+   "names": [
+    "jardim monte feliz"
+   ],
+   "total": 1,
+   "query": "jardim monte feliz",
+   "match": {
+    "name": "Jardim Monte Feliz",
+    "lat": -22.7741297,
+    "lon": -47.6332624,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1409556830"
+   },
+   "label": "jardim monte feliz",
+   "search": "jardim monte feliz"
+  },
+  "monte feliz": {
+   "names": [
+    "monte feliz"
+   ],
+   "total": 1,
+   "query": "monte feliz",
+   "match": null,
+   "rejected": [
+    "boundary/administrative: Jardim Monte Feliz (Piracicaba)",
+    "amenity/clinic: Unidade de Saúde da Família Monte Feliz/Água Branca (Piracicaba)"
+   ],
+   "label": "monte feliz",
+   "search": "monte feliz"
+  },
+  "alto esperanca": {
+   "names": [
+    "alto da esperanca"
+   ],
+   "total": 1,
+   "query": "alto da esperanca",
+   "match": null,
+   "rejected": [],
+   "label": "alto da esperanca",
+   "search": "alto da esperanca"
+  },
+  "jardim dom pedro 1": {
+   "names": [
+    "jardim e dom pedro i"
+   ],
+   "total": 1,
+   "query": "jardim e dom pedro i",
+   "match": null,
+   "rejected": [],
+   "label": "jardim e dom pedro i",
+   "search": "jardim e dom pedro i"
+  },
+  "residencial parque piazza brasile": {
+   "names": [
+    "residencial parque piazza brasile"
+   ],
+   "total": 1,
+   "query": "residencial parque piazza brasile",
+   "match": {
+    "name": "Residencial Parque Piazza Brasile",
+    "lat": -22.768132,
+    "lon": -47.654656,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1411874797"
+   },
+   "label": "residencial parque piazza brasile",
+   "search": "residencial parque piazza brasile"
+  },
+  "jardim abaete": {
+   "names": [
+    "jardim abaete"
+   ],
+   "total": 1,
+   "query": "jardim abaete",
+   "match": {
+    "name": "Jardim Abaeté",
+    "lat": -22.7270279,
+    "lon": -47.607653,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539578624"
+   },
+   "label": "jardim abaete",
+   "search": "jardim abaete"
+  },
+  "nova piracicaba": {
+   "names": [
+    "nova piracicaba"
+   ],
+   "total": 1,
+   "query": "nova piracicaba",
+   "match": {
+    "name": "Nova Piracicaba",
+    "lat": -22.7172951,
+    "lon": -47.6667689,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1414481299"
+   },
+   "label": "nova piracicaba",
+   "search": "nova piracicaba"
+  },
+  "parque rua porto": {
+   "names": [
+    "parque da rua do porto"
+   ],
+   "total": 1,
+   "query": "parque da rua do porto",
+   "match": {
+    "name": "Parque da Rua do Porto",
+    "lat": -22.7261126,
+    "lon": -47.6589489,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539674231"
+   },
+   "label": "parque da rua do porto",
+   "search": "parque da rua do porto"
+  },
+  "jardim santa clara": {
+   "names": [
+    "jardim santa clara"
+   ],
+   "total": 1,
+   "query": "jardim santa clara",
+   "match": {
+    "name": "Jardim Santa Clara",
+    "lat": -22.6679246,
+    "lon": -47.6908267,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1414417572"
+   },
+   "label": "jardim santa clara",
+   "search": "jardim santa clara"
+  },
+  "paulista": {
+   "names": [
+    "paulista"
+   ],
+   "total": 1,
+   "query": "paulista",
+   "match": {
+    "name": "Paulista",
+    "lat": -22.7377645,
+    "lon": -47.6572739,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539544591"
+   },
+   "label": "paulista",
+   "search": "paulista"
+  },
+  "bosque agua branca situado": {
+   "names": [
+    "bosque da agua branca situado"
+   ],
+   "total": 1,
+   "query": "bosque da agua branca situado",
+   "match": null,
+   "rejected": [],
+   "label": "bosque da agua branca situado",
+   "search": "bosque da agua branca situado"
+  },
+  "santa rosa ipes": {
+   "names": [
+    "santa rosa ipes"
+   ],
+   "total": 1,
+   "query": "santa rosa ipes",
+   "match": {
+    "name": "Santa Rosa Ipês",
+    "lat": -22.6769374,
+    "lon": -47.6291558,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1413270750"
+   },
+   "label": "santa rosa ipes",
+   "search": "santa rosa ipes"
+  },
+  "vila bessy": {
+   "names": [
+    "vila bessy"
+   ],
+   "total": 1,
+   "query": "vila bessy",
+   "match": null,
+   "rejected": [],
+   "label": "vila bessy",
+   "search": "vila bessy"
+  },
+  "jardim santa fe": {
+   "names": [
+    "jardim santa fe"
+   ],
+   "total": 1,
+   "query": "jardim santa fe",
+   "match": null,
+   "rejected": [],
+   "label": "jardim santa fe",
+   "search": "jardim santa fe"
+  },
+  "jardim elite": {
+   "names": [
+    "jardim elite"
+   ],
+   "total": 1,
+   "query": "jardim elite",
+   "match": {
+    "name": "Jardim Elite",
+    "lat": -22.7406538,
+    "lon": -47.6396893,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539578621"
+   },
+   "label": "jardim elite",
+   "search": "jardim elite"
+  },
+  "bongue": {
+   "names": [
+    "bongue"
+   ],
+   "total": 1,
+   "query": "bongue",
+   "match": null,
+   "rejected": [
+    "leisure/park: Parque Regional de Lazer do Bongue Orlando Louvandini (Piracicaba)",
+    "highway/secondary: Avenida Jaime Pereira (Piracicaba)",
+    "highway/secondary: Avenida Jaime Pereira (Piracicaba)"
+   ],
+   "label": "bongue",
+   "search": "bongue"
+  },
+  "jardim monumento": {
+   "names": [
+    "jardim monumento"
+   ],
+   "total": 1,
+   "query": "jardim monumento",
+   "match": null,
+   "rejected": [],
+   "label": "jardim monumento",
+   "search": "jardim monumento"
+  },
+  "vila fatima": {
+   "names": [
+    "vila fatima"
+   ],
+   "total": 1,
+   "query": "vila fatima",
+   "match": {
+    "name": "Vila Fátima",
+    "lat": -22.6899533,
+    "lon": -47.6599883,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/6539532443"
+   },
+   "label": "vila fatima",
+   "search": "vila fatima"
+  },
+  "parque piracicaba": {
+   "names": [
+    "parque piracicaba"
+   ],
+   "total": 1,
+   "query": "parque piracicaba",
+   "match": null,
+   "rejected": [
+    "leisure/park: Zoológico Municipal de Piracicaba e Paraíso das Crianças (Piracicaba)",
+    "leisure/park: Clube de Campo de Piracicaba (Piracicaba)",
+    "leisure/park: Bosque do Cinquentenário do Lions Piracicaba Leste (Piracicaba)"
+   ],
+   "label": "parque piracicaba",
+   "search": "parque piracicaba"
+  },
+  "sao jorge": {
+   "names": [
+    "sao jorge"
+   ],
+   "total": 1,
+   "query": "sao jorge",
+   "match": {
+    "name": "São Jorge",
+    "lat": -22.7476894,
+    "lon": -47.6902157,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539652142"
+   },
+   "label": "sao jorge",
+   "search": "sao jorge"
+  },
+  "santa rita": {
+   "names": [
+    "santa rita"
+   ],
+   "total": 1,
+   "query": "santa rita",
+   "match": {
+    "name": "Santa Rita",
+    "lat": -22.7561087,
+    "lon": -47.5894475,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1410376338"
+   },
+   "label": "santa rita",
+   "search": "santa rita"
+  },
+  "castelinho": {
+   "names": [
+    "castelinho"
+   ],
+   "total": 1,
+   "query": "castelinho",
+   "match": {
+    "name": "Castelinho",
+    "lat": -22.7316096,
+    "lon": -47.6679062,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539520848"
+   },
+   "label": "castelinho",
+   "search": "castelinho"
+  },
+  "sao luiz": {
+   "names": [
+    "sao luiz"
+   ],
+   "total": 1,
+   "query": "sao luiz",
+   "match": null,
+   "rejected": [
+    "boundary/administrative: Residencial São Luiz (Piracicaba)",
+    "place/quarter: Residencial São Luiz (Piracicaba)",
+    "leisure/park: Área de Lazer do São Dimas Luiz Osório Bonassi - (Piracicaba)"
+   ],
+   "label": "sao luiz",
+   "search": "sao luiz"
+  },
+  "santa fe": {
+   "names": [
+    "santa fe"
+   ],
+   "total": 1,
+   "query": "santa fe",
+   "match": {
+    "name": "Santa Fé",
+    "lat": -22.7658459,
+    "lon": -47.675648,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1411920486"
+   },
+   "label": "santa fe",
+   "search": "santa fe"
+  },
+  "jardim itapua": {
+   "names": [
+    "jardim itapua"
+   ],
+   "total": 1,
+   "query": "jardim itapua",
+   "match": {
+    "name": "Jardim Itapuã",
+    "lat": -22.7535511,
+    "lon": -47.6625578,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539520845"
+   },
+   "label": "jardim itapua",
+   "search": "jardim itapua"
+  },
+  "balbo": {
+   "names": [
+    "balbo"
+   ],
+   "total": 1,
+   "query": "balbo",
+   "match": null,
+   "rejected": [
+    "place/square: Praça Atílio Balbo (Piracicaba)"
+   ],
+   "label": "balbo",
+   "search": "balbo"
+  },
+  "agua santa": {
+   "names": [
+    "agua santa"
+   ],
+   "total": 1,
+   "query": "agua santa",
+   "match": {
+    "name": "Água Santa",
+    "lat": -22.6877557,
+    "lon": -47.5954557,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539584541"
+   },
+   "label": "agua santa",
+   "search": "agua santa"
+  },
+  "sao judas": {
+   "names": [
+    "sao judas"
+   ],
+   "total": 1,
+   "query": "sao judas",
+   "match": {
+    "name": "São Judas",
+    "lat": -22.7182963,
+    "lon": -47.6356311,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "relation/1374219"
+   },
+   "label": "sao judas",
+   "search": "sao judas"
+  },
+  "ondas": {
+   "names": [
+    "ondas"
+   ],
+   "total": 1,
+   "query": "ondas",
+   "match": {
+    "name": "Ondas",
+    "lat": -22.7001483,
+    "lon": -47.6780342,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539520851"
+   },
+   "label": "ondas",
+   "search": "ondas"
+  },
+  "glebas california": {
+   "names": [
+    "glebas california"
+   ],
+   "total": 1,
+   "query": "glebas california",
+   "match": {
+    "name": "Glebas Califórnia",
+    "lat": -22.7186006,
+    "lon": -47.684938,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1412785414"
+   },
+   "label": "glebas california",
+   "search": "glebas california"
+  },
+  "jardim vitoria": {
+   "names": [
+    "jardim vitoria"
+   ],
+   "total": 1,
+   "query": "jardim vitoria",
+   "match": {
+    "name": "Jardim Vitória",
+    "lat": -22.7490876,
+    "lon": -47.6847006,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1412357082"
+   },
+   "label": "jardim vitoria",
+   "search": "jardim vitoria"
+  },
+  "jardim sao jorge": {
+   "names": [
+    "jardim sao jorge"
+   ],
+   "total": 1,
+   "query": "jardim sao jorge",
+   "match": {
+    "name": "Jardim São Jorge",
+    "lat": -22.7466065,
+    "lon": -47.6810685,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1412355446"
+   },
+   "label": "jardim sao jorge",
+   "search": "jardim sao jorge"
+  },
+  "santa cecilia": {
+   "names": [
+    "santa cecilia"
+   ],
+   "total": 1,
+   "query": "santa cecilia",
+   "match": {
+    "name": "Santa Cecília",
+    "lat": -22.7241581,
+    "lon": -47.6193689,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539578626"
+   },
+   "label": "santa cecilia",
+   "search": "santa cecilia"
+  },
+  "jardim vila rio": {
+   "names": [
+    "jardim vila rio"
+   ],
+   "total": 1,
+   "query": "jardim vila rio",
+   "match": {
+    "name": "Jardim Vila Rio",
+    "lat": -22.6736663,
+    "lon": -47.6690011,
+    "category": "boundary",
+    "type": "administrative",
+    "osm": "way/1413297500"
+   },
+   "label": "jardim vila rio",
+   "search": "jardim vila rio"
+  },
+  "rural serrote": {
+   "names": [
+    "rural serrote"
+   ],
+   "total": 1,
+   "query": "rural serrote",
+   "match": null,
+   "rejected": [],
+   "label": "rural serrote",
+   "search": "rural serrote"
+  },
+  "iaa": {
+   "names": [
+    "iaa"
+   ],
+   "total": 1,
+   "query": "iaa",
+   "match": null,
+   "rejected": [
+    "highway/residential: Travessa Iaa (Piracicaba)"
+   ],
+   "label": "iaa",
+   "search": "iaa"
+  },
+  "parque mirante": {
+   "names": [
+    "parque do mirante"
+   ],
+   "total": 1,
+   "query": "parque do mirante",
+   "match": null,
+   "rejected": [],
+   "label": "parque do mirante",
+   "search": "parque do mirante"
+  },
+  "conceicao": {
+   "names": [
+    "conceicao"
+   ],
+   "total": 1,
+   "query": "conceicao",
+   "match": {
+    "name": "Conceição",
+    "lat": -22.7451559,
+    "lon": -47.5729466,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6539584540"
+   },
+   "label": "conceicao",
+   "search": "conceicao"
+  }
+ },
+ "merge": [
+  {
+   "into": "cecap",
+   "pattern": "^cecap( 2)?$",
+   "why": "Cecap e Cecap II: o mesmo conjunto habitacional em etapas."
+  },
+  {
+   "into": "santa terezinha",
+   "pattern": "^santa tere[sz]inha$",
+   "why": "Santa Terezinha / Teresinha: só a grafia muda."
+  },
+  {
+   "into": "sol nascente",
+   "pattern": "^(jardim )?sol nascente( 2)?$",
+   "why": "Jardim Sol Nascente, Sol Nascente e Sol Nascente II: o mesmo loteamento em etapas."
+  },
+  {
+   "into": "monte libano",
+   "pattern": "^(jardim )?monte libano( 2)?$",
+   "why": "Jardim Monte Líbano, Monte Líbano e Monte Líbano II: o mesmo loteamento em etapas."
+  },
+  {
+   "into": "costa rica",
+   "pattern": "^(jardim )?costa rica$",
+   "why": "Jardim Costa Rica citado também só como Costa Rica."
+  },
+  {
+   "into": "bertolucci",
+   "pattern": "^(residencial )?bertolucci$",
+   "why": "Residencial Bertolucci citado também só como Bertolucci."
+  },
+  {
+   "into": "alto boa vista",
+   "pattern": "^(residencial )?alto boa vista( neste municipio)?$",
+   "why": "Residencial Alto da Boa Vista, com e sem o \"neste município\" que veio colado no texto."
+  }
+ ],
+ "bbox": [
+  -48.0982733,
+  -22.9017907,
+  -47.490322,
+  -22.5208872
+ ],
+ "bboxSource": "Nominatim relation/298413 (limite municipal, IBGE 3538709)",
+ "updatedAt": "2026-11-16",
+ "streetsSource": "OpenStreetMap via Overpass (vias com nome no município), ODbL"
+}
