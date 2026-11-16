@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-16T09:12:00+00:00",
+  "city": "santa-barbara-doeste",
+  "data": {
+    "name": "Santa Bárbara d\u0027Oeste",
+    "uf": "SP",
+    "seats": 19,
+    "monthlySalary": 0,
+    "salarySourceUrl": "https://transparencia.example/",
+    "termStart": "2025-01-01",
+    "officialUrl": "https://santabarbara.siscam.com.br/",
+    "lastSuccessfulScrape": "2026-11-16T08:12:00+00:00",
+    "capabilities": [
+      "councilors",
+      "propositions"
+    ],
+    "councilors": 2,
+    "totals": {
+      "propositions": 2,
+      "neighborhoodRequests": 1,
+      "byType": {
+        "Indicacao": 1,
+        "Mocao": 1
+      }
+    }
+  }
+}

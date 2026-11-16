@@ -1,5 +1,4 @@
-using System.Globalization;
-using System.Text;
+using Radar.Domain;
 
 namespace Radar.Classification;
 
@@ -20,20 +19,7 @@ public static class TextNormalizer
     };
 
     /// <summary>Sem acento, caixa baixa, espaços colapsados.</summary>
-    public static string Fold(string text)
-    {
-        ArgumentNullException.ThrowIfNull(text);
-        var builder = new StringBuilder(text.Length);
-        foreach (var c in text.Normalize(NormalizationForm.FormD))
-        {
-            if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
-            {
-                builder.Append(char.ToLowerInvariant(c));
-            }
-        }
-
-        return string.Join(' ', builder.ToString().Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries));
-    }
+    public static string Fold(string text) => TextFolding.Fold(text);
 
     /// <summary><see cref="Fold"/> mais expansão de abreviações (<c>jd.</c> → <c>jardim</c>).</summary>
     public static string Normalize(string text) =>

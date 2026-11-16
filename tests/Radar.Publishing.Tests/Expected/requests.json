@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-16T09:12:00+00:00",
+  "city": "santa-barbara-doeste",
+  "data": [
+    {
+      "id": "100",
+      "type": "Indicacao",
+      "number": 100,
+      "year": 2025,
+      "date": "2025-03-10",
+      "summary": "Indica tapa-buraco na Rua do Algodão, no bairro Jardim Primavera \u003Curgente\u003E",
+      "url": "https://camara.example/p/100",
+      "authors": [
+        "ana-souza",
+        "joao-lima"
+      ],
+      "streets": [
+        "rua do algodao"
+      ],
+      "neighborhoods": [
+        "jardim primavera"
+      ]
+    }
+  ]
+}

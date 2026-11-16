@@ -16,3 +16,7 @@ indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
+
+# Migrations do EF são geradas por dotnet ef; analisadores não se aplicam.
+[src/Radar.Data/Migrations/*.cs]
+generated_code = true

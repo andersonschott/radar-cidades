@@ -1,0 +1,4 @@
+[
+  { "Id": "Microsoft.Data.SqlClient.SNI.runtime", "Version": "6.0.3", "License": "MIT" },
+  { "Id": "Microsoft.Identity.Client.NativeInterop", "Version": "0.20.6", "License": "MIT" }
+]
