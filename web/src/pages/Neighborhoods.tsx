@@ -1,78 +1,73 @@
 import { use, useDeferredValue, useMemo, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router'
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from '@/components/ui/empty'
-import { Input } from '@/components/ui/input'
-import { formatDate, formatNumber, load, typeSingular, type Councilor, type Request } from '../data'
-import { OfficialLink } from '../layout'
+import { formatNumber, load, titleCase, type Councilor, type Meta, type Request } from '../data'
+import { topNeighborhoods } from '../insights'
+import { UpdatedAt } from '../layout'
+import { Chip, ChipRow, MoreButton, PropositionCard } from '../pieces'
 import { buildIndex, searchRequests } from '../search'
 
-const PageSize = 30
+const PageSize = 20
 
 export default function Neighborhoods() {
   const { city = '' } = useParams()
+  const meta = use(load<Meta>(`${city}/meta.json`)).data
   const requests = use(load<Request[]>(`${city}/requests.json`)).data
   const councilors = use(load<Councilor[]>(`${city}/councilors.json`)).data
   const names = useMemo(() => new Map(councilors.map((c) => [c.slug, c.name])), [councilors])
   const index = useMemo(() => buildIndex(requests), [requests])
+  const top = useMemo(() => topNeighborhoods(requests, 12), [requests])
   const [params, setParams] = useSearchParams()
   const q = params.get('q') ?? ''
   const deferred = useDeferredValue(q)
   const results = useMemo(() => searchRequests(requests, index, deferred), [requests, index, deferred])
   const [shown, setShown] = useState(PageSize)
+  const search = (v: string) => { setShown(PageSize); setParams(v ? { q: v } : {}, { replace: true }) }
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-semibold tracking-tight">O que pediram pelo seu bairro?</h1>
-      <div role="search">
-        <label htmlFor="q" className="sr-only">Rua ou bairro</label>
-        <Input
-          id="q"
-          type="search"
-          placeholder="Digite uma rua ou bairro"
-          value={q}
-          onChange={(e) => { const v = e.currentTarget.value; setShown(PageSize); setParams(v ? { q: v } : {}, { replace: true }) }}
-        />
+    <div className="flex flex-col gap-5">
+      <div>
+        <h1 className="text-4xl font-black leading-tight tracking-tight">O que pediram pelo seu bairro?</h1>
+        <p className="mt-2 text-lg text-muted-foreground">Digite o bairro ou a rua. Sem nada digitado, você vê a cidade inteira.</p>
       </div>
-      <p className="text-sm text-muted-foreground" aria-live="polite">
-        {deferred.trim()
-          ? `${formatNumber(results.length)} pedidos encontrados para “${deferred.trim()}”.`
-          : `${formatNumber(results.length)} pedidos na cidade, mais recentes primeiro.`}
+      <div role="search">
+        <label htmlFor="q" className="sr-only">Bairro ou rua</label>
+        <input id="q" type="search" value={q} placeholder="Ex.: Jardim Europa" autoComplete="off"
+          onChange={(e) => search(e.currentTarget.value)}
+          className="min-h-14 w-full rounded-2xl border-2 border-foreground/80 bg-card px-4 text-lg outline-none focus-visible:ring-4 focus-visible:ring-ring/40" />
+      </div>
+      <ChipRow label="Bairros mais citados">
+        {top.map((n) => (
+          <li key={n.key}><Chip active={q === n.key} onClick={() => search(q === n.key ? '' : n.key)}>{titleCase(n.key)}</Chip></li>
+        ))}
+      </ChipRow>
+
+      <p className="text-lg" aria-live="polite">
+        <strong className="text-3xl font-black tabular-nums">{formatNumber(results.length)}</strong>{' '}
+        {deferred.trim() ? <>pedidos para <strong>“{deferred.trim()}”</strong></> : <>pedidos na <strong>cidade inteira</strong>, dos mais novos para os mais antigos</>}
       </p>
 
       {results.length === 0 ? (
         <Empty><EmptyHeader><EmptyTitle>Nenhum pedido encontrado</EmptyTitle><EmptyDescription>Tente só o nome do bairro ou da rua, sem número.</EmptyDescription></EmptyHeader></Empty>
       ) : (
-        <ul className="divide-y rounded-xl border">
+        <ul className="flex flex-col gap-3">
           {results.slice(0, shown).map((r) => (
-            <li key={r.id} className="flex flex-col gap-1 p-4">
-              <div className="flex flex-wrap items-center gap-x-2 text-sm">
-                <span className="font-medium">{typeSingular[r.type] ?? r.type} nº {r.number}/{r.year}</span>
-                <span className="text-muted-foreground">{formatDate(r.date)}</span>
-              </div>
-              <p className="text-sm">{r.summary}</p>
-              <div className="flex flex-wrap items-center gap-x-3 text-sm text-muted-foreground">
-                {r.authors.length > 0 && (
-                  <span>
-                    Autoria:{' '}
-                    {r.authors.map((a, i) => (
-                      <span key={a}>{i > 0 && ', '}<Link to={`/${city}/vereadores/${a}`} className="hover:underline">{names.get(a) ?? a}</Link></span>
-                    ))}
-                  </span>
-                )}
-                <OfficialLink href={r.url} />
-              </div>
-            </li>
+            <PropositionCard key={r.id} item={r} authors={r.authors.length > 0 && (
+              <>Quem pediu: {r.authors.map((a, i) => (
+                <span key={a}>{i > 0 && ', '}<Link to={`/${city}/vereadores/${a}`} className="font-semibold hover:underline">{names.get(a) ?? a}</Link></span>
+              ))}</>
+            )} />
           ))}
         </ul>
       )}
       {shown < results.length && (
-        <button type="button" onClick={() => setShown((n) => n + PageSize)} className="self-center rounded-lg border px-4 py-2 text-sm font-medium hover:bg-accent">
-          Mostrar mais ({formatNumber(results.length - shown)} restantes)
-        </button>
+        <MoreButton onClick={() => setShown((n) => n + PageSize)}>Mostrar mais ({formatNumber(results.length - shown)} restantes)</MoreButton>
       )}
       <p className="text-sm text-muted-foreground">
-        Rua e bairro são extraídos automaticamente do texto do pedido e podem falhar. A busca também procura no texto completo.
+        Rua e bairro são lidos do texto de cada pedido por regras automáticas e podem falhar. A busca também procura no texto completo.
+        Pedidos sem autor listado foram feitos por suplentes, ex-vereadores ou pela Mesa.
       </p>
+      <UpdatedAt meta={meta} />
     </div>
   )
 }

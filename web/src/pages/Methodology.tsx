@@ -9,8 +9,8 @@ export default function Methodology() {
   const { city = '' } = useParams()
   const meta = use(load<Meta>(`${city}/meta.json`)).data
   return (
-    <article className="prose-sm flex max-w-2xl flex-col gap-4 [&_h2]:mt-4 [&_h2]:text-lg [&_h2]:font-semibold [&_li]:ml-5 [&_li]:list-disc">
-      <h1 className="text-2xl font-semibold tracking-tight">Metodologia</h1>
+    <article className="prose-sm flex max-w-2xl flex-col gap-4 [&_h2]:mt-4 [&_h2]:text-2xl [&_h2]:font-black text-base [&_li]:ml-5 [&_li]:list-disc">
+      <h1 className="text-4xl font-black tracking-tight">Como funciona</h1>
 
       <h2>Fonte</h2>
       <p>
