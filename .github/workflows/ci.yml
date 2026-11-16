@@ -24,9 +24,8 @@ jobs:
       - run: dotnet build Radar.slnx --no-restore -warnaserror
       - run: >
           dotnet test Radar.slnx --no-build
-          --collect:"XPlat Code Coverage"
+          --settings coverlet.runsettings
           --results-directory coverage
-          -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
       - uses: actions/upload-artifact@v4
         if: always()
         with:

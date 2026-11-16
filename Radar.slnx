@@ -11,6 +11,7 @@
     <Project Path="tests/Radar.Architecture.Tests/Radar.Architecture.Tests.csproj" />
     <Project Path="tests/Radar.Classification.Tests/Radar.Classification.Tests.csproj" />
     <Project Path="tests/Radar.Data.Tests/Radar.Data.Tests.csproj" />
+    <Project Path="tests/Radar.Domain.Tests/Radar.Domain.Tests.csproj" />
     <Project Path="tests/Radar.Publishing.Tests/Radar.Publishing.Tests.csproj" />
     <Project Path="tests/Radar.Sources.Tests/Radar.Sources.Tests.csproj" />
   </Folder>

@@ -1,0 +1,14 @@
+{
+  "slug": "santa-barbara-doeste",
+  "name": "Santa Bárbara d'Oeste",
+  "uf": "SP",
+  "ibgeCode": 3545803,
+  "source": "Siscam",
+  "baseUrl": "https://santabarbara.siscam.com.br/",
+  "seats": 19,
+  "monthlySalary": 0,
+  "salarySourceUrl": "https://transparencia-cmsantabarbaradoeste.smarapd.com.br/",
+  "termStart": "2025-01-01",
+  "active": true,
+  "capabilities": ["councilors", "propositions"]
+}

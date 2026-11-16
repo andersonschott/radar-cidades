@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Radar.Domain\Radar.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\cities\*.json" Link="cities\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
