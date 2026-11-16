@@ -20,7 +20,7 @@ public static class PropositionClassifier
         "mocao" => PropositionType.Mocao,
         "projeto de lei" => PropositionType.ProjetoLei,
         "projeto de lei complementar" => PropositionType.ProjetoLeiComplementar,
-        "projeto de resolucao" => PropositionType.ProjetoResolucao,
+        "projeto de resolucao" or "projeto de resolucao municipal" => PropositionType.ProjetoResolucao,
         "projeto de decreto legislativo" => PropositionType.ProjetoDecretoLegislativo,
         "emenda" => PropositionType.Emenda,
         _ => PropositionType.Outro,

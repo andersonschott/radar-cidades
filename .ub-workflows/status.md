@@ -37,4 +37,4 @@ Use `SOURCE_PACK_ATLAS.md` before opening source packs. Mapeamento da fonte: `do
 
 ## Next Allowed Action
 
-Aceitar a discovery `w01-i01-d01-siscam-fonte` e preparar a sprint S01.
+Aguardar a decisão da discovery d01. Enquanto isso, a S04 (front) pode avançar sobre o JSON gerado pelo replay das fixtures. O PR da S03 só sobe depois de decidir se as fixtures (coletadas sob leitura errada do robots) podem ir para o repositório público.

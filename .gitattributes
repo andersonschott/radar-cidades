@@ -1,2 +1,4 @@
 * text=auto eol=lf
 *.html -text
+# Fixtures são respostas reais da fonte: bytes preservados.
+tests/**/Fixtures/** -text

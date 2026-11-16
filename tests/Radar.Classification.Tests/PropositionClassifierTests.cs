@@ -23,6 +23,7 @@ public sealed class PropositionClassifierTests
     [InlineData("Projeto de Lei", PropositionType.ProjetoLei)]
     [InlineData("Projeto de Lei Complementar", PropositionType.ProjetoLeiComplementar)]
     [InlineData("Projeto de Resolução", PropositionType.ProjetoResolucao)]
+    [InlineData("Projeto de Resolução Municipal", PropositionType.ProjetoResolucao)]
     [InlineData("Projeto de Decreto Legislativo", PropositionType.ProjetoDecretoLegislativo)]
     [InlineData("Emenda", PropositionType.Emenda)]
     [InlineData("Ofício", PropositionType.Outro)]

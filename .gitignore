@@ -431,3 +431,6 @@ FodyWeavers.xsd
 dist/
 .env*.local
 coverage/
+
+# Azure Functions local
+local.settings.json

@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="C&#226;mara Municipal de Santa Barbar&#225; d&#39;Oeste">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Santa Barbar&#225; d&#39;Oeste ">
+    <meta name="author" content="Santa Barbar&#225; d&#39;Oeste ">
+
+    <link rel="icon" href="/Arquivos/Uploads/favicon.ico" type="image/x-icon" />
+    <title>C&#226;mara Municipal de Santa B&#225;rbara d&#39;Oeste - SP</title>
+
+    <link href="/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/css/site.css" rel="stylesheet" />
+    <!-- CSS para impressão -->
+    <link rel="stylesheet" type="text/css" href="/Content/css/impressao.css" media="print" />
+    <link href="/Content/css/responsividade.css" rel="stylesheet" />
+
+    <!--Fonte-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--Fonte-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!--Fonte Principal-->
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+   
+    <link href="/Content/css/darktooltip.css" rel="stylesheet" />
+
+    <!--Slide-->
+    <link href="/Scripts/PgwSlider/pgwslider.css" rel="stylesheet" />
+    <link href="/Scripts/slider-pro-master/dist/css/slider-pro.min.css" rel="stylesheet" />
+    <link href="/Scripts/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css" rel="stylesheet" />
+    <link href="/Content/css/jquery.fancybox.min.css" rel="stylesheet" />
+
+    <!--Acessibilidade-->
+    <link href="/Scripts/Acessibilidade/dist/css/accessibility-buttons.css" rel="stylesheet" />
+
+    <!--Owl Carousel-->
+    <link href="/Scripts/OwlCarousel/dist/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/Scripts/OwlCarousel/dist/assets/owl.theme.default.min.css" rel="stylesheet" />
+
+
+    <!--ReCaptcha-->
+    <script src='https://google.com/recaptcha/api.js'></script>
+
+    <!--[if lte IE 8]>
+        <script src="/Scripts/html5shiv.min.js"></script>
+        <script src="/Scripts/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Vlibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+    <!-- Vlibras -->
+</head>
+
+
+<body style="overflow-x: hidden!important">
+    <div class="cab-header">
+        <div class="row">
+            <div class="col-md-10 col-lg-10 col-xs-12 col-sm-12 col-lg-offset-2">
+                
+                <div id="triangulo">
+                    <!--Caixa de Pesquisa-->
+                    <div class="col-md-3 col-lg-3 col-xs-12 col-sm-12 margin-pesq" style="margin-left: -15px;">
+                        <form action="/Home/Pesquisa" method="POST" class="navbar-form rotacao tam-pesq" name="Formulário de Pesquisa " id="form-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control contorno" id="txtBusca" name="txtBusca" placeholder="Digite sua pesquisa">
+                                <span class="input-group-addon">
+                                    <button type="submit" class="fa fa-search" style="background:transparent;border:none"></button>
+                                </span>
+                            </div>
+                        </form>
+                        <!--Caixa de Pesquisa-->
+                    </div>
+                    <!--Caixa de Pesquisa-->
+                    <!--Redes Sociais-->
+                    <div class="col-md-2 col-lg-2 col-xs-12 col-sm-12 text-center margin-icon" style="margin-top: 10px;">
+                        <span>
+                            <a href="https://www.facebook.com/camarasbo.oficial/" target="_blank">
+                                <img src="/Arquivos/Uploads/facebook.png" class="rotacao redes-sociais" />
+                            </a>
+                        </span>
+                        <span>
+                            <a href="https://www.instagram.com/camarasbo/" target="_blank">
+                                <img src="/Arquivos/Uploads/instagram.png" class="rotacao redes-sociais" />
+                            </a>
+                        </span>
+                        <span>
+                            <a href="https://twitter.com/cmsbo" target="_blank">
+                                <img src="/Arquivos/Uploads/x.png" class="rotacao redes-sociais" />
+                            </a>
+                        </span>
+                    </div>
+                    <!--Redes Sociais-->
+                    <!--Acessibilidade e Caixa de Pesquisa-->
+                    <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12 margin-aces" style="margin-top: 10px;">
+                        <p id="acessibilidade" class="rotacao" style=" font-size: 17px;">
+                            <a href=" " accesskey="G"></a>
+                            <a href=" " accesskey="Y"></a>
+                            <a href=" " accesskey="F"></a>
+
+                            <a href="/Pagina/Listar/350" class="text-aces">Acessibilidade</a>
+                            <span style="color:#006666;">&nbsp; | &nbsp; </span>
+                            <a href="#" aria-label="Increase Font" id="accessibility-font" class="js-acessibility text-aces">Aumentar Fonte</a>
+                            <span style="color:#006666;">&nbsp; | &nbsp; </span>
+                            <a href="#" aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility text-aces">Contraste</a>
+                        </p>
+                    </div>
+                    <!--Acessibilidade e Caixa de Pesquisa-->
+                    <!--Telefone-->
+                    <div class="col-md-2 col-lg-2 col-xs-12 col-sm-12 margin-tel" style="margin-top: 10px;">
+                            <p class="text-header">
+                                <i class="fa fa-phone" aria-hidden="true" style="color:#006666"></i>
+                                <span style="color:#006666">(19) 3459-8900</span>
+                            </p>
+                    </div>
+                    <!--Telefone-->
+                </div>
+            </div>
+
+            <div class="header-impressao-finish">
+                <div class="header-impressao-finish col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                    <img src="/Arquivos/Uploads/brasao.png" alt="Santa Barbar&#225; d&#39;Oeste" style="width: auto !important; height: 300px !important; margin: 0 auto !important;" />
+                    <p><h3 class="titulo-header">Câmara Municipal de </h3></p>
+                    <p><h3 class="titulo-header"> Santa Bárbara D'Oeste </h3></p>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 ">
+                <!--Logo-->
+                <div class="col-md-7 col-lg-7 col-xs-12 col-sm-12 col-lg-offset-1 col-md-offset-1">
+                    <a href="/" title="Santa Barbar&#225; d&#39;Oeste">
+                        <img src="/Arquivos/Uploads/logo.png" alt="Santa Barbar&#225; d&#39;Oeste" class=" img-responsive" />
+                    </a>
+                    <br /><br class="hidden-sm hidden-xm" />
+                </div>
+                <div class="col-md-4 col-lg-4 col-xs-12 col-md-12" style="float: right!important;">
+                    <a href="/Pagina/Listar/419" target="_blank">
+                        <br class="hidden-sm hidden-xm" /><br class="hidden-sm hidden-xm" />
+                        <img src="../../Arquivos/Uploads/logo150.png" class="img-responsive" />
+                        
+                    </a>
+                    <br /><br class="hidden-sm hidden-xm" />
+                </div>
+                <!--Logo-->
+            </div>
+        </div>
+    </div>
+
+
+    <!--Navegação Mobile-->
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 margin-nav">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" style="margin-top: 8px; z-index: 10;" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                                <li class="dropdown">
+            <a href="../../../Pagina/Listar/352" title="A C&#226;mara" target="_self" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                A C&#226;mara
+                <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+                        <li>
+                            <a href="../../Pagina/Listar/352" title="Apresenta&#231;&#227;o" target="_self">
+                                Apresenta&#231;&#227;o
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../../Pagina/Listar/353" title="Localiza&#231;&#227;o" target="_self">
+                                Localiza&#231;&#227;o
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/364" title="Departamentos" target="_self">
+                                Departamentos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Composicao/Comissoes" title="Comiss&#245;es" target="_self">
+                                Comiss&#245;es
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Galeria/Listar/567" title="Presidentes" target="_self">
+                                Presidentes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/365" title="Legislaturas" target="_self">
+                                Legislaturas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Composicao/Mesa" title="Mesa Diretor" target="_self">
+                                Mesa Diretora
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/361" title="Atendimento ao Cidad&#227;o" target="_self">
+                                Atendimento ao Cidad&#227;o
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://camarasantabarbara.sp.gov.br/ouvidoria/passo1" title="Ouvidoria" target="_self">
+                                Ouvidoria
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/372" title="Assessoria de Comunica&#231;&#227;o" target="_self">
+                                Assessoria de Comunica&#231;&#227;o
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/vereador" title="Vereadores" target="_self">
+                                Vereadores
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../../pagina/listar/408" title="Escola do Legislativo" target="_self">
+                                Escola do Legislativo
+                            </a>
+                        </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" title="O Munic&#237;pio" target="_self" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                O Munic&#237;pio
+                <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+                        <li>
+                            <a href="../../Pagina/Listar/356" title="Aspectos Gerais" target="_self">
+                                Aspectos Gerais
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/358" title="Breve Hist&#243;rico" target="_self">
+                                Breve Hist&#243;rico
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/367" title="Galeria de Prefeitos" target="_self">
+                                Galeria de Prefeitos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Galeria/" title="Galeria de Fotos" target="_self">
+                                Galeria de Fotos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/359" title="S&#237;mbolos" target="_self">
+                                S&#237;mbolos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.camarasantabarbara.sp.gov.br/galeriavideo" title="Galeria de V&#237;deos" target="_self">
+                                Galeria de V&#237;deos
+                            </a>
+                        </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" title="Honrarias" target="_self" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Honrarias
+                <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+                        <li>
+                            <a href="../../Pagina/Listar/368" title="Cidad&#227;o Barbarense" target="_self">
+                                Cidad&#227;o Barbarense
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/369" title="Medalha Dona Margarida" target="_self">
+                                Medalha Dona Margarida
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/370" title="Medalha Zumbi dos Palmares" target="_self">
+                                Medalha Zumbi dos Palmares
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/371" title="Vulto Em&#233;rito" target="_self">
+                                Vulto Em&#233;rito
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/376" title="Destaques Culturais" target="_self">
+                                Destaques Culturais
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/377" title="Pr&#234;mio Gra&#231;a Camargo" target="_self">
+                                Pr&#234;mio Gra&#231;a Camargo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/378" title="Policial Padr&#227;o" target="_self">
+                                Policial Padr&#227;o
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/379" title="Diploma Aposentados do Ano" target="_self">
+                                Diploma Aposentados do Ano
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/380" title="Diploma P&#233;rola Byngton" target="_self">
+                                Diploma P&#233;rola Byngton
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/381" title="Empres&#225;rio do Ano" target="_self">
+                                Empres&#225;rio do Ano
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/382" title="Funcion&#225;rio P&#250;blico do Ano" target="_self">
+                                Funcion&#225;rio P&#250;blico do Ano
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/383" title="Escola Consciente" target="_self">
+                                Escola Consciente
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/384" title="Mulheres de Destaque" target="_self">
+                                Mulheres de Destaque
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/434" target="_self">
+                                Profissional da Educa&#231;&#227;o F&#237;sica
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/481" title="Diploma de Reconhecimento e Gratid&#227;o aos Professores/Escritores" target="_self">
+                                Diploma de Reconhecimento e Gratid&#227;o aos Professores/Escritores
+                            </a>
+                        </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" title="Legisla&#231;&#227;o" target="_self" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Legisla&#231;&#227;o
+                <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+                        <li>
+                            <a href="https://santabarbara.siscam.com.br/" title="Proposituras" target="_blank">
+                                Proposituras
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://consulta.siscam.com.br/camarasantabarbara/index/75" title="Leis" target="_blank">
+                                Leis
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../Pagina/Listar/412" title="Legisla&#231;&#227;o em Destaque" target="_self">
+                                Legisla&#231;&#227;o em Destaque
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://consulta.siscam.com.br/camarasantabarbara/sessoes" title="Sess&#245;es" target="_blank">
+                                Sess&#245;es
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../../Pagina/Listar/449" title="Licita&#231;&#227;oCompras Diretas e Licita&#231;&#245;es" target="_self">
+                                Compras Diretas e Licita&#231;&#245;es
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://santabarbara.siscam.com.br/arquivo?Id=350125" title="Regimento Interno" target="_blank">
+                                Regimento Interno
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://santabarbara.siscam.com.br/arquivo?Id=351648" title="Lei Org&#226;nica" target="_blank">
+                                Lei Org&#226;nica
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://camarasantabarbara.sp.gov.br/Pagina/Listar/442" title="Lei Geral de Prote&#231;&#227;o de Dados" target="_self">
+                                LGPD
+                            </a>
+                        </li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" title="Transpar&#234;ncia / SIC" target="_self" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Transpar&#234;ncia / SIC
+                <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+                        <li>
+                            <a href="https://transparencia-cmsantabarbaradoeste.smarapd.com.br/#/" title="Portal da Transpar&#234;ncia " target="_blank">
+                                Portal da Transpar&#234;ncia 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../../Pagina/Listar/445" target="_self">
+                                Plano Anual de Contrata&#231;&#245;es
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../../Sic/Cidadao" title="SIC" target="_self">
+                                SIC
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://santabarbara.siscam.com.br/Documentos/Pesquisa?Pesquisa=Avancada&amp;id=73&amp;pagina=1&amp;Modulo=8&amp;Documento=1532" target="_self">
+                                Relat&#243;rio de Atividades Parlamentares
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.camarasantabarbara.sp.gov.br/sic/formatos" title="Estrutura&#231;&#227;o das Informa&#231;&#245;es" target="_self">
+                                Estrutura&#231;&#227;o das Informa&#231;&#245;es
+                            </a>
+                        </li>
+            </ul>
+        </li>
+        <li>
+            <a href="../../FaleConosco" title="Fale Conosco" target="_self">
+                Fale Conosco
+            </a>
+        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+<!--Navegação Mobile-->
+
+<!--Navegação Mobile-->
+<div class="container" style="">
+    <div style="margin-top: 30px;">
+        <ul class='breadcrumb'><li><a href="/">Home</a></li><li class='breadcrumb-item'><a href="/Vereador">Vereador</a></li><li><a href="/Vereador/Listar/103">Listar</a></li></ol>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row vereadores">
+        <div class="container marketing text-center">
+            <h1 class="bg-titul-d" style=" font-family:'Merriweather'; color:#006666">Marcelo Cury</h1>
+            <hr />
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 info-ver">
+            <br>
+            <a data-fancybox="gallery" href="/Arquivos/Vereadores/1747078684300_cropped.jpg" title="Marcelo Cury" rel="group" class="text-center center-block">
+                <img src="/Arquivos/Vereadores/1747078684300_cropped.jpg" alt="Imagem do vereador" style="max-width:180px;" />
+            </a>
+
+            <div class="row">
+                <div class="text-center center-block" style="padding-left:15px; width:20%; float:left;">
+                    <p>
+                        <img src="/Arquivos/Uploads/Tipos/teste.png" alt="" style="width: 40px; border: 0;" />
+                    </p>
+                </div>
+
+                <div style="width: 47%; float:left; line-height:35px; font-weight:bold;">
+                    <h4 style="text-align:center;"class="nome-ver">
+                        <b>Marcelo Cury</b>
+                    </h4>
+                </div>
+            </div>
+
+                <p><strong>Telefone:</strong> (19)3459-8921</p>
+
+
+
+
+
+
+
+                <p>
+                    <span style="line-height: 1em; word-wrap: break-word;"><strong>Endereço para correspondência:</strong></span> <br />
+                    Rodovia Lu&#237;s Ometto (SP-306), 1001  - CEP: 13451-902 Bairro: Jardim Primavera Santa B&#225;rbara d&#39;Oeste - SP 
+                </p>
+            <h6 id="btnEmail"><br>
+                <a href="/FaleConosco/FaleVereador/103">
+                    <span class="bg-titulo" style="font-size:19px!important;"><i class="fa fa-envelope-o" aria-hidden="true" style="display: inline !important;"></i>&nbsp;Envie sua mensagem</span>
+                </a>
+            </h6>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-lg-9">
+
+            <hr class="divider cinza" />
+
+                <p><h2 class="bg-titulo">Participação em Comissões</h2></p>
+                    <p>
+                        <a href="/Composicao/Listar/12"> CPJR - Comiss&#227;o Permanente de Justi&#231;a e Reda&#231;&#227;o (Membro)</a> <br />
+                    </p>
+                    <p>
+                        <a href="/Composicao/Listar/15"> CPPS - Comiss&#227;o Permanente de Pol&#237;tica Social (Membro)</a> <br />
+                    </p>
+                    <p>
+                        <a href="/Composicao/Listar/21"> CPRT - Comiss&#227;o Permanente de Rela&#231;&#245;es do Trabalho (Membro)</a> <br />
+                    </p>
+
+            <hr class="divider cinza" />
+
+            <div if="ViewBag.NoticiasRelacionadas.Count > 0">
+                <h2 class="bg-titulo"> Últimas notícias relacionadas com o Vereador</h2>
+                    <p>
+                        <strong> 05 . 11 . 2026</strong>
+
+                        <a href="/noticias/camara-de-santa-barbara-entrega-medalha-dona-margarida-e-diploma-de-gratidao-a-homenageados" class="link">
+                            C&#226;mara de Santa B&#225;rbara entrega Medalha Dona Margarida e Diploma de Gratid&#227;o a homenageados
+                        </a>
+                    </p>
+                    <p>
+                        <strong> 03 . 11 . 2026</strong>
+
+                        <a href="/noticias/camara-aprova-refis-2026-e-projeto-voltado-a-inclusao-de-idosos" class="link">
+                            C&#226;mara aprova REFIS 2026 e projeto voltado &#224; inclus&#227;o de idosos
+                        </a>
+                    </p>
+                    <p>
+                        <strong> 26 . 10 . 2026</strong>
+
+                        <a href="/noticias/camara-de-santa-barbara-vota-tres-projetos-de-lei-na-sessao-desta-terca-feira" class="link">
+                            C&#226;mara de Santa B&#225;rbara vota tr&#234;s projetos de lei na sess&#227;o desta ter&#231;a-feira
+                        </a>
+                    </p>
+                    <p>
+                        <strong> 20 . 10 . 2026</strong>
+
+                        <a href="/noticias/camara-aprova-projetos-sobre-alfabetizacao-e-atendimento-a-pacientes-com-cancer" class="link">
+                            C&#226;mara aprova projetos sobre alfabetiza&#231;&#227;o e atendimento a pacientes com c&#226;ncer 
+                        </a>
+                    </p>
+                    <p>
+                        <strong> 19 . 10 . 2026</strong>
+
+                        <a href="/noticias/ordem-do-dia-da-38a-reuniao-ordinaria-conta-com-veto-e-dois-projetos" class="link">
+                            Ordem do Dia da 38&#170; Reuni&#227;o Ordin&#225;ria conta com veto e dois projetos 
+                        </a>
+                    </p>
+
+                <a href="/Noticia/Vereador/103" class="link">+Veja mais notícias</a>
+            </div>
+
+            <hr class="divider cinza" />
+
+            <h2 class="bg-titulo">Fale com o Vereador</h2>
+
+                <p><strong>Email:</strong> <a href="mailto:marcelocury@camarasantabarbara.sp.gov.br">marcelocury@camarasantabarbara.sp.gov.br</a></p>
+        </div>
+
+        <!--Redes Sociais-->
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bbdf449457bb325"></script>
+
+    </div>
+</div>
+
+
+
+    <!-- Vlibras -->
+    <!--Rodapé-->
+    <footer class="footer">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 foto-footer-impressao">
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 area-esq">
+                    <a href="/" title="Santa Barbar&#225; d&#39;Oeste">
+                        <img src="/Arquivos/Uploads/brasao_.png" class="logo-footer center-block img-responsive" />
+                    </a>
+                        <p class="text-footer">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            (19) 3459-8900
+                        </p>
+                                            <p class="text-footer">
+                            <b>Horário de Funcionamento:</b>
+                        </p>
+                        <p class="text-footer">
+                            Segunda a sexta-feira, das 08h &#224;s 18h.
+                        </p>
+                    <hr style="margin-bottom: 15px;" />
+                    <a href="http://webmail.camarasantabarbara.sp.gov.br" target="_blank" class="icon-text">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <span>Web Mail</span>
+                    </a>
+                    <a href="https://cmstabarbara.smarapd.com.br/atendimentointerno/#!/login" target="_blank" class="icon-text">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Portal do Servidor</span>
+                    </a>
+                    <a href="http://camarasantabarbara.sp.gov.br/Admin" target="_blank" class="icon-text">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <span>Administrativo</span>
+                    </a>
+                    <a href="/Home/MapaDoSite" target="_blank" class="icon-text">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span>Mapa do site</span>
+                    </a>
+                </div>
+
+                <div class="col-md-9 col-lg-9 col-xs-12 col-sm-12 area-dir links-uteis-impressao">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 fundo">
+                        <h4 class="bg-titulo-rodape" style="margin-left:20px;">Links Úteis</h4>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top:-14px;">
+                                <a href="https://www.al.sp.gov.br/" target="_blank">
+                                    <img src="/Arquivos/Uploads/lk_sp.png" class="links-uteis" />
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top:-14px;">
+                                <a href="https://www12.senado.leg.br/hpsenado" target="_blank">
+                                    <img src="/Arquivos/Uploads/lk_fed.png" class="links-uteis" />
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top:-14px;">
+                                <a href="https://www.tce.sp.gov.br/" target="_blank">
+                                    <img src="/Arquivos/Uploads/lk_tc.png" class="links-uteis" />
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top:-14px;">
+                                <a href="https://www.camara.leg.br/" target="_blank">
+                                    <img src="/Arquivos/Uploads/lk_camara.png" class="links-uteis" />
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top:-14px;">
+                                <a href="https://www.interlegis.leg.br/" target="_blank">
+                                    <img src="/Arquivos/Uploads/lk_inter.png" class="links-uteis" />
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top:-14px;">
+                                <a href="http://www.santabarbara.sp.gov.br/v5/index.php" target="_blank">
+                                    <img src="/Arquivos/Uploads/btn-prefeitura.png" class="links-uteis" />
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top:-14px;">
+                                <a href="https://transparencia-cmsantabarbaradoeste.smarapd.com.br/#/fixo/pca/balancetesdadespesa" target="_blank">
+                                    <img src="/Arquivos/Uploads/" class="links-uteis" />
+                                </a>
+                            </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 print-localizacao">
+                        <h4 class="bg-titulo-rodape">Localização</h4>
+                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.2648703003665!2d-47.432902984601526!3d-22.75554960710674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c89d97a0c0dea5%3A0xbab882341694485d!2sC%C3%A2mara%20Municipal%20de%20Santa%20B%C3%A1rbara%20d&#39;Oeste!5e0!3m2!1spt-BR!2sbr!4v1568682121918!5m2!1spt-BR!2sbr" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                        <p>
+                            <i class="fa fa-map-marker" style="font-size: 10px;" aria-hidden="true"></i>
+Rodovia Lu&#237;s Ometto (SP-306), 1001  - CEP: 13451-902                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Rodapé-->
+    <!--Copyright-->
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 tam-copyright">
+            <p class="copyright"> Copyright 2026 Todos os Direitos Reservados | Desenvolvido por: <a style="color: #006666;" href="http://www.sinoinformatica.com.br" target="_blank">Sino Informática</a>. |  Versão: 1.0.0.21</p>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/css/bootstrap-modal.css"></script>
+    <script src="/Scripts/tinymce/tinymce.js"></script>
+    
+    <script src="/Scripts/plupload/plupload.js"></script>
+    <script src="/Scripts/plupload/plupload.full.js"></script>
+    <script src="/Scripts/plupload/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+    <script src="/Scripts/plupload/plupload.flash.js"></script>
+    <script src="/Scripts/plupload/plupload.silverlight.js"></script>
+    <script src="/Scripts/jquery.maskedinput.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="/Scripts/jquery.tipTip.js"></script>
+    <script src="/Content/js/jquery.darktooltip.js"></script>
+    <script src="/Scripts/PgwSlider/pgwslider.js"></script>
+    <script src="/Content/js/jquery.fancybox.js"></script>
+    <script src="/Content/js/jquery.fancybox.min.js"></script>
+    <script src="/Content/js/shortcut.js"></script>
+    <script src="/Scripts/Acessibilidade/dist/js/accessibility-buttons.js"></script>
+    <script src="/Scripts/lity-2.3.1/src/lity.js"></script>
+    <script src="/Scripts/OwlCarousel/dist/owl.carousel.min.js"></script>
+    <script src="/Content/js/site.js"></script>
+
+    <!--Open Vídeo-->
+    <script src="/Scripts/lity.min.js"></script>
+    <link rel="stylesheet" href="/Content/css/lity.min.css" />
+
+    <script>
+        $(document).ready(function () {
+            $('.pgwSlider').pgwSlider();
+        });
+    </script>
+
+    <!--Dropdown-->
+    <script>
+        $(function () {
+            $('#consulta').change(function () {
+                $('.tipocons').hide();
+                $('#' + $(this).val()).show();
+            });
+
+        });
+    </script>
+    <!--Dropdown-->
+    <!--Subir ao Topo-->
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            jQuery("#subirTopo").hide();
+
+            jQuery('a#subirTopo').click(function () {
+                jQuery('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 1000) {
+                    jQuery('#subirTopo').fadeIn();
+                } else {
+                    jQuery('#subirTopo').fadeOut();
+                }
+            });
+        });
+    </script>
+    <!--Subir ao Topo-->
+    <!--Fancybox-->
+    <script>
+        $(".fancybox").fancybox({
+            "type": "image"
+        });
+    </script>
+
+    <!--Acessibilidade-->
+    <script>
+        shortcut.add("ALT+1", function () {
+            location.href = "../../Home";
+        });
+        shortcut.add("ALT+2", function () {
+            location.href = "../../FaleConosco";
+        });
+        shortcut.add("ALT+3", function () {
+            document.getElementById("txtBusca").focus();
+        });
+        shortcut.add("ALT+4", function () {
+            location.href = "../../Pagina/Listar/350";
+        });
+    </script>
+
+    <script>
+        function ready(fn) {
+            if (document.readyState !== 'loading') {
+                fn();
+            } else {
+                document.addEventListener('DOMContentLoaded', fn);
+            }
+        }
+
+        ready(function () {
+            accessibilityButtons();
+        });
+
+        $(document).ready(function () {
+            accessibilityButtons();
+        })
+
+        accessibilityButtons({
+            font: {
+                nameButtonIncrease: 'A+', // Default
+                ariaLabelButtonIncrease: 'Increase Font', // Default
+                nameButtonDecrease: 'A-', // Default
+                ariaLabelButtonDecrease: 'Decrease Font' // Default
+            },
+
+            contrast: {
+                nameButtonAdd: 'Contraste', // Default
+                ariaLabelButtonAdd: 'Contraste', // Default
+                nameButtonRemove: 'Remover Contraste', // Default
+                ariaLabelButtonRemove: 'Remover Contraste' // Default
+            }
+        });
+    </script>
+
+    <!--Dropdown-->
+    <script>
+        $(function () {
+            $('#consulta').change(function () {
+                $('.tipocons').hide();
+                $('#' + $(this).val()).show();
+            });
+
+        });
+    </script>
+    <!--Dropdown-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://googletagmanager.com/gtag/js?id=UA-2700716-34"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-2700716-34');
+    </script>
+
+    <!-- Sucess-->
+    <script>
+        $("button").click(function () {
+            $(".check-icon").hide();
+            setTimeout(function () {
+                $(".check-icon").show();
+            }, 10);
+        });
+    </script>
+    <!-- Sucess-->
+
+    <script>
+        $(function () {
+            $(".tiptip-top").tipTip({ maxWidth: "auto", edgeOffset: 1, delay: 100, fadeIn: 200, fadeOut: 200, defaultPosition: "top" });
+            $(".tiptip-right").tipTip({ maxWidth: "auto", edgeOffset: 1, delay: 100, fadeIn: 200, fadeOut: 200, defaultPosition: "right" });
+            $(".tiptip-bottom").tipTip({ maxWidth: "auto", edgeOffset: 1, delay: 100, fadeIn: 200, fadeOut: 200, defaultPosition: "bottom" });
+            $(".tiptip-left").tipTip({ maxWidth: "auto", edgeOffset: 1, delay: 100, fadeIn: 200, fadeOut: 200, defaultPosition: "left" });
+        });
+    </script>
+    <style>
+        .termos-privacidade {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            padding: 30px 0;
+            background-color: #0069c4;
+        }
+
+            .termos-privacidade .container {
+                display: flex;
+            }
+
+                .termos-privacidade .container > div {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+            .termos-privacidade i {
+                color: #fff;
+                font-size: 2rem;
+                margin: auto;
+            }
+
+            .termos-privacidade .cta:hover {
+                background-color: #003f71;
+            }
+
+        .cta:hover {
+            text-decoration: none;
+        }
+
+        .termos-privacidade .cta {
+            margin: auto 0;
+            background-color: #30b2ef;
+            color: #fff;
+            outline: 0 !important;
+            border: 0 !important;
+            box-shadow: none !important;
+        }
+
+        .cta span {
+            color: #fff !important;
+            font-size: 13px !important;
+        }
+
+        .termos-privacidade a, .termos-privacidade p {
+            margin: auto 0;
+            color: #fff;
+        }
+
+        .cta {
+            width: 100%;
+            min-height: 35px;
+            letter-spacing: .2em;
+            color: #fff;
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            transition: .25s ease;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        .box-cookies.hide {
+            display: none !important;
+        }
+
+        .btn-cookies {
+            cursor: pointer;
+        }
+    </style>
+
+    <div id="termos-privacidade" class="termos-privacidade box-cookies hide">
+        <div class="container">
+            <div class="col-12 col-md-1">
+                <i class="fa fa-exclamation-triangle"></i>
+            </div>
+            <div class="col-12 col-md-9">
+                <p>Esse site armazena dados (como cookies), o que permite que determinadas funcionalidades (como análises e personalização) funcionem apropriadamente. <a rel="noopener" href="http://www.camarasantabarbara.sp.gov.br/Arquivos/Uploads/pol%C3%ADtica-de-dados-e-cookies.pdf" target="_blank">Clique aqui e saiba mais!</a></p>
+            </div>
+            <div class="col-12 col-md-2">
+                <button id="termos-privacidade-button" class="bot-mensagem btn-cookies cta cta--light-blue"><span>Aceitar</span></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            if (!localStorage.pureJavaScriptCookies) {
+                document.querySelector(".box-cookies").classList.remove('hide');
+            }
+
+            var acceptCookies = () => {
+                document.querySelector(".box-cookies").classList.add('hide');
+                localStorage.setItem("pureJavaScriptCookies", "accept");
+            };
+
+            var btnCookies = document.querySelector(".btn-cookies");
+
+            btnCookies.addEventListener('click', acceptCookies);
+        });
+    </script>
+    <!--Modal-->
+    <script>
+        $(document).ready(function () {
+            $("#myModal").modal('show');
+        });
+    </script>
+</body>
+</html>
