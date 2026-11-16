@@ -4,8 +4,8 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { formatDate, formatMonthYear, formatNumber, groups, groupTotals, load, titleCase, today, type Councilor, type Meta, type Request } from '../data'
 import { repeatedStreets, topNeighborhoods } from '../insights'
 import { OfficialLink, UpdatedAt } from '../layout'
-import { BigNumber, Chip, ChipRow, MoreButton, Panel, PropositionCard, Section } from '../pieces'
-import { Avatar } from './Councilors'
+import { Authors, Avatar, BigNumber, Chip, ChipRow, GroupIcon, MoreButton, Panel, PropositionCard, Section } from '../pieces'
+
 
 export default function City() {
   const { city = '' } = useParams()
@@ -22,7 +22,7 @@ export default function City() {
         <p className="text-lg text-muted-foreground">
           Tudo o que os {meta.councilors} vereadores apresentaram na Câmara desde {formatDate(meta.termStart)}, com link para o documento oficial.
         </p>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
           <BigNumber value={formatNumber(meta.totals.propositions)} label="propostas desde a posse" />
           <BigNumber value={formatNumber(meta.totals.neighborhoodRequests)} label="pedidos que citam rua ou bairro" tone="text-info-foreground" />
           <BigNumber value={formatNumber(totals.lei)} label="propostas de lei" />
@@ -43,12 +43,21 @@ export default function City() {
         </Suspense>
       </Section>
 
-      <Section id="quem" kicker="Pedidos para os bairros" title="Quem mais registrou pedidos com endereço"
-        intro="Indicações e requerimentos que citam rua ou bairro. Volume não mede qualidade nem atendimento.">
-        <Panel>
-          <RankBars city={city} councilors={councilors} />
-        </Panel>
-      </Section>
+      <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
+        <Section id="quem" kicker="Pedidos para os bairros" title="Quem mais registrou pedidos com endereço"
+          intro="Indicações e requerimentos que citam rua ou bairro. Volume não mede qualidade nem atendimento.">
+          <Panel>
+            <RankBars city={city} councilors={councilors} />
+          </Panel>
+        </Section>
+        <Section id="bairros" kicker="No mapa da cidade" title="Bairros mais citados" intro="Quantos pedidos citam cada bairro. Toque para ver os pedidos.">
+          <Panel>
+            <Suspense fallback={<Skeleton className="h-64 w-full" />}>
+              <TopNeighborhoods city={city} />
+            </Suspense>
+          </Panel>
+        </Section>
+      </div>
 
       <Suspense fallback={<Skeleton className="h-96 w-full rounded-2xl" />}>
         <StreetsAndRecent city={city} councilors={councilors} />
@@ -56,13 +65,14 @@ export default function City() {
 
       <Section id="tipos" kicker="O trabalho da Câmara" title="Que tipo de proposta eles fazem"
         intro={`São ${formatNumber(meta.totals.propositions)} propostas desde a posse, separadas pelo tipo oficial.`}>
-        <ul className="flex flex-col gap-3">
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {groups.map((g) => (
             <li key={g.key}>
-              <Panel className="flex items-start gap-4">
-                <p className="w-24 shrink-0 text-3xl font-black tabular-nums tracking-tight">{formatNumber(totals[g.key])}</p>
+              <Panel className="flex h-full items-start gap-4">
+                <GroupIcon group={g.key} size="size-12" />
                 <div>
-                  <p className="flex items-center gap-2 text-lg font-bold leading-tight"><span aria-hidden className={`size-2.5 shrink-0 rounded-full ${g.color}`} />{g.label}</p>
+                  <p className="text-3xl font-black tabular-nums tracking-tight">{formatNumber(totals[g.key])}</p>
+                  <p className="text-lg font-bold leading-tight">{g.label}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{g.hint}</p>
                 </div>
               </Panel>
@@ -110,7 +120,7 @@ function RankBars({ city, councilors }: { city: string; councilors: Councilor[] 
       <ol className="flex flex-col gap-4">
         {(all ? ranked : ranked.slice(0, 5)).map((c) => (
           <li key={c.slug}>
-            <Link to={`/${city}/vereadores/${c.slug}`} className="flex items-center gap-3">
+            <Link to={`/${city}/vereadores/${c.slug}`} className="flex min-h-11 items-center gap-3">
               <Avatar councilor={c} size="size-10" />
               <span className="min-w-0 flex-1">
                 <span className="flex items-baseline justify-between gap-2">
@@ -140,9 +150,27 @@ function NeighborhoodChips({ city }: { city: string }) {
   )
 }
 
+function TopNeighborhoods({ city }: { city: string }) {
+  const requests = use(load<Request[]>(`${city}/requests.json`)).data
+  const top = useMemo(() => topNeighborhoods(requests, 8), [requests])
+  return (
+    <ol className="flex flex-col">
+      {top.map((n) => (
+        <li key={n.key}>
+          <Link to={`/${city}/bairros?q=${encodeURIComponent(n.key)}`} className="flex min-h-11 items-center gap-3 font-semibold text-info-foreground hover:underline">
+            <GroupIcon group="melhoria" size="size-8" />
+            <span className="flex-1">{titleCase(n.key)}</span>
+            <span className="font-black tabular-nums text-foreground">{formatNumber(n.count)}</span>
+          </Link>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
 function StreetsAndRecent({ city, councilors }: { city: string; councilors: Councilor[] }) {
   const requests = use(load<Request[]>(`${city}/requests.json`)).data
-  const names = useMemo(() => new Map(councilors.map((c) => [c.slug, c.name])), [councilors])
+  const bySlug = useMemo(() => new Map(councilors.map((c) => [c.slug, c])), [councilors])
   const streets = useMemo(() => repeatedStreets(requests), [requests])
   const recent = useMemo(() => {
     const now = today()
@@ -155,7 +183,7 @@ function StreetsAndRecent({ city, councilors }: { city: string; councilors: Coun
     <>
       <Section id="ruas" kicker="Pedidos repetidos" title="Ruas com mais pedidos"
         intro="Quando o mesmo endereço aparece em vários pedidos. O site da Câmara não mostra esse cruzamento.">
-        <ul className="flex flex-col gap-3">
+        <ul className="grid gap-3 lg:grid-cols-2">
           {streets.slice(0, shownStreets).map((s) => (
             <li key={`${s.street}|${s.neighborhood}`}>
               <Link to={`/${city}/bairros?q=${encodeURIComponent(s.neighborhood ? `${s.street} ${s.neighborhood}` : s.street)}`}
@@ -185,11 +213,7 @@ function StreetsAndRecent({ city, councilors }: { city: string; councilors: Coun
       <Section id="recentes" kicker="Na cidade inteira" title="Os pedidos mais recentes">
         <ul className="flex flex-col gap-3">
           {recent.slice(0, 3).map((r) => (
-            <PropositionCard key={r.id} item={r} authors={r.authors.length > 0 && (
-              <>Quem pediu: {r.authors.map((a, i) => (
-                <span key={a}>{i > 0 && ', '}<Link to={`/${city}/vereadores/${a}`} className="font-semibold hover:underline">{names.get(a) ?? a}</Link></span>
-              ))}</>
-            )} />
+            <PropositionCard key={r.id} item={r} authors={<Authors city={city} slugs={r.authors} councilors={bySlug} />} />
           ))}
         </ul>
         <Link to={`/${city}/bairros`} className="flex min-h-12 items-center justify-center rounded-xl bg-foreground px-4 text-base font-bold text-background">

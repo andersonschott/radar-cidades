@@ -3,6 +3,7 @@ import { Link, useParams, useSearchParams } from 'react-router'
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from '@/components/ui/empty'
 import { fold, formatNumber, groups, groupTotals, load, type Councilor, type Meta } from '../data'
 import { OfficialLink, UpdatedAt } from '../layout'
+import { Avatar } from '../pieces'
 
 const sorts = {
   nome: { label: 'Nome (A–Z)', compare: (a: Councilor, b: Councilor) => a.name.localeCompare(b.name, 'pt-BR') },
@@ -61,7 +62,7 @@ export default function Councilors() {
       {list.length === 0 ? (
         <Empty><EmptyHeader><EmptyTitle>Nenhum vereador encontrado</EmptyTitle><EmptyDescription>Revise a busca ou o filtro de partido.</EmptyDescription></EmptyHeader></Empty>
       ) : (
-        <ul className="grid gap-4 sm:grid-cols-2">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((c) => <li key={c.slug}><Badge city={city} councilor={c} /></li>)}
         </ul>
       )}
@@ -119,15 +120,5 @@ function Fig({ value, label }: { value: string; label: string }) {
       <p className="text-xl font-black tabular-nums">{value}</p>
       <p className="text-xs text-muted-foreground">{label}</p>
     </div>
-  )
-}
-
-export function Avatar({ councilor, size = 'size-8' }: { councilor: Councilor; size?: string }) {
-  return councilor.photoUrl ? (
-    <img src={councilor.photoUrl} alt="" loading="lazy" className={`${size} shrink-0 rounded-full bg-muted object-cover`} />
-  ) : (
-    <span aria-hidden className={`${size} grid shrink-0 place-items-center rounded-full bg-muted text-xs font-bold text-muted-foreground`}>
-      {councilor.name.split(' ').map((w) => w[0]).slice(0, 2).join('')}
-    </span>
   )
 }

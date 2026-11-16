@@ -1,10 +1,10 @@
 import { use, useDeferredValue, useMemo, useState } from 'react'
-import { Link, useParams, useSearchParams } from 'react-router'
+import { useParams, useSearchParams } from 'react-router'
 import { Empty, EmptyDescription, EmptyHeader, EmptyTitle } from '@/components/ui/empty'
 import { formatNumber, load, titleCase, type Councilor, type Meta, type Request } from '../data'
 import { topNeighborhoods } from '../insights'
 import { UpdatedAt } from '../layout'
-import { Chip, ChipRow, MoreButton, PropositionCard } from '../pieces'
+import { Authors, Chip, ChipRow, MoreButton, PropositionCard } from '../pieces'
 import { buildIndex, searchRequests } from '../search'
 
 const PageSize = 20
@@ -14,7 +14,7 @@ export default function Neighborhoods() {
   const meta = use(load<Meta>(`${city}/meta.json`)).data
   const requests = use(load<Request[]>(`${city}/requests.json`)).data
   const councilors = use(load<Councilor[]>(`${city}/councilors.json`)).data
-  const names = useMemo(() => new Map(councilors.map((c) => [c.slug, c.name])), [councilors])
+  const bySlug = useMemo(() => new Map(councilors.map((c) => [c.slug, c])), [councilors])
   const index = useMemo(() => buildIndex(requests), [requests])
   const top = useMemo(() => topNeighborhoods(requests, 12), [requests])
   const [params, setParams] = useSearchParams()
@@ -25,7 +25,7 @@ export default function Neighborhoods() {
   const search = (v: string) => { setShown(PageSize); setParams(v ? { q: v } : {}, { replace: true }) }
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="mx-auto w-full max-w-3xl flex flex-col gap-5">
       <div>
         <h1 className="text-4xl font-black leading-tight tracking-tight">O que pediram pelo seu bairro?</h1>
         <p className="mt-2 text-lg text-muted-foreground">Digite o bairro ou a rua. Sem nada digitado, você vê a cidade inteira.</p>
@@ -52,11 +52,7 @@ export default function Neighborhoods() {
       ) : (
         <ul className="flex flex-col gap-3">
           {results.slice(0, shown).map((r) => (
-            <PropositionCard key={r.id} item={r} authors={r.authors.length > 0 && (
-              <>Quem pediu: {r.authors.map((a, i) => (
-                <span key={a}>{i > 0 && ', '}<Link to={`/${city}/vereadores/${a}`} className="font-semibold hover:underline">{names.get(a) ?? a}</Link></span>
-              ))}</>
-            )} />
+            <PropositionCard key={r.id} item={r} authors={<Authors city={city} slugs={r.authors} councilors={bySlug} />} />
           ))}
         </ul>
       )}

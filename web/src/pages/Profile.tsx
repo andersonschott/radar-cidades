@@ -2,8 +2,8 @@ import { use, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router'
 import { formatNumber, groupOf, groups, groupTotals, load, type CouncilorProfile, type GroupKey, type Meta } from '../data'
 import { OfficialLink, UpdatedAt } from '../layout'
-import { BigNumber, Chip, ChipRow, MoreButton, PropositionCard } from '../pieces'
-import { Avatar } from './Councilors'
+import { Avatar, BigNumber, Chip, ChipRow, MoreButton, PropositionCard } from '../pieces'
+
 
 const PageSize = 20
 
@@ -19,7 +19,7 @@ export default function Profile() {
   const pick = (g: GroupKey | '') => { setShown(PageSize); setParams(g ? { tipo: g } : {}, { replace: true }) }
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="mx-auto w-full max-w-3xl flex flex-col gap-6">
       <header className="flex items-center gap-4">
         <Avatar councilor={councilor} size="size-20" />
         <div>

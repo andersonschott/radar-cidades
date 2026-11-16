@@ -125,11 +125,11 @@ export const typeSingular: Record<string, string> = {
 
 /** Grupos em linguagem simples para quem não conhece os nomes do Regimento. Cor por grupo, nunca por partido; sempre junto do rótulo. */
 export const groups = [
-  { key: 'melhoria', color: 'bg-blue-600', label: 'Pedidos de melhoria', types: ['Indicacao'], hint: 'Indicações: tapar buraco, podar árvore, trocar lâmpada. É um pedido; a Prefeitura decide se faz.' },
-  { key: 'cobranca', color: 'bg-orange-600', label: 'Perguntas e cobranças', types: ['Requerimento'], hint: 'Requerimentos: pedidos de informação à Prefeitura e a outros órgãos.' },
-  { key: 'mocao', color: 'bg-pink-600', label: 'Moções', types: ['Mocao'], hint: 'Homenagens, votos de pesar, apoio ou repúdio.' },
-  { key: 'lei', color: 'bg-emerald-600', label: 'Propostas de lei', types: ['ProjetoLei', 'ProjetoLeiComplementar'], hint: 'Projetos que criam ou mudam regras da cidade.' },
-  { key: 'outros', color: 'bg-slate-500', label: 'Outros', types: ['ProjetoDecretoLegislativo', 'ProjetoResolucao', 'Emenda', 'Outro'], hint: 'Decretos legislativos, regras internas da Câmara e emendas.' },
+  { key: 'melhoria', soft: 'bg-blue-50 text-blue-700', color: 'bg-blue-600', label: 'Pedidos de melhoria', types: ['Indicacao'], hint: 'Indicações: tapar buraco, podar árvore, trocar lâmpada. É um pedido; a Prefeitura decide se faz.' },
+  { key: 'cobranca', soft: 'bg-orange-50 text-orange-700', color: 'bg-orange-600', label: 'Perguntas e cobranças', types: ['Requerimento'], hint: 'Requerimentos: pedidos de informação à Prefeitura e a outros órgãos.' },
+  { key: 'mocao', soft: 'bg-pink-50 text-pink-700', color: 'bg-pink-600', label: 'Moções', types: ['Mocao'], hint: 'Homenagens, votos de pesar, apoio ou repúdio.' },
+  { key: 'lei', soft: 'bg-emerald-50 text-emerald-700', color: 'bg-emerald-600', label: 'Propostas de lei', types: ['ProjetoLei', 'ProjetoLeiComplementar'], hint: 'Projetos que criam ou mudam regras da cidade.' },
+  { key: 'outros', soft: 'bg-slate-100 text-slate-700', color: 'bg-slate-500', label: 'Outros', types: ['ProjetoDecretoLegislativo', 'ProjetoResolucao', 'Emenda', 'Outro'], hint: 'Decretos legislativos, regras internas da Câmara e emendas.' },
 ] as const
 
 export type GroupKey = (typeof groups)[number]['key']

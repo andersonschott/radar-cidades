@@ -29,7 +29,7 @@ export function CityLayout() {
   return (
     <>
       <header className="border-b">
-        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
           <Link to={`/${city}`} className="text-lg font-black tracking-tight">Radar <Suspense fallback={null}><CityName city={city} /></Suspense></Link>
           <nav aria-label="Seções" className="hidden gap-1 sm:flex">
             {sections.map((s) => (
@@ -46,7 +46,7 @@ export function CityLayout() {
           </NavLink>
         ))}
       </nav>
-      <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-6">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 lg:py-10">
         <Suspense fallback={<PageSkeleton />}>
           <Outlet />
         </Suspense>

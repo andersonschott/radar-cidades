@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -90,4 +91,15 @@
     --success-foreground: var(--color-emerald-400);
     --warning: var(--color-amber-500);
     --warning-foreground: var(--color-amber-400);
+}
+/* Títulos com fonte de display (servida pelo próprio site, OFL-1.1); texto corrido na fonte do sistema. */
+@theme {
+  --font-display: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  h1, h2 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
 }
