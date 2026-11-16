@@ -25,11 +25,15 @@ public sealed class PublicationBuilderTests
         var indicacao = Proposition("100", PropositionType.Indicacao, PropositionCategory.PedidoBairro, "Indica tapa-buraco na Rua do Algodão, no bairro Jardim Primavera <urgente>", ana, joao);
         indicacao.Locations.Add(new PropositionLocation { StreetRaw = "Rua do Algodão", StreetNormalized = "rua do algodao", NeighborhoodRaw = "Jardim Primavera", NeighborhoodNormalized = "jardim primavera" });
         var mocao = Proposition("200", PropositionType.Mocao, PropositionCategory.Outro, "Moção de congratulação", ana);
+        var lei = Proposition("300", PropositionType.ProjetoLei, PropositionCategory.Outro, "Institui o Dia do Ciclista", ana);
+        lei.Status = "Aprovado";
+        var leiParada = Proposition("301", PropositionType.ProjetoLei, PropositionCategory.Outro, "Dispõe sobre calçadas", joao);
+        leiParada.Status = "PEDIDO DE PARECER - SUSPENSO O TRÂMITE";
         var ordinaria = new Session { Id = 1, CityId = 1, SourceId = "840", Name = "16ª Sessão Ordinária de 2025", Date = new DateOnly(2025, 5, 6), OfficialUrl = new Uri("https://camara.example/s/840"), HasRollCall = true };
         ordinaria.Attendances.Add(new Attendance { SessionId = 1, CouncilorId = ana.Id, Present = true });
         ordinaria.Attendances.Add(new Attendance { SessionId = 1, CouncilorId = joao.Id, Present = false });
         var solene = new Session { Id = 2, CityId = 1, SourceId = "841", Name = "Sessão Solene", Date = new DateOnly(2025, 5, 7), OfficialUrl = new Uri("https://camara.example/s/841") };
-        return new CityPublicationData(city, ["councilors", "propositions", "attendance"], [ana, joao], [indicacao, mocao], GeneratedAt.AddHours(-1), [ordinaria, solene]);
+        return new CityPublicationData(city, ["councilors", "propositions", "attendance"], [ana, joao], [indicacao, mocao, lei, leiParada], GeneratedAt.AddHours(-1), [ordinaria, solene]);
     }
 
     private static Proposition Proposition(string id, PropositionType type, PropositionCategory category, string summary, params Councilor[] authors)

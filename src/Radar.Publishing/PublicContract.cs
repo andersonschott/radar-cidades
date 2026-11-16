@@ -12,7 +12,10 @@ public sealed record Envelope<T>(
 
 public sealed record CitySummaryDto(string Slug, string Name, string Uf, IReadOnlyList<string> Capabilities, DateTimeOffset? LastUpdated);
 
-public sealed record TotalsDto(int Propositions, int NeighborhoodRequests, IReadOnlyDictionary<string, int> ByType);
+/// <summary>Projetos de lei (comum e complementar) pela situação na Câmara. Aprovado = votado pela Câmara; a sanção do prefeito não está na fonte.</summary>
+public sealed record BillsDto(int Total, int Approved, int InProgress, int Withdrawn, int Other);
+
+public sealed record TotalsDto(int Propositions, int NeighborhoodRequests, IReadOnlyDictionary<string, int> ByType, BillsDto Bills);
 
 public sealed record MetaDto(
     string Name,
@@ -43,7 +46,8 @@ public sealed record PropositionDto(
     DateOnly Date,
     string Summary,
     string Category,
-    Uri Url);
+    Uri Url,
+    string? Status);
 
 public sealed record CouncilorProfileDto(CouncilorDto Councilor, IReadOnlyList<PropositionDto> Propositions);
 

@@ -67,10 +67,28 @@ public static class PublicationBuilder
         propositions.Count,
         propositions.Count(p => p.Category == PropositionCategory.PedidoBairro),
         propositions.GroupBy(p => p.Type.ToString()).OrderBy(g => g.Key, StringComparer.Ordinal)
-            .ToDictionary(g => g.Key, g => g.Count(), StringComparer.Ordinal));
+            .ToDictionary(g => g.Key, g => g.Count(), StringComparer.Ordinal),
+        Bills(propositions));
+
+    private static BillsDto Bills(IReadOnlyCollection<Proposition> propositions)
+    {
+        var stages = propositions.Where(p => p.Type is PropositionType.ProjetoLei or PropositionType.ProjetoLeiComplementar)
+            .Select(p => BillStage(p.Status)).ToList();
+        return new BillsDto(stages.Count, stages.Count(s => s == "approved"), stages.Count(s => s == "progress"), stages.Count(s => s == "withdrawn"), stages.Count(s => s == "other"));
+    }
+
+    // Texto livre da fonte ("Aprovado", "TRAMITANDO", "PEDIDO DE PARECER - SUSPENSO O TRÂMITE", "RETIRADO PELO AUTOR", "REJEITADO"…).
+    private static string BillStage(string? status)
+    {
+        var s = TextFolding.Fold(status ?? string.Empty);
+        return s.Contains("aprovad", StringComparison.Ordinal) ? "approved"
+            : s.Contains("retirad", StringComparison.Ordinal) ? "withdrawn"
+            : s.Contains("tramit", StringComparison.Ordinal) ? "progress"
+            : "other";
+    }
 
     private static PropositionDto ToDto(Proposition p) =>
-        new(p.SourceId, p.Type.ToString(), p.RawType, p.Number, p.Year, p.PresentedOn, p.Summary, p.Category.ToString(), p.OfficialUrl);
+        new(p.SourceId, p.Type.ToString(), p.RawType, p.Number, p.Year, p.PresentedOn, p.Summary, p.Category.ToString(), p.OfficialUrl, p.Status);
 
     private static RequestDto ToRequest(Proposition p, Dictionary<int, string> slugs) => new(
         p.SourceId, p.Type.ToString(), p.Number, p.Year, p.PresentedOn, p.Summary, p.OfficialUrl,

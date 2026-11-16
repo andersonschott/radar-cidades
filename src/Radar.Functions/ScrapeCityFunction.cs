@@ -19,6 +19,7 @@ public sealed partial class ScrapeCityFunction(
 {
     private const int BatchSize = 500;
     private const int RecentSessionDays = 14;
+    private static readonly PropositionType[] BillTypes = [PropositionType.ProjetoLei, PropositionType.ProjetoLeiComplementar];
 
     [Function("ScrapeCity")]
     [QueueOutput(QueueNames.Publish)]
@@ -51,7 +52,7 @@ public sealed partial class ScrapeCityFunction(
             var councilors = await store.UpsertCouncilorsAsync(city, await source.GetCouncilorsAsync(config, ct).ConfigureAwait(false), ct).ConfigureAwait(false);
             var totals = new UpsertStats(0, 0, 0, 0);
             var batch = new List<ClassifiedProposition>(BatchSize);
-            await foreach (var p in source.GetPropositionsAsync(config, since.Value, ct).ConfigureAwait(false))
+            await foreach (var p in source.GetPropositionsAsync(config, since.Value, null, ct).ConfigureAwait(false))
             {
                 batch.Add(Classify(p));
                 if (batch.Count == BatchSize)
@@ -62,8 +63,20 @@ public sealed partial class ScrapeCityFunction(
             }
 
             totals = Add(totals, await store.UpsertPropositionsAsync(city, batch, ct).ConfigureAwait(false));
+
+            // A situação de um projeto de lei muda meses depois de apresentado; relê só esses tipos desde a posse (~2 req/mês).
+            var bills = new List<ClassifiedProposition>();
+            if (since.Value > config.TermStart)
+            {
+                await foreach (var p in source.GetPropositionsAsync(config, config.TermStart, BillTypes, ct).ConfigureAwait(false))
+                {
+                    bills.Add(Classify(p));
+                }
+            }
+
+            var billTotals = await store.UpsertPropositionsAsync(city, bills, ct).ConfigureAwait(false);
             var sessions = await CollectSessionsAsync(source, config, city, ct).ConfigureAwait(false);
-            var stats = JsonSerializer.Serialize(new { since, councilors, propositions = totals, sessions });
+            var stats = JsonSerializer.Serialize(new { since, councilors, propositions = totals, bills = billTotals, sessions });
             await store.FinishRunAsync(run, ScrapeStatus.Succeeded, stats, null, ct).ConfigureAwait(false);
             LogDone(logger, config.Slug, stats);
             return config.Slug;

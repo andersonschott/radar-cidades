@@ -18,11 +18,16 @@ No active cards.
 
 ## Probable Later Wave
 
-No active cards.
+- **Comparativo entre cidades** (pedido do operador, 2026-11-16). Quando houver 2+ cidades (M3, Piracicaba): ver onde os vereadores apresentam mais leis, moções etc.
+  - Normalizar por vereador e por mês, porque as Câmaras têm tamanhos diferentes.
+  - Mapear os tipos de cada Câmara para os mesmos grupos ("moção" numa pode ser "requerimento" na outra).
+  - Ranking neutro, com a limitação ao lado (docs/editorial.md).
 
 ## Unassigned Product Option
 
-No active cards.
+- **Cor da cidade como destaque** (pedido do operador, 2026-11-16).
+  - Cor oficial (bandeira ou brasão, com fonte) num campo da config da cidade, aplicada como token no tema.
+  - Se coincidir com cor de partido, usar só como detalhe (regra "nada de cor de partido").
 
 ## Update Rules
 

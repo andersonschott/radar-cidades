@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router'
-import { formatDate, formatMoney, groupOf, groups, percent, salaryEstimate, typeSingular, type Attendance, type Councilor, type GroupKey, type Meta } from './data'
+import { AvgMonthMs, billStatus, formatDate, formatMoney, groupOf, groups, percent, salaryEstimate, typeSingular, type Attendance, type Councilor, type GroupKey, type Meta } from './data'
 import { OfficialLink } from './layout'
 
 /** Título de seção: chamada curta + pergunta grande + explicação simples. */
@@ -99,7 +99,7 @@ export function Authors({ city, slugs, councilors }: { city: string; slugs: stri
   )
 }
 
-interface CardItem { id: string; type: string; number: number; year: number; date: string; summary: string; url: string }
+interface CardItem { id: string; type: string; number: number; year: number; date: string; summary: string; url: string; status?: string | null }
 
 /** Uma proposição: ícone do grupo, o texto, etiqueta colorida, data, número, autoria e o link oficial. */
 export function PropositionCard({ item, authors }: { item: CardItem; authors?: ReactNode }) {
@@ -115,6 +115,7 @@ export function PropositionCard({ item, authors }: { item: CardItem; authors?: R
           <span aria-hidden>·</span>
           <span>{typeSingular[item.type] ?? item.type} nº {item.number}/{item.year}</span>
         </p>
+        {billStatus(item.type, item.status) && <p className="text-sm font-bold">Situação: {billStatus(item.type, item.status)}</p>}
         {authors}
         <OfficialLink href={item.url} />
       </div>
@@ -156,9 +157,11 @@ export function SalaryCounter({ meta }: { meta: Meta }) {
   const [now, setNow] = useState(() => Date.now())
   useEffect(() => {
     if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
-    const id = setInterval(() => setNow(Date.now()), 1000)
+    // Um tique por centavo: intervalo = tempo que o total leva para subir R$ 0,01.
+    const perMonth = meta.seats * meta.monthlySalary
+    const id = setInterval(() => setNow(Date.now()), perMonth > 0 ? Math.max(16, (0.01 * AvgMonthMs) / perMonth) : 1000)
     return () => clearInterval(id)
-  }, [])
+  }, [meta])
   const value = salaryEstimate(meta, now)
   if (value === null || !meta.salaryFrom) return null
   return (

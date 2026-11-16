@@ -18,11 +18,19 @@
     ],
     "councilors": 2,
     "totals": {
-      "propositions": 2,
+      "propositions": 4,
       "neighborhoodRequests": 1,
       "byType": {
         "Indicacao": 1,
-        "Mocao": 1
+        "Mocao": 1,
+        "ProjetoLei": 2
+      },
+      "bills": {
+        "total": 2,
+        "approved": 1,
+        "inProgress": 1,
+        "withdrawn": 0,
+        "other": 0
       }
     },
     "salaryFrom": "2025-02-01",

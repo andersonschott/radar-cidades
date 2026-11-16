@@ -9,7 +9,8 @@ public interface ILegislativeSource
 
     Task<IReadOnlyList<SourceCouncilor>> GetCouncilorsAsync(CityConfig city, CancellationToken ct);
 
-    IAsyncEnumerable<SourceProposition> GetPropositionsAsync(CityConfig city, DateOnly since, CancellationToken ct);
+    /// <summary><paramref name="types"/> nulo = todos os tipos coletados.</summary>
+    IAsyncEnumerable<SourceProposition> GetPropositionsAsync(CityConfig city, DateOnly since, IReadOnlyCollection<PropositionType>? types, CancellationToken ct);
 
     Task<IReadOnlyList<SourceSessionRef>> ListSessionsAsync(CityConfig city, DateOnly since, CancellationToken ct);
 

@@ -45,3 +45,13 @@ describe('salário', () => {
     expect(salaryEstimate({ ...meta, monthlySalary: 0 }, oneMonthLater)).toBeNull()
   })
 })
+
+describe('situação de projeto de lei', () => {
+  it('traduz a situação só para projetos de lei', async () => {
+    const { billStatus } = await import('./data')
+    expect(billStatus('ProjetoLei', 'Aprovado')).toBe('Aprovado pela Câmara')
+    expect(billStatus('ProjetoLei', 'PEDIDO DE PARECER - SUSPENSO O TRÂMITE')).toBe('Em análise, aguardando parecer')
+    expect(billStatus('ProjetoLeiComplementar', 'TRAMITANDO')).toBe('Em análise na Câmara')
+    expect(billStatus('Indicacao', 'TRAMITANDO')).toBeNull()
+  })
+})

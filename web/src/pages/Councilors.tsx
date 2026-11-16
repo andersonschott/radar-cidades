@@ -11,6 +11,7 @@ const sorts = {
   propostas: { label: 'Mais propostas no total', compare: (a: Councilor, b: Councilor) => b.totals.propositions - a.totals.propositions },
   leis: { label: 'Mais propostas de lei', compare: (a: Councilor, b: Councilor) => groupTotals(b.totals.byType).lei - groupTotals(a.totals.byType).lei },
   ausencias: { label: 'Mais ausências registradas', compare: (a: Councilor, b: Councilor) => (b.attendance?.absent ?? -1) - (a.attendance?.absent ?? -1) },
+  aprovadas: { label: 'Mais leis aprovadas pela Câmara', compare: (a: Councilor, b: Councilor) => b.totals.bills.approved - a.totals.bills.approved },
   mocoes: { label: 'Mais moções', compare: (a: Councilor, b: Councilor) => groupTotals(b.totals.byType).mocao - groupTotals(a.totals.byType).mocao },
 } as const
 type SortKey = keyof typeof sorts
@@ -37,7 +38,7 @@ export default function Councilors() {
     <div className="flex flex-col gap-5">
       <div>
         <h1 className="text-4xl font-black leading-tight tracking-tight">Os {meta.councilors} vereadores</h1>
-        <p className="mt-2 text-lg text-muted-foreground">Toque em um número para ver os documentos.</p>
+        <p className="mt-2 text-lg text-muted-foreground">Toque em um tipo de proposta para ver os documentos.</p>
       </div>
       <div className="grid gap-3 sm:grid-cols-3">
         <label className="flex flex-col gap-1 text-sm font-semibold">
@@ -69,6 +70,7 @@ export default function Councilors() {
       )}
       <p className="text-sm text-muted-foreground">
         Presença conta só as sessões com chamada em que o vereador foi chamado; o site da Câmara não informa se a ausência foi justificada.
+        "Aprovada pela Câmara" quer dizer votada pelos vereadores; se o prefeito sancionou não aparece no site da Câmara.
         Uma proposta com vários autores conta para cada um. Suplentes e ex-vereadores que assinaram propostas nesta legislatura ainda não aparecem aqui.
       </p>
       <UpdatedAt meta={meta} />
@@ -95,6 +97,11 @@ function Badge({ city, councilor: c }: { city: string; councilor: Councilor }) {
           <Fig value={formatNumber(c.totals.propositions)} label="propostas desde a posse" />
           <Fig value={formatNumber(c.totals.neighborhoodRequests)} label="pedidos com rua ou bairro" />
         </div>
+        {c.totals.bills.total > 0 && (
+          <p className="text-sm">
+            <strong className="text-base tabular-nums">{formatNumber(c.totals.bills.approved)} de {formatNumber(c.totals.bills.total)}</strong> propostas de lei aprovadas pela Câmara
+          </p>
+        )}
         <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">O que propôs até agora</p>
         <div aria-hidden className="flex h-2.5 gap-0.5 overflow-hidden rounded-full">
           {groups.map((g) => totals[g.key] > 0 && <span key={g.key} className={g.color} style={{ width: `${(totals[g.key] / sum) * 100}%` }} />)}

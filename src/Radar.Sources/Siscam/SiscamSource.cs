@@ -12,7 +12,13 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
     public const string AgentToken = "RadarCidades";
 
     // Código "Documento" do SISCAM (índice 74, módulo 8).
-    private static readonly int[] DocumentTypes = [123, 122, 124, 117, 118, 119, 120, 121];
+    // Código do SISCAM → tipo (docs/sources/siscam.md §2).
+    private static readonly (int Code, PropositionType Type)[] DocumentTypes =
+    [
+        (123, PropositionType.Indicacao), (122, PropositionType.Requerimento), (124, PropositionType.Mocao),
+        (117, PropositionType.ProjetoLei), (118, PropositionType.ProjetoLeiComplementar), (119, PropositionType.ProjetoDecretoLegislativo),
+        (120, PropositionType.ProjetoResolucao), (121, PropositionType.Outro),
+    ];
 
     private bool robotsChecked;
     private Dictionary<string, string>? aliases;
@@ -22,7 +28,7 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
     public async Task<IReadOnlyList<SourceCouncilor>> GetCouncilorsAsync(CityConfig city, CancellationToken ct) =>
         [.. (await GetCouncilorsWithAliasesAsync(city, ct).ConfigureAwait(false)).Select(c => c.Councilor)];
 
-    public async IAsyncEnumerable<SourceProposition> GetPropositionsAsync(CityConfig city, DateOnly since, [EnumeratorCancellation] CancellationToken ct)
+    public async IAsyncEnumerable<SourceProposition> GetPropositionsAsync(CityConfig city, DateOnly since, IReadOnlyCollection<PropositionType>? types, [EnumeratorCancellation] CancellationToken ct)
     {
         ArgumentNullException.ThrowIfNull(city);
         // shortcut: autoria casada por nome (parlamentar ou civil); trocar pela 2ª passada por AutoriaId (docs/sources/siscam.md §3) se UnknownAuthors crescer.
@@ -32,7 +38,7 @@ public sealed partial class SiscamSource(IHttpClientFactory httpFactory, TimePro
 
         foreach (var (from, to) in MonthlyWindows(since, today))
         {
-            foreach (var type in DocumentTypes)
+            foreach (var (type, _) in DocumentTypes.Where(d => types is null || types.Contains(d.Type)))
             {
                 var url = new Uri(city.BaseUrl,
                     $"Documentos/Exportar?tipo=0&Pesquisa=Avancada&id=74&Modulo=8&pagina=1&Documento={type}&DataInicial={Format(from)}&DataFinal={Format(to)}");

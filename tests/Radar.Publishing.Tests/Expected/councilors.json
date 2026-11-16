@@ -10,11 +10,19 @@
       "photoUrl": null,
       "profileUrl": "https://camara.example/v/1",
       "totals": {
-        "propositions": 2,
+        "propositions": 3,
         "neighborhoodRequests": 1,
         "byType": {
           "Indicacao": 1,
-          "Mocao": 1
+          "Mocao": 1,
+          "ProjetoLei": 1
+        },
+        "bills": {
+          "total": 1,
+          "approved": 1,
+          "inProgress": 0,
+          "withdrawn": 0,
+          "other": 0
         }
       },
       "attendance": {
@@ -30,10 +38,18 @@
       "photoUrl": null,
       "profileUrl": "https://camara.example/v/2",
       "totals": {
-        "propositions": 1,
+        "propositions": 2,
         "neighborhoodRequests": 1,
         "byType": {
-          "Indicacao": 1
+          "Indicacao": 1,
+          "ProjetoLei": 1
+        },
+        "bills": {
+          "total": 1,
+          "approved": 0,
+          "inProgress": 1,
+          "withdrawn": 0,
+          "other": 0
         }
       },
       "attendance": {

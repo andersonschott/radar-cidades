@@ -19,6 +19,16 @@ export interface Totals {
   propositions: number
   neighborhoodRequests: number
   byType: Record<string, number>
+  bills: Bills
+}
+
+/** Projetos de lei pela situação no site da Câmara. Aprovado = votado pela Câmara; a sanção do prefeito não aparece lá. */
+export interface Bills {
+  total: number
+  approved: number
+  inProgress: number
+  withdrawn: number
+  other: number
 }
 
 export interface Meta {
@@ -64,6 +74,7 @@ export interface Proposition {
   summary: string
   category: string
   url: string
+  status: string | null
 }
 
 export interface CouncilorProfile {
@@ -137,7 +148,7 @@ export const typeSingular: Record<string, string> = {
 
 /** Grupos em linguagem simples para quem não conhece os nomes do Regimento. Cor por grupo, nunca por partido; sempre junto do rótulo. */
 export const groups = [
-  { key: 'melhoria', soft: 'bg-blue-50 text-blue-700', color: 'bg-blue-600', label: 'Pedidos de melhoria', types: ['Indicacao'], hint: 'Indicações: tapar buraco, podar árvore, trocar lâmpada. É um pedido; a Prefeitura decide se faz.' },
+  { key: 'melhoria', soft: 'bg-blue-50 text-blue-700', color: 'bg-blue-600', label: 'Pedidos de melhoria', types: ['Indicacao'], hint: 'Indicações: tapar buraco, podar árvore, trocar lâmpada. É um pedido à Prefeitura, que não é obrigada a fazer. O site da Câmara não registra se foi feito.' },
   { key: 'cobranca', soft: 'bg-orange-50 text-orange-700', color: 'bg-orange-600', label: 'Perguntas e cobranças', types: ['Requerimento'], hint: 'Requerimentos: pedidos de informação à Prefeitura e a outros órgãos.' },
   { key: 'mocao', soft: 'bg-pink-50 text-pink-700', color: 'bg-pink-600', label: 'Moções', types: ['Mocao'], hint: 'Homenagens, votos de pesar, apoio ou repúdio.' },
   { key: 'lei', soft: 'bg-emerald-50 text-emerald-700', color: 'bg-emerald-600', label: 'Propostas de lei', types: ['ProjetoLei', 'ProjetoLeiComplementar'], hint: 'Projetos que criam ou mudam regras da cidade.' },
@@ -170,7 +181,7 @@ const monthYearFormat = new Intl.DateTimeFormat('pt-BR', { month: 'short', year:
 export const formatMonthYear = (iso: string) => monthYearFormat.format(new Date(`${iso}T00:00:00Z`)).replace('.', '').replace(' de ', ' ')
 export const today = () => new Date().toISOString().slice(0, 10)
 
-const AvgMonthMs = 30.4375 * 24 * 3600 * 1000
+export const AvgMonthMs = 30.4375 * 24 * 3600 * 1000
 
 /** Estimativa (SDD F-08): cadeiras × subsídio × meses corridos desde a vigência. */
 export function salaryEstimate(meta: Pick<Meta, 'seats' | 'monthlySalary' | 'salaryFrom'>, now: number): number | null {
@@ -182,3 +193,16 @@ export function salaryEstimate(meta: Pick<Meta, 'seats' | 'monthlySalary' | 'sal
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
 export const formatMoney = (n: number) => money.format(n)
 export const percent = (a: Attendance) => Math.round((a.present / a.sessions) * 100)
+
+/** Situação de um projeto de lei em palavras simples; outros tipos não mostram situação (indicação fica sempre "tramitando"). */
+export function billStatus(type: string, status: string | null | undefined): string | null {
+  if (!status || !(groups.find((g) => g.key === 'lei')!.types as readonly string[]).includes(type)) return null
+  const s = status.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
+  if (s.includes('aprovad')) return 'Aprovado pela Câmara'
+  if (s.includes('retirad')) return 'Retirado pelo autor'
+  if (s.includes('rejeitad')) return 'Rejeitado pela Câmara'
+  if (s.includes('arquivad')) return 'Arquivado'
+  if (s.includes('suspens')) return 'Em análise, aguardando parecer'
+  if (s.includes('tramit')) return 'Em análise na Câmara'
+  return status.charAt(0) + status.slice(1).toLowerCase()
+}

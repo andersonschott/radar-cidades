@@ -39,7 +39,7 @@ public sealed class SiscamSourceTests
         var source = new SiscamSource(new SingleClientFactory(handler), new FakeTimeProvider(new DateTimeOffset(2026, 11, 16, 12, 0, 0, TimeSpan.Zero)), NullLogger<SiscamSource>.Instance);
 
         var items = new List<SourceProposition>();
-        await foreach (var p in source.GetPropositionsAsync(City, new DateOnly(2026, 11, 1), CancellationToken.None))
+        await foreach (var p in source.GetPropositionsAsync(City, new DateOnly(2026, 11, 1), null, CancellationToken.None))
         {
             items.Add(p);
         }
@@ -49,6 +49,26 @@ public sealed class SiscamSourceTests
         items.Count(p => p.AuthorSourceIds.Count == 0).ShouldBeLessThan(5);
         handler.Requests.Count(u => u.AbsolutePath == "/Documentos/Exportar").ShouldBe(8);
         handler.Requests.ShouldAllBe(u => !u.Query.Contains("DataFinal=16/11/2026", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public async Task GetPropositions_WithTypes_RequestsOnlyThoseTypes()
+    {
+        using var handler = new FakeHandler(uri => uri.AbsolutePath switch
+        {
+            "/robots.txt" => "User-agent: *\nAllow: /",
+            "/vereadores" => Fixture("vereadores.html"),
+            _ => "<html><body><p class=\"text-center\">0 registro(s)</p></body></html>",
+        });
+        var source = new SiscamSource(new SingleClientFactory(handler), new FakeTimeProvider(new DateTimeOffset(2026, 11, 16, 12, 0, 0, TimeSpan.Zero)), NullLogger<SiscamSource>.Instance);
+
+        await foreach (var _ in source.GetPropositionsAsync(City, new DateOnly(2026, 10, 1), [PropositionType.ProjetoLei, PropositionType.ProjetoLeiComplementar], CancellationToken.None))
+        {
+        }
+
+        var exports = handler.Requests.Where(u => u.AbsolutePath == "/Documentos/Exportar").ToList();
+        exports.Count.ShouldBe(4);
+        exports.ShouldAllBe(u => u.Query.Contains("Documento=117", StringComparison.Ordinal) || u.Query.Contains("Documento=118", StringComparison.Ordinal));
     }
 
     [Fact]

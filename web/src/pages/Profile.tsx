@@ -36,6 +36,23 @@ export default function Profile() {
         <BigNumber value={formatNumber(councilor.totals.neighborhoodRequests)} label="pedidos que citam rua ou bairro" tone="text-info-foreground" />
       </div>
 
+      {councilor.totals.bills.total > 0 && (
+        <div className="rounded-2xl bg-muted/70 p-4">
+          <p className="text-lg">
+            <strong className="font-display text-3xl font-black tabular-nums">{formatNumber(councilor.totals.bills.approved)}</strong>{' '}
+            de {formatNumber(councilor.totals.bills.total)} propostas de lei aprovadas pela Câmara
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {[
+              [councilor.totals.bills.inProgress, 'em análise'],
+              [councilor.totals.bills.withdrawn, 'retiradas pelo autor'],
+              [councilor.totals.bills.other, 'rejeitadas ou arquivadas'],
+            ].filter(([n]) => Number(n) > 0).map(([n, l]) => `${formatNumber(Number(n))} ${l}`).join(' · ')}.
+            Aprovada quer dizer votada pelos vereadores; se o prefeito sancionou não aparece no site da Câmara.
+          </p>
+        </div>
+      )}
+
       <section aria-labelledby="lista" className="flex flex-col gap-3">
         <h2 id="lista" className="text-2xl font-black">O que apresentou</h2>
         <ChipRow label="Filtrar por tipo">
