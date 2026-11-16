@@ -5,7 +5,7 @@ A especificação completa é [`docs/SDD.md`](docs/SDD.md). Leia a seção do ma
 ## Stack (SDD §4)
 
 - .NET 10, Azure Functions isolated worker (Flex Consumption), EF Core 10 (SQL Server), AngleSharp, Microsoft.Extensions.Http.Resilience.
-- Testes .NET: xUnit, Shouldly, NSubstitute, Testcontainers (MsSql), NetArchTest.
+- Testes .NET: xUnit, Shouldly, NSubstitute, Testcontainers (MsSql). Regras de dependência testadas lendo as `ProjectReference` dos `.csproj`; NetArchTest só se surgir regra de nível de tipo.
 - Front: React 19, Vite, TypeScript strict, React Router, Tailwind, MiniSearch. Testes: Vitest + Testing Library.
 - IaC: Bicep. CI/CD: GitHub Actions com OIDC.
 - **Vetados por licença:** MediatR ≥12, FluentAssertions ≥8, AutoMapper ≥15, Hangfire.Pro. O CI checa licenças (allowlist no `ci.yml`).

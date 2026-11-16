@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Radar.Publishing\Radar.Publishing.csproj" />
+  </ItemGroup>
+</Project>
