@@ -1,0 +1,1311 @@
+{
+ "source": "OpenStreetMap via Nominatim",
+ "license": "ODbL 1.0 — © colaboradores do OpenStreetMap",
+ "updatedAt": "2026-11-16",
+ "neighborhoods": {
+  "jardim europa": {
+   "names": [
+    "jardim europa"
+   ],
+   "total": 286,
+   "query": "jardim europa",
+   "match": {
+    "name": "Jardim Europa",
+    "lat": -22.725859,
+    "lon": -47.3675137,
+    "category": "place",
+    "type": "village",
+    "osm": "node/4228358167"
+   }
+  },
+  "jardim mollon 4": {
+   "names": [
+    "jardim mollon 4",
+    "jardim mollon iv"
+   ],
+   "total": 285,
+   "query": "jardim mollon 4",
+   "match": null,
+   "rejected": [
+    "place/suburb: Jardim Pérola (Santa Bárbara d'Oeste)",
+    "place/suburb: Jardim Pérola (Santa Bárbara d'Oeste)",
+    "place/suburb: Jardim Brasília (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim sao francisco": {
+   "names": [
+    "jardim sao francisco",
+    "de jardim sao francisco"
+   ],
+   "total": 256,
+   "query": "jardim sao francisco",
+   "match": {
+    "name": "Jardim São Francisco",
+    "lat": -22.7620391,
+    "lon": -47.3976147,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/1712169708"
+   }
+  },
+  "jardim perola": {
+   "names": [
+    "jardim perola"
+   ],
+   "total": 255,
+   "query": "jardim perola",
+   "match": {
+    "name": "Jardim Pérola",
+    "lat": -22.7448372,
+    "lon": -47.3714211,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4232229573"
+   }
+  },
+  "jardim mollon": {
+   "names": [
+    "jardim mollon",
+    "jd.mollon"
+   ],
+   "total": 229,
+   "query": "jardim mollon",
+   "match": null,
+   "rejected": [
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "residencial furlan": {
+   "names": [
+    "residencial furlan"
+   ],
+   "total": 204,
+   "query": "residencial furlan",
+   "match": {
+    "name": "Residencial Furlan",
+    "lat": -22.7393746,
+    "lon": -47.4207575,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4276168905"
+   }
+  },
+  "jardim orquideas": {
+   "names": [
+    "jardim das orquideas",
+    "jardim orquideas"
+   ],
+   "total": 194,
+   "query": "jardim das orquideas",
+   "match": {
+    "name": "Jardim das Orquídeas",
+    "lat": -22.7093526,
+    "lon": -47.3681847,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4276168911"
+   }
+  },
+  "cidade nova": {
+   "names": [
+    "cidade nova"
+   ],
+   "total": 187,
+   "query": "cidade nova",
+   "match": {
+    "name": "Cidade Nova",
+    "lat": -22.7338294,
+    "lon": -47.3819348,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6287520377"
+   }
+  },
+  "jardim laranjeiras": {
+   "names": [
+    "jardim das laranjeiras",
+    "jardim laranjeiras"
+   ],
+   "total": 163,
+   "query": "jardim das laranjeiras",
+   "match": null,
+   "rejected": []
+  },
+  "jardim sao fernando": {
+   "names": [
+    "jardim sao fernando"
+   ],
+   "total": 151,
+   "query": "jardim sao fernando",
+   "match": {
+    "name": "Jardim São Fernando",
+    "lat": -22.7409093,
+    "lon": -47.3676291,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4232232989"
+   }
+  },
+  "mollon": {
+   "names": [
+    "mollon",
+    "de mollon"
+   ],
+   "total": 147,
+   "query": "mollon",
+   "match": {
+    "name": "Mollon",
+    "lat": -22.7495707,
+    "lon": -47.3658174,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4227654202"
+   }
+  },
+  "sao joaquim": {
+   "names": [
+    "sao joaquim"
+   ],
+   "total": 127,
+   "query": "sao joaquim",
+   "match": {
+    "name": "São Joaquim",
+    "lat": -22.7333729,
+    "lon": -47.4007451,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4227654204"
+   }
+  },
+  "planalto sol": {
+   "names": [
+    "planalto do sol",
+    "planalto sol"
+   ],
+   "total": 126,
+   "query": "planalto do sol",
+   "match": {
+    "name": "Planalto do Sol",
+    "lat": -22.7364876,
+    "lon": -47.3850774,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6287523887"
+   }
+  },
+  "mollon 4": {
+   "names": [
+    "mollon 4",
+    "mollon iv"
+   ],
+   "total": 125,
+   "query": "mollon 4",
+   "match": null,
+   "rejected": [
+    "place/suburb: Mollon (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "parque olaria": {
+   "names": [
+    "parque olaria"
+   ],
+   "total": 122,
+   "query": "parque olaria",
+   "match": {
+    "name": "Parque Olaria",
+    "lat": -22.7680295,
+    "lon": -47.4168169,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4227666889"
+   }
+  },
+  "jardim esmeralda": {
+   "names": [
+    "jardim esmeralda"
+   ],
+   "total": 114,
+   "query": "jardim esmeralda",
+   "match": null,
+   "rejected": [
+    "leisure/park: Área de Lazer Jardim Esmeralda (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim nova conquista": {
+   "names": [
+    "jardim nova conquista"
+   ],
+   "total": 94,
+   "query": "jardim nova conquista",
+   "match": {
+    "name": "Jardim Nova Conquista",
+    "lat": -22.7277466,
+    "lon": -47.3826209,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6016037956"
+   }
+  },
+  "jardim santa rita cassia": {
+   "names": [
+    "jardim santa rita de cassia"
+   ],
+   "total": 93,
+   "query": "jardim santa rita de cassia",
+   "match": {
+    "name": "Jardim Santa Rita de Cássia",
+    "lat": -22.7701058,
+    "lon": -47.3896043,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/5037927922"
+   }
+  },
+  "jardim sartori": {
+   "names": [
+    "jardim sartori"
+   ],
+   "total": 92,
+   "query": "jardim sartori",
+   "match": null,
+   "rejected": [
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "parque planalto": {
+   "names": [
+    "parque planalto"
+   ],
+   "total": 81,
+   "query": "parque planalto",
+   "match": null,
+   "rejected": [
+    "leisure/park: Parque Linear Perdoso (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "planalto sol 2": {
+   "names": [
+    "planalto do sol ii",
+    "planalto do sol 2"
+   ],
+   "total": 80,
+   "query": "planalto do sol ii",
+   "match": {
+    "name": "Planalto do Sol II",
+    "lat": -22.7337061,
+    "lon": -47.392576,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/6287551440"
+   }
+  },
+  "parque zabani": {
+   "names": [
+    "parque zabani"
+   ],
+   "total": 77,
+   "query": "parque zabani",
+   "match": {
+    "name": "Parque Zabani",
+    "lat": -22.7346691,
+    "lon": -47.3746937,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/11026899118"
+   }
+  },
+  "vila brasil": {
+   "names": [
+    "vila brasil"
+   ],
+   "total": 75,
+   "query": "vila brasil",
+   "match": {
+    "name": "Vila Brasil",
+    "lat": -22.7460285,
+    "lon": -47.4154383,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4227652301"
+   }
+  },
+  "cruzeiro sul": {
+   "names": [
+    "cruzeiro do sul"
+   ],
+   "total": 71,
+   "query": "cruzeiro do sul",
+   "match": null,
+   "rejected": [
+    "shop/beverages: cRUZEIRO DO SUL (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "conjunto habitacional trabalhadores": {
+   "names": [
+    "conjunto habitacional dos trabalhadores",
+    "conjunto habitacional trabalhadores"
+   ],
+   "total": 70,
+   "query": "conjunto habitacional dos trabalhadores",
+   "match": {
+    "name": "Conjunto Habitacional dos Trabalhadores",
+    "lat": -22.7384044,
+    "lon": -47.3951357,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/4227654203"
+   }
+  },
+  "sao fernando": {
+   "names": [
+    "sao fernando"
+   ],
+   "total": 69,
+   "query": "sao fernando",
+   "match": null,
+   "rejected": [
+    "place/suburb: Jardim São Fernando (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim san marino": {
+   "names": [
+    "jardim san marino"
+   ],
+   "total": 63,
+   "query": "jardim san marino",
+   "match": null,
+   "rejected": []
+  },
+  "jardim geriva": {
+   "names": [
+    "jardim geriva",
+    "jardim .geriva"
+   ],
+   "total": 61,
+   "query": "jardim geriva",
+   "match": {
+    "name": "Jardim Gerivá",
+    "lat": -22.7574295,
+    "lon": -47.3797855,
+    "category": "place",
+    "type": "neighbourhood",
+    "osm": "node/4276088412"
+   }
+  },
+  "parque lago": {
+   "names": [
+    "parque do lago",
+    "parque lago"
+   ],
+   "total": 60,
+   "query": "parque do lago",
+   "match": null,
+   "rejected": [
+    "water/lake: Lago do Parque dos Ipês (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "vila linopolis": {
+   "names": [
+    "vila linopolis"
+   ],
+   "total": 58,
+   "query": "vila linopolis",
+   "match": {
+    "name": "Vila Linópolis",
+    "lat": -22.758973,
+    "lon": -47.4233128,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/3763724306"
+   }
+  },
+  "conjunto trabalhadores": {
+   "names": [
+    "conjunto dos trabalhadores",
+    "conjunto trabalhadores"
+   ],
+   "total": 57,
+   "query": "conjunto dos trabalhadores",
+   "match": null,
+   "rejected": [
+    "place/quarter: Conjunto Habitacional dos Trabalhadores (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim vista alegre": {
+   "names": [
+    "jardim vista alegre"
+   ],
+   "total": 56,
+   "query": "jardim vista alegre",
+   "match": null,
+   "rejected": [
+    "highway/motorway: Rodovia dos Bandeirantes (Santa Bárbara d'Oeste)",
+    "highway/motorway: Rodovia dos Bandeirantes (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "31 marco": {
+   "names": [
+    "31 de marco"
+   ],
+   "total": 56,
+   "query": "31 de marco",
+   "match": {
+    "name": "31 de Março",
+    "lat": -22.7411132,
+    "lon": -47.4005974,
+    "category": "place",
+    "type": "hamlet",
+    "osm": "node/1712175594"
+   }
+  },
+  "dona regina": {
+   "names": [
+    "dona regina"
+   ],
+   "total": 55,
+   "query": "dona regina",
+   "match": null,
+   "rejected": []
+  },
+  "vila sartori": {
+   "names": [
+    "vila sartori"
+   ],
+   "total": 55,
+   "query": "vila sartori",
+   "match": {
+    "name": "Vila Sartori",
+    "lat": -22.7625512,
+    "lon": -47.408089,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4227657865"
+   }
+  },
+  "vila grego": {
+   "names": [
+    "vila grego"
+   ],
+   "total": 54,
+   "query": "vila grego",
+   "match": {
+    "name": "Vila Grego",
+    "lat": -22.7447109,
+    "lon": -47.4207799,
+    "category": "place",
+    "type": "village",
+    "osm": "node/1712173290"
+   }
+  },
+  "jardim mariana": {
+   "names": [
+    "jardim mariana"
+   ],
+   "total": 52,
+   "query": "jardim mariana",
+   "match": {
+    "name": "Jardim Mariana",
+    "lat": -22.7594021,
+    "lon": -47.3954765,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4232222004"
+   }
+  },
+  "jardim europa 4": {
+   "names": [
+    "jardim europa iv",
+    "jardim europa 4"
+   ],
+   "total": 51,
+   "query": "jardim europa iv",
+   "match": null,
+   "rejected": [
+    "place/village: Jardim Europa (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim batagin": {
+   "names": [
+    "jardim batagin"
+   ],
+   "total": 48,
+   "query": "jardim batagin",
+   "match": null,
+   "rejected": []
+  },
+  "jardim barao": {
+   "names": [
+    "jardim barao"
+   ],
+   "total": 43,
+   "query": "jardim barao",
+   "match": {
+    "name": "Jardim Barão",
+    "lat": -22.7256049,
+    "lon": -47.4046129,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4227654441"
+   }
+  },
+  "jardim conceicao": {
+   "names": [
+    "jardim conceicao"
+   ],
+   "total": 42,
+   "query": "jardim conceicao",
+   "match": {
+    "name": "Jardim Conceição",
+    "lat": -22.7549134,
+    "lon": -47.4059218,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4227657863"
+   }
+  },
+  "loteamento planalto sol": {
+   "names": [
+    "loteamento planalto do sol"
+   ],
+   "total": 41,
+   "query": "loteamento planalto do sol",
+   "match": null,
+   "rejected": []
+  },
+  "jardim dulce": {
+   "names": [
+    "jardim dulce"
+   ],
+   "total": 41,
+   "query": "jardim dulce",
+   "match": null,
+   "rejected": []
+  },
+  "centro": {
+   "names": [
+    "centro"
+   ],
+   "total": 41,
+   "query": "centro",
+   "match": {
+    "name": "Centro",
+    "lat": -22.7534928,
+    "lon": -47.4126717,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4222578819"
+   }
+  },
+  "vista alegre": {
+   "names": [
+    "vista alegre"
+   ],
+   "total": 41,
+   "query": "vista alegre",
+   "match": {
+    "name": "Vista Alegre",
+    "lat": -22.7772029,
+    "lon": -47.3975109,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4232227329"
+   }
+  },
+  "jardim alfa": {
+   "names": [
+    "jardim alfa"
+   ],
+   "total": 40,
+   "query": "jardim alfa",
+   "match": null,
+   "rejected": [
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
+    "highway/motorway: Rodovia dos Bandeirantes (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim paraiso": {
+   "names": [
+    "jardim paraiso"
+   ],
+   "total": 39,
+   "query": "jardim paraiso",
+   "match": null,
+   "rejected": []
+  },
+  "conjunto habitacional roberto romano": {
+   "names": [
+    "conjunto habitacional roberto romano"
+   ],
+   "total": 39,
+   "query": "conjunto habitacional roberto romano",
+   "match": null,
+   "rejected": []
+  },
+  "jardim cedros": {
+   "names": [
+    "jardim dos cedros",
+    "jardim cedros",
+    "jardim do cedros",
+    "jd.cedros"
+   ],
+   "total": 39,
+   "query": "jardim dos cedros",
+   "match": null,
+   "rejected": []
+  },
+  "jardim paulista": {
+   "names": [
+    "jardim paulista"
+   ],
+   "total": 37,
+   "query": "jardim paulista",
+   "match": null,
+   "rejected": []
+  },
+  "zabani": {
+   "names": [
+    "zabani"
+   ],
+   "total": 36,
+   "query": "zabani",
+   "match": null,
+   "rejected": [
+    "place/suburb: Parque Zabani (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim laudissi": {
+   "names": [
+    "jardim laudissi"
+   ],
+   "total": 36,
+   "query": "jardim laudissi",
+   "match": null,
+   "rejected": []
+  },
+  "nova conquista": {
+   "names": [
+    "nova conquista"
+   ],
+   "total": 36,
+   "query": "nova conquista",
+   "match": null,
+   "rejected": [
+    "place/suburb: Jardim Nova Conquista (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim icarai": {
+   "names": [
+    "jardim icarai"
+   ],
+   "total": 36,
+   "query": "jardim icarai",
+   "match": null,
+   "rejected": []
+  },
+  "parque residencial zabani": {
+   "names": [
+    "parque residencial zabani"
+   ],
+   "total": 36,
+   "query": "parque residencial zabani",
+   "match": null,
+   "rejected": []
+  },
+  "vila mollon": {
+   "names": [
+    "vila mollon"
+   ],
+   "total": 35,
+   "query": "vila mollon",
+   "match": {
+    "name": "Vila Mollon",
+    "lat": -22.7519654,
+    "lon": -47.3662651,
+    "category": "place",
+    "type": "village",
+    "osm": "node/1712169709"
+   }
+  },
+  "jardim brasilia": {
+   "names": [
+    "jardim brasilia"
+   ],
+   "total": 35,
+   "query": "jardim brasilia",
+   "match": {
+    "name": "Jardim Brasília",
+    "lat": -22.7644521,
+    "lon": -47.3624206,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4222566524"
+   }
+  },
+  "santa rita": {
+   "names": [
+    "santa rita",
+    "sta rita"
+   ],
+   "total": 35,
+   "query": "santa rita",
+   "match": null,
+   "rejected": [
+    "place/village: Jardim Santa Rita (Santa Bárbara d'Oeste)",
+    "place/quarter: Jardim Santa Rita de Cássia (Santa Bárbara d'Oeste)",
+    "leisure/park: Praça Santa Rita (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "vila diva": {
+   "names": [
+    "vila diva"
+   ],
+   "total": 34,
+   "query": "vila diva",
+   "match": {
+    "name": "Vila Diva",
+    "lat": -22.7409888,
+    "lon": -47.4077801,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/6286563897"
+   }
+  },
+  "sao camilo": {
+   "names": [
+    "sao camilo"
+   ],
+   "total": 34,
+   "query": "sao camilo",
+   "match": null,
+   "rejected": [
+    "place/suburb: Vila São Camilo (Santa Bárbara d'Oeste)",
+    "leisure/park: Parquinho do São Camilo (Santa Bárbara d'Oeste)",
+    "leisure/park: Praça do São Camilo (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "santa rita cassia": {
+   "names": [
+    "santa rita de cassia"
+   ],
+   "total": 33,
+   "query": "santa rita de cassia",
+   "match": null,
+   "rejected": [
+    "place/quarter: Jardim Santa Rita de Cássia (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim adelia": {
+   "names": [
+    "jardim adelia"
+   ],
+   "total": 33,
+   "query": "jardim adelia",
+   "match": null,
+   "rejected": []
+  },
+  "residencial sao joaquim": {
+   "names": [
+    "residencial sao joaquim"
+   ],
+   "total": 33,
+   "query": "residencial sao joaquim",
+   "match": null,
+   "rejected": []
+  },
+  "parque jacarandas": {
+   "names": [
+    "parque dos jacarandas",
+    "parque jacarandas"
+   ],
+   "total": 33,
+   "query": "parque dos jacarandas",
+   "match": null,
+   "rejected": [
+    "leisure/park: Parque dos Jacarandás (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim dona regina": {
+   "names": [
+    "jardim dona regina"
+   ],
+   "total": 32,
+   "query": "jardim dona regina",
+   "match": null,
+   "rejected": []
+  },
+  "jardim panambi": {
+   "names": [
+    "jardim panambi"
+   ],
+   "total": 32,
+   "query": "jardim panambi",
+   "match": {
+    "name": "Jardim Panambi",
+    "lat": -22.7547662,
+    "lon": -47.4259228,
+    "category": "place",
+    "type": "quarter",
+    "osm": "node/5037961483"
+   }
+  },
+  "residencial dona margarida": {
+   "names": [
+    "residencial dona margarida"
+   ],
+   "total": 29,
+   "query": "residencial dona margarida",
+   "match": {
+    "name": "Residencial Dona Margarida",
+    "lat": -22.7534269,
+    "lon": -47.4331128,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4276168909"
+   }
+  },
+  "vila rica": {
+   "names": [
+    "vila rica"
+   ],
+   "total": 29,
+   "query": "vila rica",
+   "match": null,
+   "rejected": []
+  },
+  "jardim europa 1": {
+   "names": [
+    "jardim europa i",
+    "jardim europa 1"
+   ],
+   "total": 26,
+   "query": "jardim europa i",
+   "match": null,
+   "rejected": [
+    "place/village: Jardim Europa (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "cidade nova 2": {
+   "names": [
+    "cidade nova ii",
+    "cidade nova 2"
+   ],
+   "total": 26,
+   "query": "cidade nova ii",
+   "match": null,
+   "rejected": [
+    "place/suburb: Cidade Nova (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "sao francisco": {
+   "names": [
+    "sao francisco"
+   ],
+   "total": 25,
+   "query": "sao francisco",
+   "match": null,
+   "rejected": [
+    "place/suburb: Jardim São Francisco (Santa Bárbara d'Oeste)",
+    "place/quarter: Jardim São Francisco (Santa Bárbara d'Oeste)",
+    "building/chapel: capela são francisco (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "vila mac knight": {
+   "names": [
+    "vila mac knight",
+    "vila mac-knight"
+   ],
+   "total": 25,
+   "query": "vila mac knight",
+   "match": null,
+   "rejected": []
+  },
+  "reserva centenaria": {
+   "names": [
+    "reserva centenaria"
+   ],
+   "total": 24,
+   "query": "reserva centenaria",
+   "match": null,
+   "rejected": []
+  },
+  "san marino": {
+   "names": [
+    "san marino"
+   ],
+   "total": 24,
+   "query": "san marino",
+   "match": null,
+   "rejected": []
+  },
+  "jardim santo antonio": {
+   "names": [
+    "jardim santo antonio"
+   ],
+   "total": 24,
+   "query": "jardim santo antonio",
+   "match": null,
+   "rejected": [
+    "highway/residential: Rua Santo Antônio do Jardim (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "vila mollon 4": {
+   "names": [
+    "vila mollon iv",
+    "vila mollon 4"
+   ],
+   "total": 24,
+   "query": "vila mollon iv",
+   "match": null,
+   "rejected": [
+    "place/village: Vila Mollon (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim candido bertini": {
+   "names": [
+    "jardim candido bertini"
+   ],
+   "total": 23,
+   "query": "jardim candido bertini",
+   "match": null,
+   "rejected": []
+  },
+  "parque eldorado": {
+   "names": [
+    "parque eldorado"
+   ],
+   "total": 23,
+   "query": "parque eldorado",
+   "match": null,
+   "rejected": []
+  },
+  "vila oliveira": {
+   "names": [
+    "vila oliveira"
+   ],
+   "total": 23,
+   "query": "vila oliveira",
+   "match": {
+    "name": "Vila Oliveira",
+    "lat": -22.7453698,
+    "lon": -47.4076441,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4276168904"
+   }
+  },
+  "jardim santa alice": {
+   "names": [
+    "jardim santa alice"
+   ],
+   "total": 23,
+   "query": "jardim santa alice",
+   "match": {
+    "name": "Jardim Santa Alice",
+    "lat": -22.779743,
+    "lon": -47.4065101,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/4232227330"
+   }
+  },
+  "jardim belo horizonte": {
+   "names": [
+    "jardim belo horizonte"
+   ],
+   "total": 22,
+   "query": "jardim belo horizonte",
+   "match": null,
+   "rejected": []
+  },
+  "jardim boa vista": {
+   "names": [
+    "jardim boa vista"
+   ],
+   "total": 22,
+   "query": "jardim boa vista",
+   "match": null,
+   "rejected": []
+  },
+  "glebas california": {
+   "names": [
+    "glebas california"
+   ],
+   "total": 22,
+   "query": "glebas california",
+   "match": {
+    "name": "Glebas California",
+    "lat": -22.7396611,
+    "lon": -47.439461,
+    "category": "place",
+    "type": "village",
+    "osm": "node/1712173252"
+   }
+  },
+  "jardim turmalinas": {
+   "names": [
+    "jardim turmalinas",
+    "jardim das turmalinas"
+   ],
+   "total": 22,
+   "query": "jardim turmalinas",
+   "match": null,
+   "rejected": []
+  },
+  "parque ipes": {
+   "names": [
+    "parque dos ipes"
+   ],
+   "total": 21,
+   "query": "parque dos ipes",
+   "match": null,
+   "rejected": [
+    "leisure/park: Parque dos Ipês (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim firenze": {
+   "names": [
+    "jardim firenze"
+   ],
+   "total": 21,
+   "query": "jardim firenze",
+   "match": null,
+   "rejected": [
+    "building/yes: Condomínio Jardim Firenze (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim pantano 2": {
+   "names": [
+    "jardim pantano 2",
+    "jardim pantano ii"
+   ],
+   "total": 20,
+   "query": "jardim pantano 2",
+   "match": null,
+   "rejected": [
+    "place/neighbourhood: Jardim Gerivá (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim pantano": {
+   "names": [
+    "jardim pantano"
+   ],
+   "total": 19,
+   "query": "jardim pantano",
+   "match": null,
+   "rejected": [
+    "place/neighbourhood: Jardim Gerivá (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim primavera": {
+   "names": [
+    "jardim primavera"
+   ],
+   "total": 19,
+   "query": "jardim primavera",
+   "match": {
+    "name": "Jardim Primavera",
+    "lat": -22.7538684,
+    "lon": -47.4278201,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/1712175452"
+   }
+  },
+  "conjunto romano": {
+   "names": [
+    "conjunto romano"
+   ],
+   "total": 19,
+   "query": "conjunto romano",
+   "match": null,
+   "rejected": []
+  },
+  "sartori": {
+   "names": [
+    "sartori"
+   ],
+   "total": 18,
+   "query": "sartori",
+   "match": null,
+   "rejected": [
+    "place/suburb: Vila Sartori (Santa Bárbara d'Oeste)",
+    "highway/residential: Rua Caetano Sartori (Santa Bárbara d'Oeste)",
+    "highway/residential: Rua Nelson Sartori (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim santa rita": {
+   "names": [
+    "jardim santa rita"
+   ],
+   "total": 18,
+   "query": "jardim santa rita",
+   "match": {
+    "name": "Jardim Santa Rita",
+    "lat": -22.7700303,
+    "lon": -47.3900599,
+    "category": "place",
+    "type": "village",
+    "osm": "node/1695646304"
+   }
+  },
+  "santa rosa": {
+   "names": [
+    "santa rosa"
+   ],
+   "total": 18,
+   "query": "santa rosa",
+   "match": null,
+   "rejected": [
+    "shop/department_store: Veste 10 (antigo Cine Santa Rosa, bem tombado) (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim augusto cavalheiro": {
+   "names": [
+    "jardim augusto cavalheiro"
+   ],
+   "total": 17,
+   "query": "jardim augusto cavalheiro",
+   "match": null,
+   "rejected": []
+  },
+  "beira rio": {
+   "names": [
+    "beira rio"
+   ],
+   "total": 17,
+   "query": "beira rio",
+   "match": null,
+   "rejected": [
+    "place/suburb: Chácaras Beira-rio (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim souza queiroz": {
+   "names": [
+    "jardim souza queiroz"
+   ],
+   "total": 17,
+   "query": "jardim souza queiroz",
+   "match": null,
+   "rejected": []
+  },
+  "geriva": {
+   "names": [
+    "geriva"
+   ],
+   "total": 16,
+   "query": "geriva",
+   "match": null,
+   "rejected": [
+    "place/neighbourhood: Jardim Gerivá (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "parque residencial lago": {
+   "names": [
+    "parque residencial do lago"
+   ],
+   "total": 14,
+   "query": "parque residencial do lago",
+   "match": null,
+   "rejected": [
+    "highway/motorway: Rodovia Luiz de Queiroz (Santa Bárbara d'Oeste)",
+    "highway/motorway: Rodovia dos Bandeirantes (Santa Bárbara d'Oeste)",
+    "highway/motorway: Rodovia dos Bandeirantes (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim america": {
+   "names": [
+    "jardim america"
+   ],
+   "total": 14,
+   "query": "jardim america",
+   "match": {
+    "name": "Jardim América",
+    "lat": -22.7528933,
+    "lon": -47.4207501,
+    "category": "place",
+    "type": "suburb",
+    "osm": "node/1712175478"
+   }
+  },
+  "parque paineiras": {
+   "names": [
+    "parque das paineiras",
+    "parque paineiras"
+   ],
+   "total": 14,
+   "query": "parque das paineiras",
+   "match": null,
+   "rejected": []
+  },
+  "santo antonio sapezeiro": {
+   "names": [
+    "santo antonio do sapezeiro",
+    "santo antonio sapezeiro"
+   ],
+   "total": 14,
+   "query": "santo antonio do sapezeiro",
+   "match": {
+    "name": "Santo Antônio do Sapezeiro",
+    "lat": -22.8244274,
+    "lon": -47.4860455,
+    "category": "place",
+    "type": "village",
+    "osm": "node/1733635656"
+   }
+  },
+  "frezarin": {
+   "names": [
+    "frezarin"
+   ],
+   "total": 13,
+   "query": "frezarin",
+   "match": null,
+   "rejected": []
+  },
+  "parque frezzarin": {
+   "names": [
+    "parque frezzarin"
+   ],
+   "total": 13,
+   "query": "parque frezzarin",
+   "match": null,
+   "rejected": [
+    "building/yes: Residencial Parque Assunção (Santa Bárbara d'Oeste)",
+    "building/yes: Residencial Parque Amarilis (Santa Bárbara d'Oeste)"
+   ]
+  },
+  "jardim carolina": {
+   "names": [
+    "jardim carolina"
+   ],
+   "total": 13,
+   "query": "jardim carolina",
+   "match": null,
+   "rejected": []
+  },
+  "vila dainese": {
+   "names": [
+    "vila dainese"
+   ],
+   "total": 13,
+   "query": "vila dainese",
+   "match": null,
+   "rejected": []
+  },
+  "parque linear": {
+   "names": [
+    "parque linear"
+   ],
+   "total": 13,
+   "query": "parque linear",
+   "match": null,
+   "rejected": [
+    "leisure/park: Parque Linear Perdoso (Santa Bárbara d'Oeste)"
+   ]
+  }
+ }
+}
