@@ -3,13 +3,12 @@ import { Link } from 'react-router'
 import { AvgMonthMs, billStatus, formatDate, formatMoney, groupOf, groups, percent, salaryEstimate, typeSingular, type Attendance, type Councilor, type GroupKey, type Meta } from './data'
 import { OfficialLink } from './layout'
 
-/** Título de seção: chamada curta + pergunta grande + explicação simples. */
-export function Section({ id, kicker, title, intro, children }: { id: string; kicker: string; title: string; intro?: ReactNode; children: ReactNode }) {
+/** Título de seção: pergunta grande + explicação simples. */
+export function Section({ id, title, intro, children }: { id: string; title: string; intro?: ReactNode; children: ReactNode }) {
   return (
     <section aria-labelledby={id} className="flex flex-col gap-4">
       <div>
-        <p className="text-sm font-bold text-city">{kicker}</p>
-        <h2 id={id} className="mt-1 text-3xl font-black leading-tight tracking-tight text-balance">{title}</h2>
+        <h2 id={id} className="text-3xl font-black leading-tight tracking-tight text-balance">{title}</h2>
         {intro && <p className="mt-2 max-w-prose text-base text-muted-foreground">{intro}</p>}
       </div>
       {children}
@@ -33,7 +32,7 @@ export function BigNumber({ value, label, tone = 'text-city' }: { value: string;
 /** Botão-pílula de atalho (bairros sugeridos, filtros). Altura mínima de toque: 44px. */
 export function Chip({ to, active, onClick, children }: { to?: string; active?: boolean; onClick?: () => void; children: ReactNode }) {
   const cls = `inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border px-4 text-sm font-semibold whitespace-nowrap ${
-    active ? 'border-foreground bg-foreground text-background' : 'bg-card hover:bg-accent'
+    active ? 'border-city bg-city text-white' : 'bg-card hover:border-city hover:text-city'
   }`
   const ref = useRef<HTMLButtonElement>(null)
   // O filtro ativo pode estar fora da faixa rolável; traz para a vista.
@@ -123,7 +122,7 @@ export function PropositionCard({ item, authors }: { item: CardItem; authors?: R
 
 export function MoreButton({ onClick, children }: { onClick: () => void; children: ReactNode }) {
   return (
-    <button type="button" onClick={onClick} className="min-h-12 w-full rounded-xl bg-foreground px-4 text-base font-bold text-background hover:opacity-90 sm:w-auto sm:self-start sm:px-8">
+    <button type="button" onClick={onClick} className="min-h-12 w-full rounded-xl bg-city px-4 text-base font-bold text-white hover:opacity-90 sm:w-auto sm:self-start sm:px-8">
       {children}
     </button>
   )
@@ -137,7 +136,7 @@ export function PresenceRing({ attendance, compact = false }: { attendance: Atte
     <div className="flex items-center gap-3">
       <svg viewBox="0 0 36 36" className={compact ? 'size-14' : 'size-16'} role="img" aria-label={`${attendance.present} presenças em ${attendance.sessions} sessões`}>
         <circle cx="18" cy="18" r={r} fill="none" strokeWidth="4" className="stroke-muted" />
-        <circle cx="18" cy="18" r={r} fill="none" strokeWidth="4" strokeDasharray={`${pct} ${100 - pct}`} strokeDashoffset="25" className="stroke-foreground" />
+        <circle cx="18" cy="18" r={r} fill="none" strokeWidth="4" strokeDasharray={`${pct} ${100 - pct}`} strokeDashoffset="25" className="stroke-city" />
         <text x="18" y="21" textAnchor="middle" className="fill-foreground text-[9px] font-black">{pct}%</text>
       </svg>
       <p className="text-sm leading-snug">

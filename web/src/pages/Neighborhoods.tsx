@@ -50,7 +50,7 @@ export default function Neighborhoods() {
             <EmptyDescription>Tente só o nome do bairro ou da rua, sem número.</EmptyDescription>
           </EmptyHeader>
           <EmptyContent>
-            <Link to={base} className="flex min-h-12 items-center justify-center rounded-xl bg-foreground px-6 text-base font-bold text-background hover:opacity-90">
+            <Link to={base} className="flex min-h-12 items-center justify-center rounded-xl bg-city px-6 text-base font-bold text-white hover:opacity-90">
               Ver a cidade inteira
             </Link>
           </EmptyContent>

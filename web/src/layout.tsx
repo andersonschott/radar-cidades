@@ -2,6 +2,7 @@ import { Suspense, use, useEffect, useLayoutEffect, useRef, useState, type React
 import { Form, isRouteErrorResponse, Link, NavLink, Outlet, useLocation, useMatches, useNavigate, useParams, useRouteError } from 'react-router'
 import { Skeleton } from '@/components/ui/skeleton'
 import { formatDateTime, load, type Meta } from './data'
+import { LogoMark } from './logo'
 
 const footerText = 'Projeto independente. Sem vínculo com Câmara, Prefeitura ou partido. Dados oficiais, atualizados diariamente.'
 
@@ -10,7 +11,7 @@ export function RootLayout() {
     <div className="flex min-h-dvh flex-col bg-background text-foreground">
       <Outlet />
       <footer className="mt-auto border-t pt-6 pb-[calc(6rem+env(safe-area-inset-bottom))] text-sm text-muted-foreground sm:pb-6">
-        <p className="mx-auto max-w-6xl px-4">{footerText}</p>
+        <p className="mx-auto flex max-w-6xl items-center gap-2 px-4"><LogoMark className="size-5 shrink-0" />{footerText}</p>
       </footer>
     </div>
   )
@@ -57,7 +58,7 @@ export function CityLayout() {
       <Suspense fallback={null}><DocumentTitle city={city} /><CityAccent city={city} /></Suspense>
       <header className="border-t-4 border-b border-t-city">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-          <Link to={`/${city}`} className="inline-flex min-h-11 items-center text-lg font-black tracking-tight"><span className="text-city">Radar</span>&nbsp;<Suspense fallback={null}><CityName city={city} /></Suspense></Link>
+          <Link to={`/${city}`} className="inline-flex min-h-11 items-center gap-2 text-lg font-black tracking-tight"><LogoMark className="size-7 shrink-0 text-city" /><span><span className="text-city">Radar</span> <Suspense fallback={null}><CityName city={city} /></Suspense></span></Link>
           <nav aria-label="Seções" className="hidden gap-1 sm:flex">
             {sections.map((s) => (
               <NavLink key={s.to} end={s.end} to={`/${city}/${s.to}`} className={link('rounded-lg px-3 py-2 text-sm font-semibold')}>{s.label}</NavLink>

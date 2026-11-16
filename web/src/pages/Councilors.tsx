@@ -84,7 +84,7 @@ function Badge({ city, councilor: c }: { city: string; councilor: Councilor }) {
   const sum = c.totals.propositions || 1
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-3xl border bg-card shadow-xs">
-      <Link to={c.slug} className="flex items-center gap-4 bg-muted/70 p-4 hover:bg-muted">
+      <Link to={c.slug} className="flex items-center gap-4 bg-city/8 p-4 hover:bg-city/14">
         <Avatar councilor={c} size="size-20 ring-4 ring-background" />
         <span className="min-w-0">
           <span className="block text-2xl font-black leading-tight tracking-tight">{c.name}</span>

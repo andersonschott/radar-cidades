@@ -128,3 +128,12 @@
   outline-offset: -3px;
   box-shadow: none;
 }
+
+/* Superfícies do navegador também levam a cor da cidade. */
+::selection {
+  background: color-mix(in oklab, var(--color-city) 22%, transparent);
+}
+:root {
+  accent-color: var(--color-city);
+  caret-color: var(--color-city);
+}

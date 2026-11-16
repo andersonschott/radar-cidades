@@ -37,9 +37,9 @@ export default function Profile() {
       </div>
 
       {councilor.totals.bills && councilor.totals.bills.total > 0 && (
-        <div className="rounded-2xl bg-muted/70 p-4">
+        <div className="rounded-2xl bg-city/8 p-4">
           <p className="text-lg">
-            <strong className="font-display text-3xl font-black tabular-nums">{formatNumber(councilor.totals.bills.approved)}</strong>{' '}
+            <strong className="font-display text-3xl font-black text-city tabular-nums">{formatNumber(councilor.totals.bills.approved)}</strong>{' '}
             de {formatNumber(councilor.totals.bills.total)} propostas de lei aprovadas pela Câmara
           </p>
           <p className="mt-1 max-w-prose text-sm text-muted-foreground">
