@@ -22,6 +22,17 @@ public sealed class CityConfigLoaderTests
     }
 
     [Fact]
+    public void LoadAll_ReadsAmericanaConfig()
+    {
+        var am = CityConfigLoader.LoadAll(CitiesDir).Single(c => c.Slug == "americana");
+
+        am.BaseUrl.ShouldBe(new Uri("https://americana.siscam.com.br/"));
+        (am.MonthlySalary, am.PresidentSalary).ShouldBe((10305.64m, 11283.75m));
+        am.RobotsOverride.ShouldBe("docs/adr/0003-coleta-siscam-americana-apesar-do-robots.md");
+        am.Siscam!.DocumentTypes[PropositionType.Indicacao].ShouldBe(125);
+    }
+
+    [Fact]
     public void LoadAll_EverySiscamCityMapsAllEightTypes()
     {
         PropositionType[] expected = [PropositionType.Indicacao, PropositionType.Requerimento, PropositionType.Mocao, PropositionType.ProjetoLei,
