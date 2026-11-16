@@ -32,7 +32,7 @@ export default function City() {
         </Suspense>
         <div className="grid grid-cols-2 gap-3">
           <BigNumber value={formatNumber(meta.totals.propositions)} label="propostas desde a posse" />
-          <BigNumber value={formatNumber(meta.totals.neighborhoodRequests)} label="pedidos que citam rua ou bairro" tone="text-info-foreground" />
+          <BigNumber value={formatNumber(meta.totals.neighborhoodRequests)} label="pedidos que citam rua ou bairro" />
         </div>
         <UpdatedAt meta={meta} />
       </Section>
@@ -64,7 +64,7 @@ export default function City() {
         </ul>
         <Panel>
           <h3 className="font-bold">As {formatNumber(meta.totals.propositions)} propostas, pelo tipo oficial</h3>
-          <ul className="mt-2 flex flex-col">
+          <ul className="mt-2 flex max-w-md flex-col">
             {groups.map((g) => (
               <li key={g.key}>
                 {/* O que cada tipo significa fica a um toque; o número fica sempre à vista. */}
@@ -138,14 +138,14 @@ function Streets({ city }: { city: string }) {
   return (
     <Section id="ruas" kicker="Pedidos repetidos" title="Ruas com mais pedidos"
       intro="Quando o mesmo endereço aparece em vários pedidos. O site da Câmara não mostra esse cruzamento.">
-      <ul className="grid gap-3 lg:grid-cols-2">
+      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {streets.slice(0, shown).map((s) => (
           <li key={`${s.street}|${s.neighborhood}`}>
             <Link to={`/${city}/bairros?q=${encodeURIComponent(s.neighborhood ? `${s.street} ${s.neighborhood}` : s.street)}`}
               className="flex gap-4 rounded-2xl border bg-card p-4 hover:bg-accent">
               <span className="w-16 shrink-0 text-center">
                 <span className="block text-4xl font-black leading-none tabular-nums">{s.count}</span>
-                <span className="text-xs font-bold uppercase text-muted-foreground">pedidos</span>
+                <span className="text-xs font-bold text-muted-foreground">pedidos</span>
               </span>
               <span className="flex min-w-0 flex-col gap-1">
                 <span className="text-lg font-bold leading-tight">{titleCase(s.street)}</span>
@@ -162,8 +162,8 @@ function Streets({ city }: { city: string }) {
       {shown < streets.length && (
         <MoreButton onClick={() => setShown((n) => n + 10)}>Mostrar mais ruas ({formatNumber(streets.length - shown)})</MoreButton>
       )}
-      <p className="text-sm text-muted-foreground">Pedido repetido não prova que a Prefeitura deixou de atender: pode ser outro trecho da mesma rua ou outro serviço. Abra e leia os pedidos.</p>
-      <Link to={`/${city}/bairros`} className="font-bold underline underline-offset-4">Ver todos os {formatNumber(requests.length)} pedidos da cidade, dos mais novos aos mais antigos</Link>
+      <p className="max-w-prose text-sm text-muted-foreground">Pedido repetido não prova que a Prefeitura deixou de atender: pode ser outro trecho da mesma rua ou outro serviço. Abra e leia os pedidos.</p>
+      <Link to={`/${city}/bairros`} className="inline-flex min-h-11 items-center self-start font-bold underline underline-offset-4">Ver todos os {formatNumber(requests.length)} pedidos da cidade, dos mais novos aos mais antigos</Link>
     </Section>
   )
 }

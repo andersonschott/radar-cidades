@@ -26,7 +26,7 @@ export default function Neighborhoods() {
   const base = `/${city}/bairros`
 
   return (
-    <div className="mx-auto w-full max-w-3xl flex flex-col gap-5">
+    <div className="w-full max-w-3xl flex flex-col gap-5">
       <div>
         <h1 className="text-4xl font-black leading-tight tracking-tight">O que pediram pelo seu bairro?</h1>
         <p className="mt-2 text-lg text-muted-foreground">Digite o bairro ou a rua. Sem nada digitado, você vê a cidade inteira.</p>
@@ -65,7 +65,7 @@ export default function Neighborhoods() {
       {shown < results.length && (
         <MoreButton onClick={() => setMore({ q, shown: shown + PageSize })}>Mostrar mais ({formatNumber(results.length - shown)} restantes)</MoreButton>
       )}
-      <p className="text-sm text-muted-foreground">
+      <p className="max-w-prose text-sm text-muted-foreground">
         Rua e bairro são lidos do texto de cada pedido por regras automáticas e podem falhar. A busca também procura no texto completo.
         Pedidos sem autor listado foram feitos por suplentes, ex-vereadores ou pela Mesa.
       </p>

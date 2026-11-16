@@ -68,7 +68,7 @@ export default function Councilors() {
           {list.map((c) => <li key={c.slug}><Badge city={city} councilor={c} /></li>)}
         </ul>
       )}
-      <p className="text-sm text-muted-foreground">
+      <p className="max-w-prose text-sm text-muted-foreground">
         Presença conta só as sessões com chamada em que o vereador foi chamado; o site da Câmara não informa se a ausência foi justificada.
         "Aprovada pela Câmara" quer dizer votada pelos vereadores; se o prefeito sancionou não aparece no site da Câmara.
         Uma proposta com vários autores conta para cada um. Suplentes e ex-vereadores que assinaram propostas nesta legislatura ainda não aparecem aqui.
@@ -102,7 +102,7 @@ function Badge({ city, councilor: c }: { city: string; councilor: Councilor }) {
             <strong className="text-base tabular-nums">{formatNumber(c.totals.bills.approved)} de {formatNumber(c.totals.bills.total)}</strong> propostas de lei aprovadas pela Câmara
           </p>
         )}
-        <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">O que propôs até agora</p>
+        <p className="text-sm font-bold text-muted-foreground">O que propôs até agora</p>
         <div aria-hidden className="flex h-2.5 gap-0.5 overflow-hidden rounded-full">
           {groups.map((g) => totals[g.key] > 0 && <span key={g.key} className={g.color} style={{ width: `${(totals[g.key] / sum) * 100}%` }} />)}
         </div>

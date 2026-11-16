@@ -8,9 +8,9 @@ export function Section({ id, kicker, title, intro, children }: { id: string; ki
   return (
     <section aria-labelledby={id} className="flex flex-col gap-4">
       <div>
-        <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{kicker}</p>
+        <p className="text-sm font-bold text-muted-foreground">{kicker}</p>
         <h2 id={id} className="mt-1 text-3xl font-black leading-tight tracking-tight text-balance">{title}</h2>
-        {intro && <p className="mt-2 text-base text-muted-foreground">{intro}</p>}
+        {intro && <p className="mt-2 max-w-prose text-base text-muted-foreground">{intro}</p>}
       </div>
       {children}
     </section>
@@ -45,7 +45,7 @@ export function Chip({ to, active, onClick, children }: { to?: string; active?: 
 
 export function ChipRow({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <ul aria-label={label} className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none]">
+    <ul aria-label={label} className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [mask-image:linear-gradient(to_right,#000_88%,transparent)] [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:[mask-image:none]">
       {children}
     </ul>
   )
@@ -88,7 +88,7 @@ export function Authors({ city, slugs, councilors }: { city: string; slugs: stri
         const c = councilors.get(slug)
         return (
           <li key={slug}>
-            <Link to={`/${city}/vereadores/${slug}`} className="flex min-h-8 items-center gap-1.5 font-semibold hover:underline">
+            <Link to={`/${city}/vereadores/${slug}`} className="flex min-h-11 items-center gap-1.5 font-semibold hover:underline">
               {c && <Avatar councilor={c} size="size-6" />}{c?.name ?? slug}
             </Link>
           </li>
@@ -111,9 +111,7 @@ export function PropositionCard({ item, authors }: { item: CardItem; authors?: R
         <p className="text-base font-semibold leading-snug">{item.summary}</p>
         <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
           <span className={`rounded-md px-2 py-0.5 font-semibold ${group.soft}`}>{group.label}</span>
-          <span>{formatDate(item.date)}</span>
-          <span aria-hidden>·</span>
-          <span>{typeSingular[item.type] ?? item.type} nº {item.number}/{item.year}</span>
+          <span className="whitespace-nowrap">{formatDate(item.date)} <span aria-hidden>·</span> {typeSingular[item.type] ?? item.type} nº {item.number}/{item.year}</span>
         </p>
         {billStatus(item.type, item.status) && <p className="text-sm font-bold">Situação: {billStatus(item.type, item.status)}</p>}
         {authors}
@@ -125,7 +123,7 @@ export function PropositionCard({ item, authors }: { item: CardItem; authors?: R
 
 export function MoreButton({ onClick, children }: { onClick: () => void; children: ReactNode }) {
   return (
-    <button type="button" onClick={onClick} className="min-h-12 w-full rounded-xl bg-foreground px-4 text-base font-bold text-background hover:opacity-90">
+    <button type="button" onClick={onClick} className="min-h-12 w-full rounded-xl bg-foreground px-4 text-base font-bold text-background hover:opacity-90 sm:w-auto sm:self-start sm:px-8">
       {children}
     </button>
   )
@@ -166,13 +164,13 @@ export function SalaryCounter({ meta }: { meta: Meta }) {
   if (value === null || !meta.salaryFrom) return null
   return (
     <div className="rounded-3xl bg-foreground p-5 text-background">
-      <p className="text-xs font-bold uppercase tracking-wider opacity-80">Salário pago aos {meta.seats} vereadores (estimativa)</p>
+      <p className="text-sm font-bold opacity-80">Salário pago aos {meta.seats} vereadores (estimativa)</p>
       <p aria-hidden className="mt-1 font-display text-4xl font-black tabular-nums tracking-tight sm:text-5xl">{formatMoney(value)}</p>
       <p className="sr-only">Cerca de {formatMoney(Math.round(value / 1000) * 1000)}</p>
-      <p className="mt-2 text-sm opacity-80">
+      <p className="mt-2 max-w-prose text-sm opacity-80">
         {meta.seats} × {formatMoney(meta.monthlySalary)} por mês desde {formatDate(meta.salaryFrom)}.
         Não inclui janeiro de 2025, a diferença do presidente da Câmara, 13º nem reajustes.{' '}
-        <a href={meta.salarySourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold underline">Resolução nº 04/2023 ↗<span className="sr-only"> (abre em nova aba)</span></a>
+        <a href={meta.salarySourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold whitespace-nowrap underline">Resolução nº 04/2023 ↗<span className="sr-only"> (abre em nova aba)</span></a>
       </p>
     </div>
   )

@@ -19,7 +19,7 @@ export default function Profile() {
   const pick = (g: GroupKey | '') => { setShown(PageSize); setParams(g ? { tipo: g } : {}, { replace: true }) }
 
   return (
-    <div className="mx-auto w-full max-w-3xl flex flex-col gap-6">
+    <div className="w-full max-w-3xl flex flex-col gap-6">
       <header className="flex items-center gap-4">
         <Avatar councilor={councilor} size="size-20" />
         <div>
@@ -33,7 +33,7 @@ export default function Profile() {
 
       <div className="grid grid-cols-2 gap-3">
         <BigNumber value={formatNumber(councilor.totals.propositions)} label="propostas desde a posse" />
-        <BigNumber value={formatNumber(councilor.totals.neighborhoodRequests)} label="pedidos que citam rua ou bairro" tone="text-info-foreground" />
+        <BigNumber value={formatNumber(councilor.totals.neighborhoodRequests)} label="pedidos que citam rua ou bairro" />
       </div>
 
       {councilor.totals.bills && councilor.totals.bills.total > 0 && (
@@ -42,7 +42,7 @@ export default function Profile() {
             <strong className="font-display text-3xl font-black tabular-nums">{formatNumber(councilor.totals.bills.approved)}</strong>{' '}
             de {formatNumber(councilor.totals.bills.total)} propostas de lei aprovadas pela Câmara
           </p>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <p className="mt-1 max-w-prose text-sm text-muted-foreground">
             {[
               [councilor.totals.bills.inProgress, 'em análise'],
               [councilor.totals.bills.withdrawn, 'retiradas pelo autor'],
@@ -69,7 +69,7 @@ export default function Profile() {
           <MoreButton onClick={() => setShown((n) => n + PageSize)}>Mostrar mais ({formatNumber(list.length - shown)} restantes)</MoreButton>
         )}
       </section>
-      <p className="text-sm text-muted-foreground">Uma proposta com vários autores aparece para cada um deles. Volume não mede qualidade nem resultado.</p>
+      <p className="max-w-prose text-sm text-muted-foreground">Uma proposta com vários autores aparece para cada um deles. Volume não mede qualidade nem resultado.</p>
       <UpdatedAt meta={meta} />
     </div>
   )

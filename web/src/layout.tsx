@@ -9,8 +9,8 @@ export function RootLayout() {
   return (
     <div className="flex min-h-dvh flex-col bg-background text-foreground">
       <Outlet />
-      <footer className="mt-auto border-t px-4 pt-6 pb-[calc(6rem+env(safe-area-inset-bottom))] text-center text-sm text-muted-foreground sm:pb-6">
-        {footerText}
+      <footer className="mt-auto border-t pt-6 pb-[calc(6rem+env(safe-area-inset-bottom))] text-sm text-muted-foreground sm:pb-6">
+        <p className="mx-auto max-w-6xl px-4">{footerText}</p>
       </footer>
     </div>
   )
@@ -57,7 +57,7 @@ export function CityLayout() {
       <Suspense fallback={null}><DocumentTitle city={city} /></Suspense>
       <header className="border-b">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-          <Link to={`/${city}`} className="text-lg font-black tracking-tight">Radar <Suspense fallback={null}><CityName city={city} /></Suspense></Link>
+          <Link to={`/${city}`} className="inline-flex min-h-11 items-center text-lg font-black tracking-tight">Radar <Suspense fallback={null}><CityName city={city} /></Suspense></Link>
           <nav aria-label="Seções" className="hidden gap-1 sm:flex">
             {sections.map((s) => (
               <NavLink key={s.to} end={s.end} to={`/${city}/${s.to}`} className={link('rounded-lg px-3 py-2 text-sm font-semibold')}>{s.label}</NavLink>
@@ -185,7 +185,7 @@ export function OfficialLink({ href, label = 'Ver no site oficial' }: { href: st
 /** Link externo que não é fonte oficial (repositório, issues): texto comum sublinhado, sem o azul de "site oficial". */
 export function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-4 hover:no-underline">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4 hover:no-underline">
       {children}<span className="sr-only"> (abre em nova aba)</span>
     </a>
   )
