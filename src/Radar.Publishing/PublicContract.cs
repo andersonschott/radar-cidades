@@ -31,7 +31,10 @@ public sealed record MetaDto(
     TotalsDto Totals,
     DateOnly? SalaryFrom,
     int Sessions,
-    string? AccentColor);
+    string? AccentColor,
+    decimal? PresidentSalary,
+    bool ThirteenthSalary,
+    string? SalarySourceLabel);
 
 /// <summary>Sessões com chamada em que o vereador foi chamado (presente ou ausente). Nulo: nenhuma.</summary>
 public sealed record AttendanceDto(int Sessions, int Present, int Absent);

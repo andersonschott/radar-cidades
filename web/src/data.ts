@@ -40,6 +40,11 @@ export interface Meta {
   monthlySalary: number
   salarySourceUrl: string
   salaryFrom: string | null
+  /** Subsídio do presidente da Câmara, se diferente; ausente em JSON antigo. */
+  presidentSalary?: number | null
+  /** 13º pago (só true com fonte oficial). */
+  thirteenthSalary?: boolean
+  salarySourceLabel?: string | null
   /** "#rrggbb" da bandeira da cidade; ausente em JSON antigo. */
   accentColor?: string | null
   sessions: number
@@ -187,10 +192,19 @@ export const today = () => new Date().toISOString().slice(0, 10)
 export const AvgMonthMs = 30.4375 * 24 * 3600 * 1000
 
 /** Estimativa (SDD F-08): cadeiras × subsídio × meses corridos desde a vigência. */
-export function salaryEstimate(meta: Pick<Meta, 'seats' | 'monthlySalary' | 'salaryFrom'>, now: number): number | null {
+type SalaryMeta = Pick<Meta, 'seats' | 'monthlySalary' | 'salaryFrom' | 'presidentSalary' | 'thirteenthSalary'>
+
+/** Folha mensal da Câmara: presidente + demais vereadores; com 13º, o ano tem 13 pagamentos (diluídos por mês). */
+export function monthlyPayroll(meta: SalaryMeta): number {
+  const president = meta.presidentSalary ?? meta.monthlySalary
+  const base = (meta.seats - 1) * meta.monthlySalary + president
+  return meta.thirteenthSalary ? (base * 13) / 12 : base
+}
+
+export function salaryEstimate(meta: SalaryMeta, now: number): number | null {
   if (!meta.salaryFrom || meta.monthlySalary <= 0) return null
   const elapsed = now - Date.parse(`${meta.salaryFrom}T03:00:00Z`)
-  return elapsed <= 0 ? 0 : (meta.seats * meta.monthlySalary * elapsed) / AvgMonthMs
+  return elapsed <= 0 ? 0 : (monthlyPayroll(meta) * elapsed) / AvgMonthMs
 }
 
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })

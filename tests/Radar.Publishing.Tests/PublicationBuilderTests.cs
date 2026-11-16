@@ -33,7 +33,7 @@ public sealed class PublicationBuilderTests
         ordinaria.Attendances.Add(new Attendance { SessionId = 1, CouncilorId = ana.Id, Present = true });
         ordinaria.Attendances.Add(new Attendance { SessionId = 1, CouncilorId = joao.Id, Present = false });
         var solene = new Session { Id = 2, CityId = 1, SourceId = "841", Name = "Sessão Solene", Date = new DateOnly(2025, 5, 7), OfficialUrl = new Uri("https://camara.example/s/841") };
-        return new CityPublicationData(city, ["councilors", "propositions", "attendance"], [ana, joao], [indicacao, mocao, lei, leiParada], GeneratedAt.AddHours(-1), [ordinaria, solene], "#0b6b3a");
+        return new CityPublicationData(city, ["councilors", "propositions", "attendance"], [ana, joao], [indicacao, mocao, lei, leiParada], GeneratedAt.AddHours(-1), [ordinaria, solene], "#0b6b3a", 15921.41m, false, "Resolução nº 07/2024");
     }
 
     private static Proposition Proposition(string id, PropositionType type, PropositionCategory category, string summary, params Councilor[] authors)

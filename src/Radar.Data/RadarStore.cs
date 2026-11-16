@@ -18,6 +18,14 @@ public sealed class RadarStore(RadarDbContext db, TimeProvider clock)
             db.Cities.Add(city);
         }
 
+        ApplyConfig(city, config);
+        await db.SaveChangesAsync(ct).ConfigureAwait(false);
+        return city;
+    }
+
+    /// <summary>Copia a config (fonte da verdade) para a entidade. A publicação também usa, para não depender da última coleta.</summary>
+    internal static void ApplyConfig(City city, CityConfig config)
+    {
         city.Name = config.Name;
         city.Uf = config.Uf;
         city.IbgeCode = config.IbgeCode;
@@ -29,8 +37,6 @@ public sealed class RadarStore(RadarDbContext db, TimeProvider clock)
         city.SalaryFrom = config.SalaryFrom;
         city.TermStart = config.TermStart;
         city.Active = config.Active;
-        await db.SaveChangesAsync(ct).ConfigureAwait(false);
-        return city;
     }
 
     public async Task<UpsertStats> UpsertCouncilorsAsync(City city, IEnumerable<SourceCouncilor> councilors, CancellationToken ct)

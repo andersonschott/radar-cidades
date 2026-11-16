@@ -1,7 +1,8 @@
 import { use } from 'react'
 import { useParams } from 'react-router'
-import { formatDate, formatDateTime, formatMoney, load, type Meta } from '../data'
+import { formatDate, formatDateTime, load, type Meta } from '../data'
 import { ExternalLink, OfficialLink, UpdatedAt } from '../layout'
+import { SalaryFormula } from '../pieces'
 
 const repo = 'https://github.com/andersonschott/radar-cidades'
 
@@ -38,8 +39,12 @@ export default function Methodology() {
 
       <h2>Salário</h2>
       <p>
-        O contador é uma <strong>estimativa</strong>: {meta.seats} cadeiras × {meta.monthlySalary > 0 ? formatMoney(meta.monthlySalary) : 'subsídio'} por mês, desde {meta.salaryFrom ? formatDate(meta.salaryFrom) : 'a vigência'}, conforme a Resolução nº 04/2023 da Câmara.
-        É o valor bruto, sem descontos. Não inclui janeiro de 2025 (pago pelo valor anterior), a diferença do presidente da Câmara, 13º salário nem reajustes posteriores.{' '}
+        O contador é uma <strong>estimativa</strong>: <SalaryFormula meta={meta} /> por mês, desde {meta.salaryFrom ? formatDate(meta.salaryFrom) : 'a vigência'}, conforme a {meta.salarySourceLabel ?? 'resolução'} da Câmara.
+        É o valor bruto, sem descontos.{' '}
+        {meta.thirteenthSalary
+          ? 'Inclui o 13º, somado como um 13º pagamento por ano.'
+          : 'Não inclui 13º: a resolução não o prevê e não encontramos registro oficial de pagamento.'}{' '}
+        Não inclui reajustes posteriores.{' '}
         <OfficialLink href={meta.salarySourceUrl} label="Ler a resolução" />
       </p>
 

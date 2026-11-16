@@ -3,7 +3,8 @@ namespace Radar.Domain;
 /// <summary>Configuração de uma cidade, lida de <c>cities/{slug}.json</c> (fonte da verdade).
 /// <c>RobotsOverride</c>: referência à ADR que autoriza coletar apesar do robots.txt; nulo = respeitar.
 /// <c>SalaryFrom</c>: início da vigência de <c>MonthlySalary</c> (pode ser depois da posse).
-/// <c>AccentColor</c>: cor de destaque da cidade ("#rrggbb"), tirada da bandeira ou do brasão; nulo = neutro.</summary>
+/// <c>AccentColor</c>: cor de destaque da cidade ("#rrggbb"), tirada da bandeira ou do brasão; nulo = neutro.
+/// <c>PresidentSalary</c>: subsídio do presidente da Câmara, se diferente; <c>ThirteenthSalary</c>: true só com fonte oficial do 13º.</summary>
 public sealed record CityConfig(
     string Slug,
     string Name,
@@ -19,4 +20,7 @@ public sealed record CityConfig(
     IReadOnlyList<string> Capabilities,
     string? RobotsOverride = null,
     DateOnly? SalaryFrom = null,
-    string? AccentColor = null);
+    string? AccentColor = null,
+    decimal? PresidentSalary = null,
+    bool ThirteenthSalary = false,
+    string? SalarySourceLabel = null);

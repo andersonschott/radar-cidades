@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router'
-import { AvgMonthMs, billStatus, formatDate, formatMoney, groupOf, groups, percent, salaryEstimate, typeSingular, type Attendance, type Councilor, type GroupKey, type Meta } from './data'
+import { AvgMonthMs, billStatus, formatDate, formatMoney, groupOf, groups, percent, monthlyPayroll, salaryEstimate, typeSingular, type Attendance, type Councilor, type GroupKey, type Meta } from './data'
 import { OfficialLink } from './layout'
 import { ArrowUpRight } from './logo'
 
@@ -156,7 +156,7 @@ export function SalaryCounter({ meta }: { meta: Meta }) {
   useEffect(() => {
     if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
     // Um tique por centavo: intervalo = tempo que o total leva para subir R$ 0,01.
-    const perMonth = meta.seats * meta.monthlySalary
+    const perMonth = monthlyPayroll(meta)
     const id = setInterval(() => setNow(Date.now()), perMonth > 0 ? Math.max(16, (0.01 * AvgMonthMs) / perMonth) : 1000)
     return () => clearInterval(id)
   }, [meta])
@@ -168,10 +168,17 @@ export function SalaryCounter({ meta }: { meta: Meta }) {
       <p aria-hidden className="mt-1 font-display text-4xl font-black tabular-nums tracking-tight sm:text-5xl">{formatMoney(value)}</p>
       <p className="sr-only">Cerca de {formatMoney(Math.round(value / 1000) * 1000)}</p>
       <p className="mt-2 max-w-prose text-sm opacity-80">
-        {meta.seats} × {formatMoney(meta.monthlySalary)} por mês desde {formatDate(meta.salaryFrom)}.
-        Não inclui janeiro de 2025, a diferença do presidente da Câmara, 13º nem reajustes.{' '}
-        <a href={meta.salarySourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold whitespace-nowrap underline">Resolução nº 04/2023 <ArrowUpRight /><span className="sr-only"> (abre em nova aba)</span></a>
+        <SalaryFormula meta={meta} /> por mês desde {formatDate(meta.salaryFrom)}.
+        {meta.thirteenthSalary ? ' Inclui o 13º.' : ' Não inclui 13º, que a resolução não prevê.'} Valor bruto, sem reajustes posteriores.{' '}
+        <a href={meta.salarySourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold whitespace-nowrap underline">{meta.salarySourceLabel ?? 'Ato oficial'} <ArrowUpRight /><span className="sr-only"> (abre em nova aba)</span></a>
       </p>
     </div>
   )
+}
+
+/** "18 × R$ 14.158,92 + presidente R$ 15.921,41" (ou "19 × R$ …" quando o presidente ganha igual). */
+export function SalaryFormula({ meta }: { meta: Meta }) {
+  return meta.presidentSalary && meta.presidentSalary !== meta.monthlySalary
+    ? <>{meta.seats - 1} × {formatMoney(meta.monthlySalary)} + presidente {formatMoney(meta.presidentSalary)}</>
+    : <>{meta.seats} × {formatMoney(meta.monthlySalary)}</>
 }

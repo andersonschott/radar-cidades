@@ -38,11 +38,19 @@ describe('insights', () => {
 describe('salário', () => {
   it('estima cadeiras × subsídio × meses desde a vigência', async () => {
     const { salaryEstimate } = await import('./data')
-    const meta = { seats: 19, monthlySalary: 15422.93, salaryFrom: '2025-02-01' }
+    const meta = { seats: 19, monthlySalary: 15422.93, salaryFrom: '2025-02-01' } as const
     const oneMonthLater = Date.parse('2025-02-01T03:00:00Z') + 30.4375 * 24 * 3600 * 1000
     expect(salaryEstimate(meta, oneMonthLater)).toBeCloseTo(19 * 15422.93, 2)
     expect(salaryEstimate(meta, Date.parse('2025-01-15T00:00:00Z'))).toBe(0)
     expect(salaryEstimate({ ...meta, monthlySalary: 0 }, oneMonthLater)).toBeNull()
+  })
+
+  it('soma o presidente à parte e dilui o 13º por mês', async () => {
+    const { monthlyPayroll } = await import('./data')
+    const meta = { seats: 19, monthlySalary: 14158.92, presidentSalary: 15921.41, salaryFrom: '2025-01-01' }
+    expect(monthlyPayroll(meta)).toBeCloseTo(18 * 14158.92 + 15921.41, 2)
+    expect(monthlyPayroll({ ...meta, thirteenthSalary: true })).toBeCloseTo(((18 * 14158.92 + 15921.41) * 13) / 12, 2)
+    expect(monthlyPayroll({ ...meta, presidentSalary: null })).toBeCloseTo(19 * 14158.92, 2)
   })
 })
 

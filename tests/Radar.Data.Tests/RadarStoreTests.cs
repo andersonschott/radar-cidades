@@ -141,7 +141,11 @@ public sealed class RadarStoreTests(SqlServerFixture sql)
         await store.FinishRunAsync(run, ScrapeStatus.Succeeded, null, null, default);
 
         await using var read = sql.CreateContext();
-        var data = await new PublicationQueries(read).LoadAsync(Config("publicacao"), default);
+        // Salário mudado só na config (sem nova coleta) já sai na publicação.
+        var data = await new PublicationQueries(read).LoadAsync(Config("publicacao") with { MonthlySalary = 14158.92m, PresidentSalary = 15921.41m }, default);
+
+        data.City.MonthlySalary.ShouldBe(14158.92m);
+        data.PresidentSalary.ShouldBe(15921.41m);
 
         data.Councilors.Select(c => c.Name).ShouldBe(["Ana Souza", "João Lima"]);
         data.Councilors[0].Mandates.Single().Party!.Acronym.ShouldBe("PSD");
