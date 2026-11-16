@@ -2,11 +2,12 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router'
 import { AvgMonthMs, billStatus, formatDate, formatMoney, groupOf, groups, percent, salaryEstimate, typeSingular, type Attendance, type Councilor, type GroupKey, type Meta } from './data'
 import { OfficialLink } from './layout'
+import { ArrowUpRight } from './logo'
 
 /** Título de seção: pergunta grande + explicação simples. */
-export function Section({ id, title, intro, children }: { id: string; title: string; intro?: ReactNode; children: ReactNode }) {
+export function Section({ id, title, intro, band = false, children }: { id: string; title: string; intro?: ReactNode; band?: boolean; children: ReactNode }) {
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-4">
+    <section aria-labelledby={id} className={`flex flex-col gap-4 ${band ? 'band py-12 sm:py-16' : ''}`}>
       <div>
         <h2 id={id} className="text-3xl font-black leading-tight tracking-tight text-balance">{title}</h2>
         {intro && <p className="mt-2 max-w-prose text-base text-muted-foreground">{intro}</p>}
@@ -162,14 +163,14 @@ export function SalaryCounter({ meta }: { meta: Meta }) {
   const value = salaryEstimate(meta, now)
   if (value === null || !meta.salaryFrom) return null
   return (
-    <div className="rounded-3xl bg-foreground p-5 text-background">
+    <div className="rounded-3xl bg-city p-5 text-white">
       <p className="text-sm font-bold opacity-80">Salário pago aos {meta.seats} vereadores (estimativa)</p>
       <p aria-hidden className="mt-1 font-display text-4xl font-black tabular-nums tracking-tight sm:text-5xl">{formatMoney(value)}</p>
       <p className="sr-only">Cerca de {formatMoney(Math.round(value / 1000) * 1000)}</p>
       <p className="mt-2 max-w-prose text-sm opacity-80">
         {meta.seats} × {formatMoney(meta.monthlySalary)} por mês desde {formatDate(meta.salaryFrom)}.
         Não inclui janeiro de 2025, a diferença do presidente da Câmara, 13º nem reajustes.{' '}
-        <a href={meta.salarySourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold whitespace-nowrap underline">Resolução nº 04/2023 ↗<span className="sr-only"> (abre em nova aba)</span></a>
+        <a href={meta.salarySourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold whitespace-nowrap underline">Resolução nº 04/2023 <ArrowUpRight /><span className="sr-only"> (abre em nova aba)</span></a>
       </p>
     </div>
   )

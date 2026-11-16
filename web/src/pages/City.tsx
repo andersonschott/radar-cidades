@@ -15,11 +15,11 @@ export default function City() {
 
   return (
     <div className="flex flex-col gap-12">
-      <header className="-mx-4 -mt-6 flex flex-col gap-4 bg-city px-4 pt-8 pb-5 text-white sm:mx-0 sm:mt-0 sm:rounded-3xl sm:p-8 lg:-mt-4">
+      <header className="flex flex-col gap-4">
         <h1 className="max-w-4xl text-4xl font-black leading-[1.05] tracking-tight text-balance sm:text-5xl">
           O que cada vereador de {meta.name} fez desde a posse
         </h1>
-        <p className="max-w-prose text-lg text-white/85">
+        <p className="max-w-prose text-lg text-muted-foreground">
           Tudo o que os {meta.councilors} vereadores apresentaram na Câmara desde {formatDate(meta.termStart)}, com link para o documento oficial.
         </p>
         <SalaryCounter meta={meta} />
@@ -55,7 +55,7 @@ export default function City() {
         </Link>
       </Section>
 
-      <Section id="fonte" title="De onde vêm os números">
+      <Section id="fonte" band title="De onde vêm os números">
         <ul className="grid gap-3 sm:grid-cols-2">
           <Fact title="Fonte oficial">Tudo sai do sistema da própria Câmara. Nada é digitado à mão. <OfficialLink href={meta.officialUrl} label="Abrir o sistema da Câmara" /></Fact>
           <Fact title="Pedido não é obra feita">Um pedido é só um pedido. A Prefeitura não é obrigada a fazer, e o sistema da Câmara não informa se ela atendeu.</Fact>
@@ -136,7 +136,7 @@ function Streets({ city }: { city: string }) {
   const [shown, setShown] = useState(3)
 
   return (
-    <Section id="ruas" title="Ruas com mais pedidos"
+    <Section id="ruas" band title="Ruas com mais pedidos"
       intro="Quando o mesmo endereço aparece em vários pedidos. O site da Câmara não mostra esse cruzamento.">
       <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {streets.slice(0, shown).map((s) => (

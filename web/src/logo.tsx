@@ -13,3 +13,12 @@ export function LogoMark({ className = 'size-7' }: { className?: string }) {
     </svg>
   )
 }
+
+/** Seta de link externo desenhada (o glifo ↗ vira emoji azul em alguns sistemas). */
+export function ArrowUpRight() {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden className="inline size-[0.9em] align-[-0.1em]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 11 11 5M6 5h5v5" />
+    </svg>
+  )
+}

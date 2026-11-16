@@ -2,7 +2,7 @@ import { Suspense, use, useEffect, useLayoutEffect, useRef, useState, type React
 import { Form, isRouteErrorResponse, Link, NavLink, Outlet, useLocation, useMatches, useNavigate, useParams, useRouteError } from 'react-router'
 import { Skeleton } from '@/components/ui/skeleton'
 import { formatDateTime, load, type Meta } from './data'
-import { LogoMark } from './logo'
+import { ArrowUpRight, LogoMark } from './logo'
 
 const footerText = 'Projeto independente. Sem vínculo com Câmara, Prefeitura ou partido. Dados oficiais, atualizados diariamente.'
 
@@ -189,7 +189,7 @@ export function RouteError() {
 export function OfficialLink({ href, label = 'Ver no site oficial' }: { href: string; label?: ReactNode }) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center self-start text-sm font-bold text-info-foreground underline-offset-4 hover:underline">
-      {label} ↗<span className="sr-only"> (abre em nova aba)</span>
+      {label} <ArrowUpRight /><span className="sr-only"> (abre em nova aba)</span>
     </a>
   )
 }

@@ -137,3 +137,12 @@
   accent-color: var(--color-city);
   caret-color: var(--color-city);
 }
+
+/* Faixa de seção de ponta a ponta (estilo landing page) sem sair da coluna do conteúdo:
+   a sombra estende o fundo para os lados e o clip-path corta em cima e embaixo. */
+.band {
+  --band: color-mix(in oklab, var(--color-city) 6%, var(--background));
+  background: var(--band);
+  box-shadow: 0 0 0 100vmax var(--band);
+  clip-path: inset(0 -100vmax);
+}
