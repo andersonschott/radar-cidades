@@ -38,3 +38,7 @@ Há, portanto, dois grupos `*` que se contradizem.
 
 - Piracicaba entra ativa e sem exceção de robots.
 - Se a Câmara pedir para parar, ou se o `robots.txt` passar a proibir, a coleta para.
+
+## Atualização (2026-11-17): coleta fora da nuvem
+
+O primeiro run no Azure confirmou o risco: o Cloudflare do `siave` passa a responder 403 depois de poucas requisições vindas do IP do Function App. Decisão do dono: Piracicaba é coletada numa máquina residencial (`"localCollection": true` em `cities/piracicaba.json`). O timer do Azure pula a cidade, e `tools/sync-local.sh piracicaba` coleta localmente e sobe os JSON para o Blob, num agendamento do Claude Code em horário comercial. Saída definitiva continua sendo pedir à Câmara a liberação do User-Agent.

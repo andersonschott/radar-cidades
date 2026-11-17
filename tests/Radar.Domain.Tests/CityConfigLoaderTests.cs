@@ -18,6 +18,8 @@ public sealed class CityConfigLoaderTests
         sbo.Capabilities.ShouldContain("propositions");
         sbo.Active.ShouldBeTrue();
         sbo.Siscam!.SearchIndex.ShouldBe(74);
+        sbo.LocalCollection.ShouldBeFalse();
+        CityConfigLoader.LoadAll(CitiesDir).Single(c => c.Slug == "piracicaba").LocalCollection.ShouldBeTrue();
         sbo.Siscam.DocumentTypes[PropositionType.Indicacao].ShouldBe(123);
     }
 

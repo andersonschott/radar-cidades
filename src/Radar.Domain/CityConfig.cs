@@ -24,7 +24,9 @@ public sealed record CityConfig(
     decimal? PresidentSalary = null,
     bool ThirteenthSalary = false,
     string? SalarySourceLabel = null,
-    SiscamConfig? Siscam = null);
+    SiscamConfig? Siscam = null,
+    // Coletada fora da nuvem (IP de datacenter bloqueado, ex.: Cloudflare de Piracicaba): o timer do Azure pula; tools/sync-local.sh publica.
+    bool LocalCollection = false);
 
 /// <summary>Parâmetros do SISCAM que mudam por instalação: índice da pesquisa avançada (<c>id=</c>) e código "Documento" de cada tipo
 /// (docs/sources/siscam.md §2). Ver no select de tipos da página <c>/index/{SearchIndex}</c> da Câmara.</summary>

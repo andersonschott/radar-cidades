@@ -16,6 +16,7 @@
   "accentColorSource": "Verde veronese do campo da bandeira municipal (Lei nº 381, de 2 de outubro de 1953: \"campo em verde veronense\", segundo A Província, aprovincia.com.br/memorial-piracicaba/almanaque/a-bandeira-e-o-brasao-2176). Tom #40826d, contraste 4,5:1 sobre branco.",
   "termStart": "2025-01-01",
   "active": true,
+  "localCollection": true,
   "siscam": {
     "searchIndex": 78,
     "documentTypes": { "Indicacao": 135, "Requerimento": 134, "Mocao": 136, "ProjetoLei": 129, "ProjetoLeiComplementar": 130, "ProjetoDecretoLegislativo": 131, "ProjetoResolucao": 132, "Outro": 133 }

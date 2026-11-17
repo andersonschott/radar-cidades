@@ -29,8 +29,29 @@ public sealed class PublishCityFunction(IReadOnlyList<CityConfig> cities, Public
         }
 
         var last = await queries.LastSuccessBySlugAsync(ct).ConfigureAwait(false);
-        var index = cities.Where(c => c.Active).Select(c => new CitySummaryDto(c.Slug, c.Name, c.Uf, c.Capabilities, last.GetValueOrDefault(c.Slug)));
+        var index = new List<CitySummaryDto>();
+        foreach (var c in cities.Where(c => c.Active))
+        {
+            // Cidade coletada fora da nuvem não tem run neste banco: a data vem do meta.json que o sync local subiu.
+            var updated = last.GetValueOrDefault(c.Slug) ?? await PublishedLastScrapeAsync(c.Slug, ct).ConfigureAwait(false);
+            index.Add(new CitySummaryDto(c.Slug, c.Name, c.Uf, c.Capabilities, updated));
+        }
+
         await UploadAsync("cities.json", PublicationBuilder.CitiesIndex(index, now), ct).ConfigureAwait(false);
+    }
+
+    private async Task<DateTimeOffset?> PublishedLastScrapeAsync(string slug, CancellationToken ct)
+    {
+        var blob = container.GetBlobClient($"{slug}/meta.json");
+        if (!await blob.ExistsAsync(ct).ConfigureAwait(false))
+        {
+            return null;
+        }
+
+        var content = (await blob.DownloadContentAsync(ct).ConfigureAwait(false)).Value.Content;
+        using var doc = System.Text.Json.JsonDocument.Parse(content.ToMemory());
+        return doc.RootElement.GetProperty("data").TryGetProperty("lastSuccessfulScrape", out var v) && v.ValueKind == System.Text.Json.JsonValueKind.String
+            ? v.GetDateTimeOffset() : null;
     }
 
     private async Task UploadAsync(string name, byte[] content, CancellationToken ct) =>
